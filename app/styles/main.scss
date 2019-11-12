@@ -1,0 +1,34 @@
+$fontFam_uqReg: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+$fontFam_uqBold: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+$fontFam_hel: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+
+@import 'breakpoints';
+
+
+// FULL WIDTH SPECIFICITY
+// 
+.pt_primary #main .primary-content  {
+
+}
+
+
+// // SIDEBARRED SPECIFICITY
+// // 
+// .pt_product-search-result #main .primary-content {
+
+// }
