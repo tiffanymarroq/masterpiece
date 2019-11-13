@@ -67,21 +67,12 @@
 				</div>
 			</div>
 			<div class="products-container">
-
-
-				<p>products</p>
-				<h4>test</h4>
-
-
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
 
 							<div class="search-result-items tiles-container clearfix hide-compare">
-
-								<!-- <li class="grid-tile new-row product-listing">
 		
-				</li> -->
 							</div>
 						</div>
 					</div>
@@ -333,15 +324,7 @@
 
 
 <script>
-	let pid = [
-		'419994',
-		'409323',
-		'420684',
-		'420358',
-		'424576',
-		'419912',
-		'424571'
-	]
+
 
 	let urlPrefix = 'https://www.uniqlo.com';
 	if (window.location.href.includes('staging')) {
@@ -365,8 +348,8 @@
 
 				listHTML.push(data);
 				li.append(listHTML.join(''));
-				$('.tiles-container').append(li);
-
+				$('#'+ allDownSKUS[0].id + ' .tiles-container').append(li);
+				console.log(allDownSKUS[0].id + ' .tiles-container')
 				// Product Details
 				let productName = $(data).children('.product-tile-info').children('.product-name').html();
 				let productImage = $(data).children('.product-tile-info').children('.product-image').children(

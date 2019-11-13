@@ -193,9 +193,10 @@ sans-serif;
 				line-height: 1.5;
 				letter-spacing: 0.64px;
 				z-index: 1;
-				padding: 0 1% ;
+				padding: 0 1%;
 			}
-			.dark{
+
+			.dark {
 				color: #000;
 			}
 		}
@@ -210,9 +211,10 @@ sans-serif;
 
 		}
 
-		.product-img{
+		.product-img {
 			margin-top: -5px;
-			@include bp(sm){
+
+			@include bp(sm) {
 				margin-top: 0;
 			}
 		}
@@ -298,6 +300,17 @@ sans-serif;
 
 	.products-container {
 		padding: 4%;
+
+		.search-result-items {
+			display: flex;
+			flex-wrap: nowrap;
+			overflow: auto;
+			li{
+				flex: 0 0 auto;
+				width: 40%;
+			}
+		}
+
 
 	}
 
