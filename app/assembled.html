@@ -1,12 +1,717 @@
 <style>
 /* inject:theCss:css */
-body {
-	background-color: deepskyblue;
+:root {
+  --black: #000;
 }
+
+#featured-down-fw19 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding-bottom: 60px;
+}
+
+#featured-down-fw19 img {
+  width: 100%;
+  height: auto;
+}
+
+#featured-down-fw19 p,
+#featured-down-fw19 h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#featured-down-fw19 p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#featured-down-fw19 p.lead {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 p.lead {
+    font-size: 20px;
+  }
+}
+
+#featured-down-fw19 .gender_tab_wrapper {
+  width: 100%;
+  margin: 0 auto;
+  color: #1b1b1b;
+}
+
+#featured-down-fw19 .gender_tab {
+  margin: 0 auto;
+  margin-top: -10px;
+  border-top: 1px solid #dadada;
+}
+
+#featured-down-fw19 .gender_tab ul:first-child {
+  margin-top: 0;
+}
+
+#featured-down-fw19 .gender_tab ul li:first-child {
+  padding-left: 0;
+}
+
+#featured-down-fw19 .gender_tab ul li {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5em;
+  padding-left: 0;
+  padding: 15px 0;
+  width: 50%;
+  background: #f4f4f4;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+}
+
+#featured-down-fw19 .gender_tab ul li a {
+  color: #ababab;
+  text-decoration: none;
+  display: block;
+  height: auto;
+  vertical-align: middle;
+  padding-bottom: 2px;
+  font-family: 'Helvetica Neue', Helvetica, Arial;
+}
+
+#featured-down-fw19 .gender_tab ul li a span {
+  text-decoration: none;
+}
+
+#featured-down-fw19 .gender_tab ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  font-family: uniqlo;
+  font-weight: 400;
+}
+
+#featured-down-fw19 .gender_tab ul li.gender_tab_active {
+  background: #fff;
+  color: #1b1b1b;
+  border-bottom: none;
+}
+
+#featured-down-fw19 .gender_tab ul li.gender_tab_active a {
+  color: #1b1b1b;
+  cursor: default;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  width: auto;
+  padding: 2px 0;
+  line-height: 1em;
+}
+
+#featured-down-fw19 .gender_tab ul li a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+#featured-down-fw19 .main-intro {
+  width: 87%;
+  padding: 60px 4% 80px;
+  margin: 0 auto;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .main-intro {
+    width: 45%;
+    padding: 100px 15px;
+  }
+}
+
+#featured-down-fw19 .main-intro p {
+  text-align: center;
+  line-height: 1.45;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: var(--black);
+  font-weight: 300;
+}
+
+#featured-down-fw19 section {
+  padding-bottom: 60px;
+}
+
+#featured-down-fw19 section .title-banner {
+  position: relative;
+}
+
+#featured-down-fw19 section .title-banner .lead {
+  text-align: center;
+  position: absolute;
+  bottom: 5px;
+  font-size: 16px;
+  color: #fff;
+  width: calc(100% - 2%);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+  z-index: 1;
+  padding: 0 1%;
+}
+
+#featured-down-fw19 section .title-banner .dark {
+  color: #000;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 6% 4% 0;
+  }
+}
+
+#featured-down-fw19 .product-info-container .product-img {
+  margin-top: -5px;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container .product-img {
+    margin-top: 0;
+  }
+}
+
+#featured-down-fw19 .product-info-container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container > div {
+    width: 48%;
+  }
+}
+
+#featured-down-fw19 .product-info-container .product-info > .lead {
+  text-align: center;
+  margin-bottom: 10%;
+  margin-top: 10px;
+  line-height: 1.25;
+  letter-spacing: 0.8px;
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container .product-info > .lead {
+    display: block;
+  }
+}
+
+#featured-down-fw19 .product-info-container .product-info .product-detail p {
+  line-height: 1.39;
+  letter-spacing: 0.72px;
+  text-align: left;
+  color: var(--black);
+}
+
+#featured-down-fw19 .product-info-container .product-info .product-detail .lead {
+  line-height: 1.19;
+  letter-spacing: 0.42px;
+  text-align: left;
+  color: var(--black);
+}
+
+#featured-down-fw19 .product-info-container .product-info > img {
+  margin-top: 40px;
+  margin-bottom: 8%;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container .product-info > img {
+    margin-top: 3%;
+    margin-bottom: 8%;
+  }
+}
+
+#featured-down-fw19 .product-info-container .product-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5%;
+}
+
+#featured-down-fw19 .product-info-container .product-icons .product-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 3%;
+}
+
+#featured-down-fw19 .product-info-container .product-icons .product-icon img {
+  padding-right: 20px;
+  width: 15%;
+}
+
+#featured-down-fw19 .product-info-container .product-icons .product-icon p {
+  margin: 0;
+}
+
+#featured-down-fw19 .products-container {
+  padding: 4%;
+}
+
+#featured-down-fw19 .pc {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .pc {
+    display: block;
+  }
+}
+
+#featured-down-fw19 .mb {
+  display: block;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .mb {
+    display: none;
+  }
+}
+
+
+
 /* endCSSinject */
 </style>
 
 
 <!-- inject:theHTML:html -->
-<p>Seeing Is Forgetting the Name of the Thing One Sees</p>
+<div id="featured-down-fw19">
+	<div class="main-hero">
+		<img class="pc" src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc.jpg"
+			alt="Uniqlo Down Main Hero">
+		<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/w-hero-sp.jpg"
+			alt="Uniqlo Down Main Hero" class="mb">
+	</div>
+	<div class="gender_tab_wrapper">
+		<div class="gender_tab">
+			<ul>
+				<li class="gender_tab_active"><a class="js--track-event" data-category="heattech_special"
+						data-label="k_gender_tab_women" href="#"><span>
+							<span style="vertical-align: inherit;">
+								<span style="vertical-align: inherit;">WOMEN</span>
+							</span>
+						</span>
+					</a>
+				</li>
+				<li class=""><a class="js--track-event diabled" data-category="heattech_special"
+						data-label="k_gender_tab_men" href="#"><span>
+							<span style="vertical-align: inherit;">
+								<span style="vertical-align: inherit;">MEN</span>
+							</span>
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-intro">
+		<p>Looking for down outerwear, but not sure what level of warmth you need? Shop our helpful guide to find a new
+			jacket or coat that's just-right for you.</p>
+	</div>
+	<div class="product-section">
+		<section id="ultra-light-down">
+			<div class="title-banner">
+				<img class="pc"
+					src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_03.jpg"
+					alt="ULD banner">
+				<div class="mb">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-uld.jpg"
+						alt="ULD Banner">
+					<p class="lead">Amazingly light, warm, and compact.</p>
+
+				</div>
+			</div>
+			<div class="product-info-container">
+				<div class="product-img">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_06.jpg"
+						alt="Seamless Image">
+				</div>
+				<div class="product-info">
+					<p class="lead">Amazingly light, warm, and compact.</p>
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/uld-chart.jpg"
+						alt="Chart">
+					<div class="product-detail">
+						<p class="lead">Pocketable Design</p>
+						<p>Folds compact into a pouch that comes with every style.</p>
+					</div>
+					<div class="product-detail">
+						<p class="lead">New Fall Styles</p>
+						<p>Men’s Ultra Light Down Puffer Vest + Jacket, and Women’s Ultra Light Down Puffer Vest +
+							Cocoon
+							Jacket</p>
+					</div>
+
+				</div>
+			</div>
+			<div class="products-container">
+
+
+				<p>products</p>
+				<h4>test</h4>
+
+
+				<div class="search-result-content">
+					<div class="collection-tiles">
+						<div class="collections-section">
+
+							<div class="search-result-items tiles-container clearfix hide-compare">
+
+								<!-- <li class="grid-tile new-row product-listing">
+		
+				</li> -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section id="seamless">
+			<div class="title-banner">
+				<img class="pc"
+					src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_09.jpg"
+					alt="seamless Banner">
+				<div class="mb">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-seamlessdown.jpg"
+						alt="Seamless Banner" class="mb">
+					<p class="lead">Reduced stitching makes for a highly functional design that's windproof,
+						water-repellent, and lightweight.</p>
+				</div>
+
+			</div>
+			<div class="product-info-container">
+				<div class="product-img">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_12.jpg"
+						alt="seamless Image">
+				</div>
+				<div class="product-info">
+					<p class="lead">Reduced stitching makes for a highly functional design that's windproof,
+						water-repellent, and lightweight.</p>
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/seamlessdown-chart.jpg"
+						alt="Chart">
+					<div class="product-icons">
+						<div class="product-icon">
+							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/windproof-logo.png"
+								alt="Windproof Logo">
+							<p>Windproof</p>
+						</div>
+						<div class="product-icon">
+							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/waterepellentlogo.png"
+								alt="Water Repellent">
+							<p>Water Repellent</p>
+						</div>
+						<div class="product-icon">
+							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/lightweight-logo.png"
+								alt="Lightweight Logo">
+							<p>Lightweight</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="products-container">
+				<p>products</p>
+				<h4>test</h4>
+			</div>
+		</section>
+
+		<section id="hybrid">
+			<div class="title-banner">
+				<img class="pc"
+					src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_15.jpg"
+					alt="Hybrid Banner">
+				<div class="mb">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-hybriddown.jpg"
+						alt="Hybrid Banner">
+					<p class="lead dark">Evolutionary outerwear combining moisture-absorbing, heat-producing insulation
+						with premium down.</p>
+				</div>
+			</div>
+
+			<div class="product-info-container">
+				<div class="product-img">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_18.jpg"
+						alt="Hybrid Image">
+				</div>
+				<div class="product-info">
+					<p class="lead">Evolutionary outerwear combining moisture-absorbing,
+						heat-producing insulation with premium down.</p>
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-chart.jpg"
+						alt="Chart">
+					<div class="product-detail">
+						<p class="lead">Light, Warm, and Unrestricting</p>
+						<p>A sleek silhouette allows you to move freely. The padding doesn’t feel lumpy, and won’t
+							escape like regular down.</p>
+					</div>
+					<div class="product-detail">
+
+						<p class="lead">Inspired by Athletes</p>
+						<p>UNIQLO teamed up with snowboarder/skateboarder Ayumu Hirano to develop outerwear with
+							optimized warmth and lightness.</p>
+					</div>
+
+
+
+				</div>
+			</div>
+			<div class="products-container">
+				<p>products</p>
+				<h4>test</h4>
+			</div>
+		</section>
+
+		<section id="hybrid-ultra-warm">
+			<div class="title-banner">
+				<img class="pc"
+					src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_21.jpg"
+					alt="Hybrid Ultra Warm Banner">
+				<div class="mb">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/sp-hybriddown-uw.jpg?a=b"
+						alt="Hybrid Ultra Warm Banner">
+					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+				</div>
+			</div>
+			<div class="product-info-container">
+				<div class="product-image">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_24.jpg"
+						alt="hybrid ultra warm Image">
+				</div>
+				<div class="product-info">
+					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-uw-chart.jpg"
+						alt="Chart">
+
+					<div class="product-detail">
+						<p class="lead">Two-layer Hybrid Structure</p>
+						<p>Filled with down and AIRTECH, an aluminum print lining on the body for warmth, softness, and
+							heat
+							retention.</p>
+					</div>
+					<div class="product-detail">
+
+						<p class="lead">Modern Silhouette</p>
+						<p>The non-quilted design reduces bulk.</p>
+					</div>
+
+				</div>
+			</div>
+			<p>products</p>
+		</section>
+
+		<section id="lightweight-down">
+			<div class="title-banner">
+				<img class="pc"
+					src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/19fw-lightweight_28.jpg"
+					alt="Lightweight Down Banner">
+				<div class="mb">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-lightweightdown.jpg"
+						alt="Lightweight Down Banner">
+					<p class="lead">The soft, lightweight feel and puffy silhouette give this down coat an attractive
+						shape and make it a winter must-have.</p>
+				</div>
+
+			</div>
+			<div class="product-info-container">
+				<div class="product-img">
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/19fw-lightweight_31.jpg"
+						alt="Lightweight Down Image">
+				</div>
+				<div class="product-info">
+					<p class="lead">The soft, lightweight feel and puffy silhouette give this down coat an attractive
+						shape and make it a winter must-have.</p>
+					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/lightweight-chart.jpg"
+						alt="Chart">
+					<div class="product-detail">
+						<p class="lead">Double-layered Down</p>
+						<p>Lightweight fabric full of down that still keeps you exceptionally warm.</p>
+					</div>
+
+					<div class="product-icons">
+						<div class="product-icon">
+							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/waterepellentlogo.png"
+								alt="Water Repellent Logo">
+							<div>
+								<p class="lead">Water-Repellent Coating</p>
+								<p>Repels light rain or snow</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p>products</p>
+		</section>
+	</div>
+
+</div>
+
+<script>
+	let uldSKU = [
+		'419775',
+		'409111',
+		'419780',
+		'419776',
+		'409112',
+		'421618',
+		'419777',
+		'419852',
+		'419853',
+		'419778',
+		'420290',
+		'419779',
+		'420291',
+		'420278'
+	]
+
+
+	let seamlessSKU = [
+		'420252',
+		'420253'
+	]
+
+	let hybridDownSKU = [
+		'420251',
+		'420215'
+	]
+
+	let hybridUWSKU = [
+		'420258',
+		'420259'
+	]
+
+	let lightweightSKU = [
+		'420255'
+	]
+
+
+	let allDownSKUS = [{
+			id: 'ultra-light-down',
+			skus: uldSKU
+		},
+		{
+			id: 'seamless',
+			skus: seamlessSKU
+		},
+		{
+			id: 'hybrid',
+			skus: hybridDownSKU
+		},
+		{
+			id: 'hybrid-ultra-warm',
+			skus: hybridUWSKU
+		},
+		{
+			id: 'lightweight-down',
+			skus: lightweightSKU
+		}
+	]
+
+</script>
+
+
+
+<script>
+	let pid = [
+		'419994',
+		'409323',
+		'420684',
+		'420358',
+		'424576',
+		'419912',
+		'424571'
+	]
+
+	let urlPrefix = 'https://www.uniqlo.com';
+	if (window.location.href.includes('staging')) {
+		urlPrefix = 'https://staging-na-uniqlo.demandware.net'
+	}
+	console.log(urlPrefix)
+	for (let id = 0; id < allDownSKUS[0].skus.length; id++) {
+		$.ajax({
+			url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+			allDownSKUS[0].skus[id],
+			success: function (data) {
+				var listHTML = [];
+				var reformatHTML = []
+				//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
+				if (data.length === 0) {
+					return;
+				}
+				let li = $(' <li class="grid-tile new-row product-listing"></li>')
+				let reformat = $('.reformat');
+
+
+				listHTML.push(data);
+				li.append(listHTML.join(''));
+				$('.tiles-container').append(li);
+
+				// Product Details
+				let productName = $(data).children('.product-tile-info').children('.product-name').html();
+				let productImage = $(data).children('.product-tile-info').children('.product-image').children(
+					'.thumb-link').html();
+
+
+
+				// Product Price
+				let price = $(data).children('.product-tile-info').children('.product-pricing').children(
+					'.product-sales-price').html();
+				let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
+					.children('del').children('.product-standard-price').html();
+
+				// Color Swatches
+				let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
+			.html();
+
+				// Flags
+				let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+					'.sale').html();
+				let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+					'.Low').html();
+				let promoFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+					'.promotion.promotion').html();
+
+
+				console.log(saleFlag, 'sale flag')
+
+			},
+			error: function (err) {
+				console.log('errrr', err)
+			},
+			complete: function () {}
+		});
+	}
+
+</script>
+
 <!-- endHTMLinject -->
