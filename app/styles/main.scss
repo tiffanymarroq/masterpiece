@@ -218,7 +218,7 @@ sans-serif;
 
 		}
 
-		.product-img {
+		.product-image {
 			margin-top: -5px;
 
 			@include bp(sm) {
@@ -284,7 +284,6 @@ sans-serif;
 					margin-bottom: 8%;
 				}
 			}
-
 		}
 
 		.product-icons {
@@ -387,7 +386,7 @@ sans-serif;
 				margin-right: 15px;
 
 				@include bp(sm) {
-					width: 22%;
+					width: 29%;
 				}
 			}
 		}
@@ -424,6 +423,8 @@ sans-serif;
 		}
 	}
 
+	.product-standard-price {}
+
 	.product-sales-price {
 		font-family: $fontFam_uqReg;
 		color: #f00;
@@ -438,6 +439,7 @@ sans-serif;
 
 	.pc {
 		display: none;
+
 		@include bp(sm) {
 			display: block;
 		}

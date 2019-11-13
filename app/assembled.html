@@ -193,12 +193,12 @@
   }
 }
 
-#featured-down-fw19 .product-info-container .product-img {
+#featured-down-fw19 .product-info-container .product-image {
   margin-top: -5px;
 }
 
 @media all and (min-width: 768px) {
-  #featured-down-fw19 .product-info-container .product-img {
+  #featured-down-fw19 .product-info-container .product-image {
     margin-top: 0;
   }
 }
@@ -300,7 +300,7 @@
 }
 
 #featured-down-fw19 .product-info-container .product-icons .product-icon img {
-  padding-right: 20px;
+  padding-right: 30px;
   width: 20%;
 }
 
@@ -372,6 +372,7 @@
 }
 
 #featured-down-fw19 .products-container .search-result-items {
+  padding-top: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,7 +404,7 @@
 #featured-down-fw19 .products-container .promotion-data span {
   color: red;
   font-size: 12px;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 @media all and (min-width: 768px) {
@@ -432,12 +433,15 @@
 }
 
 #featured-down-fw19 .product-sales-price {
+  font-family: UniqloProRegular, "Uniqlo Pro Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f00;
   margin-top: 10px;
+  font-size: 14px;
 }
 
-#featured-down-fw19 .product-sales-price .saleprice {
+#featured-down-fw19 .product-sales-price.saleprice {
   color: #000;
+  font-size: 16px;
 }
 
 #featured-down-fw19 .pc {
@@ -515,7 +519,7 @@
 				</div>
 			</div>
 			<div class="product-info-container">
-				<div class="product-img">
+				<div class="product-image">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_06.jpg"
 						alt="Seamless Image">
 				</div>
@@ -529,9 +533,7 @@
 					</div>
 					<div class="product-detail">
 						<p class="lead">New Fall Styles</p>
-						<p>Men’s Ultra Light Down Puffer Vest + Jacket, and Women’s Ultra Light Down Puffer Vest +
-							Cocoon
-							Jacket</p>
+						<p>Women's Ultra Light Down Puffer Vest + Cocoon Jacket, and Men's Ultra Light Down Puffer Vest + Jacket</p>
 					</div>
 
 				</div>
@@ -566,7 +568,7 @@
 
 			</div>
 			<div class="product-info-container">
-				<div class="product-img">
+				<div class="product-image">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_12.jpg"
 						alt="seamless Image">
 				</div>
@@ -584,7 +586,7 @@
 						<div class="product-icon">
 							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/waterepellentlogo.png"
 								alt="Water Repellent">
-							<p class="lead">Water Repellent</p>
+							<p class="lead">Water-Repellent</p>
 						</div>
 						<div class="product-icon">
 							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/lightweight-logo.png"
@@ -621,7 +623,7 @@
 			</div>
 
 			<div class="product-info-container">
-				<div class="product-img">
+				<div class="product-image">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc_18.jpg"
 						alt="Hybrid Image">
 				</div>
@@ -631,7 +633,7 @@
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-chart.jpg"
 						alt="Chart">
 					<div class="product-detail">
-						<p class="lead">Light, Warm, and Unrestricting</p>
+						<p class="lead">Light, Warm, and Unrestrictive</p>
 						<p>A sleek silhouette allows you to move freely. The padding doesn’t feel lumpy, and won’t
 							escape like regular down.</p>
 					</div>
@@ -668,7 +670,7 @@
 				<div class="mb">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-hybriddown-uw.jpg"
 						alt="Hybrid Ultra Warm Banner">
-					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+					<p class="lead">Our warmest outerwear yet.</p>
 				</div>
 			</div>
 			<div class="product-info-container">
@@ -677,7 +679,7 @@
 						alt="hybrid ultra warm Image">
 				</div>
 				<div class="product-info">
-					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+					<p class="lead">Our warmest outerwear yet.</p>
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-uw-chart.jpg"
 						alt="Chart">
 
@@ -724,7 +726,7 @@
 
 			</div>
 			<div class="product-info-container">
-				<div class="product-img">
+				<div class="product-image">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/19fw-lightweight_31.jpg"
 						alt="Lightweight Down Image">
 				</div>
@@ -859,13 +861,11 @@
 					li.append(listHTML.join(''));
 					$('#' + this.val.id + ' .tiles-container').append(li);
 
-
 					// Product Details
 					let productName = $(data).children('.product-tile-info').children('.product-name').html();
 					let productImage = $(data).children('.product-tile-info').children('.product-image')
 						.children(
 							'.thumb-link').html();
-
 
 					// Product Price
 					let price = $(data).children('.product-tile-info').children('.product-pricing').children(
