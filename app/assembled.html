@@ -19,6 +19,11 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+#featured-down-fw19 a {
+  color: black;
+  text-decoration: none;
+}
+
 #featured-down-fw19 p {
   font-size: 18px;
   font-weight: 300;
@@ -33,6 +38,10 @@
   #featured-down-fw19 p.lead {
     font-size: 20px;
   }
+}
+
+#featured-down-fw19 li {
+  list-style-type: none;
 }
 
 #featured-down-fw19 .gender_tab_wrapper {
@@ -137,6 +146,13 @@
   text-align: center;
   color: var(--black);
   font-weight: 300;
+  font-size: 18px;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .main-intro p {
+    font-size: 20px;
+  }
 }
 
 #featured-down-fw19 section {
@@ -274,7 +290,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 3%;
+  margin-bottom: 8%;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .product-info-container .product-icons .product-icon {
+    margin-bottom: 3%;
+  }
 }
 
 #featured-down-fw19 .product-info-container .product-icons .product-icon img {
@@ -290,6 +312,57 @@
 
 #featured-down-fw19 .product-info-container .product-icons .product-icon p {
   margin: 0;
+}
+
+@-webkit-keyframes arrowAnimate {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 20px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes arrowAnimate {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 20px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+#featured-down-fw19 .collections-section {
+  position: relative;
+}
+
+#featured-down-fw19 .arrow-right {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  right: 0;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8ss;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: arrowAnimate;
+          animation-name: arrowAnimate;
 }
 
 #featured-down-fw19 .products-container {
@@ -314,12 +387,57 @@
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   width: 40%;
+  margin-right: 15px;
 }
 
 @media all and (min-width: 768px) {
   #featured-down-fw19 .products-container .search-result-items li {
     width: 22%;
   }
+}
+
+#featured-down-fw19 .products-container .promotion-data {
+  min-height: 15px;
+}
+
+#featured-down-fw19 .products-container .promotion-data span {
+  color: red;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .products-container .promotion-data span {
+    color: #fff;
+    font-size: 10px;
+  }
+}
+
+#featured-down-fw19 .products-container .product-swatches {
+  display: none;
+}
+
+#featured-down-fw19 .products-container .name-link {
+  font-family: UniqloProRegular, "Uniqlo Pro Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#featured-down-fw19 .products-container .favorites {
+  display: none;
+}
+
+@media all and (min-width: 768px) {
+  #featured-down-fw19 .products-container .favorites {
+    display: block;
+  }
+}
+
+#featured-down-fw19 .product-sales-price {
+  color: #f00;
+  margin-top: 10px;
+}
+
+#featured-down-fw19 .product-sales-price .saleprice {
+  color: #000;
 }
 
 #featured-down-fw19 .pc {
@@ -477,7 +595,7 @@
 				</div>
 			</div>
 			<div class="products-container">
-		
+
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -529,7 +647,7 @@
 				</div>
 			</div>
 			<div class="products-container">
-			
+
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -651,7 +769,7 @@
 </div>
 
 <script>
-	let uldSKU = [
+	var uldSKU = [
 		'419775',
 		'409111',
 		'419780',
@@ -669,27 +787,27 @@
 	]
 
 
-	let seamlessSKU = [
+	var seamlessSKU = [
 		'420252',
 		'420253'
 	]
 
-	let hybridDownSKU = [
+	var hybridDownSKU = [
 		'420251',
 		'420215'
 	]
 
-	let hybridUWSKU = [
+	var hybridUWSKU = [
 		'420258',
 		'420259'
 	]
 
-	let lightweightSKU = [
+	var lightweightSKU = [
 		'420255'
 	]
 
 
-	let allDownSKUS = [{
+	var allDownSKUS = [{
 			id: 'ultra-light-down',
 			skus: uldSKU
 		},
@@ -711,76 +829,72 @@
 		}
 	]
 
+
+	var urlPrefix = 'https://www.uniqlo.com';
+	if (window.location.href.includes('staging')) {
+		urlPrefix = 'https://staging-na-uniqlo.demandware.net'
+	}
+	console.log(urlPrefix)
+	for (var i in allDownSKUS) {
+		for (var j = 0; j < allDownSKUS[i].skus.length; j++) {
+			var values = allDownSKUS[i];
+			console.log(values)
+			$.ajax({
+				url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+					allDownSKUS[i].skus[j],
+				val: values,
+				success: function (data) {
+					console.log(this.val, 'values')
+					var listHTML = [];
+					var reformatHTML = []
+					//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
+					if (data.length === 0) {
+						return;
+					}
+					let li = $(' <li class="grid-tile new-row product-listing"></li>')
+					$(window).resize(() => {
+						let width = window.innerWidth;
+					})
+					listHTML.push(data);
+					li.append(listHTML.join(''));
+					$('#' + this.val.id + ' .tiles-container').append(li);
+
+
+					// Product Details
+					let productName = $(data).children('.product-tile-info').children('.product-name').html();
+					let productImage = $(data).children('.product-tile-info').children('.product-image')
+						.children(
+							'.thumb-link').html();
+
+
+					// Product Price
+					let price = $(data).children('.product-tile-info').children('.product-pricing').children(
+						'.product-sales-price').html();
+					let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
+						.children('del').children('.product-standard-price').html();
+
+					// Color Swatches
+					let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
+						.html();
+
+					// Flags
+					let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+						'.sale').html();
+					let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
+						.children(
+							'.Low').html();
+					let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
+						.children(
+							'.promotion.promotion').html();
+				},
+				error: function (err) {
+					console.log('errrr', err)
+				},
+				complete: function () {}
+			});
+		}
+	}
+
 </script>
 
-
-
-<script>
-		let urlPrefix = 'https://www.uniqlo.com';
-		if (window.location.href.includes('staging')) {
-			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
-		}
-		console.log(urlPrefix)
-		for (var i in allDownSKUS) {
-			console.log(i)
-			for (let j = 0; j < allDownSKUS[i].skus.length; j++) {
-			
-				let values = allDownSKUS[i];
-				console.log(values)
-				$.ajax({
-					url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
-						allDownSKUS[i].skus[j],
-						val: values,
-					success: function (data) {
-						console.log(this.val  , 'values')
-						var listHTML = [];
-						var reformatHTML = []
-						//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
-						if (data.length === 0) {
-							return;
-						}
-						let li = $(' <li class="grid-tile new-row product-listing"></li>')
-	
-						listHTML.push(data);
-						li.append(listHTML.join(''));
-						$('#' + this.val.id + ' .tiles-container').append(li);
-						console.log(this.val.id + ' .tiles-container')
-						// Product Details
-						let productName = $(data).children('.product-tile-info').children('.product-name').html();
-						let productImage = $(data).children('.product-tile-info').children('.product-image')
-							.children(
-								'.thumb-link').html();
-	
-						// let link = $(data).children('product-tile-info').children('product-image').
-	
-						// Product Price
-						let price = $(data).children('.product-tile-info').children('.product-pricing').children(
-							'.product-sales-price').html();
-						let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
-							.children('del').children('.product-standard-price').html();
-	
-						// Color Swatches
-						let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
-							.html();
-	
-						// Flags
-						let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-							'.sale').html();
-						let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
-							.children(
-								'.Low').html();
-						let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
-							.children(
-								'.promotion.promotion').html();
-					},
-					error: function (err) {
-						console.log('errrr', err)
-					},
-					complete: function () {}
-				});
-			}
-		}
-	
-	</script>
-	
 <!-- endHTMLinject -->

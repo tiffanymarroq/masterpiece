@@ -59,9 +59,7 @@
 					</div>
 					<div class="product-detail">
 						<p class="lead">New Fall Styles</p>
-						<p>Men’s Ultra Light Down Puffer Vest + Jacket, and Women’s Ultra Light Down Puffer Vest +
-							Cocoon
-							Jacket</p>
+						<p>Women's Ultra Light Down Puffer Vest + Cocoon Jacket, and Men's Ultra Light Down Puffer Vest + Jacket</p>
 					</div>
 
 				</div>
@@ -70,9 +68,9 @@
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
-								<div class="arrow-right">
-										<span></span>
-									</div>
+							<div class="arrow-right">
+								<span></span>
+							</div>
 							<div class="search-result-items tiles-container clearfix hide-compare">
 							</div>
 						</div>
@@ -114,7 +112,7 @@
 						<div class="product-icon">
 							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/waterepellentlogo.png"
 								alt="Water Repellent">
-							<p class="lead">Water Repellent</p>
+							<p class="lead">Water-Repellent</p>
 						</div>
 						<div class="product-icon">
 							<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/lightweight-logo.png"
@@ -125,7 +123,7 @@
 				</div>
 			</div>
 			<div class="products-container">
-		
+
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -161,7 +159,7 @@
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-chart.jpg"
 						alt="Chart">
 					<div class="product-detail">
-						<p class="lead">Light, Warm, and Unrestricting</p>
+						<p class="lead">Light, Warm, and Unrestrictive</p>
 						<p>A sleek silhouette allows you to move freely. The padding doesn’t feel lumpy, and won’t
 							escape like regular down.</p>
 					</div>
@@ -177,7 +175,7 @@
 				</div>
 			</div>
 			<div class="products-container">
-			
+
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -198,7 +196,7 @@
 				<div class="mb">
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/sp-hybriddown-uw.jpg"
 						alt="Hybrid Ultra Warm Banner">
-					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+					<p class="lead">Our warmest outerwear yet.</p>
 				</div>
 			</div>
 			<div class="product-info-container">
@@ -207,7 +205,7 @@
 						alt="hybrid ultra warm Image">
 				</div>
 				<div class="product-info">
-					<p class="lead">UNIQLO’s warmest outerwear yet.</p>
+					<p class="lead">Our warmest outerwear yet.</p>
 					<img src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/hybriddown-uw-chart.jpg"
 						alt="Chart">
 
@@ -299,7 +297,7 @@
 </div>
 
 <script>
-	let uldSKU = [
+	var uldSKU = [
 		'419775',
 		'409111',
 		'419780',
@@ -317,27 +315,27 @@
 	]
 
 
-	let seamlessSKU = [
+	var seamlessSKU = [
 		'420252',
 		'420253'
 	]
 
-	let hybridDownSKU = [
+	var hybridDownSKU = [
 		'420251',
 		'420215'
 	]
 
-	let hybridUWSKU = [
+	var hybridUWSKU = [
 		'420258',
 		'420259'
 	]
 
-	let lightweightSKU = [
+	var lightweightSKU = [
 		'420255'
 	]
 
 
-	let allDownSKUS = [{
+	var allDownSKUS = [{
 			id: 'ultra-light-down',
 			skus: uldSKU
 		},
@@ -359,75 +357,70 @@
 		}
 	]
 
+
+	var urlPrefix = 'https://www.uniqlo.com';
+	if (window.location.href.includes('staging')) {
+		urlPrefix = 'https://staging-na-uniqlo.demandware.net'
+	}
+	console.log(urlPrefix)
+	for (var i in allDownSKUS) {
+		for (var j = 0; j < allDownSKUS[i].skus.length; j++) {
+			var values = allDownSKUS[i];
+			console.log(values)
+			$.ajax({
+				url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+					allDownSKUS[i].skus[j],
+				val: values,
+				success: function (data) {
+					console.log(this.val, 'values')
+					var listHTML = [];
+					var reformatHTML = []
+					//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
+					if (data.length === 0) {
+						return;
+					}
+					let li = $(' <li class="grid-tile new-row product-listing"></li>')
+					$(window).resize(() => {
+						let width = window.innerWidth;
+					})
+					listHTML.push(data);
+					li.append(listHTML.join(''));
+					$('#' + this.val.id + ' .tiles-container').append(li);
+
+
+					// Product Details
+					let productName = $(data).children('.product-tile-info').children('.product-name').html();
+					let productImage = $(data).children('.product-tile-info').children('.product-image')
+						.children(
+							'.thumb-link').html();
+
+
+					// Product Price
+					let price = $(data).children('.product-tile-info').children('.product-pricing').children(
+						'.product-sales-price').html();
+					let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
+						.children('del').children('.product-standard-price').html();
+
+					// Color Swatches
+					let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
+						.html();
+
+					// Flags
+					let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+						'.sale').html();
+					let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
+						.children(
+							'.Low').html();
+					let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
+						.children(
+							'.promotion.promotion').html();
+				},
+				error: function (err) {
+					console.log('errrr', err)
+				},
+				complete: function () {}
+			});
+		}
+	}
+
 </script>
-
-
-
-<script>
-		let urlPrefix = 'https://www.uniqlo.com';
-		if (window.location.href.includes('staging')) {
-			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
-		}
-		console.log(urlPrefix)
-		for (var i in allDownSKUS) {
-			console.log(i)
-			for (let j = 0; j < allDownSKUS[i].skus.length; j++) {
-			
-				let values = allDownSKUS[i];
-				console.log(values)
-				$.ajax({
-					url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
-						allDownSKUS[i].skus[j],
-						val: values,
-					success: function (data) {
-						console.log(this.val  , 'values')
-						var listHTML = [];
-						var reformatHTML = []
-						//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
-						if (data.length === 0) {
-							return;
-						}
-						let li = $(' <li class="grid-tile new-row product-listing"></li>')
-	
-						listHTML.push(data);
-						li.append(listHTML.join(''));
-						$('#' + this.val.id + ' .tiles-container').append(li);
-						console.log(this.val.id + ' .tiles-container')
-						// Product Details
-						let productName = $(data).children('.product-tile-info').children('.product-name').html();
-						let productImage = $(data).children('.product-tile-info').children('.product-image')
-							.children(
-								'.thumb-link').html();
-	
-						// let link = $(data).children('product-tile-info').children('product-image').
-	
-						// Product Price
-						let price = $(data).children('.product-tile-info').children('.product-pricing').children(
-							'.product-sales-price').html();
-						let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
-							.children('del').children('.product-standard-price').html();
-	
-						// Color Swatches
-						let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
-							.html();
-	
-						// Flags
-						let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-							'.sale').html();
-						let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
-							.children(
-								'.Low').html();
-						let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
-							.children(
-								'.promotion.promotion').html();
-					},
-					error: function (err) {
-						console.log('errrr', err)
-					},
-					complete: function () {}
-				});
-			}
-		}
-	
-	</script>
-	
