@@ -34,7 +34,7 @@ sans-serif;
 	--black: #000;
 }
 
-#featured-down-fw19 {
+.pt_primary #main .primary-content  #featured-down-fw19 {
 	font-family: $fontFam_hel;
 	padding-bottom: 60px;
 
@@ -300,14 +300,21 @@ sans-serif;
 
 	.products-container {
 		padding: 4%;
+		min-height: 265px;
+		margin-bottom: 10px;
 
 		.search-result-items {
 			display: flex;
 			flex-wrap: nowrap;
 			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+			-ms-overflow-style: -ms-autohiding-scrollbar; 
 			li{
 				flex: 0 0 auto;
 				width: 40%;
+				@include bp(sm){
+					width: 22%;
+				}
 			}
 		}
 

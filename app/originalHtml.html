@@ -70,9 +70,7 @@
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
-
 							<div class="search-result-items tiles-container clearfix hide-compare">
-		
 							</div>
 						</div>
 					</div>
@@ -126,6 +124,14 @@
 			<div class="products-container">
 				<p>products</p>
 				<h4>test</h4>
+				<div class="search-result-content">
+					<div class="collection-tiles">
+						<div class="collections-section">
+							<div class="search-result-items tiles-container clearfix hide-compare">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -171,6 +177,15 @@
 			<div class="products-container">
 				<p>products</p>
 				<h4>test</h4>
+				<div class="search-result-content">
+					<div class="collection-tiles">
+						<div class="collections-section">
+							<div class="search-result-items tiles-container clearfix hide-compare">
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</section>
 
@@ -209,7 +224,19 @@
 
 				</div>
 			</div>
-			<p>products</p>
+			<div class="products-container">
+				<div class="search-result-content">
+					<div class="collection-tiles">
+						<div class="collections-section">
+
+							<div class="search-result-items tiles-container clearfix hide-compare">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</section>
 
 		<section id="lightweight-down">
@@ -252,7 +279,19 @@
 					</div>
 				</div>
 			</div>
-			<p>products</p>
+			<div class="products-container">
+				<div class="search-result-content">
+					<div class="collection-tiles">
+						<div class="collections-section">
+
+							<div class="search-result-items tiles-container clearfix hide-compare">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</section>
 	</div>
 
@@ -324,66 +363,70 @@
 
 
 <script>
-
-
-	let urlPrefix = 'https://www.uniqlo.com';
-	if (window.location.href.includes('staging')) {
-		urlPrefix = 'https://staging-na-uniqlo.demandware.net'
-	}
-	console.log(urlPrefix)
-	for (let id = 0; id < allDownSKUS[0].skus.length; id++) {
-		$.ajax({
-			url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
-			allDownSKUS[0].skus[id],
-			success: function (data) {
-				var listHTML = [];
-				var reformatHTML = []
-				//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
-				if (data.length === 0) {
-					return;
-				}
-				let li = $(' <li class="grid-tile new-row product-listing"></li>')
-				let reformat = $('.reformat');
-
-
-				listHTML.push(data);
-				li.append(listHTML.join(''));
-				$('#'+ allDownSKUS[0].id + ' .tiles-container').append(li);
-				console.log(allDownSKUS[0].id + ' .tiles-container')
-				// Product Details
-				let productName = $(data).children('.product-tile-info').children('.product-name').html();
-				let productImage = $(data).children('.product-tile-info').children('.product-image').children(
-					'.thumb-link').html();
-
-
-
-				// Product Price
-				let price = $(data).children('.product-tile-info').children('.product-pricing').children(
-					'.product-sales-price').html();
-				let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
-					.children('del').children('.product-standard-price').html();
-
-				// Color Swatches
-				let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
-			.html();
-
-				// Flags
-				let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-					'.sale').html();
-				let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-					'.Low').html();
-				let promoFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-					'.promotion.promotion').html();
-
-
-				console.log(saleFlag, 'sale flag')
-
-			},
-			error: function (err) {
-				console.log('errrr', err)
-			},
-			complete: function () {}
-		});
-	}
-
-</script>
+		let urlPrefix = 'https://www.uniqlo.com';
+		if (window.location.href.includes('staging')) {
+			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
+		}
+		console.log(urlPrefix)
+		for (var i in allDownSKUS) {
+			console.log(i)
+			for (let j = 0; j < allDownSKUS[i].skus.length; j++) {
+			
+				let values = allDownSKUS[i];
+				console.log(values)
+				$.ajax({
+					url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+						allDownSKUS[i].skus[j],
+						val: values,
+					success: function (data) {
+						console.log(this.val  , 'values')
+						var listHTML = [];
+						var reformatHTML = []
+						//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
+						if (data.length === 0) {
+							return;
+						}
+						let li = $(' <li class="grid-tile new-row product-listing"></li>')
+	
+						listHTML.push(data);
+						li.append(listHTML.join(''));
+						$('#' + this.val.id + ' .tiles-container').append(li);
+						console.log(this.val.id + ' .tiles-container')
+						// Product Details
+						let productName = $(data).children('.product-tile-info').children('.product-name').html();
+						let productImage = $(data).children('.product-tile-info').children('.product-image')
+							.children(
+								'.thumb-link').html();
+	
+						// let link = $(data).children('product-tile-info').children('product-image').
+	
+						// Product Price
+						let price = $(data).children('.product-tile-info').children('.product-pricing').children(
+							'.product-sales-price').html();
+						let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
+							.children('del').children('.product-standard-price').html();
+	
+						// Color Swatches
+						let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
+							.html();
+	
+						// Flags
+						let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+							'.sale').html();
+						let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
+							.children(
+								'.Low').html();
+						let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
+							.children(
+								'.promotion.promotion').html();
+					},
+					error: function (err) {
+						console.log('errrr', err)
+					},
+					complete: function () {}
+				});
+			}
+		}
+	
+	</script>
+	
