@@ -387,13 +387,11 @@
 					li.append(listHTML.join(''));
 					$('#' + this.val.id + ' .tiles-container').append(li);
 
-
 					// Product Details
 					let productName = $(data).children('.product-tile-info').children('.product-name').html();
 					let productImage = $(data).children('.product-tile-info').children('.product-image')
 						.children(
 							'.thumb-link').html();
-
 
 					// Product Price
 					let price = $(data).children('.product-tile-info').children('.product-pricing').children(

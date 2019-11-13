@@ -304,7 +304,7 @@ sans-serif;
 				}
 
 				img {
-					padding-right: 20px;
+					padding-right: 30px;
 					width: 20%;
 
 					@include bp(sm) {
@@ -374,6 +374,7 @@ sans-serif;
 		margin-bottom: 10px;
 
 		.search-result-items {
+			padding-top: 25px;
 			display: flex;
 			flex-wrap: nowrap;
 			overflow: auto;
@@ -397,7 +398,7 @@ sans-serif;
 			span {
 				color: red;
 				font-size: 12px;
-				text-transform: uppercase;
+				text-transform: capitalize;
 
 				@include bp(sm) {
 					color: #fff;
@@ -424,19 +425,19 @@ sans-serif;
 	}
 
 	.product-sales-price {
+		font-family: $fontFam_uqReg;
 		color: #f00;
 		margin-top: 10px;
+		font-size: 14px;
 
-		.saleprice {
+		&.saleprice {
 			color: #000;
-
+			font-size: 16px;
 		}
-
 	}
 
-.pc {
+	.pc {
 		display: none;
-
 		@include bp(sm) {
 			display: block;
 		}
@@ -449,6 +450,4 @@ sans-serif;
 			display: none;
 		}
 	}
-
-
 }
