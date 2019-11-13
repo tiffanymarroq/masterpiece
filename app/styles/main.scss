@@ -22,9 +22,7 @@ sans-serif;
 
 // FULL WIDTH SPECIFICITY
 // 
-.pt_primary #main .primary-content  {
-
-}
+.pt_primary #main .primary-content {}
 
 
 // // SIDEBARRED SPECIFICITY
@@ -32,3 +30,157 @@ sans-serif;
 // .pt_product-search-result #main .primary-content {
 
 // }
+
+
+#featured-down-fw19 {
+    font-family: $fontFam_hel;
+
+	img {
+		width: 100%;
+		height: auto;
+    }
+    
+    p,h4 {
+        font-family: $fontFam_hel;
+    }
+
+    p{
+        font-size: 18px;
+        &.lead{
+            font-size: 20px;
+        }
+    }
+
+	.gender_tab_wrapper {
+		width: 100%;
+		margin: 0 auto;
+		color: #1b1b1b;
+	}
+
+
+	.gender_tab {
+        margin: 0 auto;
+        margin-top: -10px;
+		border-top: 1px solid #dadada;
+	}
+
+
+	.gender_tab ul:first-child {
+		margin-top: 0;
+	}
+
+	.gender_tab ul li:first-child {
+		padding-left: 0;
+	}
+
+	.gender_tab ul li {
+		display: block;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 1.5em;
+		padding-left: 0;
+		padding: 15px 0;
+		width: 50%;
+		background: #f4f4f4;
+		border-bottom: 1px solid #dadada;
+		border-right: 1px solid #dadada;
+	}
+
+	.gender_tab ul li a {
+		color: #ababab;
+		text-decoration: none;
+		display: block;
+		height: auto;
+		vertical-align: middle;
+		padding-bottom: 2px;
+		font-family: 'Helvetica Neue', Helvetica, Arial;
+	}
+
+	.gender_tab ul li a span {
+		text-decoration: none;
+	}
+
+	.gender_tab ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		-ms-flex-pack: distribute;
+		justify-content: space-around;
+		font-family: uniqlo;
+		font-weight: 400;
+	}
+
+	.gender_tab ul li.gender_tab_active {
+		background: #fff;
+		color: #1b1b1b;
+		border-bottom: none;
+	}
+
+	.gender_tab ul li.gender_tab_active a {
+		color: #1b1b1b;
+		cursor: default;
+		border-bottom: 2px solid #378694;
+		display: inline-block;
+		width: auto;
+		padding: 2px 0;
+		line-height: 1em;
+	}
+
+	.gender_tab ul li a.disabled {
+		pointer-events: none;
+		cursor: default;
+    }
+    
+    .main-intro{
+        padding: 100px 15px;
+        width: 45%;
+        margin: 0 auto;
+        p{
+            text-align: center;
+            line-height: 1.45;
+            letter-spacing: 0.8px;
+            text-align: center;
+            color: var(--black);
+            font-weight: 300;
+        }
+
+    }
+
+
+    section{
+        padding-bottom: 60px;
+    }
+    .product-info-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 3% 6%;
+        > div{
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-info{
+            .lead{
+                text-align: center;
+            }
+        }
+        .product-icons{
+            display: flex;
+            flex-direction: column;
+            .product-icon{
+                display: flex;
+                align-content: center;
+                align-items: center;
+                img{
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+
+}
