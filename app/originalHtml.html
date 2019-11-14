@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
 <div id="featured-down-fw19">
 	<div class="main-hero">
 		<img class="pc" src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/19fw-down/191107-pc.jpg"
@@ -59,7 +62,8 @@
 					</div>
 					<div class="product-detail">
 						<p class="lead">New Fall Styles</p>
-						<p>Women's Ultra Light Down Puffer Vest + Cocoon Jacket, and Men's Ultra Light Down Puffer Vest + Jacket</p>
+						<p>Women's Ultra Light Down Puffer Vest + Cocoon Jacket, and Men's Ultra Light Down Puffer Vest
+							+ Jacket</p>
 					</div>
 
 				</div>
@@ -68,7 +72,7 @@
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
-							<div class="arrow-right">
+							<div class="arrow-right" id="next">
 								<span></span>
 							</div>
 							<div class="search-result-items tiles-container clearfix hide-compare">
@@ -418,5 +422,58 @@
 			});
 		}
 	}
+</script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
+<script>
+	// setTimeout( ()=>{
+	// 	$('#ultra-light-down .tiles-container').slick({
+	// 	dots:true,
+	// 	infinite: true
+	// })
+
+	// },500)
+
+
+	$(function () {
+		jQuery.ajax({
+			url: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js',
+			dataType: 'script',
+			success: function () {
+				//put in script
+			},
+			async: true
+		});
+	});
+</script>
+<script>
+	function loopNext() {
+		$('#ultra-light-down .tiles-container').stop().animate({
+			scrollLeft: '+=20'
+		}, 'fast', 'linear', loopNext);
+	}
+
+	function loopPrev() {
+		$('#ultra-light-down .tiles-container').stop().animate({
+			scrollLeft: '-=20'
+		}, 'fast', 'linear', loopPrev);
+	}
+
+	function stop() {
+		$('#ultra-light-down .tiles-container').stop();
+	}
+
+
+	$('#next').hover(function () {
+		loopNext();
+	}, function () {
+		stop();
+	});
+
+	$('#prev').hover(function () {
+		loopPrev();
+	}, function () {
+		stop();
+	});
 </script>
