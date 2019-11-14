@@ -421,6 +421,7 @@
 			});
 		}
 	}
+
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
@@ -445,6 +446,7 @@
 			async: true
 		});
 	});
+
 </script>
 <script>
 	console.log($('#ultra-light-down .tiles-container').width())
@@ -452,9 +454,8 @@
 	$('#ultra-light-down .tiles-container').scroll(() => {
 		var scrollLeft = $('#ultra-light-down .tiles-container').scrollLeft();
 		var scrollWidth = $('#ultra-light-down .tiles-container')[0].scrollWidth;
-var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
-		console.log(scrollLeft, 'left' )
-		console.log( scrollWidth, 'width')
+		var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
+
 		$("#scroll").css({
 			width: ((scrollLeft + scrollClientWidth) / scrollWidth) * 100 + '%'
 		})
@@ -488,4 +489,5 @@ var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
 	}, function () {
 		stop();
 	});
+
 </script>
