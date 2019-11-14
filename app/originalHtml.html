@@ -77,6 +77,7 @@
 							</div>
 							<div class="search-result-items tiles-container clearfix hide-compare">
 							</div>
+							<div id="scroll"></div>
 						</div>
 					</div>
 
@@ -368,13 +369,11 @@
 	for (var i in allDownSKUS) {
 		for (var j = 0; j < allDownSKUS[i].skus.length; j++) {
 			var values = allDownSKUS[i];
-			console.log(values)
 			$.ajax({
 				url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
 					allDownSKUS[i].skus[j],
 				val: values,
 				success: function (data) {
-					console.log(this.val, 'values')
 					var listHTML = [];
 					var reformatHTML = []
 					//check data length to make sure we dont get an empty product (happens if SB catalog not updated)
@@ -448,6 +447,19 @@
 	});
 </script>
 <script>
+	console.log($('#ultra-light-down .tiles-container').width())
+
+	$('#ultra-light-down .tiles-container').scroll(() => {
+		var scrollLeft = $('#ultra-light-down .tiles-container').scrollLeft();
+		var scrollWidth = $('#ultra-light-down .tiles-container')[0].scrollWidth;
+var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
+		console.log(scrollLeft, 'left' )
+		console.log( scrollWidth, 'width')
+		$("#scroll").css({
+			width: ((scrollLeft + scrollClientWidth) / scrollWidth) * 100 + '%'
+		})
+	})
+
 	function loopNext() {
 		$('#ultra-light-down .tiles-container').stop().animate({
 			scrollLeft: '+=20'
