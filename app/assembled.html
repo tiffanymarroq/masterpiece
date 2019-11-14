@@ -365,33 +365,32 @@
   height: 2px;
 }
 
-.pt_primary #main .primary-content #featured-down-fw19 .arrow-right {
-  display: inline-block;
-  border: solid black;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  width: 8px;
-  height: 8px;
-  cursor: pointer;
+.pt_primary #main .primary-content #featured-down-fw19 .slick-arrow {
+  top: 35%;
+  z-index: 1;
+  font-size: 50px;
+  color: #000;
   position: absolute;
-  right: 0;
-  transform: rotate(-45deg);
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
+  cursor: pointer;
+}
+
+.pt_primary #main .primary-content #featured-down-fw19 .arrow-right {
+  right: -30px;
+}
+
+.pt_primary #main .primary-content #featured-down-fw19 .arrow-left {
+  left: -30px;
 }
 
 .pt_primary #main .primary-content #featured-down-fw19 .products-container {
-  padding: 0 4%;
   margin-bottom: 10px;
+  padding: 0 calc(4% - 10px);
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content #featured-down-fw19 .products-container .slider-container {
+    padding: 0 calc(4% - 10px);
+  }
 }
 
 .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items {
@@ -413,23 +412,28 @@
 @media all and (min-width: 768px) {
   .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items {
     display: block;
-    overflow: none;
+    overflow: unset;
   }
 }
 
-.pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items li {
+.pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items .grid-tile {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   width: 40%;
-  margin-right: 15px;
+  padding: 0 10px;
 }
 
 @media all and (min-width: 768px) {
-  .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items li {
+  .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items .grid-tile {
     width: auto;
+    width: 24%;
     display: inline-block;
   }
+}
+
+.pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items .product-tile {
+  width: 100%;
 }
 
 .pt_primary #main .primary-content #featured-down-fw19 .products-container .promotion-data {
@@ -582,7 +586,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="products-container">
+			<div class="products-container slider-container">
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -816,7 +820,6 @@
 <script>
 	var uldSKU = [
 		'419775',
-		'409111',
 		'419780',
 		'419776',
 		'409112',
@@ -828,7 +831,9 @@
 		'420290',
 		'419779',
 		'420291',
-		'420278'
+		'420278',
+		'409111'
+
 	]
 
 
@@ -934,45 +939,22 @@
 				},
 				complete: function () {
 					if (Number(this.i) === Number(this.lengthSKU - 1)) {
-					console.log('check')
-					// setTimeout(() => {
+						console.log('check')
 						$('.uld-slider').slick({
 							dots: true,
 							arrows: true,
 							infinite: true,
 							slidesToShow: 4,
-							slidesToScroll: 4
+							slidesToScroll: 4,
+							nextArrow: '<div class="arrow arrow-right">⟩</div>',
+							prevArrow: '<div class="arrow arrow-left">⟨</div>',
 						})
-					// }, 1000)
-				}
+					}
 
 				}
 			})
 		}
-
-		// if (Number(i) === allDownSKUS.length - 1) {
-		// 	console.log('check')
-		// 	setTimeout(() => {
-		// 		$('.uld-slider').slick({
-		// 			dots: true,
-		// 			infinite: true,
-		// 			slidesToShow: 4,
-		// 			slidesToScroll: 4
-		// 		})
-		// 	}, 500)
-		// }
 	}
-
-
-	console.log("DONE")
-
-
-	// $('.uld-slider').slick({
-	// 	dots: true,
-	// 	infinite: true,
-	// 	slidesToShow: 4,
-	// 	slidesToScroll: 4
-	// })
 
 </script>
 
@@ -1033,6 +1015,30 @@
 	// });
 
 </script>
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
 
 <!-- endHTMLinject -->
 

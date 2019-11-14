@@ -67,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="products-container">
+			<div class="products-container slider-container">
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
@@ -301,7 +301,6 @@
 <script>
 	var uldSKU = [
 		'419775',
-		'409111',
 		'419780',
 		'419776',
 		'409112',
@@ -313,7 +312,9 @@
 		'420290',
 		'419779',
 		'420291',
-		'420278'
+		'420278',
+		'409111'
+
 	]
 
 
@@ -419,45 +420,22 @@
 				},
 				complete: function () {
 					if (Number(this.i) === Number(this.lengthSKU - 1)) {
-					console.log('check')
-					// setTimeout(() => {
+						console.log('check')
 						$('.uld-slider').slick({
 							dots: true,
 							arrows: true,
 							infinite: true,
 							slidesToShow: 4,
-							slidesToScroll: 4
+							slidesToScroll: 4,
+							nextArrow: '<div class="arrow arrow-right">⟩</div>',
+							prevArrow: '<div class="arrow arrow-left">⟨</div>',
 						})
-					// }, 1000)
-				}
+					}
 
 				}
 			})
 		}
-
-		// if (Number(i) === allDownSKUS.length - 1) {
-		// 	console.log('check')
-		// 	setTimeout(() => {
-		// 		$('.uld-slider').slick({
-		// 			dots: true,
-		// 			infinite: true,
-		// 			slidesToShow: 4,
-		// 			slidesToScroll: 4
-		// 		})
-		// 	}, 500)
-		// }
 	}
-
-
-	console.log("DONE")
-
-
-	// $('.uld-slider').slick({
-	// 	dots: true,
-	// 	infinite: true,
-	// 	slidesToShow: 4,
-	// 	slidesToScroll: 4
-	// })
 
 </script>
 
