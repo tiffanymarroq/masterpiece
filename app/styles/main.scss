@@ -38,7 +38,7 @@ sans-serif;
 	float: none;
 }
 
-.pt_primary #main .primary-content #featured-down-fw19 {
+#featured-down-fw19 {
 	font-family: $fontFam_hel;
 	padding-bottom: 60px;
 
@@ -414,8 +414,9 @@ sans-serif;
 		margin-bottom: 10px;
 		padding: 0 calc(4% - 10px);
 
-		.slider-container {
+		&.slider-container {
 			@include bp(sm) {
+				margin-bottom: 45px;
 				padding: 0 calc(4% - 10px);
 			}
 		}
@@ -532,7 +533,7 @@ sans-serif;
 		font-weight: 700;
 		background-color: transparent;
 		transition: all 0.2s;
-		width: 45%;
+		width: 80%;
 		margin: 15px auto 0;
 		display: block;
 
@@ -543,6 +544,8 @@ sans-serif;
 			border: 3px solid #000;
 			width: 100%;
 			font-family: $fontFam_hel;
+			padding: 20px;
+
 
 
 			&:hover {
