@@ -16,6 +16,7 @@
 .pt_primary #main .primary-content #featured-down-fw19 img {
   width: 100%;
   height: auto;
+  pointer-events: none;
 }
 
 .pt_primary #main .primary-content #featured-down-fw19 p,
@@ -409,6 +410,13 @@
   display: none;
 }
 
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items {
+    display: block;
+    overflow: none;
+  }
+}
+
 .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items li {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -419,7 +427,8 @@
 
 @media all and (min-width: 768px) {
   .pt_primary #main .primary-content #featured-down-fw19 .products-container .search-result-items li {
-    width: 29%;
+    width: auto;
+    display: inline-block;
   }
 }
 
@@ -462,7 +471,13 @@
   font-family: UniqloProRegular, "Uniqlo Pro Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #f00;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content #featured-down-fw19 .product-sales-price {
+    margin-top: 0;
+  }
 }
 
 .pt_primary #main .primary-content #featured-down-fw19 .product-sales-price.saleprice {
@@ -565,22 +580,20 @@
 						<p>Women's Ultra Light Down Puffer Vest + Cocoon Jacket, and Men's Ultra Light Down Puffer Vest
 							+ Jacket</p>
 					</div>
-
 				</div>
 			</div>
 			<div class="products-container">
 				<div class="search-result-content">
 					<div class="collection-tiles">
 						<div class="collections-section">
-							<div class="arrow-right" id="next">
+							<!-- <div class="arrow-right" id="next">
 								<span></span>
+							</div> -->
+							<div class="search-result-items tiles-container clearfix hide-compare uld-slider">
 							</div>
-							<div class="search-result-items tiles-container clearfix hide-compare">
-							</div>
-							<div id="scroll"></div>
+							<!-- <div id="scroll"></div> -->
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</section>
@@ -798,6 +811,7 @@
 	</div>
 
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 
 <script>
 	var uldSKU = [
@@ -865,7 +879,6 @@
 	if (window.location.href.includes('staging')) {
 		urlPrefix = 'https://staging-na-uniqlo.demandware.net'
 	}
-	console.log(urlPrefix)
 	for (var i in allDownSKUS) {
 		for (var j = 0; j < allDownSKUS[i].skus.length; j++) {
 			var values = allDownSKUS[i];
@@ -873,6 +886,8 @@
 				url: urlPrefix + '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
 					allDownSKUS[i].skus[j],
 				val: values,
+				i: i,
+				lengthSKU: allDownSKUS.length,
 				success: function (data) {
 					var listHTML = [];
 					var reformatHTML = []
@@ -888,53 +903,81 @@
 					li.append(listHTML.join(''));
 					$('#' + this.val.id + ' .tiles-container').append(li);
 
-					// Product Details
-					let productName = $(data).children('.product-tile-info').children('.product-name').html();
-					let productImage = $(data).children('.product-tile-info').children('.product-image')
-						.children(
-							'.thumb-link').html();
+					// // Product Details
+					// let productName = $(data).children('.product-tile-info').children('.product-name').html();
+					// let productImage = $(data).children('.product-tile-info').children('.product-image')
+					// 	.children(
+					// 		'.thumb-link').html();
 
-					// Product Price
-					let price = $(data).children('.product-tile-info').children('.product-pricing').children(
-						'.product-sales-price').html();
-					let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
-						.children('del').children('.product-standard-price').html();
+					// // Product Price
+					// let price = $(data).children('.product-tile-info').children('.product-pricing').children(
+					// 	'.product-sales-price').html();
+					// let standardPrice = $(data).children('.product-tile-info').children('.product-pricing')
+					// 	.children('del').children('.product-standard-price').html();
 
-					// Color Swatches
-					let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
-						.html();
+					// // Color Swatches
+					// let colorSwatches = $(data).children('.product-tile-info').children('.product-swatches')
+					// 	.html();
 
-					// Flags
-					let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
-						'.sale').html();
-					let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
-						.children(
-							'.Low').html();
-					let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
-						.children(
-							'.promotion.promotion').html();
+					// // Flags
+					// let saleFlag = $(data).children('.product-tile-info').children('.promotion-data').children(
+					// 	'.sale').html();
+					// let lowStockFlag = $(data).children('.product-tile-info').children('.promotion-data')
+					// 	.children(
+					// 		'.Low').html();
+					// let promoFlag = $(data).children('.product-tile-info').children('.promotion-data')
+					// 	.children(
+					// 		'.promotion.promotion').html();
 				},
 				error: function (err) {
 					console.log('errrr', err)
 				},
-				complete: function () {}
-			});
+				complete: function () {
+					if (Number(this.i) === Number(this.lengthSKU - 1)) {
+					console.log('check')
+					// setTimeout(() => {
+						$('.uld-slider').slick({
+							dots: true,
+							arrows: true,
+							infinite: true,
+							slidesToShow: 4,
+							slidesToScroll: 4
+						})
+					// }, 1000)
+				}
+
+				}
+			})
 		}
+
+		// if (Number(i) === allDownSKUS.length - 1) {
+		// 	console.log('check')
+		// 	setTimeout(() => {
+		// 		$('.uld-slider').slick({
+		// 			dots: true,
+		// 			infinite: true,
+		// 			slidesToShow: 4,
+		// 			slidesToScroll: 4
+		// 		})
+		// 	}, 500)
+		// }
 	}
-</script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 
-<script>
-	// setTimeout( ()=>{
-	// 	$('#ultra-light-down .tiles-container').slick({
-	// 	dots:true,
-	// 	infinite: true
+	console.log("DONE")
+
+
+	// $('.uld-slider').slick({
+	// 	dots: true,
+	// 	infinite: true,
+	// 	slidesToShow: 4,
+	// 	slidesToScroll: 4
 	// })
 
-	// },500)
+</script>
 
 
+<script>
 	$(function () {
 		jQuery.ajax({
 			url: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js',
@@ -945,48 +988,58 @@
 			async: true
 		});
 	});
+
 </script>
 <script>
 	console.log($('#ultra-light-down .tiles-container').width())
 
-	$('#ultra-light-down .tiles-container').scroll(() => {
-		var scrollLeft = $('#ultra-light-down .tiles-container').scrollLeft();
-		var scrollWidth = $('#ultra-light-down .tiles-container')[0].scrollWidth;
-var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
-		console.log(scrollLeft, 'left' )
-		console.log( scrollWidth, 'width')
-		$("#scroll").css({
-			width: ((scrollLeft + scrollClientWidth) / scrollWidth) * 100 + '%'
-		})
-	})
+	// $('#ultra-light-down .tiles-container').scroll(() => {
+	// 	var scrollLeft = $('#ultra-light-down .tiles-container').scrollLeft();
+	// 	var scrollWidth = $('#ultra-light-down .tiles-container')[0].scrollWidth;
+	// 	var scrollClientWidth = $('#ultra-light-down .tiles-container')[0].clientWidth;
 
-	function loopNext() {
-		$('#ultra-light-down .tiles-container').stop().animate({
-			scrollLeft: '+=20'
-		}, 'fast', 'linear', loopNext);
-	}
+	// 	$("#scroll").css({
+	// 		width: ((scrollLeft + scrollClientWidth) / scrollWidth) * 100 + '%'
+	// 	})
+	// })
 
-	function loopPrev() {
-		$('#ultra-light-down .tiles-container').stop().animate({
-			scrollLeft: '-=20'
-		}, 'fast', 'linear', loopPrev);
-	}
+	// function loopNext() {
+	// 	$('#ultra-light-down .tiles-container').stop().animate({
+	// 		scrollLeft: '+=20'
+	// 	}, 'fast', 'linear', loopNext);
+	// }
 
-	function stop() {
-		$('#ultra-light-down .tiles-container').stop();
-	}
+	// function loopPrev() {
+	// 	$('#ultra-light-down .tiles-container').stop().animate({
+	// 		scrollLeft: '-=20'
+	// 	}, 'fast', 'linear', loopPrev);
+	// }
+
+	// function stop() {
+	// 	$('#ultra-light-down .tiles-container').stop();
+	// }
 
 
-	$('#next').hover(function () {
-		loopNext();
-	}, function () {
-		stop();
-	});
+	// $('#next').hover(function () {
+	// 	loopNext();
+	// }, function () {
+	// 	stop();
+	// });
 
-	$('#prev').hover(function () {
-		loopPrev();
-	}, function () {
-		stop();
-	});
+	// $('#prev').hover(function () {
+	// 	loopPrev();
+	// }, function () {
+	// 	stop();
+	// });
+
 </script>
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
+<!-- endHTMLinject -->
+
 <!-- endHTMLinject -->

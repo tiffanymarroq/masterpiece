@@ -45,6 +45,7 @@ sans-serif;
 	img {
 		width: 100%;
 		height: auto;
+		pointer-events: none;
 	}
 
 	p,
@@ -376,7 +377,6 @@ sans-serif;
 		right: 0;
 		transform: rotate(-45deg);
 
-
 		-webkit-animation-duration: 2s;
 		animation-duration: 2s;
 		-webkit-animation-fill-mode: both;
@@ -404,13 +404,19 @@ sans-serif;
 				display: none;
 			  }
 
+			@include bp(sm){
+				display: block;
+				overflow: none;
+			}
+
 			li {
 				flex: 0 0 auto;
 				width: 40%;
 				margin-right: 15px;
 
 				@include bp(sm) {
-					width: 29%;
+					width: auto;
+					display: inline-block;
 				}
 			}
 		}
@@ -453,7 +459,10 @@ sans-serif;
 		font-family: $fontFam_uqReg;
 		color: #f00;
 		margin-top: 10px;
-		font-size: 14px;
+		font-size: 16px;
+		@include bp(sm){
+			margin-top: 0;
+		}
 
 		&.saleprice {
 			color: #000;
