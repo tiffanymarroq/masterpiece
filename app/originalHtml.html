@@ -246,13 +246,9 @@
 		}
 	]
 
-	//Actions
 
-	var selectMenuItem = () => {
-		
-	}
 	
-	//Components
+	//Homepage Components
 
 	var hompageMenu = () => {
 
@@ -464,6 +460,12 @@
 	}
 
 
+	// Product Page Components
+
+	var productPage = () => {
+
+	}
+
 	$(document).ready(() => {
 		// Check for query
 		$('.main').html(homepage)
@@ -472,6 +474,11 @@
 		$('.l-navigation_item').click((e) => {
 			state.filter = e.currentTarget.dataset.filterButton
 			homepageProductList()
+		})
+
+		$('.c-contentsCard .js-trackEvent').click((e)=>{
+			e.preventDefault()
+			console.log(e.currentTarget.dataset)
 		})
 	})
 
