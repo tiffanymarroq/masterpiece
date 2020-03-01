@@ -175,7 +175,7 @@
 	var state = {
 		loading: false,
 		menuSelectedItem: ``,
-		filter: ``,
+		filter: `all`,
 	}
 
 	var homepageHero = {
@@ -374,9 +374,11 @@
 	}
 
     var homepageProductList = () => {
-		console.log('selected category')
+		console.log('selected category', state)
 		
-		var categoryProductItems = masterpieceData.filter( (product, i) => {
+		var categoryProductItems = masterpieceData
+			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
+			.map( (product, i) => {
 			let productTile = `
 				<section class="c-contentsCard -no-${i}" data-filter-panel="tops" aria-hidden="false"><a
 						class="js-trackEvent" data-category="L3_20ss_masterpiece"
@@ -400,33 +402,28 @@
 					</a>
 				</section>
 			`
-			if(state.filter === product.category.toLowerCase()){
-				return productTile
 
-			}
-
-			if(state.filter.length === 0){
-				return productTile
-
-			}
+			return productTile
+		
 
 		})
 
+		console.log(categoryProductItems.length, 'items')
+
 		var productListContainer = 
 			`
-			<div class="c-contentsCardGroup">
 				<div class="c-contentsCardGroup_body">
 					${categoryProductItems.length > 0 ? 
 						categoryProductItems.join('')
-					
+						
 					:
 						`<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>`
 					}
 				</div>
-			</div>
 			`
-
-		return productListContainer
+		setTimeout( () => {
+			$('.c-contentsCardGroup').html(productListContainer)
+		}, 500)
 		
 	}
 
@@ -458,7 +455,9 @@
 			</p>
 			<div class="l-container -topLayer">
 				${hompageMenu()}
-				${homepageProductList()}
+				<div class="c-contentsCardGroup">
+					${homepageProductList()}
+				</div>
 			</div>
 		`
 
