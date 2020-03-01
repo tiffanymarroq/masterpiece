@@ -171,6 +171,7 @@
 
 
 <script>
+
 	var state = {
 		loading: false,
 		menuSelectedItem: ``,
@@ -183,35 +184,67 @@
 		copy: `home copy`
 	}
 
-	var masterpieceData = [{
-		image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-		title: `Linen Page`,
-		productName: `Premium Linen Shirt`,
-		gender: [`Women`, `Men`],
-		category: `Tops`,
-		url: `/us/en/masterpiece?product=linen-page`,
-		productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
-		relatedProducts: {
-			title: `One by one, texture prepared by human hands`,
-			productList: [{
-					image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-					gender: `Women`,
-					productName: `Premium linen skipper shirt`,
-					productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-					ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					ctaCopy: `WOMEN related products`
-				},
-				{
-					image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-					gender: `Men`,
-					productName: `Premium linen skipper shirt`,
-					productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-					ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					ctaCopy: `WOMEN related products`
-				}
-			]
+	var masterpieceData = [
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Tops`,
+			url: `/us/en/masterpiece?product=linen-page`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Tops`,
+			url: `/us/en/masterpiece?product=linen-page`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
 		}
-	}]
+	]
 
 	//Actions
 
@@ -342,33 +375,40 @@
 
     var homepageProductList = () => {
 		console.log('selected category')
-
-		var categoryProductItems = masterpieceData.map( (product, i) => {
-
+		
+		var categoryProductItems = masterpieceData.filter( (product, i) => {
 			let productTile = `
-					<section class="c-contentsCard -no-${i}" data-filter-panel="tops" aria-hidden="false"><a
-							class="js-trackEvent" data-category="L3_20ss_masterpiece"
-							data-label="${'gatag'}"
-							href="${product.url}">
-							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner">
-									<img class="fr-img lazyloaded"
-										src="${product.image}"
-										data-src="${product.image}"
-										alt="${product.title}" data-expand="300">
-								</picture>
-							</figure>
-							<div class="c-contentsCard_inner">
-								<h2 class="c-contentsCard_title">${product.title}</h2>
-								<ul class="c-label -inCard">
-									<li class="c-label_item -category">${product.category}</li>
-									<li class="c-label_item -name">${product.productName}</li>
-								</ul>
-							</div>
-						</a>
-					</section>
+				<section class="c-contentsCard -no-${i}" data-filter-panel="tops" aria-hidden="false"><a
+						class="js-trackEvent" data-category="L3_20ss_masterpiece"
+						data-label="${'gatag'}"
+						href="${product.url}">
+						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+							<picture class="u-imgAdjustBox_inner">
+								<img class="fr-img lazyloaded"
+									src="${product.image}"
+									data-src="${product.image}"
+									alt="${product.title}" data-expand="300">
+							</picture>
+						</figure>
+						<div class="c-contentsCard_inner">
+							<h2 class="c-contentsCard_title">${product.title}</h2>
+							<ul class="c-label -inCard">
+								<li class="c-label_item -category">${product.category}</li>
+								<li class="c-label_item -name">${product.productName}</li>
+							</ul>
+						</div>
+					</a>
+				</section>
 			`
-			return productTile
+			if(state.filter === product.category.toLowerCase()){
+				return productTile
+
+			}
+
+			if(state.filter.length === 0){
+				return productTile
+
+			}
 
 		})
 
@@ -376,8 +416,12 @@
 			`
 			<div class="c-contentsCardGroup">
 				<div class="c-contentsCardGroup_body">
-					<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>
-						${categoryProductItems.join('')}
+					${categoryProductItems.length > 0 ? 
+						categoryProductItems.join('')
+					
+					:
+						`<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>`
+					}
 				</div>
 			</div>
 			`
@@ -424,15 +468,15 @@
 
 
 	$(document).ready(() => {
-		console.log('appened')
 		$('.main').html(homepage)
 
-
-		// Actions 
-		$('.l-navigation_item').click( (e) => {
-			console.log(e)
-			// state.menuSelectedItem = menuItem;
+		// Actions 	
+		$('.l-navigation_item').click((e) => {
+			console.log(e.currentTarget.dataset.filterButton)
+			state.filter = e.currentTarget.dataset.filterButton
+			homepageProductList()
 		})
+
 	})
 
 </script>
