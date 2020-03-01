@@ -408,8 +408,6 @@
 
 		})
 
-		console.log(categoryProductItems.length, 'items')
-
 		var productListContainer = 
 			`
 				<div class="c-contentsCardGroup_body">
@@ -417,7 +415,7 @@
 						categoryProductItems.join('')
 						
 					:
-						`<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>`
+						'<div class="c-contentsCard -comingSoon" >Coming soon...</div>'
 					}
 				</div>
 			`
@@ -467,15 +465,14 @@
 
 
 	$(document).ready(() => {
+		// Check for query
 		$('.main').html(homepage)
 
 		// Actions 	
 		$('.l-navigation_item').click((e) => {
-			console.log(e.currentTarget.dataset.filterButton)
 			state.filter = e.currentTarget.dataset.filterButton
 			homepageProductList()
 		})
-
 	})
 
 </script>
