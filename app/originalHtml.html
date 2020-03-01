@@ -173,7 +173,7 @@
 <script>
 	var state = {
 		loading: false,
-		selectedContent: ``,
+		menuSelectedItem: ``,
 		filter: ``,
 	}
 
@@ -213,8 +213,17 @@
 		}
 	}]
 
-	
+	//Actions
 
+	var selectMenuItem = () => {
+		$('.l-navigation_item').click( (e) => {
+			console.log(e)
+			// state.menuSelectedItem = menuItem;
+
+		})
+	}
+	
+	//Components
 
 	var hompageMenu = () => {
 
@@ -235,7 +244,7 @@
 				<!-- Navigation -->
 				<div class="l-navigation_wrapper">
 					<ul class="l-navigation_body" data-navigation-position="default">
-						<li class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
+						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_all_icon"><span>ALL</span>
 						</li>
@@ -336,16 +345,15 @@
 	}
 
     var homepageProductList = () => {
-		var productListContainer = 
-			`
-			<div class="c-contentsCardGroup">
-				<div class="c-contentsCardGroup_body">
-					<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>
+		console.log('selected category')
 
+		var categoryProductItems = masterpieceData.map( (product, i) => {
+
+			let productTile = `
 					<section class="c-contentsCard -no-${i}" data-filter-panel="tops" aria-hidden="false"><a
 							class="js-trackEvent" data-category="L3_20ss_masterpiece"
 							data-label="${'gatag'}"
-							href="${url}">
+							href="${product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
 									<img class="fr-img lazyloaded"
@@ -363,29 +371,42 @@
 							</div>
 						</a>
 					</section>
+			`
+			return productTile
+
+		})
+
+		var productListContainer = 
+			`
+			<div class="c-contentsCardGroup">
+				<div class="c-contentsCardGroup_body">
+					<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>
+						${categoryProductItems.join('')}
 				</div>
 			</div>
 			`
+
+		return productListContainer
 		
 	}
 
 	var homepage = () => {
 		console.log(`home`);
-		var homepageHero = `
+		var homepageComponent = `
 			<div class="o-hero">
 				<h1 class="o-hero_title">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
 						<picture class="u-imgAdjustBox_inner">
 							<source
-								data-srcset="${imagePC}"
+								data-srcset="${homepageHero.imagePC}"
 								media="(min-width: 813px)" type="image/png"
-								srcset="${imagePC}">
+								srcset="${homepageHero.imagePC}">
 							<source
-								data-srcset="${imageMB}"
+								data-srcset="${homepageHero.imageMB}"
 								type="image/png"
-								srcset="${imageMB}">
+								srcset="${homepageHero.imageMB}">
 							<img class="fr-img lazyloaded"
-								src="${imageMB}"
+								src="${homepageHero.imageMB}"
 								data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-hero-logo.png?20200306"
 								alt="UNIQLO MASTERPIECE" data-expand="300">
 						</picture>
@@ -396,15 +417,19 @@
 				${homepageHero.copy}
 			</p>
 			<div class="l-container -topLayer">
-				${hompageMenu}
+				${hompageMenu()}
+				${homepageProductList()}
 			</div>
 		`
+
+		return homepageComponent;
 
 	}
 
 
 	$(document).ready(() => {
-		homepage()
+		console.log('appened')
+		$('.main').html(homepage)
 	})
 
 </script>
