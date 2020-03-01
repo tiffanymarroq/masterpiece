@@ -216,11 +216,7 @@
 	//Actions
 
 	var selectMenuItem = () => {
-		$('.l-navigation_item').click( (e) => {
-			console.log(e)
-			// state.menuSelectedItem = menuItem;
-
-		})
+		
 	}
 	
 	//Components
@@ -430,6 +426,13 @@
 	$(document).ready(() => {
 		console.log('appened')
 		$('.main').html(homepage)
+
+
+		// Actions 
+		$('.l-navigation_item').click( (e) => {
+			console.log(e)
+			// state.menuSelectedItem = menuItem;
+		})
 	})
 
 </script>
