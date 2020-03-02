@@ -54,7 +54,7 @@
 								href="${product.productUrl}">
 								<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 									<picture class="u-imgAdjustBox_inner">
-											<img class="fr-img lazyloaded"
+										<img class="fr-img lazyloaded"
 											src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
 											data-src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
 											alt="Comfort jacket" data-expand="300">
@@ -135,8 +135,9 @@
 									</font>
 								</p>
 							</div>
-						</a></li>
-				
+						</a>
+					</li>
+
 				</ul>
 			</aside>
 
@@ -246,7 +247,7 @@
 			title: `Linen Page`,
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
-			category: `Bottoms`,
+			category: `Tops`,
 			url: `?product=linen-page?category=bottoms`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
@@ -523,16 +524,16 @@
 					</li>
 				</ul>`;
 
-			$('.c-contentsPanel .c-contentsPanel_image').html(image);
-			$('.c-contentsPanel .c-contentsPanel_inner').html(content);
+		$('.c-contentsPanel .c-contentsPanel_image').html(image);
+		$('.c-contentsPanel .c-contentsPanel_inner').html(content);
 
 
 	}
 
 	var relatedProducts = () => {
 		var product = state.contentSelected;
-		var relatedProductsComponent = 
-		`	<h2 class="c-shoulderSection_title">
+		var relatedProductsComponent =
+			`	<h2 class="c-shoulderSection_title">
 				${product.relatedProducts.title}
 			</h2>
 			<ul class="c-productButtonGroup">
@@ -541,24 +542,17 @@
 
 		$('.c-shoulderSection').html(relatedProductsComponent);
 
-		if(product.relatedProducts && product.relatedProducts.productList.length > 0){
+		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			console.log('related')
 
-			for( var data in product.relatedProducts.productList){
+			for (var data in product.relatedProducts.productList) {
 				console.log(product.relatedProducts.productList[data], 'data');
 				getRelatedProduct(product.relatedProducts.productList[data])
 			}
 		}
 
 	}
-	// id: '123',
-	// 	image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-	// 	gender: `Women`,
-	// 	productName: `Premium linen skipper shirt`,
-	// 	productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-	// 	ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-	// 	ctaCopy: `WOMEN related products`
-	// },
+
 	var getRelatedProduct = (data) => {
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
@@ -585,11 +579,69 @@
 						</p>
 					</div>
 				</a>
+				<a class="c-linkButton js-trackEvent" href="https://www.uniqlo.com/jp/store/feature/uq/cutsewl/women/" 
+				data-category="L3_20ss_masterpiece_supima_cotton_crew_neck_shirt_details_page" 
+				data-label="L3_ws_t_shirt">${data.gender} related products</font></a>
 			</li>
 			`
 
 
 		$('.c-productButtonGroup').append(productComponent)
+	}
+
+	var topArticles = () => {
+		let test = masterpieceData
+			.filter(product => {
+				console.log(product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && 
+						product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
+
+		
+
+				return (product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && 
+						product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
+			})
+		console.log(test, 'test')
+
+
+		let articles = masterpieceData
+			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && product
+				.category.toLowerCase() === state.contentSelected.category.toLowerCase())
+			.map((product, i) => {
+				console.log(product, 'article')
+				return (
+					`
+					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
+							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
+							data-label="L3_20ss_masterpiece_premium_linen_details_page"
+							href="/jp/ja/contents/feature/masterpiece/001-premium-linen.html">
+							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+								<picture class="u-imgAdjustBox_inner">
+								
+									<source data-srcset="${product.image}"
+										type="image/jpeg"
+										srcset="${product.image}"><img
+										class="fr-img lazyloaded"
+										src="${product.image}"
+										data-src="${product.image}"
+										alt="${product.title}" data-expand="300">
+								</picture>
+							</figure>
+							<div>
+								<h3 class="c-relatedButton_title">
+									${product.title}
+								</h3>
+								<p class="c-relatedButton_name">
+									${product.productName}
+								</p>
+							</div>
+						</a>
+					</li>
+					`
+				)
+			})
+		console.log(articles, 'articles')
+
+		$('.c-relatedButtonGroup').html(articles.join(''))
 	}
 
 	var productPage = () => {
@@ -603,16 +655,41 @@
 					<section class="c-shoulderSection"></section>
 
 				</article>
+				<aside class="l-relatedAside">
+					<h2 class="l-relatedAside_title">
+						Tops Articles
+					</h2>
+					<ul class="c-relatedButtonGroup"></ul>
+
+				</aside>
+				<a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
+					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
+					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
+						<picture class="u-imgAdjustBox_inner">
+							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306"
+								type="image/webp"
+								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306">
+							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+								type="image/png"
+								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"><img
+								class="fr-img lazyloaded"
+								src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+								data-src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
+						</picture>
+					</figure>
+				</a>
 			</div>`
-		
-		if(state.contentSelected){
+
+		if (state.contentSelected) {
 			$('.main').html(productPageComponent);
 			productInfo();
 			relatedProducts();
-		}else{
+			topArticles();
+		} else {
 			$('.main').html('Page not found');
 		}
-		
+
 
 	}
 	// Init App
@@ -625,13 +702,13 @@
 			console.log('home')
 		}
 
-		var findProductPageData = masterpieceData.filter( (data) => {
+		var findProductPageData = masterpieceData.filter((data) => {
 			return data.category.toLowerCase() === 'tops' && data.title.toLowerCase() === 'linen page'
 		})
 
-		if(findProductPageData && findProductPageData.length > 0){
+		if (findProductPageData && findProductPageData.length > 0) {
 			state.contentSelected = findProductPageData[0]
-		}else{
+		} else {
 			state.contentSelected = null;
 		}
 
@@ -688,6 +765,3 @@
 	}
 
 </script>
-
-
-
