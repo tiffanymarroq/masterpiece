@@ -542,10 +542,11 @@
 		$('.c-shoulderSection').html(relatedProductsComponent);
 
 		if(product.relatedProducts && product.relatedProducts.productList.length > 0){
-		console.log('related')
+			console.log('related')
 
 			for( var data in product.relatedProducts.productList){
-				console.log(product.relatedProducts.productList[data], 'data')
+				console.log(product.relatedProducts.productList[data], 'data');
+				getRelatedProduct(product.relatedProducts.productList[data])
 			}
 		}
 
@@ -559,8 +560,36 @@
 	// 	ctaCopy: `WOMEN related products`
 	// },
 	var getRelatedProduct = (data) => {
-		let productComponent = `<li class="c-productButtonGroup_item">${data.relatedProducts}</li>`
-		$('.c-productButtonGroup').append()
+		let productComponent = `
+			<li class="c-productButtonGroup_item">
+				<a class="c-productButton js-trackEvent"
+					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L4_425035"
+					href="${data.productUrl}">
+					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+						<picture class="u-imgAdjustBox_inner">
+								<img class="fr-img lazyloaded"
+								src="${data.image}"
+								data-src="${data.image}"
+								alt="Comfort jacket" data-expand="300">
+						</picture>
+					</figure>
+					<div class="c-productButton_inner">
+						<p class="c-productButton_gender">
+							${data.gender}
+						</p>
+						<h3 class="c-productButton_title">
+							${data.productName}
+						</h3>
+						<p class="c-productButton_viewProduct">
+							View Product
+						</p>
+					</div>
+				</a>
+			</li>
+			`
+
+
+		$('.c-productButtonGroup').append(productComponent)
 	}
 
 	var productPage = () => {
@@ -570,8 +599,9 @@
 					<div class="c-contentsPanel">
 						<div class="c-contentsPanel_image"></div>
 						<div class="c-contentsPanel_inner"></div>
-						<section class="c-shoulderSection"></section>
 					</div>
+					<section class="c-shoulderSection"></section>
+
 				</article>
 			</div>`
 		
