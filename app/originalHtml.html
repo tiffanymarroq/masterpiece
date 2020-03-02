@@ -1,169 +1,118 @@
 <div class="wrapper">
 	<main class="main">
-
-		<div class="l-container -topLayer">
-			<nav class="l-navigation">
-				<div class="l-navigation_head">
-					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
-						<picture class="u-imgAdjustBox_inner">
-
-							<img class="fr-img lazyloaded"
-								src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-navigation-logo.png?20200306"
-								data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-navigation-logo.png?20200306"
-								alt="UNIQLO MASTERPIECE" data-expand="300">
-						</picture>
-					</figure>
+		<div class="l-container">
+			<article>
+				<div class="c-contentsPanel">
+					<div class="c-contentsPanel_image">
+						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+							<picture class="u-imgAdjustBox_inner">
+							
+								<source data-srcset="${product.image}"
+									type="image/jpeg"
+									srcset="${product.image}"><img
+									class="fr-img ls-is-cached lazyloaded"
+									src="${product.image}"
+									data-src="${product.image}"
+									alt="Comfort jacket" data-expand="300">
+							</picture>
+						</figure>
+					</div>
+					<div class="c-contentsPanel_inner">
+						<h1 class="c-contentsPanel_title">
+							${product.title}
+						</h1>
+						<p class="c-contentsPanel_text">
+							${product.productCopy}
+						</p>
+						<ul class="c-label -inPanel">
+							<li class="c-label_item -category">
+								${product.category}
+							</li>
+							${ product.gender && product.gender.length > 0 ?
+								Object.keys(product.gender).map((gender, i) => {
+									return (
+										<li class="c-label_item -gender" data-i = ${i}>
+											gender
+										</li>)
+								})
+								: null
+							}
+							
+							<li class="c-label_item -name">
+								${product.productName}
+							</li>
+						</ul>
+					</div>
 				</div>
-
-				<!-- Navigation -->
-				<div class="l-navigation_wrapper">
-					<ul class="l-navigation_body" data-navigation-position="default">
-						<li class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
-							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_all_icon"><span>ALL</span>
+				<section class="c-shoulderSection">
+					<h2 class="c-shoulderSection_title">
+						${product.relatedProducts.title}
+					</h2>
+					<ul class="c-productButtonGroup">
+						<li class="c-productButtonGroup_item"><a class="c-productButton js-trackEvent"
+								data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L4_425035"
+								href="https://www.uniqlo.com/jp/store/goods/425035-09">
+								<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+									<picture class="u-imgAdjustBox_inner">
+										<source
+											data-srcset="/jp/ja/contents/feature/masterpiece/img/product-2-1.webp?20200306"
+											type="image/webp"
+											srcset="/jp/ja/contents/feature/masterpiece/img/product-2-1.webp?20200306">
+										<source
+											data-srcset="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
+											type="image/jpeg"
+											srcset="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306">
+										<img class="fr-img lazyloaded"
+											src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
+											data-src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
+											alt="Comfort jacket" data-expand="300">
+									</picture>
+								</figure>
+								<div class="c-productButton_inner">
+									<p class="c-productButton_gender">
+										<font style="vertical-align: inherit;">
+											<font style="vertical-align: inherit;">MEN</font>
+										</font>
+									</p>
+									<h3 class="c-productButton_title">
+										<font style="vertical-align: inherit;">
+											<font style="vertical-align: inherit;">Comfort jacket</font>
+										</font>
+									</h3>
+									<p class="c-productButton_viewProduct">
+										<font style="vertical-align: inherit;">
+											<font style="vertical-align: inherit;">View product</font>
+										</font>
+									</p>
+								</div>
+							</a>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outer"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_outer_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-outer.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-outer.svg?20200306"
-										alt="OUTER" data-expand="300"></picture>
-							</figure><span class="u-only-pc">OUTER</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_tops_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-tops.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-tops.svg?20200306"
-										alt="TOPS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">TOPS</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent"
-							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_bottoms_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-bottoms.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-bottoms.svg?20200306"
-										alt="BOTTOMS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">BOTTOMS</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dress"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_dress_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-dress.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-dress.svg?20200306"
-										alt="DRESS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">DRESS</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
-							data-filter-button="roomwear" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_roomwear_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-roomwear.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-roomwear.svg?20200306"
-										alt="ROOM WEAR" data-expand="300"></picture>
-							</figure><span class="u-only-pc">ROOM WEAR</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="inner"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_inner_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-inner.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-inner.svg?20200306"
-										alt="INNER" data-expand="300"></picture>
-							</figure><span class="u-only-pc">INNER</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="goods"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_goods_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-goods.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-goods.svg?20200306"
-										alt="GOODS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">GOODS</span>
-						</li>
-						<li class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_baby_icon">
-							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-baby.svg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/icon-baby.svg?20200306"
-										alt="BABY" data-expand="300"></picture>
-							</figure><span class="u-only-pc">BABY</span>
-						</li>
-					</ul>
-				</div>
-
-			</nav>
-
-
-			<div class="c-contentsCardGroup">
-
-				<div class="c-contentsCardGroup_body">
-
-
-
-					<div class="c-contentsCard -comingSoon" aria-hidden="true">Coming soon...</div>
-
-					<section class="c-contentsCard -no-4" data-filter-panel="tops" aria-hidden="false"><a
-							class="js-trackEvent" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_tops_fine_cloth_shirt"
-							href="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/004-fine-cloth-shirt.html">
-							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner">
-
-									<img class="fr-img lazyloaded"
-										src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-4-1.jpg?20200306"
-										data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-4-1.jpg?20200306"
-										alt="ファインクロスシャツ" data-expand="300">
-								</picture>
-							</figure>
-							<div class="c-contentsCard_inner">
-								<h2 class="c-contentsCard_title">いいシャツは<br>襟が教えてくれる。</h2>
-								<ul class="c-label -inCard">
-									<li class="c-label_item -category">TOPS</li>
-									<li class="c-label_item -name">ファインクロスシャツ</li>
-								</ul>
-							</div>
-						</a>
-					</section>
-
-
-
-				</div>
-			</div>
+					</ul><a class="c-linkButton js-trackEvent"
+						href="https://www.uniqlo.com/jp/store/feature/uq/jacket/men/"
+						data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L3_ms_jacket">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">See related products</font>
+						</font>
+					</a>
+				</section>
+			</article><a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
+				data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
+				<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
+					<picture class="u-imgAdjustBox_inner">
+						<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306"
+							type="image/webp"
+							srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306">
+						<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+							type="image/png"
+							srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"><img
+							class="fr-img lazyloaded"
+							src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+							data-src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+							alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
+					</picture>
+				</figure>
+			</a>
 		</div>
-
-		<ul class="c-bannerGroup">
-			<li class="c-banner"><a class="js-trackEvent" data-category="L3_20ss_masterpiece"
-					data-label="L3_19fw_uniqlo_invisible_quality_banner" href="/jp/ja/contents/invisible-quality/pc/">
-					<figure class="u-imgAdjustBox" data-aspect-ratio="3:1">
-						<picture class="u-imgAdjustBox_inner"><img class="fr-img lazyloaded"
-								src="/jp/ja/contents/feature/common-assets/images/banner-invisible-quality.jpg?20200306"
-								data-src="/jp/ja/contents/feature/common-assets/images/banner-invisible-quality.jpg?20200306"
-								alt="UNIQLO INVISIBLE QUALITY 目に見えない裏側の品質のこと。" data-expand="300"></picture>
-					</figure>
-				</a></li>
-		</ul>
 	</main>
 </div>
 
@@ -240,6 +189,35 @@
 					}
 				]
 			}
+		},
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Bottoms`,
+			url: `?product=linen-page`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
 		}
 	]
 
@@ -248,7 +226,6 @@
 	//Homepage Components
 
 	var hompageMenu = () => {
-
 		var menu = `
 		<nav class="l-navigation">
 				<div class="l-navigation_head">
@@ -584,7 +561,8 @@
 					b = p ? r : r[e] || (r[e] = {}),
 					w = b.prototype || (b.prototype = {});
 				for (u in p && (i = e), i) h = ((c = !f && y && void 0 !== y[u]) ? y : i)[u], d = m && c ? o(h,
-					n) : g && "function" == typeof h ? o(Function.call, h) : h, y && a(y, u, h, t & l.U), b[u] !=
+						n) : g && "function" == typeof h ? o(Function.call, h) : h, y && a(y, u, h, t & l.U), b[
+					u] !=
 					h && s(b, u, d), g && w[u] != h && (w[u] = h)
 			};
 		n.core = r, l.F = 1, l.G = 2, l.S = 4, l.P = 8, l.B = 16, l.W = 32, l.U = 64, l.R = 128, t.exports = l
@@ -2639,7 +2617,7 @@
 					forEach: function (t) {
 						p(this, e);
 						for (var i, n = a(t, arguments.length > 1 ? arguments[1] : void 0,
-							3); i = i ? i.n : this._f;)
+								3); i = i ? i.n : this._f;)
 							for (n(i.v, i.k, this); i && i.r;) i = i.p
 					},
 					has: function (t) {
@@ -2842,7 +2820,7 @@
 							var e = t || [0];
 							return Array.isArray(e) || (e = [e]), e.sort().filter((function (t, e, i) {
 								if ("number" != typeof t || isNaN(t) || t < 0 || t > 1)
-								throw new Error(
+									throw new Error(
 										"threshold must be a number between 0 and 1 inclusively");
 								return t !== i[e - 1]
 							}))
@@ -2973,6 +2951,7 @@
 							var t = e.indexOf(this); - 1 != t && e.splice(t, 1)
 						}, window.IntersectionObserver = n, window.IntersectionObserverEntry = i
 				}
+
 			function i(t) {
 				this.time = t.time, this.target = t.target, this.rootBounds = t.rootBounds, this
 					.boundingClientRect = t.boundingClientRect, this.intersectionRect = t.intersectionRect || {
@@ -3453,9 +3432,10 @@
 				},
 				next: function (t) {
 					return this.length > 0 ? t ? this[0].nextElementSibling && n(this[0]
-						.nextElementSibling).is(t) ? new i([this[0].nextElementSibling]) : new i(
-					[]) : this[0].nextElementSibling ? new i([this[0].nextElementSibling]) : new i(
-						[]) : new i([])
+							.nextElementSibling).is(t) ? new i([this[0].nextElementSibling]) : new i(
+							[]) : this[0].nextElementSibling ? new i([this[0].nextElementSibling]) :
+						new i(
+							[]) : new i([])
 				},
 				nextAll: function (t) {
 					var e = [],
@@ -3577,7 +3557,7 @@
 									"&").filter((function (t) {
 									return "" !== t
 								}))).length, i = 0; i < s; i += 1) r = n[i].replace(/#\S+/g, "").split(
-								"="), a[decodeURIComponent(r[0])] = void 0 === r[1] ? void 0 :
+									"="), a[decodeURIComponent(r[0])] = void 0 === r[1] ? void 0 :
 								decodeURIComponent(r[1]) || "";
 						return a
 					},
@@ -3654,7 +3634,8 @@
 				var r = i ? "unshift" : "push";
 				return t.split(" ").forEach((function (t) {
 					n.eventsListeners[t] || (n.eventsListeners[t] = []), n.eventsListeners[t][
-						r](e)
+						r
+					](e)
 				})), n
 			}, c.prototype.once = function (t, e, i) {
 				var n = this;
@@ -3813,7 +3794,8 @@
 											.roundLengths && (S = Math.floor(S))
 									} else S = (n - (t.slidesPerView - 1) * b) / t.slidesPerView, t
 										.roundLengths && (S = Math.floor(S)), c[P] && (this
-										.isHorizontal() ? c[P].style.width = S + "px" : c[P].style.height =
+											.isHorizontal() ? c[P].style.width = S + "px" : c[P].style
+											.height =
 											S + "px");
 									c[P] && (c[P].swiperSlideSize = S), p.push(S), t.centeredSlides ? (w =
 											w + S / 2 + x / 2 + b, 0 === x && 0 !== P && (w = w - n / 2 -
@@ -3972,7 +3954,7 @@
 								'"]').addClass(i.slideDuplicatePrevClass) : n.children("." + i
 								.slideClass + "." + i.slideDuplicateClass +
 								'[data-swiper-slide-index="' + l.attr("data-swiper-slide-index") + '"]'
-								).addClass(i.slideDuplicatePrevClass))
+							).addClass(i.slideDuplicatePrevClass))
 					},
 					updateActiveIndex: function (t) {
 						var e, i = this.rtlTranslate ? this.translate : -this.translate,
@@ -4106,7 +4088,7 @@
 						if (r.initialized && s !== h) {
 							if (!r.allowSlideNext && v < r.translate && v < r.minTranslate()) return !1;
 							if (!r.allowSlidePrev && v > r.translate && v > r.maxTranslate() && (h ||
-								0) !== s) return !1
+									0) !== s) return !1
 						}
 						return p = s > h ? "next" : s < h ? "prev" : "reset", d && -v === r.translate || !
 							d && v === r.translate ? (r.updateActiveIndex(s), a.autoHeight && r
@@ -4199,9 +4181,9 @@
 								.loopedSlides + s / 2 ? (e.loopFix(), a = r.children("." + i.slideClass +
 									'[data-swiper-slide-index="' + t + '"]:not(.' + i
 									.slideDuplicateClass + ")").eq(0).index(), l.nextTick((
-							function () {
-									e.slideTo(a)
-								}))) : e.slideTo(a) : a > e.slides.length - s ? (e.loopFix(), a = r
+									function () {
+										e.slideTo(a)
+									}))) : e.slideTo(a) : a > e.slides.length - s ? (e.loopFix(), a = r
 									.children("." + i.slideClass + '[data-swiper-slide-index="' + t +
 										'"]:not(.' + i.slideDuplicateClass + ")").eq(0).index(), l
 									.nextTick((function () {
@@ -4437,12 +4419,12 @@
 							c = "touchmove" === o.type ? o.targetTouches[0].pageY : o.pageY;
 						if (o.preventedByNestedSwiper) return s.startX = u, void(s.startY = c);
 						if (!this.allowTouchMove) return this.allowClick = !1, void(i.isTouched && (l.extend(
-						s, {
-							startX: u,
-							startY: c,
-							currentX: u,
-							currentY: c
-						}), i.touchStartTime = l.now()));
+							s, {
+								startX: u,
+								startY: c,
+								currentX: u,
+								currentY: c
+							}), i.touchStartTime = l.now()));
 						if (i.isTouchEvent && r.touchReleaseOnEdges && !r.loop)
 							if (this.isVertical()) {
 								if (c < s.startY && this.translate <= this.maxTranslate() || c > s.startY &&
@@ -4594,10 +4576,11 @@
 										e && !e.destroyed && e.transitionEnd()
 									})))
 							}))) : e.velocity ? (e.updateProgress(w), e.setTransition(y), e.setTranslate(
-							w), e.transitionStart(!0, e.swipeDirection), e.animating || (e.animating = !0,
-								a.transitionEnd((function () {
-									e && !e.destroyed && e.transitionEnd()
-								})))) : e.updateProgress(w), e.updateActiveIndex(), e.updateSlidesClasses()
+							w), e.transitionStart(!0, e.swipeDirection), e.animating || (e
+							.animating = !0,
+							a.transitionEnd((function () {
+								e && !e.destroyed && e.transitionEnd()
+							})))) : e.updateProgress(w), e.updateActiveIndex(), e.updateSlidesClasses()
 					} else if (n.freeModeSticky) return void e.slideToClosest();
 					(!n.freeModeMomentum || f >= n.longSwipesMs) && (e.updateProgress(), e.updateActiveIndex(),
 						e.updateSlidesClasses())
@@ -4862,7 +4845,8 @@
 								r = [];
 							r.push(e.direction), e.freeMode && r.push("free-mode"), u.flexbox || r.push(
 									"no-flexbox"), e.autoHeight && r.push("autoheight"), i && r.push(
-								"rtl"), e.slidesPerColumn > 1 && r.push("multirow"), b.android && r.push(
+									"rtl"), e.slidesPerColumn > 1 && r.push("multirow"), b.android && r
+								.push(
 									"android"), b.ios && r.push("ios"), A.isIE && (u.pointerEvents || u
 									.prefixedPointerEvents) && r.push("wp8-" + e.direction), r.forEach((
 									function (i) {
@@ -4916,7 +4900,7 @@
 						}));
 						var c = this;
 						void 0 === c.modules && (c.modules = {}), Object.keys(c.modules).forEach((function (
-						t) {
+							t) {
 							var e = c.modules[t];
 							if (e.params) {
 								var i = Object.keys(e.params)[0],
@@ -4933,7 +4917,7 @@
 						}));
 						var h = l.extend({}, P);
 						c.useModulesParams(h), c.params = l.extend({}, h, k, s), c.originalParams = l
-						.extend({}, c.params), c.passedParams = l.extend({}, s), c.$ = n;
+							.extend({}, c.params), c.passedParams = l.extend({}, s), c.$ = n;
 						var d = n(c.params.el);
 						if (r = d[0]) {
 							if (d.length > 1) {
@@ -5264,15 +5248,15 @@
 							}), o === y && u === b && !t) return e.slidesGrid !== h && w !== f && e.slides
 							.css(p, w + "px"), void e.updateProgress();
 						if (e.params.virtual.renderExternal) return e.params.virtual.renderExternal.call(
-						e, {
-							offset: w,
-							from: y,
-							to: b,
-							slides: function () {
-								for (var t = [], e = y; e <= b; e += 1) t.push(c[e]);
-								return t
-							}()
-						}), void x();
+							e, {
+								offset: w,
+								from: y,
+								to: b,
+								slides: function () {
+									for (var t = [], e = y; e <= b; e += 1) t.push(c[e]);
+									return t
+								}()
+							}), void x();
 						var _ = [],
 							E = [];
 						if (t) e.$wrapperEl.find("." + e.params.slideClass).remove();
@@ -5358,13 +5342,13 @@
 						r.originalEvent && (r = r.originalEvent);
 						var s = r.keyCode || r.charCode;
 						if (!this.allowSlideNext && (this.isHorizontal() && 39 === s || this
-							.isVertical() && 40 === s)) return !1;
+								.isVertical() && 40 === s)) return !1;
 						if (!this.allowSlidePrev && (this.isHorizontal() && 37 === s || this
-							.isVertical() && 38 === s)) return !1;
+								.isVertical() && 38 === s)) return !1;
 						if (!(r.shiftKey || r.altKey || r.ctrlKey || r.metaKey || t.activeElement && t
 								.activeElement.nodeName && ("input" === t.activeElement.nodeName
 									.toLowerCase() || "textarea" === t.activeElement.nodeName.toLowerCase()
-									))) {
+								))) {
 							if (this.params.keyboard.onlyInViewport && (37 === s || 39 === s || 38 === s ||
 									40 === s)) {
 								var a = !1;
@@ -5498,7 +5482,7 @@
 										n.slideToClosest()
 									}), 300)), n.emit("scroll", i), n.params.autoplay && n.params
 								.autoplayDisableOnInteraction && n.autoplay.stop(), u === n
-							.minTranslate() || u === n.maxTranslate()) return !0
+								.minTranslate() || u === n.maxTranslate()) return !0
 						} else {
 							if (l.now() - n.mousewheel.lastScrollTime > 60)
 								if (s < 0)
@@ -5557,7 +5541,7 @@
 							t.preventDefault(), i.isEnd && !i.params.loop || i.slideNext()
 						})), e && e.length > 0 && e.on("click", (function (t) {
 							t.preventDefault(), i.isBeginning && !i.params.loop || i
-							.slidePrev()
+								.slidePrev()
 						})), l.extend(i.navigation, {
 							$nextEl: t,
 							nextEl: t && t[0],
@@ -5902,7 +5886,8 @@
 							u = r.attr("data-swiper-parallax-scale"),
 							c = r.attr("data-swiper-parallax-opacity");
 						if (o || l ? (o = o || "0", l = l || "0") : this.isHorizontal() ? (o = a, l =
-							"0") : (l = a, o = "0"), o = o.indexOf("%") >= 0 ? parseInt(o, 10) * e * s +
+								"0") : (l = a, o = "0"), o = o.indexOf("%") >= 0 ? parseInt(o, 10) * e *
+							s +
 							"%" : o * e * s + "px", l = l.indexOf("%") >= 0 ? parseInt(l, 10) * e + "%" :
 							l * e + "px", null != c) {
 							var h = c - (c - 1) * (1 - Math.abs(e));
@@ -5922,7 +5907,7 @@
 							s = t.snapGrid;
 						e.children(
 							"[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]"
-							).each((function (e, i) {
+						).each((function (e, i) {
 							t.parallax.setTransform(i, r)
 						})), i.each((function (e, i) {
 							var a = i.progress;
@@ -5930,7 +5915,7 @@
 								(a += Math.ceil(e / 2) - r * (s.length - 1)), a = Math.min(Math
 									.max(a, -1), 1), n(i).find(
 									"[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]"
-									).each((function (e, i) {
+								).each((function (e, i) {
 									t.parallax.setTransform(i, a)
 								}))
 						}))
@@ -5938,7 +5923,7 @@
 					setTransition: function (t) {
 						void 0 === t && (t = this.params.speed), this.$el.find(
 							"[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]"
-							).each((function (e, i) {
+						).each((function (e, i) {
 							var r = n(i),
 								s = parseInt(r.attr("data-swiper-parallax-duration"), 10) || t;
 							0 === t && (s = 0), r.transition(s)
@@ -5964,10 +5949,10 @@
 							i.fakeGestureTouched = !0, r.scaleStart = q.getDistanceBetweenTouches(t)
 						}
 						r.$slideEl && r.$slideEl.length || (r.$slideEl = n(t.target).closest(
-								".swiper-slide"), 0 === r.$slideEl.length && (r.$slideEl = this.slides
-								.eq(this.activeIndex)), r.$imageEl = r.$slideEl.find(
-								"img, svg, canvas"), r.$imageWrapEl = r.$imageEl.parent("." + e
-								.containerClass), r.maxRatio = r.$imageWrapEl.attr(
+							".swiper-slide"), 0 === r.$slideEl.length && (r.$slideEl = this.slides
+							.eq(this.activeIndex)), r.$imageEl = r.$slideEl.find(
+							"img, svg, canvas"), r.$imageWrapEl = r.$imageEl.parent("." + e
+							.containerClass), r.maxRatio = r.$imageWrapEl.attr(
 							"data-swiper-zoom") || e.maxRatio, 0 !== r.$imageWrapEl.length) ? (r
 							.$imageEl.transition(0), this.zoom.isScaling = !0) : r.$imageEl = void 0
 					},
@@ -6034,7 +6019,7 @@
 									t.pageX, n.touchesCurrent.y = "touchmove" === t.type ? t.targetTouches[
 										0].pageY : t.pageY, !n.isMoved && !e.isScaling) {
 									if (this.isHorizontal() && (Math.floor(n.minX) === Math.floor(n
-											.startX) && n.touchesCurrent.x < n.touchesStart.x || Math
+												.startX) && n.touchesCurrent.x < n.touchesStart.x || Math
 											.floor(n.maxX) === Math.floor(n.startX) && n.touchesCurrent.x >
 											n.touchesStart.x)) return void(n.isTouched = !1);
 									if (!this.isHorizontal() && (Math.floor(n.minY) === Math.floor(n
@@ -6053,7 +6038,7 @@
 									.prevPositionX || (r.prevPositionX = n.touchesCurrent.x), r
 									.prevPositionY || (r.prevPositionY = n.touchesCurrent.y), r.prevTime ||
 									(r.prevTime = Date.now()), r.x = (n.touchesCurrent.x - r
-									.prevPositionX) / (Date.now() - r.prevTime) / 2, r.y = (n
+										.prevPositionX) / (Date.now() - r.prevTime) / 2, r.y = (n
 										.touchesCurrent.y - r.prevPositionY) / (Date.now() - r.prevTime) /
 									2, Math.abs(n.touchesCurrent.x - r.prevPositionX) < 2 && (r.x = 0),
 									Math.abs(n.touchesCurrent.y - r.prevPositionY) < 2 && (r.y = 0), r
@@ -6402,9 +6387,10 @@
 							this.navigation && this.navigation.$nextEl && i.is(this.navigation.$nextEl) &&
 								(this.isEnd && !this.params.loop || this.slideNext(), this.isEnd ? this
 									.a11y.notify(e.lastSlideMessage) : this.a11y.notify(e.nextSlideMessage)
-									), this.navigation && this.navigation.$prevEl && i.is(this.navigation
+								), this.navigation && this.navigation.$prevEl && i.is(this.navigation
 									.$prevEl) && (this.isBeginning && !this.params.loop || this
-								.slidePrev(), this.isBeginning ? this.a11y.notify(e.firstSlideMessage) :
+									.slidePrev(), this.isBeginning ? this.a11y.notify(e
+									.firstSlideMessage) :
 									this.a11y.notify(e.prevSlideMessage)), this.pagination && i.is("." +
 									this.params.pagination.bulletClass) && i[0].click()
 						}
@@ -6467,8 +6453,8 @@
 							var t = this.history;
 							t.initialized = !0, t.paths = Z.getPathValues(), (t.paths.key || t.paths
 								.value) && (t.scrollToSlide(0, t.paths.value, this.params
-										.runCallbacksOnInit), this.params.history.replaceState || e
-									.addEventListener("popstate", this.history.setHistoryPopState))
+									.runCallbacksOnInit), this.params.history.replaceState || e
+								.addEventListener("popstate", this.history.setHistoryPopState))
 						}
 					},
 					destroy: function () {
@@ -6575,7 +6561,7 @@
 									!0), t.emit("autoplay")) : t.params.loop ? (t.loopFix(), t
 									.slideNext(t.params.speed, !0, !0), t.emit("autoplay")) : t
 								.isEnd ? t.params.autoplay.stopOnLastSlide ? t.autoplay
-							.stop() : (t.slideTo(0, t.params.speed, !0, !0), t.emit(
+								.stop() : (t.slideTo(0, t.params.speed, !0, !0), t.emit(
 									"autoplay")) : (t.slideNext(t.params.speed, !0, !0), t
 									.emit("autoplay"))
 						}), i)
@@ -6686,7 +6672,7 @@
 							}), u.shadow)
 							if (c) t.transform("translate3d(0px, " + (s / 2 + u.shadowOffset) + "px, " + -
 								s / 2 + "px) rotateX(90deg) rotateZ(0deg) scale(" + u.shadowScale + ")"
-								);
+							);
 							else {
 								var T = Math.abs(d) - 90 * Math.floor(Math.abs(d) / 90),
 									C = 1.5 - (Math.sin(2 * T * Math.PI / 360) / 2 + Math.cos(2 * T * Math
@@ -6704,7 +6690,7 @@
 						var e = this.$el;
 						this.slides.transition(t).find(
 								".swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left"
-								).transition(t), this.params.cubeEffect.shadow && !this.isHorizontal() && e
+							).transition(t), this.params.cubeEffect.shadow && !this.isHorizontal() && e
 							.find(".swiper-cube-shadow").transition(t)
 					}
 				},
@@ -6744,7 +6730,7 @@
 							r = e.$wrapperEl;
 						if (i.transition(t).find(
 								".swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left"
-								).transition(t), e.params.virtualTranslate && 0 !== t) {
+							).transition(t), e.params.virtualTranslate && 0 !== t) {
 							var s = !1;
 							i.eq(n).transitionEnd((function () {
 								if (!s && e && !e.destroyed) {
@@ -6793,7 +6779,7 @@
 					setTransition: function (t) {
 						this.slides.transition(t).find(
 							".swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left"
-							).transition(t)
+						).transition(t)
 					}
 				},
 				at = [L, I, D, R, N, B, G, {
@@ -7108,7 +7094,7 @@
 						},
 						transitionEnd: function () {
 							this.zoom.enabled && this.params.zoom.enabled && this.zoom
-							.onTransitionEnd()
+								.onTransitionEnd()
 						}
 					}
 				}, {
@@ -7190,7 +7176,7 @@
 					on: {
 						init: function () {
 							this.params.a11y.enabled && (this.a11y.init(), this.a11y
-							.updateNavigation())
+								.updateNavigation())
 						},
 						toEdge: function () {
 							this.params.a11y.enabled && this.a11y.updateNavigation()
@@ -7294,7 +7280,7 @@
 									t && !t.destroyed && t.$wrapperEl && e.target ===
 										this && (t.$wrapperEl[0].removeEventListener(
 												"transitionend", t.autoplay.onTransitionEnd
-												), t.$wrapperEl[0].removeEventListener(
+											), t.$wrapperEl[0].removeEventListener(
 												"webkitTransitionEnd", t.autoplay
 												.onTransitionEnd), t.autoplay.paused = !1,
 											t.autoplay.running ? t.autoplay.run() : t
@@ -7494,7 +7480,7 @@
 								scrollIntoView: n.prototype.scrollIntoView
 							},
 							a = t.performance && t.performance.now ? t.performance.now.bind(t
-							.performance) : Date.now,
+								.performance) : Date.now,
 							o = (i = t.navigator.userAgent, new RegExp(["MSIE ", "Trident/", "Edge/"].join(
 								"|")).test(i) ? 1 : 0);
 						t.scroll = t.scrollTo = function () {
@@ -7641,7 +7627,8 @@
 				204), i(205), i(206), i(207), i(209), i(210), i(212), i(213), i(214), i(215), i(216), i(217), i(
 				218), i(220), i(221), i(222), i(223), i(224), i(225), i(226), i(227), i(228), i(229), i(230), i(
 				231), i(232), i(80), i(233), i(108), i(234), i(109), i(235), i(236), i(237), i(238), i(110), i(
-			241), i(242), i(243), i(244), i(245), i(246), i(247), i(248), i(249), i(250), i(251), i(252), i(253),
+				241), i(242), i(243), i(244), i(245), i(246), i(247), i(248), i(249), i(250), i(251), i(252), i(
+				253),
 			i(254), i(255), i(256), i(257), i(258), i(259), i(260), i(261), i(262), i(263), i(264), i(265), i(266),
 			i(267), i(268), i(269), t.exports = i(7)
 	}, function (t, e, i) {
@@ -7807,7 +7794,7 @@
 				stringify: function (t) {
 					for (var e, i, n = [t], r = 1; arguments.length > r;) n.push(arguments[r++]);
 					if (i = e = n[1], (b(e) || void 0 !== t) && !q(t)) return m(e) || (e = function (t,
-					e) {
+						e) {
 						if ("function" == typeof i && (e = i.call(this, t, e)), !q(e)) return e
 					}), n[1] = e, D.apply(I, n)
 				}
@@ -8779,7 +8766,7 @@
 					i = a(e.length),
 					n = i - 1;
 				for (arguments.length > 1 && (n = Math.min(n, s(arguments[1]))), n < 0 && (n = i +
-					n); n >= 0; n--)
+						n); n >= 0; n--)
 					if (n in e && e[n] === t) return n || 0;
 				return -1
 			}
@@ -8945,7 +8932,8 @@
 				for (var w, x = "", _ = 0, E = 0; E < y.length; E++) {
 					b = y[E];
 					for (var S = String(b[0]), T = u(c(a(b.index), d.length), 0), C = [], M =
-						1; M < b.length; M++) C.push(void 0 === (w = b[M]) ? w : String(w));
+							1; M < b.length; M++) C.push(void 0 === (w = b[M]) ? w : String(
+					w));
 					var A = b.groups;
 					if (f) {
 						var P = [S].concat(C, T, d);
@@ -9034,7 +9022,8 @@
 					if (void 0 === t && 0 === e) return [];
 					if (!n(t)) return i.call(r, t, e);
 					for (var s, a, o, l = [], c = (t.ignoreCase ? "i" : "") + (t.multiline ? "m" :
-							"") + (t.unicode ? "u" : "") + (t.sticky ? "y" : ""), h = 0, f = void 0 ===
+								"") + (t.unicode ? "u" : "") + (t.sticky ? "y" : ""), h = 0, f =
+							void 0 ===
 							e ? 4294967295 : e >>> 0, p = new RegExp(t.source, c + "g");
 						(s = u.call(p, r)) && !((a = p.lastIndex) > h && (l.push(r.slice(h, s.index)),
 							s.length > 1 && s.index < r.length && d.apply(l, s.slice(1)), o = s[0]
@@ -10109,7 +10098,8 @@
 					b = y.prototype,
 					w = f ? n : p ? n[e] : (n[e] || {}).prototype;
 				for (u in f && (i = e), i)(c = !d && w && void 0 !== w[u]) && o(y, u) || (h = c ? w[u] : i[u], y[
-					u] = f && "function" != typeof w[u] ? i[u] : g && c ? s(h, n) : m && w[u] == h ? function (
+						u] = f && "function" != typeof w[u] ? i[u] : g && c ? s(h, n) : m && w[u] == h ?
+					function (
 						t) {
 						var e = function (e, i, n) {
 							if (this instanceof t) {
@@ -10367,8 +10357,9 @@
 									g[s], u))) {
 								if (ot(g[s]), l = !0, U > 9) break
 							} else !l && I && !o && U < 4 && K < 4 && R > 2 && (L[0] || n
-								.preloadAfterLoad) && (L[0] || !h && (W || G || j || B || "auto" != g[s]
-									.getAttribute(n.sizesAttr))) && (o = L[0] || g[s]);
+								.preloadAfterLoad) && (L[0] || !h && (W || G || j || B || "auto" != g[
+									s]
+								.getAttribute(n.sizesAttr))) && (o = L[0] || g[s]);
 							o && !l && ot(o)
 						}
 					}, et = function (t) {
@@ -10458,7 +10449,7 @@
 									attributes: !0
 								}) : (r.addEventListener("DOMNodeInserted", et, !0), r
 									.addEventListener("DOMAttrModified", et, !0), setInterval(et, 999)
-									), o("hashchange", et, !0), ["focus", "mouseover", "click", "load",
+								), o("hashchange", et, !0), ["focus", "mouseover", "click", "load",
 									"transitionend", "animationend"
 								].forEach((function (t) {
 									e.addEventListener(t, et, !0)
@@ -10639,7 +10630,7 @@
 					if (h) {
 						var e, i, n, r = t || {};
 						if (r.elements && 1 === r.elements.nodeType && ("IMG" === r.elements.nodeName
-							.toUpperCase() ? r.elements = [r.elements] : (r.context = r.elements, r.elements =
+								.toUpperCase() ? r.elements = [r.elements] : (r.context = r.elements, r.elements =
 									null)), n = (e = r.elements || c.qsa(r.context || s, r.reevaluate || r
 								.reselect ? c.sel : c.selShort)).length) {
 							for (c.setupRun(r), L = !0, i = 0; i < n; i++) c.fillImg(e[i], r);
@@ -10713,7 +10704,8 @@
 									o.length - 1), h = parseInt(u, 10), d = parseFloat(u), N.test(u) &&
 								"w" === l ? ((t || i) && (f = !0), 0 === h ? f = !0 : t = h) : $.test(u) &&
 								"x" === l ? ((t || i || s) && (f = !0), d < 0 ? f = !0 : i = d) : N.test(
-								u) && "h" === l ? ((s || i) && (f = !0), 0 === h ? f = !0 : s = h) : f = !
+									u) && "h" === l ? ((s || i) && (f = !0), 0 === h ? f = !0 : s = h) :
+								f = !
 								0;
 							f || (p.url = n, t && (p.w = t), i && (p.d = i), s && (p.h = s), s || i || t ||
 								(p.d = 1), 1 === p.d && (e.has1x = !0), p.set = e, c.push(p))
@@ -10839,8 +10831,9 @@
 						if (o = w.curSrc || e[_], (l = w.curCan || function (t, e, i) {
 								var n;
 								return !i && e && (i = (i = t[c.ns].sets) && i[i.length - 1]), (n = ut(e,
-									i)) && (e = c.makeUrl(e), t[c.ns].curSrc = e, t[c.ns].curCan = n, n.res ||
-										at(n, n.set.sizes)), n
+									i)) && (e = c.makeUrl(e), t[c.ns].curSrc = e, t[c.ns].curCan = n, n
+									.res ||
+									at(n, n.set.sizes)), n
 							}(e, o, t[0].set)) && l.set === t[0].set && ((h = x && !e.complete && l.res - .1 >
 								E) || (l.cached = !0, l.res >= E && (a = l))), !a)
 							for (t.sort(lt), a = t[(s = t.length) - 1], n = 0; n < s; n++)
@@ -10946,7 +10939,7 @@
 				}, i.src = e, "pending"
 			}("image/webp",
 				"data:image/webp;base64,UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAABBxAR/Q9ERP8DAABWUDggGAAAADABAJ0BKgEAAQADADQlpAADcAD++/1QAA=="
-				))
+			))
 		}(window, document)
 	}, function (t, e) {
 		/*! picturefill - v3.0.2 - 2016-02-12
@@ -11075,9 +11068,9 @@
 					a = Date.now(), i.apply(l, c)
 				}
 				s || (n && !r && h(), o(), void 0 === n && u > t ? h() : !0 !== e && (r = setTimeout(n ?
-				function () {
-					r = void 0
-				} : h, void 0 === n ? t - u : t)))
+					function () {
+						r = void 0
+					} : h, void 0 === n ? t - u : t)))
 			}
 			return "boolean" != typeof e && (n = i, i = e, e = void 0), l.cancel = function () {
 				o(), s = !0
@@ -11238,7 +11231,7 @@
 
 		function d(t) {
 			if (void 0 === t) throw new ReferenceError(
-			"this hasn't been initialised - super() hasn't been called");
+				"this hasn't been initialised - super() hasn't been called");
 			return t
 		}
 
@@ -11578,7 +11571,7 @@
 				return ie(it(t) ? !e : !0 === i ? !!(i = 0) : !n, (function () {
 					return it(t) ? t[~~(Math.random() * t.length)] : (i = i || 1e-5) && (n = i < 1 ?
 						Math.pow(10, (i + "").length - 2) : 1) && ~~(Math.round((t + Math
-					.random() * (e - t)) / i) * i * n) / n
+						.random() * (e - t)) / i) * i * n) / n
 				}))
 			},
 			pe = function (t, e, i) {
@@ -11775,8 +11768,9 @@
 			Le = /["']/g,
 			Ie = function (t) {
 				for (var e, i, n, r = {}, s = t.substr(1, t.length - 3).split(":"), a = s[0], o = 1, l = s
-					.length; o < l; o++) i = s[o], e = o !== l - 1 ? i.lastIndexOf(",") : i.length, n = i.substr(0,
-					e), r[a] = isNaN(n) ? n.replace(Le, "").trim() : +n, a = i.substr(e + 1).trim();
+						.length; o < l; o++) i = s[o], e = o !== l - 1 ? i.lastIndexOf(",") : i.length, n = i
+					.substr(0,
+						e), r[a] = isNaN(n) ? n.replace(Le, "").trim() : +n, a = i.substr(e + 1).trim();
 				return r
 			},
 			De = function (t) {
@@ -11789,7 +11783,7 @@
 					var e = (t + "").split("("),
 						i = ke[e[0]];
 					return i && e.length > 1 && i.config ? i.config.apply(null, ~t.indexOf("{") ? [Ie(e[
-							1])] : ot.exec(t)[1].split(",").map(Lt)) : ke._CE && ze.test(t) ? ke._CE("",
+						1])] : ot.exec(t)[1].split(",").map(Lt)) : ke._CE && ze.test(t) ? ke._CE("",
 						t) : i
 				}(t)) || e
 			},
@@ -11903,7 +11897,8 @@
 					if (i && i.smoothChildTiming && this._ts) {
 						for (this._start = At(i._time - (this._ts > 0 ? t / this._ts : ((this._dirty ? this
 								.totalDuration() : this._tDur) - t) / -this._ts)), Ut(this), i._dirty || Wt(
-							i); i.parent;) i.parent._time !== i._start + (i._ts >= 0 ? i._tTime / i._ts : (i
+								i); i.parent;) i.parent._time !== i._start + (i._ts >= 0 ? i._tTime / i._ts : (
+								i
 								.totalDuration() - i._tTime) / -i._ts) && i.totalTime(i._tTime, !0), i = i
 							.parent;
 						!this.parent && this._dp.autoRemoveChildren && Kt(this._dp, this, this._start - this
@@ -11916,7 +11911,7 @@
 						this._dur || (t ? this._dur : 0), e) : this._time
 				}, e.totalProgress = function (t, e) {
 					return arguments.length ? this.totalTime(this.totalDuration() * t, e) : this
-					.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio
+						.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio
 				}, e.progress = function (t, e) {
 					return arguments.length ? this.totalTime(this.duration() * (!this._yoyo || 1 & this
 						.iteration() ? t : 1 - t) + Ht(this), e) : this.duration() ? Math.min(1, this
@@ -11934,10 +11929,10 @@
 					var e = !this._ts;
 					return arguments.length ? (e !== t && (t ? (this._pauseTS = this._ts, this._pTime = this
 						._tTime || Math.max(-this._delay, this.rawTime()), this._ts = this._act = 0
-						) : (Oe(), this._ts = this._pauseTS || 1, this._pauseTS = null, this
+					) : (Oe(), this._ts = this._pauseTS || 1, this._pauseTS = null, this
 						.totalTime(this.parent && !this.parent.smoothChildTiming ? this.rawTime() :
 							this._tTime || this._pTime, 1 === this.progress() && (this._tTime -=
-							j) && Math.abs(this._zTime) !== j))), this) : e
+								j) && Math.abs(this._zTime) !== j))), this) : e
 				}, e.startTime = function (t) {
 					return arguments.length ? (this.parent && this.parent._sort && Kt(this.parent, this, t -
 						this._delay), this) : this._start
@@ -12056,15 +12051,15 @@
 					if (g !== this._time && y && (b += this._time - g, t += this._time - g), n = b, h =
 						this._start, l = !(c = this._ts), w && (y || (g = this._zTime), !t && e || (this
 							._zTime = t)), this._repeat && (f = this._yoyo, o = y + this._rDelay, ((n = At(
-								b % o)) > y || m === b) && (n = y), (a = ~~(b / o)) && a === b / o && (n =
-								y, a--), f && 1 & a && (n = y - n, v = 1), a !== (d = Xt(this._tTime,
+							b % o)) > y || m === b) && (n = y), (a = ~~(b / o)) && a === b / o && (n =
+							y, a--), f && 1 & a && (n = y - n, v = 1), a !== (d = Xt(this._tTime,
 							o)) && !this._lock)) {
 						var x = f && 1 & d,
 							_ = x === (f && 1 & a);
 						if (a < d && (x = !x), g = x ? 0 : y, this._lock = 1, this.render(g, e, !y)._lock =
 							0, !e && this.parent && ye(this, "onRepeat"), this.vars.repeatRefresh && !v &&
 							(this.invalidate()._lock = 1), g !== this._time || l !== !this._ts)
-					return this;
+							return this;
 						if (_ && (this._lock = 2, g = x ? y + 1e-4 : -1e-4, this.render(g, !0), this.vars
 								.repeatRefresh && !v && this.invalidate()), this._lock = 0, !this._ts && !
 							l) return this
@@ -12113,10 +12108,12 @@
 					if (u && !e && (this.pause(), u.render(n >= g ? 0 : -j)._zTime = n >= g ? 1 : -1, this
 							._ts)) return this._start = h, Ut(this), this.render(t, e, i);
 					this._onUpdate && !e && ye(this, "onUpdate", !0), (b === m && m >= this
-					.totalDuration() || !b && this._ts < 0) && (h !== this._start && Math.abs(c) ===
+						.totalDuration() || !b && this._ts < 0) && (h !== this._start && Math.abs(
+						c) ===
 						Math.abs(this._ts) || ((t || !y) && (t && this._ts > 0 || !b && this._ts <
-							0) && Gt(this, 1), e || t < 0 && !g || (ye(this, b === m ? "onComplete" :
-								"onReverseComplete", !0), this._prom && this._prom())))
+							0) && Gt(this, 1), e || t < 0 && !g || (ye(this, b === m ?
+							"onComplete" :
+							"onReverseComplete", !0), this._prom && this._prom())))
 				}
 				return this
 			}, i.add = function (t, e) {
@@ -12222,8 +12219,9 @@
 				if (a._dirty) {
 					for (r = a.parent; o;) e = o._prev, o._dirty && o.totalDuration(), (n = o._start) >
 						l && a._sort && o._ts && !a._lock ? (a._lock = 1, Kt(a, o, n - o._delay)._lock =
-						0) : l = n, n < 0 && o._ts && (s -= n, (!r && !a._dp || r && r
-							.smoothChildTiming) && (a._start += n / a._ts, a._time -= n, a._tTime -= n), a
+							0) : l = n, n < 0 && o._ts && (s -= n, (!r && !a._dp || r && r
+								.smoothChildTiming) && (a._start += n / a._ts, a._time -= n, a._tTime -=
+							n), a
 							.shiftChildren(-n, !1, -1e20), l = 0), (i = Ut(o)) > s && o._ts && (s = i), o =
 						e;
 					Jt(a, a === p && a._time > s ? a._time : Math.min(1e8, s), 1), a._dirty = 0
@@ -12253,7 +12251,7 @@
 						n
 					], t, e), i = p[0], n = p[1]), l = i.match(at) || []; o = at.exec(n);) c = o[0], h = n
 					.substring(g, o.index), u ? u = (u + 1) % 5 : "rgba(" === h.substr(-5) && (u = 1), c !== l[
-					m++] && (d = parseFloat(l[m - 1]) || 0, v._pt = {
+						m++] && (d = parseFloat(l[m - 1]) || 0, v._pt = {
 						_next: v._pt,
 						p: h || 1 === m ? h : ",",
 						s: d,
@@ -12272,7 +12270,7 @@
 					d = U(c) ? l ? ei : ti : Ze;
 				if (q(n) && (~n.indexOf("random(") && (n = ve(n)), "=" === n.charAt(1) && (n = parseFloat(h) +
 						parseFloat(n.substr(2)) * ("-" === n.charAt(0) ? -1 : 1) + (re(h) || 0))), h !== n)
-				return isNaN(h + n) ? Ve.call(this, t, e, h, n, d, o || $.stringFilter, l) : (u = new di(this
+					return isNaN(h + n) ? Ve.call(this, t, e, h, n, d, o || $.stringFilter, l) : (u = new di(this
 						._pt, t, e, +h || 0, n - (h || 0), "boolean" == typeof c ? si : ri, 0, d), l && (u
 						.fp = l), a && u.modifier(a, this, t), this._pt = u)
 			},
@@ -12717,7 +12715,7 @@
 				mapRange: ge,
 				pipe: function () {
 					for (var t = arguments.length, e = new Array(t), i = 0; i < t; i++) e[i] = arguments[
-					i];
+						i];
 					return function (t) {
 						return e.reduce((function (t, e) {
 							return e(t)
@@ -12973,7 +12971,8 @@
 					.indexOf("adius")) ? At(l / (o ? t.getBBox()[h ? "width" : "height"] : t[f]) * 100) : (
 					c[h ? "width" : "height"] = 100 + (p ? u : n), s = ~e.indexOf("adius") || "em" === n &&
 					t.appendChild && !d ? t : t.parentNode, o && (s = (t.ownerSVGElement || {})
-					.parentNode), s && s !== yi && s.appendChild || (s = yi.body), (a = s._gsap) && "%" ===
+						.parentNode), s && s !== yi && s.appendChild || (s = yi.body), (a = s._gsap) &&
+					"%" ===
 					n && a.width && h && a.time === Pe.time ? At(l / a.width * 100) : (s === t && (c
 							.position = "static"), s.appendChild(xi), r = xi[f], s.removeChild(xi), c
 						.position = "absolute", h && "%" === n && ((a = Tt(s)).time = Pe.time, a.width = s[
@@ -13001,7 +13000,8 @@
 					.length) {
 					for (; o = st.exec(n);) d = o[0], p = n.substring(b, o.index), c ? c = (c + 1) % 5 :
 						"rgba(" !== p.substr(-5) && "hsla(" !== p.substr(-5) || (c = 1), d !== (h = l[w++] ||
-						"") && (u = parseFloat(h) || 0, g = h.substr((u + "").length), (m = "=" === d.charAt(1) ? +
+							"") && (u = parseFloat(h) || 0, g = h.substr((u + "").length), (m = "=" === d.charAt(
+							1) ? +
 							(d.charAt(0) + "1") : 0) && (d = d.substr(2)), f = parseFloat(d), v = d.substr((f +
 							"").length), b = st.lastIndex - v.length, v || (v = v || $.units[e] || g, b === n
 							.length && (n += v, y.e += v)), g !== v && (u = an(t, e, h, v) || 0), y._pt = {
@@ -13104,7 +13104,8 @@
 								y * y + b * b), o = Math.sqrt(x * x + w * w), l = y || b ? Ai(b, y) * Ci : 0, h =
 							w || x ? Ai(w, x) * Ci + l : 0, i.svg && (n -= D - (D * y + R * w), r -= R - (D * b +
 								R * x))) : (z = p[6], O = p[7], M = p[8], A = p[9], P = p[10], k = p[11], n = p[
-							12], r = p[13], s = p[14], u = (v = Ai(z, P)) * Ci, v && (S = _ * (g = Math.cos(-v)) +
+								12], r = p[13], s = p[14], u = (v = Ai(z, P)) * Ci, v && (S = _ * (g = Math.cos(-
+									v)) +
 								M * (m = Math.sin(-v)), T = E * g + A * m, C = z * g + P * m, M = _ * -m + M * g,
 								A = E * -m + A * g, P = z * -m + P * g, k = O * -m + k * g, _ = S, E = T, z = C),
 							c = (v = Ai(-w, P)) * Ci, v && (g = Math.cos(-v), k = x * (m = Math.sin(-v)) + k * g,
@@ -13271,7 +13272,7 @@
 								x = void 0, _ = void 0, E = void 0, x = (w = a).split(" "), _ = x[0], E =
 									x[1] || "50%", "top" !== _ && "bottom" !== _ && "left" !== E &&
 									"right" !== E || (w = _, _ = E, E = w), x[0] = un[_] || _, x[1] = un[
-									E] || E, a = x.join(" "), m.svg ? mn(t, a, 0, y, 0, this) : ((f =
+										E] || E, a = x.join(" "), m.svg ? mn(t, a, 0, y, 0, this) : ((f =
 										parseFloat(a.split(" ")[2])) !== m.zOrigin && rn(this, m,
 										"zOrigin", m.zOrigin, f), rn(this, T, h, bn(s), bn(a)));
 								continue
@@ -13317,8 +13318,9 @@
 			getSetter: function (t, e, i) {
 				var n = zi[e];
 				return n && n.indexOf(",") < 0 && (e = n), e in Ti && e !== Hi && (t._gsap.x || on(t,
-					"x")) ? i && Ei === i ? "scale" === e ? Gi : ji : (Ei = i || {}) && ("scale" === e ?
-						Wi : Yi) : t.style && !Q(t.style[e]) ? $i : ~e.indexOf("-") ? Bi : ni(t, e)
+					"x")) ? i && Ei === i ? "scale" === e ? Gi : ji : (Ei = i || {}) && ("scale" ===
+					e ?
+					Wi : Yi) : t.style && !Q(t.style[e]) ? $i : ~e.indexOf("-") ? Bi : ni(t, e)
 			}
 		};
 		gi.utils.checkPrefix = Ki, Mn = Mt("x,y,z,scale,scaleX,scaleY,xPercent,yPercent," + (Cn =
@@ -13425,7 +13427,7 @@
 									else u.setAttribute("aria-hidden", "true"), u
 										.getAttribute("data-filter-panel") === s && (
 											t++, u.setAttribute("aria-hidden", "false")
-											)
+										)
 								}
 							} catch (t) {
 								r = !0, a = t
@@ -13558,7 +13560,7 @@
 						r = e.dataset.href,
 						s = '<iframe class="modal_contentsIframe" src="'.concat(r,
 							'?rel=0&wmode=transparent&autoplay=1&autohide=1" frameborder="0" allowfullscreen></iframe>'
-							);
+						);
 					n.innerHTML = s, i.setAttribute("data-modal-is-active", !0)
 				},
 				funcWindow: function () {
