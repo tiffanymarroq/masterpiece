@@ -1,18 +1,16 @@
 <div class="wrapper">
 	<main class="main">
 		<div class="l-container">
-			<article>
+			<article class="c-contents">
+
+				<!-- Content Header -->
 				<div class="c-contentsPanel">
 					<div class="c-contentsPanel_image">
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
-								<source data-srcset="${product.image}"
-									type="image/jpeg"
-									srcset="${product.image}"><img
-									class="fr-img ls-is-cached lazyloaded"
-									src="${product.image}"
-									data-src="${product.image}"
-									alt="Comfort jacket" data-expand="300">
+								<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
+									class="fr-img ls-is-cached lazyloaded" src="${product.image}"
+									data-src="${product.image}" alt="Comfort jacket" data-expand="300">
 							</picture>
 						</figure>
 					</div>
@@ -28,21 +26,23 @@
 								${product.category}
 							</li>
 							${ product.gender && product.gender.length > 0 ?
-								Object.keys(product.gender).map((gender, i) => {
-									return (
-										<li class="c-label_item -gender" data-i = ${i}>
-											gender
-										</li>)
-								})
-								: null
+							Object.keys(product.gender).map((gender, i) => {
+							return (
+							<li class="c-label_item -gender" data-i=${i}>
+								gender
+							</li>)
+							})
+							: null
 							}
-							
+
 							<li class="c-label_item -name">
 								${product.productName}
 							</li>
 						</ul>
 					</div>
 				</div>
+
+				<!-- Related Products -->
 				<section class="c-shoulderSection">
 					<h2 class="c-shoulderSection_title">
 						${product.relatedProducts.title}
@@ -86,15 +86,70 @@
 								</div>
 							</a>
 						</li>
-					</ul><a class="c-linkButton js-trackEvent"
-						href="https://www.uniqlo.com/jp/store/feature/uq/jacket/men/"
+					</ul>
+					<a class="c-linkButton js-trackEvent" href="https://www.uniqlo.com/jp/store/feature/uq/jacket/men/"
 						data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L3_ms_jacket">
 						<font style="vertical-align: inherit;">
 							<font style="vertical-align: inherit;">See related products</font>
 						</font>
 					</a>
 				</section>
-			</article><a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
+
+			</article>
+
+			<!-- Top Articles -->
+			<aside class="l-relatedAside">
+				<h2 class="l-relatedAside_title">
+					<font style="vertical-align: inherit;">
+						<font style="vertical-align: inherit;">Tops Articles
+						</font>
+					</font>
+				</h2>
+				<ul class="c-relatedButtonGroup">
+					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
+							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
+							data-label="L3_20ss_masterpiece_premium_linen_details_page"
+							href="/jp/ja/contents/feature/masterpiece/001-premium-linen.html">
+							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+								<picture class="u-imgAdjustBox_inner">
+									<source
+										data-srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.webp?20200306"
+										type="image/webp"
+										srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.webp?20200306">
+									<source data-srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
+										type="image/jpeg"
+										srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"><img
+										class="fr-img lazyloaded"
+										src="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
+										data-src="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
+										alt="Premium linen shirt" data-expand="300">
+								</picture>
+							</figure>
+							<div>
+								<h3 class="c-relatedButton_title">
+									<font style="vertical-align: inherit;">
+										<font style="vertical-align: inherit;">Linen </font>
+									</font><br>
+									<font style="vertical-align: inherit;">
+										<font style="vertical-align: inherit;">becomes a shirt with </font>
+										<font style="vertical-align: inherit;">human eyes </font>
+										<font style="vertical-align: inherit;">.</font>
+									</font>
+								</h3>
+								<p class="c-relatedButton_name">
+									<font style="vertical-align: inherit;">
+										<font style="vertical-align: inherit;">Premium linen shirt</font>
+									</font>
+								</p>
+							</div>
+						</a></li>
+				
+				</ul>
+			</aside>
+
+
+			<!-- Back to Top -->
+			<a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
 				data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
 				<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 					<picture class="u-imgAdjustBox_inner">
@@ -111,6 +166,7 @@
 					</picture>
 				</figure>
 			</a>
+
 		</div>
 	</main>
 </div>
@@ -126,8 +182,8 @@
 	}
 
 	var homepageHero = {
-		imagePC: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-hero-logo.png?20200306`,
-		imageMB: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-hero-logo.png?20200306`,
+		imagePC: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg`,
+		imageMB: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-background-hero.jpg`,
 		copy: `home copy`
 	}
 
@@ -433,9 +489,63 @@
 	}
 
 
-	// Product Page Components
+	var productInfo = () => {
+		var product = masterpieceData[0]
+		var image = `
+				<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+					<picture class="u-imgAdjustBox_inner">
+						<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
+							class="fr-img ls-is-cached lazyloaded" src="${product.image}"
+							data-src="${product.image}" alt="Comfort jacket" data-expand="300">
+					</picture>
+				</figure>`;
+
+		var content = `
+				<h1 class="c-contentsPanel_title">
+					${product.title}
+				</h1>
+				<p class="c-contentsPanel_text">
+					${product.productCopy}
+				</p>
+				<ul class="c-label -inPanel">
+					<li class="c-label_item -category">
+						${product.category}
+					</li>
+					${ product.gender && product.gender.length > 0 ?
+						Object.keys(product.gender).map((i) => {
+							return (
+								`<li class="c-label_item -gender" data-i=${i}>
+									${product.gender[i]}
+								</li>`)
+							}).join('')
+						: null
+					}
+					<li class="c-label_item -name">
+						${product.productName}
+					</li>
+				</ul>`;
+
+			$('.c-contentsPanel .c-contentsPanel_image').html(image);
+			$('.c-contentsPanel .c-contentsPanel_inner').html(content);
+
+
+	}
+
+
 
 	var productPage = () => {
+		var productPageComponent =
+			`<div class="l-container">
+				<article class="c-contents">
+					<div class="c-contentsPanel">
+						<div class="c-contentsPanel_image"></div>
+						<div class="c-contentsPanel_inner"></div>
+					</div>
+				</article>
+			</div>`
+
+		$('.main').html(productPageComponent);
+		productInfo();
 
 	}
 	// Init App
@@ -447,7 +557,11 @@
 		} else {
 			console.log('home')
 		}
-		$('.main').html(homepage)
+
+
+		// $('.main').html(homepage)
+
+		productPage();
 
 
 		// Actions 	
@@ -561,7 +675,7 @@
 					w = b.prototype || (b.prototype = {});
 				for (u in p && (i = e), i) h = ((c = !f && y && void 0 !== y[u]) ? y : i)[u], d = m && c ? o(h,
 						n) : g && "function" == typeof h ? o(Function.call, h) : h, y && a(y, u, h, t & l.U), b[
-					u] !=
+						u] !=
 					h && s(b, u, d), g && w[u] != h && (w[u] = h)
 			};
 		n.core = r, l.F = 1, l.G = 2, l.S = 4, l.P = 8, l.B = 16, l.W = 32, l.U = 64, l.R = 128, t.exports = l
@@ -6389,7 +6503,7 @@
 								), this.navigation && this.navigation.$prevEl && i.is(this.navigation
 									.$prevEl) && (this.isBeginning && !this.params.loop || this
 									.slidePrev(), this.isBeginning ? this.a11y.notify(e
-									.firstSlideMessage) :
+										.firstSlideMessage) :
 									this.a11y.notify(e.prevSlideMessage)), this.pagination && i.is("." +
 									this.params.pagination.bulletClass) && i[0].click()
 						}
@@ -8932,7 +9046,7 @@
 					b = y[E];
 					for (var S = String(b[0]), T = u(c(a(b.index), d.length), 0), C = [], M =
 							1; M < b.length; M++) C.push(void 0 === (w = b[M]) ? w : String(
-					w));
+						w));
 					var A = b.groups;
 					if (f) {
 						var P = [S].concat(C, T, d);
@@ -12108,7 +12222,7 @@
 							._ts)) return this._start = h, Ut(this), this.render(t, e, i);
 					this._onUpdate && !e && ye(this, "onUpdate", !0), (b === m && m >= this
 						.totalDuration() || !b && this._ts < 0) && (h !== this._start && Math.abs(
-						c) ===
+							c) ===
 						Math.abs(this._ts) || ((t || !y) && (t && this._ts > 0 || !b && this._ts <
 							0) && Gt(this, 1), e || t < 0 && !g || (ye(this, b === m ?
 							"onComplete" :
@@ -12220,7 +12334,7 @@
 						l && a._sort && o._ts && !a._lock ? (a._lock = 1, Kt(a, o, n - o._delay)._lock =
 							0) : l = n, n < 0 && o._ts && (s -= n, (!r && !a._dp || r && r
 								.smoothChildTiming) && (a._start += n / a._ts, a._time -= n, a._tTime -=
-							n), a
+								n), a
 							.shiftChildren(-n, !1, -1e20), l = 0), (i = Ut(o)) > s && o._ts && (s = i), o =
 						e;
 					Jt(a, a === p && a._time > s ? a._time : Math.min(1e8, s), 1), a._dirty = 0
@@ -13000,7 +13114,7 @@
 					for (; o = st.exec(n);) d = o[0], p = n.substring(b, o.index), c ? c = (c + 1) % 5 :
 						"rgba(" !== p.substr(-5) && "hsla(" !== p.substr(-5) || (c = 1), d !== (h = l[w++] ||
 							"") && (u = parseFloat(h) || 0, g = h.substr((u + "").length), (m = "=" === d.charAt(
-							1) ? +
+								1) ? +
 							(d.charAt(0) + "1") : 0) && (d = d.substr(2)), f = parseFloat(d), v = d.substr((f +
 							"").length), b = st.lastIndex - v.length, v || (v = v || $.units[e] || g, b === n
 							.length && (n += v, y.e += v)), g !== v && (u = an(t, e, h, v) || 0), y._pt = {
