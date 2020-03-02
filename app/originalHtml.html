@@ -188,7 +188,7 @@
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
 			category: `Tops`,
-			url: `?product=linen-page?category=tops`,
+			url: `?product=linen-page&category=tops`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
 				title: `One by one, texture prepared by human hands`,
@@ -199,7 +199,6 @@
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-						ctaCopy: `WOMEN related products`
 					},
 					{
 						id: '123',
@@ -208,7 +207,6 @@
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-						ctaCopy: `WOMEN related products`
 					}
 				]
 			}
@@ -219,7 +217,7 @@
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
 			category: `tops`,
-			url: `?product=linen-page?category=tops`,
+			url: `?product=linen-page&category=tops`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
 				title: `One by one, texture prepared by human hands`,
@@ -229,7 +227,6 @@
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-						ctaCopy: `WOMEN related products`
 					},
 					{
 						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
@@ -237,7 +234,6 @@
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-						ctaCopy: `WOMEN related products`
 					}
 				]
 			}
@@ -248,7 +244,7 @@
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
 			category: `Tops`,
-			url: `?product=linen-page?category=bottoms`,
+			url: `?product=linen-page-not&category=bottoms`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
 				title: `One by one, texture prepared by human hands`,
@@ -396,7 +392,6 @@
 	}
 
 	var homepageProductList = () => {
-		console.log('selected category', state)
 
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
@@ -448,7 +443,6 @@
 	}
 
 	var homepage = () => {
-		console.log(`home`);
 		var homepageComponent = `
 			<div class="o-hero">
 				<h1 class="o-hero_title">
@@ -543,10 +537,8 @@
 		$('.c-shoulderSection').html(relatedProductsComponent);
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
-			console.log('related')
 
 			for (var data in product.relatedProducts.productList) {
-				console.log(product.relatedProducts.productList[data], 'data');
 				getRelatedProduct(product.relatedProducts.productList[data])
 			}
 		}
@@ -595,13 +587,12 @@
 			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && product
 				.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
-				console.log(product, 'article')
 				return (
 					`
 					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
 							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
 							data-label="L3_20ss_masterpiece_premium_linen_details_page"
-							href="/jp/ja/contents/feature/masterpiece/001-premium-linen.html">
+							href="${product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
 								
@@ -627,7 +618,6 @@
 					`
 				)
 			})
-		console.log(articles, 'articles')
 
 		$('.c-relatedButtonGroup').html(articles.join(''))
 	}
@@ -684,28 +674,42 @@
 	$(document).ready(() => {
 		// Check for query
 		if (window.location.href.includes('?product=')) {
+			var urlParams = new URLSearchParams(window.location.search);
+			var product = urlParams.get('product').replace('-', ' ');
+			var category = urlParams.get('category').replace('-', ' ');
+			console.log(product, category)
+
+			var findProductPageData = masterpieceData.filter((data) => {
+				console.log(data.category.toLowerCase() === category)
+				return data.category.toLowerCase() === category && data.title.toLowerCase() === product
+			})
+
+			if (findProductPageData && findProductPageData.length > 0) {
+				state.contentSelected = findProductPageData[0];
+				productPage();
+
+			} else {
+				state.contentSelected = null;
+				$('.main').html('Page not found');
+			}
+
+
+
 			console.log('product page');
+
 
 		} else {
 			console.log('home')
+			$('.main').html(homepage)
+
 		}
 
-		var findProductPageData = masterpieceData.filter((data) => {
-			return data.category.toLowerCase() === 'tops' && data.title.toLowerCase() === 'linen page'
-		})
 
-		if (findProductPageData && findProductPageData.length > 0) {
-			state.contentSelected = findProductPageData[0]
-		} else {
-			state.contentSelected = null;
-		}
 
 
 		console.log(state, 'state')
 
-		// $('.main').html(homepage)
 
-		productPage();
 
 
 		// Actions 	
