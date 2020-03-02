@@ -215,10 +215,10 @@
 		},
 		{
 			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page`,
+			title: `Linen Page tst`,
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
-			category: `Baby`,
+			category: `tops`,
 			url: `?product=linen-page?category=tops`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
@@ -244,7 +244,7 @@
 		},
 		{
 			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page`,
+			title: `Linen Page NOT`,
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
 			category: `Tops`,
@@ -590,18 +590,6 @@
 	}
 
 	var topArticles = () => {
-		let test = masterpieceData
-			.filter(product => {
-				console.log(product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && 
-						product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
-
-		
-
-				return (product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && 
-						product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
-			})
-		console.log(test, 'test')
-
 
 		let articles = masterpieceData
 			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && product
