@@ -3,10 +3,20 @@
 <div class="wrapper">
 	<div class="fr-breadcrumbs u-only-pc">
 		<ol class="fr-breadcrumbs_inner">
-		  <li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent" href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece" data-label="L3_20ss_masterpiece_top_breadcrumb_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">UNIQLO TOP</font></font></a></li>
-		  <li class="fr-breadcrumbs_item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Master piece</font></font></li>
+			<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent"
+					href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece"
+					data-label="L3_20ss_masterpiece_top_breadcrumb_1">
+					<font style="vertical-align: inherit;">
+						<font style="vertical-align: inherit;">UNIQLO TOP</font>
+					</font>
+				</a></li>
+			<li class="fr-breadcrumbs_item">
+				<font style="vertical-align: inherit;">
+					<font style="vertical-align: inherit;">Master piece</font>
+				</font>
+			</li>
 		</ol>
-	  </div>
+	</div>
 	<main class="main">
 
 	</main>
@@ -118,9 +128,9 @@
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_W-SUPIMA-COTTON-T-Shirt_422697.jpg`,
 			title: `SUPIMA®: Because Basic Does Not Lie`,
 			productName: `Supima Cotton Crew Neck T-shirt`,
-			gender: [`women', 'men`],
+			gender: [`women`, `men`],
 			category: `Tops`,
-			url: `?product=supima-cotton-crew-neck-t-shirt&category=tops`,
+			url: `?product=supima-cotton-crew-neck-t_shirt&category=tops`,
 			productCopy: `The finest Pima cotton, grown in the high dry land of Pima, Arizona, is called Supima® (superior pima). It represents less than1% of cotton grown in the world and is highly sought after, but we didn&apos;t hesitate to use it for T-shirts. Because when you try to upgrade the ultimate basic, you must use premium material. You&apos;ll recognize the high-quality color and soft texture at first touch, because basic does not lie.`,
 			relatedProducts: {
 				title: `SUPIMA®: Because Basic Does Not Lie`,
@@ -147,9 +157,9 @@
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_34_Uniqlo-U-crew-neck-Tshirts.jpg`,
 			title: `T-shirts that evolve with the times`,
 			productName: `Crew Neck T-shirt`,
-			gender: [`women', 'men`],
+			gender: [`women`, `men`],
 			category: `Tops`,
-			url: `?product=crew-neck-t-shirt&category=tops`,
+			url: `?product=crew-neck-t_shirt&category=tops`,
 			productCopy: `Some might treat the T-shirt as an already-perfected design, but we believe attention to detail reveals much potential for improvement. Driven by this belief, we scrutinized the thread and color quality along with the density of the fabric so the design maintains its shape longer than ever before. We&apos;re proud to introduce the next classic T-shirt that&apos;s universally flattering and multi-functional.`,
 			relatedProducts: {
 				title: `T-shirts that evolve with the times`,
@@ -207,7 +217,7 @@
 			productName: `Super Non-Iron Shirt`,
 			gender: [`Men`],
 			category: `Tops`,
-			url: `?product=super-non-iron-shirt&category=tops`,
+			url: `?product=super-non_iron-shirt&category=tops`,
 			productCopy: `Even if it’s a non-iron shirt, it’s pointless if it feels and looks uncomfortable. UNIQLO not only pursues style and comfort, but also low-maintenance care, all at once. For the high-quality look, we’ve selected premium materials and treated them with a special easy-care finishing technology, particularly to the wrinkle-prone sleeves and underarm areas so that these shirts are both stylish and convenient. *Depending on washing method, light ironing may be needed.`,
 			relatedProducts: {
 				title: `Farewell to ironing.`,
@@ -321,7 +331,7 @@
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Premium-Linen-Shirt.jpg`,
 			title: `Linen: Transformed by Human Hands`,
 			productName: `Premium Linen Shirt`,
-			gender: [`women', 'men`],
+			gender: [`women`, `men`],
 			category: `Tops`,
 			url: `?product=premium-linen-shirt&category=tops`,
 			productCopy: `The oldest textile in the world, linen is mainly produced in Northern France. The premium linen used by UNIQLO has a distinct, signature texture thanks to little knots in the fiber called “Neps,” but a balance must be found between too many and too few. To achieve this, we remove excess Neps from the fabric one-by-one with tweezers—a process requiring patience as well as the steady hand and keen eyes of highly skilled textile experts.`,
@@ -345,11 +355,13 @@
 					}
 				]
 			}
-		},
+		}
+
 
 
 
 	]
+
 	//Homepage Components
 
 	var hompageMenu = () => {
@@ -749,23 +761,21 @@
 	$(document).ready(() => {
 		var urlParams = new URLSearchParams(window.location.search);
 
-		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').toLowerCase() :
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
 			null;
 
-		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').toLowerCase() :
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
 			null;
-
-		console.log(product, category)
 
 
 		if (product && category) {
-		
+
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
-
-			console.log(findProductPageData, 'data')
 
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
@@ -790,14 +800,13 @@
 		})
 
 		$(window).scroll(() => {
-			if(!state.contentSelected){
+			if ($('.l-navigation_wrapper').length > 0) {
 				if ($(window).scrollTop() > $('.l-navigation_wrapper').offset().top) {
-				$('.l-navigation_body').addClass('sticky-menu')
-			} else {
-				$('.l-navigation_body').removeClass('sticky-menu')
+					$('.l-navigation_body').addClass('sticky-menu')
+				} else {
+					$('.l-navigation_body').removeClass('sticky-menu')
+				}
 			}
-			}
-			
 		})
 	})
 
