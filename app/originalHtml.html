@@ -2,168 +2,7 @@
 
 <div class="wrapper">
 	<main class="main">
-		<div class="l-container">
-			<article class="c-contents">
 
-				<!-- Content Header -->
-				<div class="c-contentsPanel">
-					<div class="c-contentsPanel_image">
-						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-							<picture class="u-imgAdjustBox_inner">
-								<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
-									class="fr-img ls-is-cached lazyloaded" src="${product.image}"
-									data-src="${product.image}" alt="Comfort jacket" data-expand="300">
-							</picture>
-						</figure>
-					</div>
-					<div class="c-contentsPanel_inner">
-						<h1 class="c-contentsPanel_title">
-							${product.title}
-						</h1>
-						<p class="c-contentsPanel_text">
-							${product.productCopy}
-						</p>
-						<ul class="c-label -inPanel">
-							<li class="c-label_item -category">
-								${product.category}
-							</li>
-							${ product.gender && product.gender.length > 0 ?
-							Object.keys(product.gender).map((gender, i) => {
-							return (
-							<li class="c-label_item -gender" data-i=${i}>
-								gender
-							</li>)
-							})
-							: null
-							}
-
-							<li class="c-label_item -name">
-								${product.productName}
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Related Products -->
-				<section class="c-shoulderSection">
-					<h2 class="c-shoulderSection_title">
-						${product.relatedProducts.title}
-					</h2>
-					<ul class="c-productButtonGroup">
-						<li class="c-productButtonGroup_item">
-							<a class="c-productButton js-trackEvent"
-								data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L4_425035"
-								href="${product.productUrl}">
-								<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-									<picture class="u-imgAdjustBox_inner">
-										<img class="fr-img lazyloaded"
-											src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
-											data-src="/jp/ja/contents/feature/masterpiece/img/product-2-1.jpg?20200306"
-											alt="Comfort jacket" data-expand="300">
-									</picture>
-								</figure>
-								<div class="c-productButton_inner">
-									<p class="c-productButton_gender">
-										<font style="vertical-align: inherit;">
-											<font style="vertical-align: inherit;">MEN</font>
-										</font>
-									</p>
-									<h3 class="c-productButton_title">
-										<font style="vertical-align: inherit;">
-											<font style="vertical-align: inherit;">Comfort jacket</font>
-										</font>
-									</h3>
-									<p class="c-productButton_viewProduct">
-										<font style="vertical-align: inherit;">
-											<font style="vertical-align: inherit;">View product</font>
-										</font>
-									</p>
-								</div>
-							</a>
-						</li>
-					</ul>
-					<a class="c-linkButton js-trackEvent" href="https://www.uniqlo.com/jp/store/feature/uq/jacket/men/"
-						data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L3_ms_jacket">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">See related products</font>
-						</font>
-					</a>
-				</section>
-
-			</article>
-
-			<!-- Top Articles -->
-			<aside class="l-relatedAside">
-				<h2 class="l-relatedAside_title">
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Tops Articles
-						</font>
-					</font>
-				</h2>
-				<ul class="c-relatedButtonGroup">
-					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
-							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
-							data-label="L3_20ss_masterpiece_premium_linen_details_page"
-							href="/jp/ja/contents/feature/masterpiece/001-premium-linen.html">
-							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-								<picture class="u-imgAdjustBox_inner">
-									<source
-										data-srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.webp?20200306"
-										type="image/webp"
-										srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.webp?20200306">
-									<source data-srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
-										type="image/jpeg"
-										srcset="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"><img
-										class="fr-img lazyloaded"
-										src="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
-										data-src="/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306"
-										alt="Premium linen shirt" data-expand="300">
-								</picture>
-							</figure>
-							<div>
-								<h3 class="c-relatedButton_title">
-									<font style="vertical-align: inherit;">
-										<font style="vertical-align: inherit;">Linen </font>
-									</font><br>
-									<font style="vertical-align: inherit;">
-										<font style="vertical-align: inherit;">becomes a shirt with </font>
-										<font style="vertical-align: inherit;">human eyes </font>
-										<font style="vertical-align: inherit;">.</font>
-									</font>
-								</h3>
-								<p class="c-relatedButton_name">
-									<font style="vertical-align: inherit;">
-										<font style="vertical-align: inherit;">Premium linen shirt</font>
-									</font>
-								</p>
-							</div>
-						</a>
-					</li>
-
-				</ul>
-			</aside>
-
-
-			<!-- Back to Top -->
-			<a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
-				data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
-				<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
-					<picture class="u-imgAdjustBox_inner">
-						<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306"
-							type="image/webp"
-							srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306">
-						<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-							type="image/png"
-							srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"><img
-							class="fr-img lazyloaded"
-							src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-							data-src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-							alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
-					</picture>
-				</figure>
-			</a>
-
-		</div>
 	</main>
 </div>
 
@@ -217,7 +56,7 @@
 			title: `Linen Page tst`,
 			productName: `Premium Linen Shirt`,
 			gender: [`Women`, `Men`],
-			category: `tops`,
+			category: `Tops`,
 			url: `?product=linen-page-tst&category=tops`,
 			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
 			relatedProducts: {
@@ -276,7 +115,7 @@
 
 	var hompageMenu = () => {
 		var menu = `
-		<nav class="l-navigation">
+		
 				<div class="l-navigation_head">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
 						<picture class="u-imgAdjustBox_inner">
@@ -386,9 +225,8 @@
 					</ul>
 				</div>
 
-			</nav>
 		`
-		return menu;
+		$('.l-navigation').html(menu)
 	}
 
 	var homepageProductList = () => {
@@ -428,7 +266,7 @@
 		var productListContainer =
 			`
 				<div class="c-contentsCardGroup_body">
-					${categoryProductItems.length > 0 ? 
+					${categoryProductItems && categoryProductItems.length > 0 ? 
 						categoryProductItems.join('')
 						
 					:
@@ -436,9 +274,7 @@
 					}
 				</div>
 			`
-		setTimeout(() => {
-			$('.c-contentsCardGroup').html(productListContainer)
-		}, 500)
+		$('.c-contentsCardGroup').html(productListContainer)
 
 	}
 
@@ -468,14 +304,16 @@
 				${homepageHero.copy}
 			</p>
 			<div class="l-container -topLayer">
-				${hompageMenu()}
+				<nav class="l-navigation">
+				</nav>
 				<div class="c-contentsCardGroup">
-					${homepageProductList()}
 				</div>
 			</div>
 		`
-
-		return homepageComponent;
+		$('.main').html(homepageComponent.replace(/>[ ]+</g, "><"))
+		hompageMenu();
+		homepageProductList()
+	
 
 	}
 
@@ -685,7 +523,6 @@
 			var category = urlParams.get('category').split('-').join(' ').toLowerCase();
 
 			var findProductPageData = masterpieceData.filter((data) => {
-				console.log(data.category.toLowerCase() === category)
 				return data.category.toLowerCase() === category && data.title.toLowerCase() === product
 			})
 
@@ -699,12 +536,8 @@
 			}
 
 
-
-
 		} else {
-			console.log('home')
-			$('.main').html(homepage)
-
+			homepage()
 		}
 
 
