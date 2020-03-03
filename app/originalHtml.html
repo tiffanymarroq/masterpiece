@@ -473,13 +473,13 @@
 	var productInfo = () => {
 		var product = state.contentSelected
 		var image = `
-				<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
-					<picture class="u-imgAdjustBox_inner">
-						<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
-							class="fr-img ls-is-cached lazyloaded" src="${product.image}"
-							data-src="${product.image}" alt="Comfort jacket" data-expand="300">
-					</picture>
-				</figure>`;
+			<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+				<picture class="u-imgAdjustBox_inner">
+					<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
+						class="fr-img ls-is-cached lazyloaded" src="${product.image}"
+						data-src="${product.image}" alt="Comfort jacket" data-expand="300">
+				</picture>
+			</figure>`;
 
 		var content = `
 				<h1 class="c-contentsPanel_title">
@@ -526,14 +526,17 @@
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 
-			for (var data in product.relatedProducts.productList) {
-				getRelatedProduct(product.relatedProducts.productList[data])
+			for (var i in product.relatedProducts.productList) {
+				getRelatedProduct(product.relatedProducts.productList[i], i)
 			}
 		}
 
+
 	}
 
-	var getRelatedProduct = (data) => {
+	var getRelatedProduct = (data, i) => {
+		console.log(i)
+
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
@@ -552,7 +555,7 @@
 							${data.gender}
 						</p>
 						<h3 class="c-productButton_title">
-							test
+						
 						</h3>
 						<p class="c-productButton_viewProduct">
 							View Product
@@ -565,71 +568,86 @@
 			</li>
 			`
 		$('.c-productButtonGroup').append(productComponent)
-
-		getProductData(data.sku);
+			getProductData(data.sku, i);
 
 
 	}
 
-	var getProductData = (sku) => {
-		if (id) {
-                $.ajax({
-                    url: urlPrefix +
-                        '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
-                        id,
-                    i: i,
-                    id: id,
-                    prefix: urlPrefix,
-                    name: name,
+	var getProductData = (sku, i) => {
+		console.log(sku, i)
+		var urlPrefix = 'https://www.uniqlo.com/us/en';
+		if (window.location.href.includes('staging')) {
+			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
+		}
 
-                    success: function (pData) {
-                        if (pData.length === 0) {
-                            return;
-                        }
-                        var price = $(pData).children('.product-tile-info')
-                            .children(
-                                '.product-pricing')
-                            .children(
-                                '.product-sales-price').html();
-
+		if (window.location.href.includes('development')) {
+			urlPrefix = 'https://development-na-uniqlo.demandware.net'
+		}
+		if (sku) {
+			console.log('sku true');
+			console.log(urlPrefix)
+			$.ajax({
+				url: urlPrefix +
+					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+					sku,
+				i: i,
+				sku: sku,
 
 
-                        if (price.includes('/')) {
-                            $('.shop-by-look-card:eq(' + i + ')').hide();
-                            return;
-                        }
+				success: function (pData) {
+					if (pData.length === 0) {
+						return;
+					}
 
-                    
+					console.log('success')
+					var price = $(pData).children('.product-tile-info')
+						.children(
+							'.product-pricing')
+						.children(
+							'.product-sales-price').html();
 
-                        var swatches = $(pData).children(
-                            '.product-swatches').html();
+					if (price.includes('/')) {
+						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
+						return;
+					}
+					var productImage = $(pData).children(
+						'.product-tile-info').children(
+						'.product-image').html();
 
-                        
-                        if ($(swatches).children().length === 0) {
-                            $('.shop-by-look-card:eq(' + i + ')').hide();
-                            return;
-                        }
+					var swatches = $(pData).children(
+						'.product-swatches').html();
 
-                        var productTitle = $(pData).children('.product-tile-info').children(
-                            '.product-name').html();
 
-                        var productTitleText = $(pData).children('.product-tile-info')
-                            .children(
-                                '.product-name').children(
-                                '.name-link').html();
+					if ($(swatches).children().length === 0) {
+						$('.shop-by-look-card:eq(' + i + ')').hide();
+						return;
+					}
 
-                        var productLink = $(pData).children('.product-tile-info').children(
-                            '.product-name').children(
-                            '.name-link').attr('href');
-                    }
-                })
-            }
+					var productTitle = $(pData).children('.product-tile-info').children(
+						'.product-name').html();
+
+
+					var productLink = $(pData).children('.product-tile-info').children(
+						'.product-name').children(
+						'.name-link').attr('href');
+					console.log($(`.c-productButtonGroup_item:eq(${i})`))
+
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href', productLink)
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(productTitle)
+					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('src',
+						productImage)
+					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('data-src',
+						productImage)
+
+				}
+			})
+		}
 	}
 
 	var topArticles = () => {
 		var articles = masterpieceData
-			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() 
-				&& product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
+			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() &&
+				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 				return (
 					`
@@ -711,6 +729,7 @@
 			productInfo();
 			relatedProducts();
 			topArticles();
+
 		} else {
 			$('.main').html('Page not found');
 		}
@@ -732,8 +751,7 @@
 		if (product && category) {
 
 			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
-					product
+				return data.category.toLowerCase() === category && data.productName.toLowerCase() === product
 			})
 
 			if (findProductPageData && findProductPageData.length > 0) {
@@ -744,6 +762,9 @@
 				state.contentSelected = null;
 				$('.main').html('Page not found');
 			}
+		
+
+
 
 		} else {
 			homepage()
