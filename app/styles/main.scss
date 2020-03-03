@@ -22,7 +22,9 @@ sans-serif;
 
 // FULL WIDTH SPECIFICITY
 // 
-.pt_primary #main .primary-content {}
+.pt_primary #main .primary-content {
+
+}
 
 
 // // SIDEBARRED SPECIFICITY
@@ -39,27 +41,18 @@ sans-serif;
 }
 
 
+// Override Styles
+.pt_primary #main .primary-content{
 
-
+    h2{
+        border: 0;
+    }
+}
 
 
 :root {
     --color-red:red;--color-teal:#378694;--color-yellow:#ebbe00;--color-black900:#1b1b1b;--color-white:#fff;--color-gray500:#7d7d7d;--color-gray350:#ababab;--color-gray150:#dadada;--color-gray050:#f4f4f4;--color-men:#000082;--color-kids:#50b4f0;--color-baby:#96c800;--color-boys:#0091d7;--color-girls:#eb64a5;--sp-v-xxs:3px;--sp-v-xs:6px;--sp-v-s:9px;--sp-v-m:15px;--sp-v-l:21px;--sp-v-xl:24px;--sp-v-xxl:36px;--pc-v-xxs:4px;--pc-v-xs:8px;--pc-v-s:12px;--pc-v-m:20px;--pc-v-l:28px;--pc-v-xl:40px;--pc-v-xxl:52px;--pc-v-xxxl:64px;--sp-h-xxs:1px;--sp-h-05g:2vw;--sp-h-1g:4vw;--sp-h-2g:8vw;--pc-h-s:12px;--pc-h-m:24px;--pc-h-l:80px;--pc-h-xl:160px;--contents-width-sp:375px;--contents-width-container:1180px;--contents-width-inner:936px}
 
-@font-face {
-    font-family: UniqloPro Light;
-    src: url(/jp/ja/contents/feature/common/fonts/UniqloProLight.woff2) format("woff2"),url(/jp/ja/contents/feature/common/fonts/UniqloProLight.woff) format("woff");
-    font-display:swap}
-
-@font-face {
-    font-family: UniqloPro Regular;
-    src: url(/jp/ja/contents/feature/common/fonts/UniqloProRegular.woff2) format("woff2"),url(/jp/ja/contents/feature/common/fonts/UniqloProRegular.woff) format("woff");
-    font-display:swap}
-
-@font-face {
-    font-family: UniqloPro Bold;
-    src: url(/jp/ja/contents/feature/common/fonts/UniqloProBold.woff2) format("woff2"),url(/jp/ja/contents/feature/common/fonts/UniqloProBold.woff) format("woff");
-    font-display:swap}
 
 *,:after,:before {
     box-sizing: border-box
@@ -148,7 +141,7 @@ body {
     background-color: #f4f4f4;
     background-color: var(--color-gray050);
     font-size: 13px;
-    font-family: ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´Pro W3,Hiragino Kaku Gothic Pro,æ¸¸ã‚´ã‚·ãƒƒã‚¯,Yu Gothic,æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“,YuGothic,ãƒ¡ã‚¤ãƒªã‚ª,Meiryo,sans-serif;
+    font-family: $fontFam_hel;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased
 }
@@ -157,6 +150,8 @@ a,body {
     color: #1b1b1b;
     color: var(--color-black900)
 }
+
+
 
 svg {
     -webkit-backface-visibility: hidden;
@@ -227,14 +222,15 @@ svg {
     color: #ababab;
     color: var(--color-gray350);
     display: block;
-    font-family: UniqloPro Light,sans-serif;
+    font-family: $fontFam_hel;
     font-size: 11px;
     line-height: 17.6px;
     padding-top: 24px;
     padding-top: var(--sp-v-xl);
     padding-bottom: 24px;
     padding-bottom: var(--sp-v-xl);
-    text-align: center
+    text-align: center;
+    font-weight: 300;
 }
 
 .fr-breadcrumbs_inner {
@@ -398,7 +394,7 @@ svg {
 
 .fr-tabs_item.-en {
     font-size: 15px;
-    font-family: UniqloPro Bold,sans-serif;
+    font-family: $fontFam_uqBold;
     font-weight: 400
 }
 
@@ -1104,7 +1100,7 @@ svg {
 }
 
 .l-navigation_body {
-    font-family: UniqloPro Regular,sans-serif
+    font-family: $fontFam_uqReg;
 }
 
 .l-navigation_body[data-navigation-position=fixed] {
@@ -1286,7 +1282,7 @@ svg {
     box-shadow: none;
     background: transparent;
     font-size: 24px;
-    font-family: UniqloPro Regular,sans-serif;
+    font-family: $fontFam_uqReg;
     color: #ababab;
     color: var(--color-gray350)
 }
@@ -1299,7 +1295,7 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: UniqloPro Bold,sans-serif;
+    font-family: $fontFam_uqBold;
     font-size: 11px;
     color: #fff;
     color: var(--color-white);
@@ -1331,7 +1327,7 @@ svg {
 }
 
 .c-contentsCardGroup_headInner {
-    font-family: UniqloPro Bold,sans-serif;
+    font-family: $fontFam_uqBold;
     font-size: 31px;
     display: inline-block;
     margin-bottom: 2.66667vw
@@ -1380,7 +1376,7 @@ svg {
 }
 
 .c-productButton_gender {
-    font-family: UniqloPro Regular,sans-serif
+    font-family: $fontFam_uqReg;
 }
 
 .c-productButton_viewProduct {
@@ -1425,7 +1421,7 @@ svg {
 }
 
 .c-label_item.-category {
-    font-family: UniqloPro Regular,sans-serif;
+    font-family: $fontFam_uqReg;
     color: red;
     color: var(--color-red);
     display: flex;
@@ -1443,7 +1439,7 @@ svg {
 }
 
 .c-label_item.-gender {
-    font-family: UniqloPro Regular,sans-serif
+    font-family: $fontFam_uqReg;
 }
 
 .c-label_item.-name {
@@ -1858,15 +1854,16 @@ svg {
 }
 
 .u-uqFont-l {
-    font-family: UniqloPro Light,sans-serif
+    font-family: $fontFam_hel;
+    font-weight: 300;
 }
 
 .u-uqFont-r {
-    font-family: UniqloPro Regular,sans-serif
+    font-family: $fontFam_uqReg;
 }
 
 .u-uqFont-b {
-    font-family: UniqloPro Bold,sans-serif
+    font-family: $fontFam_uqBold;
 }
 
 .u-font-400 {
@@ -4233,5 +4230,16 @@ button.swiper-pagination-bullet {
     .a-lead {
         margin-bottom: 50px
     }
-}
 
+
+  
+}
+.sticky-menu{
+    position: fixed;
+    top:0;
+}
+@include bp(sm){
+    .sticky-menu{
+       position: relative;
+    }
+}

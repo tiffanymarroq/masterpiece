@@ -555,6 +555,16 @@
 		})
 
 
+		$(window).scroll( ()=> {
+			if($(window).scrollTop() > $('.l-navigation_wrapper').offset().top ){
+				$('.l-navigation_body').addClass('sticky-menu')
+			}else{
+				$('.l-navigation_body').removeClass('sticky-menu')
+
+			}
+		})
+
+
 
 	})
 
