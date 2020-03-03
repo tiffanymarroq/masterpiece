@@ -565,12 +565,71 @@
 			</li>
 			`
 		$('.c-productButtonGroup').append(productComponent)
+
+		getProductData(data.sku);
+
+
+	}
+
+	var getProductData = (sku) => {
+		if (id) {
+                $.ajax({
+                    url: urlPrefix +
+                        '/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
+                        id,
+                    i: i,
+                    id: id,
+                    prefix: urlPrefix,
+                    name: name,
+
+                    success: function (pData) {
+                        if (pData.length === 0) {
+                            return;
+                        }
+                        var price = $(pData).children('.product-tile-info')
+                            .children(
+                                '.product-pricing')
+                            .children(
+                                '.product-sales-price').html();
+
+
+
+                        if (price.includes('/')) {
+                            $('.shop-by-look-card:eq(' + i + ')').hide();
+                            return;
+                        }
+
+                    
+
+                        var swatches = $(pData).children(
+                            '.product-swatches').html();
+
+                        
+                        if ($(swatches).children().length === 0) {
+                            $('.shop-by-look-card:eq(' + i + ')').hide();
+                            return;
+                        }
+
+                        var productTitle = $(pData).children('.product-tile-info').children(
+                            '.product-name').html();
+
+                        var productTitleText = $(pData).children('.product-tile-info')
+                            .children(
+                                '.product-name').children(
+                                '.name-link').html();
+
+                        var productLink = $(pData).children('.product-tile-info').children(
+                            '.product-name').children(
+                            '.name-link').attr('href');
+                    }
+                })
+            }
 	}
 
 	var topArticles = () => {
 		var articles = masterpieceData
-			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && product
-				.category.toLowerCase() === state.contentSelected.category.toLowerCase())
+			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() 
+				&& product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 				return (
 					`
