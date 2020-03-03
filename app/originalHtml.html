@@ -9,6 +9,7 @@
 
 
 <script>
+
 	var state = {
 		loading: false,
 		menuSelectedItem: '',
@@ -17,12 +18,13 @@
 	}
 
 	var homepageHero = {
-		imagePC: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg`,
-		imageMB: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-background-hero.jpg`,
+		imagePC: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg`,
+		imageMB: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg`,
 		copy: `home copy`
 	}
 
-	var masterpieceData = [{
+	var masterpieceData = [
+		{
 			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
 			title: `Linen Page`,
 			productName: `Premium Linen Shirt`,
@@ -106,7 +108,93 @@
 					}
 				]
 			}
+		},
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page 2`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Bottoms`,
+			url: `?product=linen-page-2&category=bottoms`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [{
+						id: '123',
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+					},
+					{
+						id: '123',
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+					}
+				]
+			}
+		},
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page 3`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Bottoms`,
+			url: `?product=linen-page-3&category=bottoms`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+					}
+				]
+			}
+		},
+		{
+			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
+			title: `Linen Page 4`,
+			productName: `Premium Linen Shirt`,
+			gender: [`Women`, `Men`],
+			category: `Baby`,
+			url: `?product=linen-page-4&category=baby`,
+			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			relatedProducts: {
+				title: `One by one, texture prepared by human hands`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
 		}
+
 	]
 
 
@@ -414,14 +502,11 @@
 				data-label="L3_ws_t_shirt">${data.gender} related products</font></a>
 			</li>
 			`
-
-
 		$('.c-productButtonGroup').append(productComponent)
 	}
 
 	var topArticles = () => {
-
-		let articles = masterpieceData
+		var articles = masterpieceData
 			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() && product
 				.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
@@ -476,7 +561,6 @@
 						<div class="c-contentsPanel_inner"></div>
 					</div>
 					<section class="c-shoulderSection"></section>
-
 				</article>
 				<aside class="l-relatedAside">
 				</aside>
@@ -507,17 +591,18 @@
 		} else {
 			$('.main').html('Page not found');
 		}
-
-
 	}
+
 	// Init App
 	$(document).ready(() => {
 		var urlParams = new URLSearchParams(window.location.search);
+
 		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').toLowerCase() :
 			null;
+
 		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').toLowerCase() :
 			null;
-		// Check for query
+
 		if (product && category) {
 			var product = urlParams.get('product').split('-').join(' ').toLowerCase();
 			var category = urlParams.get('category').split('-').join(' ').toLowerCase();
@@ -535,43 +620,27 @@
 				$('.main').html('Page not found');
 			}
 
-
 		} else {
 			homepage()
 		}
 
-
-
-
-		console.log(state, 'state')
-
 		$('.js-trackEvent').click((e) => {
 			console.log(e.currentTarget.dataset)
 		})
-		// Actions 	
+
 		$('.l-navigation_item').click((e) => {
 			state.filter = e.currentTarget.dataset.filterButton
 			homepageProductList()
 		})
-
 
 		$(window).scroll( ()=> {
 			if($(window).scrollTop() > $('.l-navigation_wrapper').offset().top ){
 				$('.l-navigation_body').addClass('sticky-menu')
 			}else{
 				$('.l-navigation_body').removeClass('sticky-menu')
-
 			}
 		})
-
-
-
 	})
-
-
-
-
-
 
 	// GA TAG
 	var masterpieceGA = (e) => {
