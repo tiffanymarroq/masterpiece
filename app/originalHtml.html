@@ -612,7 +612,7 @@
 					}
 					var productImage = $(pData).children(
 						'.product-tile-info').children(
-						'.product-image').html();
+						'.product-image').children('.thumb-link').children('img').attr('src');
 
 					var swatches = $(pData).children(
 						'.product-swatches').html();
@@ -630,7 +630,6 @@
 					var productLink = $(pData).children('.product-tile-info').children(
 						'.product-name').children(
 						'.name-link').attr('href');
-					console.log($(`.c-productButtonGroup_item:eq(${i})`))
 
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href', productLink)
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(productTitle)
