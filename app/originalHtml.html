@@ -1,15 +1,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
 <div class="wrapper">
+	<div class="fr-breadcrumbs u-only-pc">
+		<ol class="fr-breadcrumbs_inner">
+		  <li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent" href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece" data-label="L3_20ss_masterpiece_top_breadcrumb_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">UNIQLO TOP</font></font></a></li>
+		  <li class="fr-breadcrumbs_item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Master piece</font></font></li>
+		</ol>
+	  </div>
 	<main class="main">
 
 	</main>
 </div>
 
 
-
 <script>
-
 	var state = {
 		loading: false,
 		menuSelectedItem: '',
@@ -23,73 +27,103 @@
 		copy: `home copy`
 	}
 
-	var masterpieceData = [
+	var masterpieceData = [{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
+			title: `From the nation who takes socks seriously`,
+			productName: `Colorful 50 Socks`,
+			gender: [`Men`],
+			category: `Accessories`,
+			url: `?product=colorful-50-socks&category=accessories`,
+			productCopy: `In Japan, it&apos;s customary to take off your shoes inside, which makes socks innerwear and an accessory seen by others. This demands they be comfortable, durable, and stylish. UNIQLO is spreading this standard globally with special self-deodorizing thread that&apos;s hole-resistant and designed to help socks stay in place shoes of all types. What’s more, we have the a truly staggering variety of colors, making these Color Socks a true luxury for your feet.`,
+			relatedProducts: {
+				title: `From the nation who takes socks seriously`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
 		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_32_M's-Vintage-regular-fit-chino-pants.jpg`,
+			title: `Vintage on the outside, modern day on the inside`,
+			productName: `Vintage Regular Fit Chinos`,
+			gender: [`Men`],
+			category: `Bottoms`,
+			url: `?product=vintage-regular-fit-chinos&category=bottoms`,
+			productCopy: `Which details are imperative to acheive a vintage Chino look? he pocket shape? The zipper quality? The durability of the stitchwork? .which details give it the authentic character? These are all important qualityies, but the real key is the construction of the fabric. We updated the materials to lend a rugged, vintage feel on the outside but updated the design for today with a soft texture on the inside.`,
+			relatedProducts: {
+				title: `Vintage on the outside, modern day on the inside`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-Dry-pique-polo.jpg`,
+			title: `Quality makes the first impression`,
+			productName: `Dry Pique Polo Shirt`,
+			gender: [`Men`],
 			category: `Tops`,
-			url: `?product=linen-page&category=tops`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			url: `?product=dry-pique-polo-shirt&category=tops`,
+			productCopy: `What makes or breaks a polo shirt are the collars and the sleeves. Wash after wash, the sharp lines give way. We decided to swap the thread used in these areas with fabric woven using air pressure to prevent lint fluff and double-layered the button strip to boost durability. This makes them incredibly versatile, able to be styled alone casually or paired it with a blazer for a more formal look.`,
 			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
+				title: `Quality makes the first impression`,
 				productList: [{
-						id: '123',
 						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
 						gender: `Women`,
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
 					},
 					{
-						id: '123',
 						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
 						gender: `Men`,
 						productName: `Premium linen skipper shirt`,
 						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
 						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
 					}
 				]
 			}
 		},
 		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page tst`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_W-SUPIMA-COTTON-T-Shirt_422697.jpg`,
+			title: `SUPIMA®: Because Basic Does Not Lie`,
+			productName: `Supima Cotton Crew Neck T-shirt`,
+			gender: [`women', 'men`],
 			category: `Tops`,
-			url: `?product=linen-page-tst&category=tops`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			url: `?product=supima-cotton-crew-neck-t-shirt&category=tops`,
+			productCopy: `The finest Pima cotton, grown in the high dry land of Pima, Arizona, is called Supima® (superior pima). It represents less than1% of cotton grown in the world and is highly sought after, but we didn&apos;t hesitate to use it for T-shirts. Because when you try to upgrade the ultimate basic, you must use premium material. You&apos;ll recognize the high-quality color and soft texture at first touch, because basic does not lie.`,
 			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
-				productList: [{
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Women`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					},
-					{
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Men`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					}
-				]
-			}
-		},
-		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page NOT`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
-			category: `Bottoms`,
-			url: `?product=linen-page-not&category=bottoms`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
-			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
+				title: `SUPIMA®: Because Basic Does Not Lie`,
 				productList: [{
 						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
 						gender: `Women`,
@@ -110,71 +144,15 @@
 			}
 		},
 		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page 2`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
-			category: `Bottoms`,
-			url: `?product=linen-page-2&category=bottoms`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_34_Uniqlo-U-crew-neck-Tshirts.jpg`,
+			title: `T-shirts that evolve with the times`,
+			productName: `Crew Neck T-shirt`,
+			gender: [`women', 'men`],
+			category: `Tops`,
+			url: `?product=crew-neck-t-shirt&category=tops`,
+			productCopy: `Some might treat the T-shirt as an already-perfected design, but we believe attention to detail reveals much potential for improvement. Driven by this belief, we scrutinized the thread and color quality along with the density of the fabric so the design maintains its shape longer than ever before. We&apos;re proud to introduce the next classic T-shirt that&apos;s universally flattering and multi-functional.`,
 			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
-				productList: [{
-						id: '123',
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Women`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					},
-					{
-						id: '123',
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Men`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					}
-				]
-			}
-		},
-		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page 3`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
-			category: `Bottoms`,
-			url: `?product=linen-page-3&category=bottoms`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
-			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
-				productList: [{
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Women`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					},
-					{
-						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
-						gender: `Men`,
-						productName: `Premium linen skipper shirt`,
-						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
-						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
-					}
-				]
-			}
-		},
-		{
-			image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/image-1-1.jpg?20200306`,
-			title: `Linen Page 4`,
-			productName: `Premium Linen Shirt`,
-			gender: [`Women`, `Men`],
-			category: `Baby`,
-			url: `?product=linen-page-4&category=baby`,
-			productCopy: `Linen called the oldest fiber of mankind. Linen grown mainly in Western Europe, especially in Northern France, is known for its unique softness. In the linen there is a lump of thread called NEP. It's an important personality, but too much can make it look ugly. To make shirts that are easy to wear and clean. UNIQLO has a lot of work. Seasoned tweezers and human eyes. Be patient with simple tools. Do not hesitate. Only the extra nep disappears, leaving an elegant texture.`,
-			relatedProducts: {
-				title: `One by one, texture prepared by human hands`,
+				title: `T-shirts that evolve with the times`,
 				productList: [{
 						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
 						gender: `Women`,
@@ -193,12 +171,185 @@
 					}
 				]
 			}
-		}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-EFC-broad-shirts.jpg`,
+			title: `A shirt made with everyone in mind`,
+			productName: `Extra Fine Cotton Broad Shirt`,
+			gender: [`Men`],
+			category: `Tops`,
+			url: `?product=extra-fine-cotton-broad-shirt&category=tops`,
+			productCopy: `Casual shirts can make their own style statement thanks to 100% extra-long cotton fibers, known for allowing dye to seep to their core to acheive high-quality color saturation. That’s not all: We also adjust the density of the weave according to the pattern design like stripes or checks. UNIQLO believes everyone should be able to revel in the simplicity of premium quality, and this is how we acheive it.`,
+			relatedProducts: {
+				title: `A shirt made with everyone in mind`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-super-non-iron-shirt_SW_NP.jpg`,
+			title: `Farewell to ironing.`,
+			productName: `Super Non-Iron Shirt`,
+			gender: [`Men`],
+			category: `Tops`,
+			url: `?product=super-non-iron-shirt&category=tops`,
+			productCopy: `Even if it’s a non-iron shirt, it’s pointless if it feels and looks uncomfortable. UNIQLO not only pursues style and comfort, but also low-maintenance care, all at once. For the high-quality look, we’ve selected premium materials and treated them with a special easy-care finishing technology, particularly to the wrinkle-prone sleeves and underarm areas so that these shirts are both stylish and convenient. *Depending on washing method, light ironing may be needed.`,
+			relatedProducts: {
+				title: `Farewell to ironing.`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Fine-cloth-easy-care-shirt_NP.jpg`,
+			title: `You can tell the quality by the collar`,
+			productName: `Fine Cloth Shirt`,
+			gender: [`Men`],
+			category: `Tops`,
+			url: `?product=fine-cloth-shirt&category=tops`,
+			productCopy: `At UNIQLO, we believe a shirt is only as good as its stitching. Our masters of needlework ensure our shirts are in a class all their own. For many years, they have kept the industry going, and their influence can be seen throughout every step of our production. Take the collar for example: it must be perfectly symmetrical and stand crisply on its own. To achieve this, each one is carefully stitched together using a special method designed by the masters, creating high-quality design that&apos;s Made For All.`,
+			relatedProducts: {
+				title: `You can tell the quality by the collar`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_23_W's-rayon-blouse.jpg`,
+			title: `Low-maintenance yet highly refined`,
+			productName: `Rayon Blouse`,
+			gender: [`Women`],
+			category: `Tops`,
+			url: `?product=rayon-blouse&category=tops`,
+			productCopy: `Rayon can be a finicky fabric, but at UNIQLO we like a challenge. Our secret is the special thread hybrid thread that&apos;s part-rayon for luster, part-polyester for durability that leaves the rayon fabric soft and easy to care for. The only thing lost is the extra time it takes you to maintain.`,
+			relatedProducts: {
+				title: `Low-maintenance yet highly refined`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_31_M's-Comfort-jacket.jpg`,
+			title: `Small details speak volumes.`,
+			productName: `Comfort jacket`,
+			gender: [`Men`],
+			category: `Outerwear`,
+			url: `?product=comfort-jacket&category=outerwear`,
+			productCopy: `To engineer a jacket with ultimate comfort, we started with stretchy jersey and gave it a brushed wool-like texture for a more formal look. We then ergonomically tweaked the positioning and placement of the collar so it&apos;s always sharp. All this was done to ensure that this jacket is as supremely stylish as it is completely comfortable.`,
+			relatedProducts: {
+				title: `Small details speak volumes.`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Premium-Linen-Shirt.jpg`,
+			title: `Linen: Transformed by Human Hands`,
+			productName: `Premium Linen Shirt`,
+			gender: [`women', 'men`],
+			category: `Tops`,
+			url: `?product=premium-linen-shirt&category=tops`,
+			productCopy: `The oldest textile in the world, linen is mainly produced in Northern France. The premium linen used by UNIQLO has a distinct, signature texture thanks to little knots in the fiber called “Neps,” but a balance must be found between too many and too few. To achieve this, we remove excess Neps from the fabric one-by-one with tweezers—a process requiring patience as well as the steady hand and keen eyes of highly skilled textile experts.`,
+			relatedProducts: {
+				title: `Linen: Transformed by Human Hands`,
+				productList: [{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Women`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					},
+					{
+						image: `http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/product-1-1.webp?20200306`,
+						gender: `Men`,
+						productName: `Premium linen skipper shirt`,
+						productUrl: `https://www.uniqlo.com/jp/store/goods/426232-30`,
+						ctaUrl: `https://www.uniqlo.com/jp/store/feature/uq/longshirts/women/`,
+						ctaCopy: `WOMEN related products`
+					}
+				]
+			}
+		},
+
+
 
 	]
-
-
-
 	//Homepage Components
 
 	var hompageMenu = () => {
@@ -356,7 +507,6 @@
 				<div class="c-contentsCardGroup_body">
 					${categoryProductItems && categoryProductItems.length > 0 ? 
 						categoryProductItems.join('')
-						
 					:
 						'<div class="c-contentsCard -comingSoon" >Coming soon...</div>'
 					}
@@ -401,7 +551,7 @@
 		$('.main').html(homepageComponent.replace(/>[ ]+</g, "><"))
 		hompageMenu();
 		homepageProductList()
-	
+
 
 	}
 
@@ -409,7 +559,7 @@
 	// Product Components
 
 	var productInfo = () => {
-		var product = masterpieceData[0]
+		var product = state.contentSelected
 		var image = `
 				<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 					<picture class="u-imgAdjustBox_inner">
@@ -553,6 +703,8 @@
 	}
 
 	var productPage = () => {
+
+		console.log(state, 'product page')
 		var productPageComponent =
 			`<div class="l-container">
 				<article class="c-contents">
@@ -603,13 +755,17 @@
 		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').toLowerCase() :
 			null;
 
-		if (product && category) {
-			var product = urlParams.get('product').split('-').join(' ').toLowerCase();
-			var category = urlParams.get('category').split('-').join(' ').toLowerCase();
+		console.log(product, category)
 
+
+		if (product && category) {
+		
 			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category && data.title.toLowerCase() === product
+				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+					product
 			})
+
+			console.log(findProductPageData, 'data')
 
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
@@ -633,12 +789,15 @@
 			homepageProductList()
 		})
 
-		$(window).scroll( ()=> {
-			if($(window).scrollTop() > $('.l-navigation_wrapper').offset().top ){
+		$(window).scroll(() => {
+			if(!state.contentSelected){
+				if ($(window).scrollTop() > $('.l-navigation_wrapper').offset().top) {
 				$('.l-navigation_body').addClass('sticky-menu')
-			}else{
+			} else {
 				$('.l-navigation_body').removeClass('sticky-menu')
 			}
+			}
+			
 		})
 	})
 

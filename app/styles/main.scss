@@ -1,23 +1,24 @@
-$fontFam_uqReg: UniqloProRegular,
-'Uniqlo Pro Regular',
-'Helvetica Neue',
-Helvetica,
-Arial,
-sans-serif;
 
-$fontFam_uqBold: UniqloProBold,
-'Helvetica Neue',
-Helvetica,
-Arial,
-sans-serif;
+// $fontFam_uqReg: UniqloProRegular,
+// 'Uniqlo Pro Regular',
+// 'Helvetica Neue',
+// Helvetica,
+// Arial,
+// sans-serif;
 
-$fontFam_hel: 'Helvetica Neue',
-Helvetica,
-Arial,
-sans-serif;
+// $fontFam_uqBold: UniqloProBold,
+// 'Helvetica Neue',
+// Helvetica,
+// Arial,
+// sans-serif;
+
+// $fontFam_hel: 'Helvetica Neue',
+// Helvetica,
+// Arial,
+// sans-serif;
 
 
-@import 'breakpoints';
+// @import 'breakpoints';
 
 
 // FULL WIDTH SPECIFICITY
@@ -141,7 +142,10 @@ body {
     background-color: #f4f4f4;
     background-color: var(--color-gray050);
     font-size: 13px;
-    font-family: $fontFam_hel;
+    font-family: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased
 }
@@ -222,7 +226,10 @@ svg {
     color: #ababab;
     color: var(--color-gray350);
     display: block;
-    font-family: $fontFam_hel;
+    font-family: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     font-size: 11px;
     line-height: 17.6px;
     padding-top: 24px;
@@ -394,7 +401,11 @@ svg {
 
 .fr-tabs_item.-en {
     font-size: 15px;
-    font-family: $fontFam_uqBold;
+    font-family: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     font-weight: 400
 }
 
@@ -1100,7 +1111,12 @@ svg {
 }
 
 .l-navigation_body {
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
 }
 
 .l-navigation_body[data-navigation-position=fixed] {
@@ -1282,7 +1298,12 @@ svg {
     box-shadow: none;
     background: transparent;
     font-size: 24px;
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     color: #ababab;
     color: var(--color-gray350)
 }
@@ -1295,7 +1316,11 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: $fontFam_uqBold;
+    font-family: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     font-size: 11px;
     color: #fff;
     color: var(--color-white);
@@ -1327,7 +1352,11 @@ svg {
 }
 
 .c-contentsCardGroup_headInner {
-    font-family: $fontFam_uqBold;
+    font-family: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     font-size: 31px;
     display: inline-block;
     margin-bottom: 2.66667vw
@@ -1376,7 +1405,12 @@ svg {
 }
 
 .c-productButton_gender {
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
 }
 
 .c-productButton_viewProduct {
@@ -1421,7 +1455,12 @@ svg {
 }
 
 .c-label_item.-category {
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     color: red;
     color: var(--color-red);
     display: flex;
@@ -1439,7 +1478,12 @@ svg {
 }
 
 .c-label_item.-gender {
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
 }
 
 .c-label_item.-name {
@@ -1854,16 +1898,28 @@ svg {
 }
 
 .u-uqFont-l {
-    font-family: $fontFam_hel;
+    font-family: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
     font-weight: 300;
 }
 
 .u-uqFont-r {
-    font-family: $fontFam_uqReg;
+    font-family: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
 }
 
 .u-uqFont-b {
-    font-family: $fontFam_uqBold;
+    font-family: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;;
 }
 
 .u-font-400 {
@@ -4238,8 +4294,9 @@ button.swiper-pagination-bullet {
     position: fixed;
     top:0;
 }
-@include bp(sm){
+@media screen and (min-width: 768px){
     .sticky-menu{
-       position: relative;
-    }
+        position: relative;
+     }
+  
 }
