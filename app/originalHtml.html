@@ -34,8 +34,27 @@
 	var homepageHero = {
 		imagePC: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg`,
 		imageMB: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg`,
-		copy: `home copy`
-	}
+		copy: `What is really good clothing?
+				<br>
+				<br>
+				Simple, functional, aesthetic and
+				evolving for the wearer.
+				<br>
+				<br>
+				Materials, sewing, silhouettes, colors ... with
+				people, nature and living. Attention is paid to every detail
+				while inheriting the spirit of Japanese manufacturing.
+				<br>
+				<br>
+				In order for each piece of clothing to continue to be a masterpiece of the
+				people who live today .
+				<br>
+				<br>
+				Making UNIQLO clothes is endless.
+				<br>
+				<br>
+				<span style="font-weight: bold">UNIQLO MASTERPIECE</span>`
+			}
 
 	var masterpieceData = [{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
@@ -386,7 +405,7 @@
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
 				let productTile = `
-				<section class="c-contentsCard -no-${i}" data-filter-panel="tops" aria-hidden="false"><a
+				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"><a
 						class="js-trackEvent" data-category="L3_20ss_masterpiece"
 						data-label="${'gatag'}"
 						href="${product.url}">
@@ -420,7 +439,7 @@
 					${categoryProductItems && categoryProductItems.length > 0 ? 
 						categoryProductItems.join('')
 					:
-						'<div class="c-contentsCard -comingSoon" >Coming soon...</div>'
+						'<div class="c-contentsCard -comingSoon product-fadeIn" >Coming soon...</div>'
 					}
 				</div>
 			`
