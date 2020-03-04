@@ -1,23 +1,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+<div class='-masterpiece'>
+	<div class="wrapper">
+		<div class="fr-breadcrumbs u-only-pc">
+			<ol class="fr-breadcrumbs_inner">
+				<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent"
+						href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece"
+						data-label="L3_20ss_masterpiece_top_breadcrumb_1">
+						HOME
+					</a></li>
+				<li class="fr-breadcrumbs_item">
+					<a href="/">
+						MASTERPIECE
+					</a>
+				</li>
+			</ol>
+		</div>
+		<main class="main">
 
-<div class="wrapper">
-	<div class="fr-breadcrumbs u-only-pc">
-		<ol class="fr-breadcrumbs_inner">
-			<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent"
-					href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece"
-					data-label="L3_20ss_masterpiece_top_breadcrumb_1">
-					HOME
-				</a></li>
-			<li class="fr-breadcrumbs_item">
-				<a href="/">
-					MASTERPIECE
-				</a>
-			</li>
-		</ol>
+		</main>
+		<button class="fr-pagetop js-fr-pagetop js-smoothScroll" type="button" data-link=".wrapper"
+			data-pagetop-is-active="true"></button>
 	</div>
-	<main class="main">
-
-	</main>
 </div>
 
 
@@ -557,7 +560,7 @@
 						
 						</h3>
 						<p class="c-productButton_viewProduct">
-							View Product
+							View product
 						</p>
 					</div>
 				</a>
@@ -815,6 +818,18 @@
 			});
 
 		})
+
+		$('.js-fr-pagetop').click(()=>{
+
+			$('html, body').animate({
+				scrollTop: 0
+			}, 300, function () {
+				// Add hash (#) to URL when done scrolling (default click behavior)
+				window.location.hash = e.currentTarget.dataset.filterButton;
+			});
+		})
+
+
 
 		$(window).scroll(() => {
 			if ($('.l-navigation_wrapper').length > 0) {

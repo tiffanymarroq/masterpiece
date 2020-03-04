@@ -368,7 +368,7 @@ svg {
 	font-size: 11px;
 	line-height: 17.6px;
 	padding-top: 24px;
-	padding-top: var(--sp-v-xl);
+	padding-top: 0;
 	padding-bottom: 24px;
 	padding-bottom: var(--sp-v-xl);
 	text-align: center;
@@ -1609,7 +1609,7 @@ svg {
 .c-label_item {
 	margin-right: 2.66667vw;
     position: relative;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
 
 .c-label_item.-category {
@@ -1650,7 +1650,8 @@ svg {
 	color: #7d7d7d;
 	color: var(--color-gray500);
 	margin-right: 0;
-	font-size: 12px
+    font-size: 12px;
+    text-transform: inherit
 }
 
 .-inPanel .c-label_item.-name {
@@ -2814,7 +2815,7 @@ button.swiper-pagination-bullet {
 		padding-left: 25px;
 		margin: 0 auto;
 		box-shadow: none;
-		padding-top: 0;
+		padding-top: var(--pc-v-m);
 		padding-bottom: 20px;
 		padding-bottom: var(--pc-v-m)
 	}
@@ -3548,7 +3549,8 @@ button.swiper-pagination-bullet {
 	}
 
 	.c-productButton_gender {
-		font-size: 18px
+        font-size: 18px;
+        text-transform: uppercase;
 	}
 
 	.c-productButton_viewProduct {
