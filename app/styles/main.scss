@@ -11,10 +11,10 @@
 // Arial,
 // sans-serif;
 
-// $fontFam_hel: 'Helvetica Neue',
-// Helvetica,
-// Arial,
-// sans-serif;
+$fontFam_hel: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
 
 
 // @import 'breakpoints';
@@ -191,7 +191,8 @@ html {
 }
 
 body {
-	line-height: 1
+    line-height: 1;
+    font-family: ;
 }
 
 article,
@@ -3612,7 +3613,11 @@ button.swiper-pagination-bullet {
 	}
 
 	.c-label_item.-name {
-		font-size: 14px
+        font-size: 14px;
+        font-family: 'Helvetica Neue',
+        Helvetica,
+        Arial,
+        sans-serif;
 	}
 
 	.-inCard .c-label_item.-name {
