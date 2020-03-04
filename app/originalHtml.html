@@ -6,13 +6,11 @@
 			<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent"
 					href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece"
 					data-label="L3_20ss_masterpiece_top_breadcrumb_1">
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">UNIQLO TOP</font>
-					</font>
+					HOME
 				</a></li>
 			<li class="fr-breadcrumbs_item">
 				<a href="/">
-					Master piece
+					MASTERPIECE
 				</a>
 			</li>
 		</ol>
@@ -318,7 +316,7 @@
 										alt="BOTTOMS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">BOTTOMS</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dress"
+						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_dress_icon">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -327,10 +325,10 @@
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg"
 										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg"
 										alt="DRESS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">DRESS</span>
+							</figure><span class="u-only-pc">DRESSES</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
-							data-filter-button="roomwear" data-link=".l-container" data-category="L3_20ss_masterpiece"
+							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_roomwear_icon">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
@@ -338,9 +336,9 @@
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg"
 										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg"
 										alt="ROOM WEAR" data-expand="300"></picture>
-							</figure><span class="u-only-pc">ROOM WEAR</span>
+							</figure><span class="u-only-pc">LOUNGEWEAR</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="inner"
+						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_inner_icon">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -349,7 +347,7 @@
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg"
 										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg"
 										alt="INNER" data-expand="300"></picture>
-							</figure><span class="u-only-pc">INNER</span>
+							</figure><span class="u-only-pc">INNERWEAR</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
@@ -779,7 +777,7 @@
 			console.log(e.currentTarget.dataset)
 		})
 		$('.c-contentsCard').click(() => {
-			event.preventDefault()
+			// event.preventDefault()
 		})
 		$('.l-navigation_item').click((e) => {
 			state.filter = e.currentTarget.dataset.filterButton;
@@ -872,6 +870,7 @@
 
 <!-- 
 Home page
+
 
 Menu
 
