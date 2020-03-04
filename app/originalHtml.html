@@ -813,20 +813,15 @@
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
 			}, 300, function () {
-				// Add hash (#) to URL when done scrolling (default click behavior)
 				window.location.hash = e.currentTarget.dataset.filterButton;
 			});
 
 		})
 
 		$('.js-fr-pagetop').click(()=>{
-
 			$('html, body').animate({
 				scrollTop: 0
-			}, 300, function () {
-				// Add hash (#) to URL when done scrolling (default click behavior)
-				window.location.hash = e.currentTarget.dataset.filterButton;
-			});
+			}, 300);
 		})
 
 
