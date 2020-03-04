@@ -429,12 +429,9 @@
 	}
 
 	var homepage = () => {
-		var homepageComponent = `
-			<div class="o-hero">
-				<h1 class="o-hero_title">
-					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
-						<picture class="u-imgAdjustBox_inner">
-							<source
+
+		var heroText = `
+		<source
 								data-srcset="${homepageHero.imagePC}"
 								media="(min-width: 813px)" type="image/png"
 								srcset="${homepageHero.imagePC}">
@@ -446,6 +443,13 @@
 								src="${homepageHero.imageMB}"
 								data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-hero-logo.png?20200306"
 								alt="UNIQLO MASTERPIECE" data-expand="300">
+		`
+		var homepageComponent = `
+			<div class="o-hero" style="background-image: url(${homepageHero.imagePC})">
+				<h1 class="o-hero_title">
+					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
+						<picture class="u-imgAdjustBox_inner">
+						
 						</picture>
 					</figure>
 				</h1>
@@ -459,6 +463,7 @@
 				<div class="c-contentsCardGroup">
 				</div>
 			</div>
+			<div style="padding: 100px 0"></div>
 		`
 		$('.main').html(homepageComponent)
 		hompageMenu();
@@ -579,7 +584,7 @@
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-		
+
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
@@ -744,23 +749,25 @@
 		if (product && category) {
 
 			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category && data.productName.toLowerCase() === product
+				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+					product
 			})
 
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
 				productPage();
-				if($('.product-crumb').length === 0){
-					$('.fr-breadcrumbs_inner').append(`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
+				if ($('.product-crumb').length === 0) {
+					$('.fr-breadcrumbs_inner').append(
+						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
 
 				}
-			
+
 
 			} else {
 				state.contentSelected = null;
 				$('.main').html('Page not found');
 			}
-		
+
 
 
 
@@ -776,17 +783,33 @@
 			state.filter = e.currentTarget.dataset.filterButton;
 			console.log($(e))
 			$('.l-navigation_item.isactive').removeClass('isactive');
-    		$(this).addClass('isactive')
+			$(this).addClass('isactive')
 			homepageProductList()
 		})
 
 		$(window).scroll(() => {
 			if ($('.l-navigation_wrapper').length > 0) {
-				if ($(window).scrollTop() > $('.l-navigation_wrapper').offset().top) {
-					$('.l-navigation_body').addClass('sticky-menu')
+				if ($(this).scrollTop() + $('.c-contentsCardGroup_body').innerHeight() > $('.c-contentsCardGroup_body').offset().top + $('.c-contentsCardGroup_body')[0].scrollHeight) {
+					$('.l-navigation_body').css({
+						'position': 'absolute',
+						'bottom': '0',
+						'top': ''
+					})
+
+				} else if ($(this).scrollTop() > $('.l-navigation_wrapper').offset().top) {
+					$('.l-navigation_body').css({
+						'position': 'fixed',
+						'top': '0',
+						'bottom': ''
+					})
 				} else {
-					$('.l-navigation_body').removeClass('sticky-menu')
+					$('.l-navigation_body').css({
+						'position': '',
+						'top': '',
+						'bottom': ''
+					});
 				}
+
 			}
 		})
 	})
