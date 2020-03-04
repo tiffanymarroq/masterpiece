@@ -753,157 +753,139 @@
 
 	// Init App
 	$(document).ready(() => {
-				var urlParams = new URLSearchParams(window.location.search);
+		var urlParams = new URLSearchParams(window.location.search);
 
-				var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
-					.toLowerCase() :
-					null;
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
+			null;
 
-				var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
-					.toLowerCase() :
-					null;
-
-
-				var hpCategory = window.location.hash.toLowerCase().replace('#', '');
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
+			null;
 
 
-
-				if (product && category) {
-
-					var findProductPageData = masterpieceData.filter((data) => {
-						return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
-							product
-					})
-
-					if (findProductPageData && findProductPageData.length > 0) {
-						state.contentSelected = findProductPageData[0];
-						productPage();
-						if ($('.product-crumb').length === 0) {
-							$('.fr-breadcrumbs_inner').append(
-								`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
-
-						}
-
-
-					} else {
-						state.contentSelected = null;
+		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
 
 
 
-						$('.main').html('Page not found');
-					}
+		if (product && category) {
 
+			var findProductPageData = masterpieceData.filter((data) => {
+				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+					product
+			})
 
+			if (findProductPageData && findProductPageData.length > 0) {
+				state.contentSelected = findProductPageData[0];
+				productPage();
+				if ($('.product-crumb').length === 0) {
+					$('.fr-breadcrumbs_inner').append(
+						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
 
-
-				} else {
-					homepage();
-					console.log(hpCategory)
-					if (hpCategory) {
-						var findProductPageData = masterpieceData.filter((data) => {
-							return data.category.toLowerCase() === hpCategory
-						})
-						if (findProductPageData && findProductPageData.length > 0) {
-							state.filter = hpCategory;
-							homepageProductList();
-
-
-						}
-
-
-					}
 				}
 
-				$('.js-trackEvent').click((e) => {
-					console.log(e.currentTarget.dataset)
+
+			} else {
+				state.contentSelected = null;
+
+
+
+				$('.main').html('Page not found');
+			}
+
+
+
+
+		} else {
+			homepage();
+			console.log(hpCategory)
+			if (hpCategory) {
+				var findProductPageData = masterpieceData.filter((data) => {
+					return data.category.toLowerCase() === hpCategory
 				})
-				$('.c-contentsCard').click(() => {
-					// event.preventDefault()
-				})
-				$('.l-navigation_item').click((e) => {
-					state.filter = e.currentTarget.dataset.filterButton;
-					console.log($(e))
-					$('.l-navigation_item.isactive').removeClass('isactive');
-					$(this).addClass('isactive')
+				if (findProductPageData && findProductPageData.length > 0) {
+					state.filter = hpCategory;
 					homepageProductList();
 
-					$('html, body').animate({
-						scrollTop: $('.c-contentsCardGroup').offset().top
-					}, 300, function () {
-						window.location.hash = e.currentTarget.dataset.filterButton;
-					});
 
-					masterpieceGA(e)
-
-				})
-
-		
-
-					$(window).scroll(() => {
-						if ($('.l-navigation_wrapper').length > 0) {
-
-							var t = document.querySelector(".l-navigation_body");
-     
-                var e = document.documentElement.scrollTop || document.body.scrollTop;
-                e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t.setAttribute("data-navigation-position", "fixed") : t.setAttribute("data-navigation-position", "default"),
-                e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
-
-
-							// if($(this).scrollTop() > $(".l-navigation_wrapper").offset().top + $(this).scrollTop()){
-							// 	$('.l-navigation_body').css({
-							// 			'position': 'fixed',
-							// 			'top': '0',
-							// 			'bottom': ''
-							// 		})
-							// }
-
-
-							// if($(this).scrollTop() > $(".c-bannerGroup").offset().top + $(this).scrollTop() - $('.l-navigation_body').clientHeight()){
-
-							// 	$('.l-navigation_body').css({
-							// 			'position': 'absolute',
-							// 			'bottom': '0',
-							// 			'top': ''
-							// 		})
-							// }
-
-
-
-
-						}
-					})
-				})
-
-				// GA TAG
-				var masterpieceGA = (e) => {
-					if (!(e.dataset)) {
-						event.preventDefault();
-					}
-
-					var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
-					var urlPrefix = 'https://www.uniqlo.com/us/en';
-
-					if (window.location.href.includes('staging')) {
-						urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
-					}
-
-					if (window.location.href.includes('development')) {
-						urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
-					}
-
-					var path = window.location.href.split('?')[0].replace(urlPrefix, '');
-					if (path.substring(path.length - 1) !== '/') {
-						path = path + '/'
-					}
-					console.log(value, 'value')
-
-					// dataLayer.push({
-					// 	'event': 'eventTracking',
-					// 	'eventCategory': 'category page',
-					// 	'eventAction': `clicked category: ${path}`,
-					// 	'eventLabel': `l3_${value}`
-					// })
 				}
+
+
+			}
+		}
+
+		$('.js-trackEvent').click((e) => {
+			console.log(e.currentTarget.dataset)
+		})
+		$('.c-contentsCard').click(() => {
+			// event.preventDefault()
+		})
+		$('.l-navigation_item').click((e) => {
+			state.filter = e.currentTarget.dataset.filterButton;
+			$('.l-navigation_item.is-active').removeClass('is-active');
+			$(e).addClass('is-active')
+			console.log($(e))
+			homepageProductList();
+
+			$('html, body').animate({
+				scrollTop: $('.c-contentsCardGroup').offset().top
+			}, 300, function () {
+				window.location.hash = e.currentTarget.dataset.filterButton;
+			});
+
+			masterpieceGA(e)
+
+		})
+
+
+
+		$(window).scroll(() => {
+			if ($('.l-navigation_wrapper').length > 0) {
+
+				var t = document.querySelector(".l-navigation_body");
+
+				var e = document.documentElement.scrollTop || document.body.scrollTop;
+				e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
+					.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
+						"data-navigation-position", "default"),
+					e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
+					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
+
+
+			}
+		})
+	})
+
+	// GA TAG
+	var masterpieceGA = (e) => {
+		if (!(e.dataset)) {
+			event.preventDefault();
+		}
+
+		var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
+		var urlPrefix = 'https://www.uniqlo.com/us/en';
+
+		if (window.location.href.includes('staging')) {
+			urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
+		}
+
+		if (window.location.href.includes('development')) {
+			urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
+		}
+
+		var path = window.location.href.split('?')[0].replace(urlPrefix, '');
+		if (path.substring(path.length - 1) !== '/') {
+			path = path + '/'
+		}
+		console.log(value, 'value')
+
+		// dataLayer.push({
+		// 	'event': 'eventTracking',
+		// 	'eventCategory': 'category page',
+		// 	'eventAction': `clicked category: ${path}`,
+		// 	'eventLabel': `l3_${value}`
+		// })
+	}
 
 </script>
 
