@@ -789,20 +789,32 @@
 
 		$(window).scroll(() => {
 			if ($('.l-navigation_wrapper').length > 0) {
-				if ($(this).scrollTop() + $('.c-contentsCardGroup_body').innerHeight() > $('.c-contentsCardGroup_body').offset().top + $('.c-contentsCardGroup_body')[0].scrollHeight) {
-					$('.l-navigation_body').css({
-						'position': 'absolute',
-						'bottom': '0',
-						'top': ''
-					})
 
-				} else if ($(this).scrollTop() > $('.l-navigation_wrapper').offset().top) {
-					$('.l-navigation_body').css({
-						'position': 'fixed',
-						'top': '0',
-						'bottom': ''
-					})
+
+				if ($(this).scrollTop() > $('.l-navigation_wrapper').offset().top) {
+
+					console.log('top')
+
+					if ($(this).scrollTop() >
+						$('.c-contentsCardGroup_body').offset().top + $('.c-contentsCardGroup_body')
+						.height()) {
+
+						$('.l-navigation_body').css({
+							'position': 'absolute',
+							'bottom': '0',
+							'top': ''
+						})
+					} else {
+						$('.l-nav_body').css({
+							'position': 'fixed',
+							'top': '0',
+							'bottom': ''
+						})
+					}
+
+
 				} else {
+					console.log('default')
 					$('.l-navigation_body').css({
 						'position': '',
 						'top': '',
