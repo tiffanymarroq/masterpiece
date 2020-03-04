@@ -463,7 +463,7 @@
 				<div class="c-contentsCardGroup">
 				</div>
 			</div>
-			<div style="padding: 100px 0"></div>
+			<div style="padding: 500px 0"></div>
 		`
 		$('.main').html(homepageComponent)
 		hompageMenu();
@@ -793,11 +793,11 @@
 
 				if ($(this).scrollTop() > $('.l-navigation_wrapper').offset().top) {
 
-					console.log('top')
-
-					if ($(this).scrollTop() >
-						$('.c-contentsCardGroup_body').offset().top + $('.c-contentsCardGroup_body')
-						.height()) {
+					var tileContainer = $('.c-contentsCardGroup_body');
+					var bottom = tileContainer.position().top + tileContainer.offset().top + tileContainer.outerHeight(true)
+					console.log(bottom, $(this).scrollTop())
+					if ($(this).scrollTop() + $('.c-contentsCardGroup_body').innerHeight() >
+						bottom){
 
 						$('.l-navigation_body').css({
 							'position': 'absolute',
@@ -805,7 +805,9 @@
 							'top': ''
 						})
 					} else {
-						$('.l-nav_body').css({
+						console.log('top')
+
+						$('.l-navigation_body').css({
 							'position': 'fixed',
 							'top': '0',
 							'bottom': ''
