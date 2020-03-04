@@ -196,7 +196,7 @@ sans-serif;
 		line-height: 1;
 
 	}
-
+    .pt_primary #main .primary-content {
 	article,
 	aside,
 	details,
@@ -1419,8 +1419,14 @@ sans-serif;
 		left: 50%;
 		width: 60.26667vw;
 		height: 16.8vw;
-		margin: -8.4vw 0 0 -30.13333vw
-	}
+        margin: -8.4vw 0 0 -30.13333vw
+        
+    }
+    .main-hero-text{
+        text-align: center;
+        font-size: 5vw;
+        width: 100%;
+    }
 
 	.c-banner {
 		width: 100%
@@ -2205,7 +2211,8 @@ sans-serif;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%
+        height: 100%;
+        text-align: center;
 	}
 
 	.swiper-container {
@@ -4645,3 +4652,4 @@ sans-serif;
 		animation: fadeIn .55s forwards;
 	}
 
+}

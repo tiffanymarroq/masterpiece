@@ -54,7 +54,7 @@
 				<br>
 				<br>
 				<span style="font-weight: bold">UNIQLO MASTERPIECE</span>`
-			}
+	}
 
 	var masterpieceData = [{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
@@ -302,11 +302,11 @@
 					<ul class="l-navigation_body" data-navigation-position="default">
 						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_all_icon"><span>ALL</span>
+							data-label="l3_hp_menu_all"><span>ALL</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_outer_icon">
+							data-label="l3_hp_menu_outerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -317,7 +317,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_tops_icon">
+							data-label="l3_hp_menu_tops">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -328,7 +328,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent"
 							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_bottoms_icon">
+							data-label="l3_hp_menu_bottoms">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -339,7 +339,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_dress_icon">
+							data-label="l3_hp_menu_dresses">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -350,7 +350,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
 							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_roomwear_icon">
+							data-label="l3_hp_menu_loungwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -361,7 +361,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_inner_icon">
+							data-label="l3_hp_menu_innerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -372,7 +372,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_goods_icon">
+							data-label="l3_hp_menu_accessories">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -383,7 +383,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="L3_20ss_masterpiece_baby_icon">
+							data-label="l3_hp_menu_baby">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -468,7 +468,7 @@
 				<h1 class="o-hero_title">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
 						<picture class="u-imgAdjustBox_inner">
-						
+							<p class="main-hero-text">UNIQLO MASTERPIECE<p>
 						</picture>
 					</figure>
 				</h1>
@@ -482,12 +482,11 @@
 				<div class="c-contentsCardGroup">
 				</div>
 			</div>
-			<div style="padding: 500px 0"></div>
+			<div class="c-bannerGroup"style=""></div>
 		`
 		$('.main').html(homepageComponent)
 		hompageMenu();
 		homepageProductList()
-
 
 	}
 
@@ -754,159 +753,157 @@
 
 	// Init App
 	$(document).ready(() => {
-		var urlParams = new URLSearchParams(window.location.search);
+				var urlParams = new URLSearchParams(window.location.search);
 
-		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
-			.toLowerCase() :
-			null;
+				var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
+					.toLowerCase() :
+					null;
 
-		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
-			.toLowerCase() :
-			null;
-
-
-		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
+				var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
+					.toLowerCase() :
+					null;
 
 
-
-		if (product && category) {
-
-			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
-					product
-			})
-
-			if (findProductPageData && findProductPageData.length > 0) {
-				state.contentSelected = findProductPageData[0];
-				productPage();
-				if ($('.product-crumb').length === 0) {
-					$('.fr-breadcrumbs_inner').append(
-						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
-
-				}
-
-
-			} else {
-				state.contentSelected = null;
+				var hpCategory = window.location.hash.toLowerCase().replace('#', '');
 
 
 
-				$('.main').html('Page not found');
-			}
+				if (product && category) {
 
-
-
-
-		} else {
-			homepage();
-			console.log(hpCategory)
-			if (hpCategory) {
-				var findProductPageData = masterpieceData.filter((data) => {
-					return data.category.toLowerCase() === hpCategory
-				})
-				if (findProductPageData && findProductPageData.length > 0) {
-					state.filter = hpCategory;
-					homepageProductList();
-
-
-				}
-
-
-			}
-		}
-
-		$('.js-trackEvent').click((e) => {
-			console.log(e.currentTarget.dataset)
-		})
-		$('.c-contentsCard').click(() => {
-			// event.preventDefault()
-		})
-		$('.l-navigation_item').click((e) => {
-			state.filter = e.currentTarget.dataset.filterButton;
-			console.log($(e))
-			$('.l-navigation_item.isactive').removeClass('isactive');
-			$(this).addClass('isactive')
-			homepageProductList();
-
-			$('html, body').animate({
-				scrollTop: $('.c-contentsCardGroup').offset().top
-			}, 300, function () {
-				window.location.hash = e.currentTarget.dataset.filterButton;
-			});
-
-		})
-
-
-
-		$(window).scroll(() => {
-			if ($('.l-navigation_wrapper').length > 0) {
-				if ($(this).scrollTop() > $('.l-navigation_wrapper').offset().top) {
-
-					var tileContainer = $('.c-contentsCardGroup_body');
-					var bottom = tileContainer.position().top + tileContainer.offset().top + tileContainer
-						.outerHeight(true)
-					// console.log(bottom, $(this).scrollTop())
-					// if ($(this).scrollTop() + $('.c-contentsCardGroup_body').innerHeight() >
-					// 	bottom){
-
-					// 	$('.l-navigation_body').css({
-					// 		'position': 'absolute',
-					// 		'bottom': '0',
-					// 		'top': ''
-					// 	})
-					// } else {
-					// console.log('top')
-
-					$('.l-navigation_body').css({
-						'position': 'fixed',
-						'top': '0',
-						'bottom': ''
+					var findProductPageData = masterpieceData.filter((data) => {
+						return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+							product
 					})
-					// }
+
+					if (findProductPageData && findProductPageData.length > 0) {
+						state.contentSelected = findProductPageData[0];
+						productPage();
+						if ($('.product-crumb').length === 0) {
+							$('.fr-breadcrumbs_inner').append(
+								`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
+
+						}
+
+
+					} else {
+						state.contentSelected = null;
+
+
+
+						$('.main').html('Page not found');
+					}
+
+
 
 
 				} else {
-					// console.log('default')
-					$('.l-navigation_body').css({
-						'position': '',
-						'top': '',
-						'bottom': ''
-					});
+					homepage();
+					console.log(hpCategory)
+					if (hpCategory) {
+						var findProductPageData = masterpieceData.filter((data) => {
+							return data.category.toLowerCase() === hpCategory
+						})
+						if (findProductPageData && findProductPageData.length > 0) {
+							state.filter = hpCategory;
+							homepageProductList();
+
+
+						}
+
+
+					}
 				}
 
-			}
-		})
-	})
+				$('.js-trackEvent').click((e) => {
+					console.log(e.currentTarget.dataset)
+				})
+				$('.c-contentsCard').click(() => {
+					// event.preventDefault()
+				})
+				$('.l-navigation_item').click((e) => {
+					state.filter = e.currentTarget.dataset.filterButton;
+					console.log($(e))
+					$('.l-navigation_item.isactive').removeClass('isactive');
+					$(this).addClass('isactive')
+					homepageProductList();
 
-	// GA TAG
-	var masterpieceGA = (e) => {
-		if (!(e.dataset)) {
-			event.preventDefault();
-		}
+					$('html, body').animate({
+						scrollTop: $('.c-contentsCardGroup').offset().top
+					}, 300, function () {
+						window.location.hash = e.currentTarget.dataset.filterButton;
+					});
 
-		var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
-		var urlPrefix = 'https://www.uniqlo.com/us/en';
+					masterpieceGA(e)
 
-		if (window.location.href.includes('staging')) {
-			urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
-		}
+				})
 
-		if (window.location.href.includes('development')) {
-			urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
-		}
+		
 
-		var path = window.location.href.split('?')[0].replace(urlPrefix, '');
-		if (path.substring(path.length - 1) !== '/') {
-			path = path + '/'
-		}
+					$(window).scroll(() => {
+						if ($('.l-navigation_wrapper').length > 0) {
 
-		// dataLayer.push({
-		// 	'event': 'eventTracking',
-		// 	'eventCategory': 'category page',
-		// 	'eventAction': `clicked category: ${path}`,
-		// 	'eventLabel': `l3_${value}`
-		// })
-	}
+							var t = document.querySelector(".l-navigation_body");
+     
+                var e = document.documentElement.scrollTop || document.body.scrollTop;
+                e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t.setAttribute("data-navigation-position", "fixed") : t.setAttribute("data-navigation-position", "default"),
+                e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
+
+
+							// if($(this).scrollTop() > $(".l-navigation_wrapper").offset().top + $(this).scrollTop()){
+							// 	$('.l-navigation_body').css({
+							// 			'position': 'fixed',
+							// 			'top': '0',
+							// 			'bottom': ''
+							// 		})
+							// }
+
+
+							// if($(this).scrollTop() > $(".c-bannerGroup").offset().top + $(this).scrollTop() - $('.l-navigation_body').clientHeight()){
+
+							// 	$('.l-navigation_body').css({
+							// 			'position': 'absolute',
+							// 			'bottom': '0',
+							// 			'top': ''
+							// 		})
+							// }
+
+
+
+
+						}
+					})
+				})
+
+				// GA TAG
+				var masterpieceGA = (e) => {
+					if (!(e.dataset)) {
+						event.preventDefault();
+					}
+
+					var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
+					var urlPrefix = 'https://www.uniqlo.com/us/en';
+
+					if (window.location.href.includes('staging')) {
+						urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
+					}
+
+					if (window.location.href.includes('development')) {
+						urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
+					}
+
+					var path = window.location.href.split('?')[0].replace(urlPrefix, '');
+					if (path.substring(path.length - 1) !== '/') {
+						path = path + '/'
+					}
+					console.log(value, 'value')
+
+					// dataLayer.push({
+					// 	'event': 'eventTracking',
+					// 	'eventCategory': 'category page',
+					// 	'eventAction': `clicked category: ${path}`,
+					// 	'eventLabel': `l3_${value}`
+					// })
+				}
 
 </script>
 
