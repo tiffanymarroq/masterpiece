@@ -744,6 +744,10 @@
 			null;
 
 
+		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
+
+
+
 		if (product && category) {
 
 			var findProductPageData = masterpieceData.filter((data) => {
@@ -763,6 +767,9 @@
 
 			} else {
 				state.contentSelected = null;
+
+
+
 				$('.main').html('Page not found');
 			}
 
@@ -770,7 +777,21 @@
 
 
 		} else {
-			homepage()
+			homepage();
+			console.log(hpCategory)
+			if (hpCategory) {
+				var findProductPageData = masterpieceData.filter((data) => {
+					return data.category.toLowerCase() === hpCategory
+				})
+				if (findProductPageData && findProductPageData.length > 0) {
+					state.filter = hpCategory;
+					homepageProductList();
+
+
+				}
+
+
+			}
 		}
 
 		$('.js-trackEvent').click((e) => {
@@ -790,7 +811,7 @@
 				scrollTop: $('.c-contentsCardGroup').offset().top
 			}, 300, function () {
 				// Add hash (#) to URL when done scrolling (default click behavior)
-				// window.location.hash = hash;
+				window.location.hash = e.currentTarget.dataset.filterButton;
 			});
 
 		})
@@ -802,7 +823,7 @@
 					var tileContainer = $('.c-contentsCardGroup_body');
 					var bottom = tileContainer.position().top + tileContainer.offset().top + tileContainer
 						.outerHeight(true)
-					console.log(bottom, $(this).scrollTop())
+					// console.log(bottom, $(this).scrollTop())
 					// if ($(this).scrollTop() + $('.c-contentsCardGroup_body').innerHeight() >
 					// 	bottom){
 
@@ -812,7 +833,7 @@
 					// 		'top': ''
 					// 	})
 					// } else {
-					console.log('top')
+					// console.log('top')
 
 					$('.l-navigation_body').css({
 						'position': 'fixed',
@@ -823,7 +844,7 @@
 
 
 				} else {
-					console.log('default')
+					// console.log('default')
 					$('.l-navigation_body').css({
 						'position': '',
 						'top': '',
@@ -888,3 +909,12 @@ l3_article_relatedArticle_productName
 
 BreadCrumb
 l3_breadcrumb_name -->
+
+
+
+<script>
+
+
+
+
+</script>
