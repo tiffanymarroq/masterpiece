@@ -11,9 +11,9 @@
 					</font>
 				</a></li>
 			<li class="fr-breadcrumbs_item">
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;">Master piece</font>
-				</font>
+				<a href="/">
+					Master piece
+				</a>
 			</li>
 		</ol>
 	</div>
@@ -285,7 +285,7 @@
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_all_icon"><span>ALL</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outer"
+						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_outer_icon">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -294,7 +294,7 @@
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg"
 										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg"
 										alt="OUTER" data-expand="300"></picture>
-							</figure><span class="u-only-pc">OUTER</span>
+							</figure><span class="u-only-pc">OUTERWEAR</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
@@ -351,7 +351,7 @@
 										alt="INNER" data-expand="300"></picture>
 							</figure><span class="u-only-pc">INNER</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="goods"
+						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="L3_20ss_masterpiece_goods_icon">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -360,7 +360,7 @@
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg"
 										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg"
 										alt="GOODS" data-expand="300"></picture>
-							</figure><span class="u-only-pc">GOODS</span>
+							</figure><span class="u-only-pc">ACCESSORIES</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
@@ -460,7 +460,7 @@
 				</div>
 			</div>
 		`
-		$('.main').html(homepageComponent.replace(/>[ ]+</g, "><"))
+		$('.main').html(homepageComponent)
 		hompageMenu();
 		homepageProductList()
 
@@ -530,13 +530,9 @@
 				getRelatedProduct(product.relatedProducts.productList[i], i)
 			}
 		}
-
-
 	}
 
 	var getRelatedProduct = (data, i) => {
-		console.log(i)
-
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
@@ -568,13 +564,12 @@
 			</li>
 			`
 		$('.c-productButtonGroup').append(productComponent)
-			getProductData(data.sku, i);
+		getProductData(data.sku, i);
 
 
 	}
 
 	var getProductData = (sku, i) => {
-		console.log(sku, i)
 		var urlPrefix = 'https://www.uniqlo.com/us/en';
 		if (window.location.href.includes('staging')) {
 			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
@@ -584,8 +579,7 @@
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-			console.log('sku true');
-			console.log(urlPrefix)
+		
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
@@ -756,6 +750,11 @@
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
 				productPage();
+				if($('.product-crumb').length === 0){
+					$('.fr-breadcrumbs_inner').append(`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
+
+				}
+			
 
 			} else {
 				state.contentSelected = null;
@@ -774,7 +773,10 @@
 		})
 
 		$('.l-navigation_item').click((e) => {
-			state.filter = e.currentTarget.dataset.filterButton
+			state.filter = e.currentTarget.dataset.filterButton;
+			console.log($(e))
+			$('.l-navigation_item.isactive').removeClass('isactive');
+    		$(this).addClass('isactive')
 			homepageProductList()
 		})
 
