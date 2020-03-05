@@ -1275,7 +1275,9 @@ q:before {
 
 	.l-container.-topLayer {
 		position: relative;
-		display: flex
+        display: flex;
+            padding-top: 60px;
+
 	}
 
 	.l-navigation {
@@ -1403,12 +1405,12 @@ q:before {
 
 		p {
 			font-family: $fontFam_hel;
-            font-size: 14px;
+			font-size: 14px;
 			margin-bottom: 8vw;
-            
+
 
 			@include bp(sm) {
-			margin-bottom: 1.875vw;
+				margin-bottom: 1.875vw;
 
 				font-size: 20px;
 
@@ -1418,9 +1420,19 @@ q:before {
 	}
 
 	.main-hero-text {
-		text-align: center;
-		font-size: 5vw;
-		width: 100%;
+		text-align: left;
+		font-size: 24px;
+		width: 60%;
+		margin: 0 auto;
+
+		@include bp(sm) {
+			font-size: 5vw;
+			width: 100%;
+			text-align: center;
+
+
+
+		}
 	}
 
 	.c-banner {
@@ -1524,7 +1536,8 @@ q:before {
 		;
 		font-size: 31px;
 		display: inline-block;
-		margin-bottom: 2.66667vw
+        margin-bottom: 2.66667vw;
+        text-transform: uppercase;
 	}
 
 	.c-contentsCardGroup_body {
@@ -2221,7 +2234,24 @@ q:before {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		text-align: center;
+        text-align: center;
+        &.menu{
+            height: auto;
+        transform: rotate(-90deg);
+        bottom: 0;
+        top:auto;
+            
+
+            @include bp(sm){
+                bottom: auto;
+                top: 0;
+                height: 100%;
+        transform: none;
+
+
+            }
+
+        }
 	}
 
 	.swiper-container {
@@ -3392,10 +3422,7 @@ q:before {
 		.l-container {
 			margin: 0 auto;
 
-			&.-topLayer {
-				padding-top: 60px;
-
-			}
+			
 		}
 
 		.l-container.-underLayer {
@@ -4543,10 +4570,13 @@ q:before {
 
 
 	.o-hero {
-		// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-
 		margin-bottom: 30px;
-		padding-top: 38vw;
+		padding-top: 90vh;
+
+		@include bp(sm) {
+			padding-top: 38vw;
+		}
+
 
 	}
 
