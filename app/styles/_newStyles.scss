@@ -16,7 +16,7 @@ Helvetica,
 Arial,
 sans-serif;
 
-
+@import '_icons';
 // New Edits
 
 
@@ -56,7 +56,7 @@ sans-serif;
     margin: 0;
 }
 .o-hero-lead {
-	padding: 13.33333vw 0;
+	padding: 13.33333vw 4%;
 	background: hsla(0, 0%, 100%, .6);
 	text-align: center;
 	font-size: 14px;
@@ -133,6 +133,7 @@ sans-serif;
 
 
 .c-topPageButton {
+
 	.u-imgAdjustBox_inner {
 		display: block;
 
@@ -157,8 +158,13 @@ sans-serif;
 		width: 8px;
 		height: 8px;
 		border-top: 2px solid #000;
-		border-left: 2px solid #000;
-	}
+        border-left: 2px solid #000;
+        transition: .5s;
+    }
+    &:hover .long-arrow-left{ 
+		margin-left: 50px;
+
+    }
 
 
 	.long-arrow-right {

@@ -31,8 +31,8 @@ sans-serif;
 		sans-serif;
 }
 
-.content-wrapper{
-    max-width: 100%;
+.content-wrapper {
+	max-width: 100%;
 }
 
 
@@ -201,39 +201,41 @@ body {
 
 }
 
-.pt_primary #main .primary-content {
 
-	article,
-	aside,
-	details,
-	figcaption,
-	figure,
-	footer,
-	header,
-	hgroup,
-	menu,
-	nav,
-	section {
-		display: block
-	}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block
+}
 
-	ol,
-	ul {
-		list-style: none
-	}
+ol,
+ul {
+	list-style: none
+}
 
-	blockquote,
-	q {
-		quotes: none
-	}
+blockquote,
+q {
+	quotes: none
+}
 
-	blockquote:after,
-	blockquote:before,
-	q:after,
-	q:before {
-		content: "";
-		content: none
-	}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+	content: "";
+	content: none
+}
+
+.pt_primary #main .primary-content .masterpiece-container,
+.masterpiece-container {
 
 	a {
 		margin: 0;
@@ -267,6 +269,10 @@ body {
 		vertical-align: bottom
 	}
 
+	.bold {
+		font-weight: 700;
+	}
+
 	button {
 		-webkit-appearance: none;
 		-moz-appearance: none;
@@ -279,7 +285,12 @@ body {
 	}
 
 	.wrapper {
-		padding: 0 20px 50px;
+		padding: 0 0 50px;
+
+		@include bp(sm) {
+			padding: 0 20px 50px;
+
+		}
 	}
 
 	body {
@@ -405,8 +416,9 @@ body {
 
 	.fr-breadcrumbs_item {
 		font-size: 12px;
-        line-height: 18px;
-        font-family: $fontFam_hel;;
+		line-height: 18px;
+		font-family: $fontFam_hel;
+		;
 	}
 
 	.fr-breadcrumbs_item:not(:last-child) {
@@ -1371,7 +1383,6 @@ body {
 	}
 
 	.o-hero {
-		// background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
 		padding-top: 100%;
 		position: relative;
 		margin-bottom: 5.33333vw
@@ -1391,13 +1402,17 @@ body {
 		margin: 0 auto;
 
 		p {
-			margin-bottom: 1.875vw;
-            font-family: $fontFam_hel;
+			font-family: $fontFam_hel;
             font-size: 14px;
-            @include bp(sm){
-            font-size: 20px;
+			margin-bottom: 8vw;
+            
 
-            }
+			@include bp(sm) {
+			margin-bottom: 1.875vw;
+
+				font-size: 20px;
+
+			}
 
 		}
 	}
@@ -1476,10 +1491,14 @@ body {
 	}
 
 	.c-contentsCard_title {
-		font-size: 20px;
-		margin-bottom: 1.33333vw;
-		// white-space: nowrap
-		color: #fff;
+		font-size: 18px;
+		margin-bottom: 2.4vw;
+		color: #000;
+
+		@include bp(sm) {
+			color: #fff;
+
+		}
 	}
 
 	.c-contentsCardGroup {
@@ -3311,8 +3330,12 @@ body {
 		}
 
 		.-masterpiece .wrapper {
-			background-color: transparent;
-			padding: 0 20px 50px;
+			padding: 0 0 50px;
+
+			@include bp(sm) {
+				padding: 0 20px 50px;
+
+			}
 
 		}
 
@@ -3483,7 +3506,9 @@ body {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			transition: all, .3s
+			transition: all, .3s;
+
+
 		}
 
 		.c-contentsCard_tag {
@@ -3700,8 +3725,8 @@ body {
 
 		.c-shoulderSection_title {
 			font-size: 24px;
-            margin-bottom: 30px;
-            text-transform: inherit;
+			margin-bottom: 30px;
+			text-transform: inherit;
 		}
 
 		.a-lead {
@@ -4519,14 +4544,14 @@ body {
 
 	.o-hero {
 		// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-	
+
 		margin-bottom: 30px;
 		padding-top: 38vw;
 
-    }
-    
+	}
 
-    
+
+
 
 
 
