@@ -464,7 +464,7 @@
 								alt="UNIQLO MASTERPIECE" data-expand="300">
 		`
 		var homepageComponent = `
-			<div class="o-hero" style="background-image: url(${homepageHero.imagePC})">
+			<div class="o-hero" >
 				<h1 class="o-hero_title">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
 						<picture class="u-imgAdjustBox_inner">
@@ -473,9 +473,12 @@
 					</figure>
 				</h1>
 			</div>
-			<p class="a-lead">
-				${homepageHero.copy}
-			</p>
+			<div class="o-hero-lead">
+				<p class="a-lead">
+					${homepageHero.copy}
+				</p>
+			</div>
+		
 			<div class="l-container -topLayer">
 				<nav class="l-navigation">
 				</nav>
