@@ -1528,20 +1528,19 @@ q:before {
 	}
 
 	.c-contentsCardGroup_headInner {
-		font-family: UniqloProBold,
-			'Helvetica Neue',
-			Helvetica,
-			Arial,
-			sans-serif;
-		;
-		font-size: 31px;
+		font-family: $fontFam_uqBold;
+		font-size: 24px;
 		display: inline-block;
         margin-bottom: 2.66667vw;
         text-transform: uppercase;
+      
 	}
 
 	.c-contentsCardGroup_body {
-		margin-top: -4vw
+        @include bp(sm){
+            margin-top: -4vw
+
+        }
 	}
 
 	.c-contentsPanel {
@@ -4571,7 +4570,7 @@ q:before {
 
 	.o-hero {
 		margin-bottom: 30px;
-		padding-top: 90vh;
+		padding-top: 85vh;
 
 		@include bp(sm) {
 			padding-top: 38vw;
