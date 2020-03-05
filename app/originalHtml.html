@@ -285,7 +285,6 @@
 
 	var hompageMenu = () => {
 		var menu = `
-		
 				<div class="l-navigation_head">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
 						<picture class="u-imgAdjustBox_inner">
@@ -301,11 +300,12 @@
 				<div class="l-navigation_wrapper">
 					<ul class="l-navigation_body" data-navigation-position="default">
 						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
+							data-i ="0"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_all"><span>ALL</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
+						data-i ="1" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_outerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
@@ -317,7 +317,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_tops">
+							data-label="l3_hp_menu_tops" data-i ="2">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -326,7 +326,7 @@
 										alt="TOPS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">TOPS</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent"
+						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent" data-i ="3"
 							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_bottoms">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -337,7 +337,7 @@
 										alt="BOTTOMS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">BOTTOMS</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
+						<li data-i ="4" class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_dresses">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -348,7 +348,7 @@
 										alt="DRESS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">DRESSES</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
+						<li data-i ="5" class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
 							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_loungwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -359,7 +359,7 @@
 										alt="ROOM WEAR" data-expand="300"></picture>
 							</figure><span class="u-only-pc">LOUNGEWEAR</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
+						<li data-i ="6" class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_innerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -370,7 +370,7 @@
 										alt="INNER" data-expand="300"></picture>
 							</figure><span class="u-only-pc">INNERWEAR</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
+						<li data-i ="7" class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_accessories">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -381,7 +381,7 @@
 										alt="GOODS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">ACCESSORIES</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
+						<li data-i ="8" class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_baby">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -425,8 +425,7 @@
 							</ul>
 						</div>
 					</a>
-				</section>
-			`
+				</section>`;
 
 				return productTile
 
@@ -798,7 +797,6 @@
 
 		} else {
 			homepage();
-			console.log(hpCategory)
 			if (hpCategory) {
 				var findProductPageData = masterpieceData.filter((data) => {
 					return data.category.toLowerCase() === hpCategory
@@ -806,25 +804,29 @@
 				if (findProductPageData && findProductPageData.length > 0) {
 					state.filter = hpCategory;
 					homepageProductList();
-
-
 				}
-
-
 			}
 		}
 
 		$('.js-trackEvent').click((e) => {
 			console.log(e.currentTarget.dataset)
 		})
+
 		$('.c-contentsCard').click(() => {
 			// event.preventDefault()
 		})
+
 		$('.l-navigation_item').click((e) => {
 			state.filter = e.currentTarget.dataset.filterButton;
+			var i = e.currentTarget.dataset.i;
 			$('.l-navigation_item.is-active').removeClass('is-active');
-			$(e).addClass('is-active')
-			console.log($(e))
+			// $('.l-navigation_item').index(this).addClass('is-active');
+			console.log($('.l-navigation_item').index(this), 'aksjdh')
+			console.log($(this), 'this')
+
+
+			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
+
 			homepageProductList();
 
 			$('html, body').animate({
