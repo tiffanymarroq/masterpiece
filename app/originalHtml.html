@@ -9,7 +9,7 @@
 							HOME
 						</a></li>
 					<li class="fr-breadcrumbs_item">
-						<a href="/us/page/masterpiece">
+						<a href="/us/en/page/masterpiece">
 							MASTERPIECE
 						</a>
 					</li>
@@ -30,7 +30,8 @@
 		menuSelectedItem: '',
 		filter: 'all',
 		contentSelected: '',
-		width: window.innerWidth
+		width: window.innerWidth,
+		siteUrl: '/us/en/page/masterpiece-tmq/'
 	}
 
 
@@ -389,7 +390,7 @@
 				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"><a
 						class="js-trackEvent" data-category="L3_20ss_masterpiece"
 						data-label="${'gatag'}"
-						href="/us/en/page/masterpiece/${product.url}">
+						href="${state.siteUrl + product.url}">
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
 								<img class="fr-img lazyloaded"
@@ -607,14 +608,13 @@
 						return;
 					}
 
-					console.log('success')
 					var price = $(pData).children('.product-tile-info')
 						.children(
 							'.product-pricing')
 						.children(
 							'.product-sales-price').html();
 
-					if (price.includes('/')) {
+					if (price && price.includes('/')) {
 						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
 						return;
 					}
@@ -661,7 +661,7 @@
 					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
 							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
 							data-label="L3_20ss_masterpiece_premium_linen_details_page"
-							href="/us/en/page/masterpiece/${product.url}">
+							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
 								
@@ -713,7 +713,7 @@
 				</article>
 				<aside class="l-relatedAside">
 				</aside>
-				<a class="c-topPageButton js-trackEvent" href="/us/page/masterpiece"
+				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
 					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
@@ -740,8 +740,8 @@
 		}
 	}
 
-	// Init App
-	$(document).ready(() => {
+
+	function initMasterpiece() {
 		var urlParams = new URLSearchParams(window.location.search);
 
 		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;',
@@ -760,7 +760,6 @@
 
 
 		if (product && category) {
-
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
@@ -772,18 +771,15 @@
 				if ($('.product-crumb').length === 0) {
 					$('.fr-breadcrumbs_inner').append(
 						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
-						)
+					)
 
 				}
 
 
 			} else {
 				state.contentSelected = null;
-
 				$('.main').html('Page not found');
 			}
-
-
 
 
 		} else {
@@ -798,6 +794,11 @@
 				}
 			}
 		}
+	}
+
+	// Init App
+	$(document).ready(() => {
+		initMasterpiece()
 
 		$('.js-trackEvent').click((e) => {
 			console.log(e.currentTarget.dataset.label)
@@ -805,6 +806,7 @@
 
 		$('.c-contentsCard').click(() => {
 			// event.preventDefault()
+			initMasterpiece()
 		})
 
 		$('.l-navigation_item').click((e) => {
