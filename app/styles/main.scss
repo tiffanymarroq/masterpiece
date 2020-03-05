@@ -1406,7 +1406,14 @@ body {
 	.l-relatedAside_title {
 		font-size: 18px;
 		margin-bottom: 5.33333vw
-	}
+    }
+    
+    .l-wrapper{
+        background: var(--color-gray050);
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    }
 
 	.o-hero {
 		// background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
@@ -1427,8 +1434,11 @@ body {
         max-width: 450px;
         margin: 0 auto;
 
+
         p{
             margin-bottom: 1.875vw;
+        font-family: $fontFam_hel;
+
         }
     }
 
@@ -3394,7 +3404,8 @@ body {
 		}
 
 		.l-container {
-			margin: 0 auto
+            margin: 0 auto;
+            padding-top: 60px;
 		}
 
 		.l-container.-underLayer {
@@ -3452,7 +3463,6 @@ body {
 
 		.o-hero {
 			background-size: 135.59322vw 54.23729vw;
-			padding-top: 54.23729vw;
 			margin-bottom: 2.54237vw
 		}
 
@@ -4541,8 +4551,9 @@ body {
     .o-hero {
         // background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
         background-size: 1600px 640px;
-        padding-top: 640px;
         margin-bottom: 30px;
+			padding-top: 38vw;
+
         &:before{
             content: '';
             display: block;
@@ -4559,7 +4570,7 @@ body {
             &:before{
                 padding-top: 40%;
                 background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
-                top: 145px;
+                top: 73px;
             }
         }
     
