@@ -524,7 +524,7 @@
 			</ul>
 		`;
 
-		$('.c-shoulderSection').html(relatedProductsComponent);
+		$('.c-shoulderSection_content').html(relatedProductsComponent);
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
@@ -695,25 +695,24 @@
 						<div class="c-contentsPanel_image"></div>
 						<div class="c-contentsPanel_inner"></div>
 					</div>
-					<section class="c-shoulderSection"></section>
+					<section class="c-shoulderSection">
+						<div class="c-shoulderSection_content"></div>
+					</section>
 				</article>
 				<aside class="l-relatedAside">
 				</aside>
 				<a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
 					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
-						<picture class="u-imgAdjustBox_inner">
-							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306"
-								type="image/webp"
-								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306">
-							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-								type="image/png"
-								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"><img
+						<div class="u-imgAdjustBox_inner">
+								<img
 								class="fr-img lazyloaded"
-								src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-								data-src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
-						</picture>
+								<p>BACK TO TOP</p>
+								<div class="long-arrow-left"></div>
+						</div>
 					</figure>
 				</a>
 			</div>`

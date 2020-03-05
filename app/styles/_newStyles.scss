@@ -1,3 +1,22 @@
+$fontFam_uqReg: UniqloProRegular,
+'Uniqlo Pro Regular',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+$fontFam_uqBold: UniqloProBold,
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+$fontFam_hel: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+
+
 // New Edits
 
 
@@ -51,6 +70,64 @@
 	line-height: 1.2;
 }
 
-.-inCard .c-label_item.-name{
-    line-height: 1.2;
+.-inCard .c-label_item.-name {
+	line-height: 1.2;
+}
+
+
+// Product Page
+.c-shoulderSection_content {
+	max-width: var(--contents-width-inner);
+	margin: 0 auto;
+}
+
+
+.c-topPageButton {
+	.u-imgAdjustBox_inner {
+		display: block;
+
+		img {
+			margin-bottom: 15px;
+		}
+
+		p {
+			font-family: $fontFam_uqReg;
+		}
+	}
+
+
+
+
+
+	.long-arrow-left {
+		display: block;
+		margin: 30px auto;
+		width: 25px;
+		height: 25px;
+		border-top: 2px solid #000;
+		border-left: 2px solid #000;
+	}
+
+
+	.long-arrow-right {
+		transform: rotate(135deg);
+	}
+
+
+	.long-arrow-left {
+		transform: rotate(-45deg);
+	}
+
+
+	.long-arrow-left::after {
+		content: "";
+		display: block;
+		width: 2px;
+		height: 45px;
+		background-color: black;
+		transform: rotate(-45deg) translate(15px, 4px);
+		left: 0;
+		top: 0;
+	}
+
 }
