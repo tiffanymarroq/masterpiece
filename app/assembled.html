@@ -7,6 +7,10 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.content-wrapper {
+  max-width: 100% ;
+}
+
 :root {
   --black: #000;
 }
@@ -369,6 +373,7 @@ body {
 .pt_primary #main .primary-content .fr-breadcrumbs_item {
   font-size: 12px;
   line-height: 18px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .fr-breadcrumbs_item:not(:last-child) {
@@ -1703,8 +1708,6 @@ body {
 }
 
 .pt_primary #main .primary-content .c-shoulderSection {
-  background: #f4f4f4;
-  background: var(--color-gray050);
   padding: 5.33333vw 8vw;
 }
 
@@ -3324,6 +3327,7 @@ body {
   }
   .pt_primary #main .primary-content .l-relatedAside {
     padding: 0;
+    max-width: var(--contents-width-inner);
     margin: 0 auto;
   }
   .pt_primary #main .primary-content .l-relatedAside_title {
@@ -4371,21 +4375,18 @@ body {
   left: 0;
   z-index: 1;
   min-height: 500px;
-  top: 73px;
+   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
   
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
-
 }
 
 @media all and (min-width: 768px) {
   .pt_primary #main .primary-content .hp-hero-container .hp-bg-hero {
     padding-top: 40%;
-  top: 280px;
-
+    /* top: 73px; */
      background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 
   }
@@ -4406,6 +4407,9 @@ body {
 .pt_primary #main .primary-content .c-shoulderSection_content {
   max-width: var(--contents-width-inner);
   margin: 0 auto;
+  background: #f4f4f4;
+  background: var(--color-gray050);
+  padding: 20px;
 }
 
 .pt_primary #main .primary-content .c-topPageButton .u-imgAdjustBox_inner {
@@ -4455,8 +4459,13 @@ body {
   top: 0;
 }
 
-.content-wrapper {
-  max-width: 100%;
+.pt_primary #main .primary-content .-masterpiece {
+  background-color: var(--color-gray050);
+}
+
+.pt_primary #main .primary-content .product-container {
+  background-color: #fff;
+  padding: 50px 0;
 }
 
 
@@ -4552,7 +4561,7 @@ body {
 				</li>
 			</ol>
 		</div>
-		<main class="main">
+		<main   class="main">
 		</main>
 
 	</div>
@@ -5229,7 +5238,7 @@ body {
 
 		console.log(state, 'product page')
 		var productPageComponent =
-			`<div class="l-container">
+			`<div class="l-container product-container">
 				<article class="c-contents">
 					<div class="c-contentsPanel">
 						<div class="c-contentsPanel_image"></div>

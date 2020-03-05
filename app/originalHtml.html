@@ -15,7 +15,7 @@
 				</li>
 			</ol>
 		</div>
-		<main class="main">
+		<main  style="margin-top: 280px" class="main">
 		</main>
 
 	</div>
@@ -540,14 +540,14 @@
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="L4_425035"
+					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label=""
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
 								<img class="fr-img lazyloaded"
-								src="https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/427952/item/goods_30_427952.jpg?width=380"
-								data-src="https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/427952/item/goods_30_427952.jpg?width=380"
-								alt="Comfort jacket" data-expand="300">
+								src=""
+								data-src=""
+								alt="" data-expand="300">
 						</picture>
 					</figure>
 					<div class="c-productButton_inner">
@@ -690,9 +690,8 @@
 
 	var productPage = () => {
 
-		console.log(state, 'product page')
 		var productPageComponent =
-			`<div class="l-container">
+			`<div class="l-container product-container">
 				<article class="c-contents">
 					<div class="c-contentsPanel">
 						<div class="c-contentsPanel_image"></div>
@@ -704,7 +703,7 @@
 				</article>
 				<aside class="l-relatedAside">
 				</aside>
-				<a class="c-topPageButton js-trackEvent" href="/masterpiece"
+				<a class="c-topPageButton js-trackEvent" href="/page/masterpiece"
 					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">

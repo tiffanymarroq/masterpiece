@@ -405,7 +405,8 @@ body {
 
 	.fr-breadcrumbs_item {
 		font-size: 12px;
-		line-height: 18px
+        line-height: 18px;
+        font-family: $fontFam_hel;;
 	}
 
 	.fr-breadcrumbs_item:not(:last-child) {
@@ -1698,8 +1699,7 @@ body {
 	}
 
 	.c-shoulderSection {
-		background: #f4f4f4;
-		background: var(--color-gray050);
+
 		padding: 5.33333vw 8vw
 	}
 
@@ -3415,7 +3415,7 @@ body {
 		.l-relatedAside {
 			padding: 0;
 			// max-width: 936px;
-			// max-width: var(--contents-width-inner);
+			max-width: var(--contents-width-inner);
 			margin: 0 auto;
 		}
 
