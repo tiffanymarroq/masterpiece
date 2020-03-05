@@ -4,12 +4,12 @@
 		<div class="fr-breadcrumbs u-only-pc">
 			<ol class="fr-breadcrumbs_inner">
 				<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent"
-						href="https://www.uniqlo.com/" data-category="L3_20ss_masterpiece"
+						href="/" data-category="L3_20ss_masterpiece"
 						data-label="L3_20ss_masterpiece_top_breadcrumb_1">
 						HOME
 					</a></li>
 				<li class="fr-breadcrumbs_item">
-					<a href="/">
+					<a href="/page/masterpiece">
 						MASTERPIECE
 					</a>
 				</li>
@@ -29,7 +29,6 @@
 		filter: 'all',
 		contentSelected: ''
 	}
-
 
 
 	var masterpieceData = [{
@@ -483,10 +482,10 @@
 
 		var content = `
 				<h1 class="c-contentsPanel_title">
-					${product.title}
+					${product.title.replace('&apos;',"'")}
 				</h1>
 				<p class="c-contentsPanel_text">
-					${product.productCopy}
+					${product.productCopy.replace('&apos;',"'")}
 				</p>
 				<ul class="c-label -inPanel">
 					<li class="c-label_item -category">
@@ -516,7 +515,7 @@
 		var product = state.contentSelected;
 		var relatedProductsComponent =
 			`	<h2 class="c-shoulderSection_title">
-				${product.relatedProducts.title}
+				${product.relatedProducts.title.replace('&apos;',"'")}
 			</h2>
 			<ul class="c-productButtonGroup">
 			</ul>
@@ -656,12 +655,12 @@
 										class="fr-img lazyloaded"
 										src="${product.image}"
 										data-src="${product.image}"
-										alt="${product.title}" data-expand="300">
+										alt="${product.title.replace('&apos;',"'")}" data-expand="300">
 								</picture>
 							</figure>
 							<div>
 								<h3 class="c-relatedButton_title">
-									${product.title}
+									${product.title.replace('&apos;',"'")}
 								</h3>
 								<p class="c-relatedButton_name">
 									${product.productName}
@@ -729,11 +728,11 @@
 	$(document).ready(() => {
 		var urlParams = new URLSearchParams(window.location.search);
 
-		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;',"'").replace('_', '-')
 			.toLowerCase() :
 			null;
 
-		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('&apos;',"'").replace('_', '-')
 			.toLowerCase() :
 			null;
 
@@ -754,15 +753,13 @@
 				productPage();
 				if ($('.product-crumb').length === 0) {
 					$('.fr-breadcrumbs_inner').append(
-						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
+						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`)
 
 				}
 
 
 			} else {
 				state.contentSelected = null;
-
-
 
 				$('.main').html('Page not found');
 			}
@@ -784,7 +781,7 @@
 		}
 
 		$('.js-trackEvent').click((e) => {
-			console.log(e.currentTarget.dataset)
+			console.log(e.currentTarget.dataset.label)
 		})
 
 		$('.c-contentsCard').click(() => {
@@ -795,9 +792,6 @@
 			state.filter = e.currentTarget.dataset.filterButton;
 			var i = e.currentTarget.dataset.i;
 			$('.l-navigation_item.is-active').removeClass('is-active');
-			// $('.l-navigation_item').index(this).addClass('is-active');
-			console.log($('.l-navigation_item').index(this), 'aksjdh')
-			console.log($(this), 'this')
 
 
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
@@ -838,7 +832,6 @@
 					})
 
 				} else {
-					console.log(280 - e, 'scroll')
 					$('.hp-bg-hero').css({
 						'position': 'fixed',
 						'top': 280 - e > 0 ? 280 - e : 0,
