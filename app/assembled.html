@@ -240,6 +240,10 @@ body {
   padding: 0;
 }
 
+.pt_primary #main .primary-content .wrapper {
+  padding: 0 20px 50px;
+}
+
 .pt_primary #main .primary-content body {
   background-color: #f4f4f4;
   background-color: var(--color-gray050);
@@ -260,6 +264,10 @@ body {
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+}
+
+.pt_primary #main .primary-content p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .footer_inner,
@@ -1363,38 +1371,6 @@ body {
   background-size: cover;
 }
 
-.pt_primary #main .primary-content .-outer.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-outer-active.svg);
-}
-
-.pt_primary #main .primary-content .-tops.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-tops-active.svg);
-}
-
-.pt_primary #main .primary-content .-bottoms.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-bottoms-active.svg);
-}
-
-.pt_primary #main .primary-content .-dress.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-dress-active.svg);
-}
-
-.pt_primary #main .primary-content .-roomwear.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-roomwear-active.svg);
-}
-
-.pt_primary #main .primary-content .-inner.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-inner-active.svg);
-}
-
-.pt_primary #main .primary-content .-goods.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-goods-active.svg);
-}
-
-.pt_primary #main .primary-content .-baby.is-active .l-navigation_iconInner {
-  background-image: url(/jp/ja/contents/feature/masterpiece/img/icon-baby-active.svg);
-}
-
 .pt_primary #main .primary-content .l-relatedAside {
   background: #fff;
   background: var(--color-white);
@@ -1404,10 +1380,19 @@ body {
 .pt_primary #main .primary-content .l-relatedAside_title {
   font-size: 18px;
   margin-bottom: 5.33333vw;
+  text-transform: inherit;
+  font-weight: 500;
+  letter-spacing: .75px;
+}
+
+.pt_primary #main .primary-content .l-wrapper {
+  background: var(--color-gray050);
+  z-index: 2;
+  position: relative;
+  width: 100%;
 }
 
 .pt_primary #main .primary-content .o-hero {
-  background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
   padding-top: 100%;
   position: relative;
   margin-bottom: 5.33333vw;
@@ -1420,6 +1405,16 @@ body {
   width: 60.26667vw;
   height: 16.8vw;
   margin: -8.4vw 0 0 -30.13333vw;
+}
+
+.pt_primary #main .primary-content .o-hero-text {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.pt_primary #main .primary-content .o-hero-text p {
+  margin-bottom: 1.875vw;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .main-hero-text {
@@ -1442,10 +1437,6 @@ body {
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
           box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
   margin-top: 4vw;
-}
-
-.pt_primary #main .primary-content .c-contentsCard.-no-8 {
-  background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/image-8-2.jpg) 0 0/100% auto;
 }
 
 .pt_primary #main .primary-content .c-contentsCard.-no-8.is-random figure {
@@ -1543,6 +1534,7 @@ body {
 .pt_primary #main .primary-content .c-contentsPanel_title {
   margin-bottom: 4vw;
   font-size: 26px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .c-contentsPanel_text {
@@ -1605,9 +1597,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 13px;
 }
 
@@ -1655,6 +1647,7 @@ body {
   margin-right: 0;
   font-size: 12px;
   text-transform: inherit;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .-inPanel .c-label_item.-name {
@@ -1669,7 +1662,7 @@ body {
   background: var(--color-white);
   display: block;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 48px;
   text-align: center;
   margin-top: 5.33333vw;
@@ -1686,6 +1679,8 @@ body {
 .pt_primary #main .primary-content .c-relatedButton_title {
   font-size: 20px;
   margin-bottom: 2.66667vw;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.2;
 }
 
 .pt_primary #main .primary-content .c-relatedButton_name {
@@ -2773,6 +2768,7 @@ body {
   .pt_primary #main .primary-content .wrapper {
     background-color: #fff;
     background-color: var(--color-white);
+    width: 100%;
   }
   .pt_primary #main .primary-content .footer_inner,
   .pt_primary #main .primary-content .fr-globalHeader_inner,
@@ -3242,7 +3238,7 @@ body {
   }
   .pt_primary #main .primary-content .-masterpiece .wrapper {
     background-color: transparent;
-    padding: 0 20px;
+    padding: 0 20px 50px;
   }
   .pt_primary #main .primary-content .-masterpiece .fr-globalHeader_inner {
     max-width: 1180px;
@@ -3288,6 +3284,9 @@ body {
   .pt_primary #main .primary-content .l-container {
     margin: 0 auto;
   }
+  .pt_primary #main .primary-content .l-container.-topLayer {
+    padding-top: 60px;
+  }
   .pt_primary #main .primary-content .l-container.-underLayer {
     padding: 60px 0;
     background: #fff;
@@ -3324,7 +3323,7 @@ body {
     height: 3.81356vw;
   }
   .pt_primary #main .primary-content .l-relatedAside {
-    padding: 20px;
+    padding: 0;
     margin: 0 auto;
   }
   .pt_primary #main .primary-content .l-relatedAside_title {
@@ -3333,7 +3332,6 @@ body {
   }
   .pt_primary #main .primary-content .o-hero {
     background-size: 135.59322vw 54.23729vw;
-    padding-top: 54.23729vw;
     margin-bottom: 2.54237vw;
   }
   .pt_primary #main .primary-content .o-hero_title {
@@ -3430,6 +3428,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    max-width: 936px;
     margin: 0 auto 40px;
   }
   .pt_primary #main .primary-content .c-contentsPanel_image {
@@ -3521,7 +3520,6 @@ body {
   }
   .pt_primary #main .primary-content .c-label_item.-name {
     font-size: 14px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   .pt_primary #main .primary-content .-inCard .c-label_item.-name {
     color: #fff;
@@ -3535,6 +3533,7 @@ body {
     font-size: 16px;
     margin: 30px auto 0;
     width: 296px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .pt_primary #main .primary-content .c-linkButton:hover {
     opacity: .7;
@@ -3554,7 +3553,7 @@ body {
     opacity: .7;
   }
   .pt_primary #main .primary-content .c-relatedButton_title {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   .pt_primary #main .primary-content .c-relatedButton_name {
     font-size: 14px;
@@ -4230,6 +4229,33 @@ body {
   }
 }
 
+.pt_primary #main .primary-content .o-hero {
+  background-size: 1600px 640px;
+  margin-bottom: 30px;
+  padding-top: 38vw;
+}
+
+.pt_primary #main .primary-content .o-hero:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 150.93333%;
+  background: no-repeat url(https://image.uniqlo.com
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: -1;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .o-hero:before {
+    padding-top: 40%;
+    background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
+    top: 73px;
+  }
+}
+
 @media screen and (min-width: 1180px) {
   .pt_primary #main .primary-content .l-navigation {
     width: 196px;
@@ -4254,11 +4280,6 @@ body {
   .pt_primary #main .primary-content .l-navigation_icon {
     width: 45px;
     height: 45px;
-  }
-  .pt_primary #main .primary-content .o-hero {
-    background-size: 1600px 640px;
-    padding-top: 640px;
-    margin-bottom: 30px;
   }
   .pt_primary #main .primary-content .o-hero_title {
     width: 960px;
@@ -4286,7 +4307,7 @@ body {
     top: 30px;
   }
   .pt_primary #main .primary-content .c-contentsCard_title {
-    font-size: 30px;
+    font-size: 28px;
   }
   .pt_primary #main .primary-content .c-contentsCardGroup {
     width: 984px;
@@ -4302,11 +4323,6 @@ body {
   .pt_primary #main .primary-content .a-lead {
     margin-bottom: 50px;
   }
-}
-
-.pt_primary #main .primary-content .sticky-menu {
-  position: fixed;
-  top: 0;
 }
 
 @-webkit-keyframes fadeIn {
@@ -4342,39 +4358,86 @@ body {
           animation: fadeIn .55s forwards;
 }
 
+.pt_primary #main .primary-content .o-hero-lead {
+  padding: 13.33333vw 0;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .o-hero-lead {
+    padding: 3.75vw 0;
+    font-size: 1.35vw;
+  }
+}
+
+.pt_primary #main .primary-content .c-contentsCard_inner {
+  padding-top: 2.2vw;
+}
+
+.pt_primary #main .primary-content .c-contentsCard_title {
+  line-height: 1.2;
+}
+
+.pt_primary #main .primary-content .-inCard .c-label_item.-name {
+  line-height: 1.2;
+}
+
+.pt_primary #main .primary-content .c-shoulderSection_content {
+  max-width: var(--contents-width-inner);
+  margin: 0 auto;
+}
+
+.pt_primary #main .primary-content .c-topPageButton .u-imgAdjustBox_inner {
+  display: block;
+}
+
+.pt_primary #main .primary-content .c-topPageButton .u-imgAdjustBox_inner img {
+  margin-bottom: 15px;
+}
+
+.pt_primary #main .primary-content .c-topPageButton .u-imgAdjustBox_inner p {
+  font-family: UniqloProRegular, "Uniqlo Pro Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pt_primary #main .primary-content .c-topPageButton [data-aspect-ratio="322:119"]:before {
+  padding-top: 45%;
+}
+
+.pt_primary #main .primary-content .c-topPageButton .long-arrow-left {
+  display: block;
+  margin: 15px 60px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+
+.pt_primary #main .primary-content .c-topPageButton .long-arrow-right {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.pt_primary #main .primary-content .c-topPageButton .long-arrow-left {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.pt_primary #main .primary-content .c-topPageButton .long-arrow-left::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  -webkit-transform: rotate(-45deg) translate(15px, 4px);
+          transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
 
 
-.-outer:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-hover.svg)
-	}
-
-	.-tops:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops-hover.svg)
-	}
-
-	.-bottoms:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms-hover.svg)
-	}
-
-	.-dress:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress-hover.svg)
-	}
-
-	.-roomwear:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear-hover.svg)
-	}
-
-	.-inner:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner-hover.svg)
-	}
-
-	.-goods:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods-hover.svg)
-	}
-
-	.-baby:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-hover.svg)
-	}
 
 	/* endCSSinject */
 
@@ -4401,7 +4464,6 @@ body {
 			</ol>
 		</div>
 		<main class="main">
-
 		</main>
 
 	</div>
@@ -4416,30 +4478,7 @@ body {
 		contentSelected: ''
 	}
 
-	var homepageHero = {
-		imagePC: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg`,
-		imageMB: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg`,
-		copy: `What is really good clothing?
-				<br>
-				<br>
-				Simple, functional, aesthetic and
-				evolving for the wearer.
-				<br>
-				<br>
-				Materials, sewing, silhouettes, colors ... with
-				people, nature and living. Attention is paid to every detail
-				while inheriting the spirit of Japanese manufacturing.
-				<br>
-				<br>
-				In order for each piece of clothing to continue to be a masterpiece of the
-				people who live today .
-				<br>
-				<br>
-				Making UNIQLO clothes is endless.
-				<br>
-				<br>
-				<span style="font-weight: bold">UNIQLO MASTERPIECE</span>`
-	}
+
 
 	var masterpieceData = [{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
@@ -4670,7 +4709,6 @@ body {
 
 	var hompageMenu = () => {
 		var menu = `
-		
 				<div class="l-navigation_head">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
 						<picture class="u-imgAdjustBox_inner">
@@ -4686,11 +4724,12 @@ body {
 				<div class="l-navigation_wrapper">
 					<ul class="l-navigation_body" data-navigation-position="default">
 						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
+							data-i ="0"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_all"><span>ALL</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
-							data-link=".l-container" data-category="L3_20ss_masterpiece"
+						data-i ="1" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_outerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
@@ -4702,7 +4741,7 @@ body {
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_tops">
+							data-label="l3_hp_menu_tops" data-i ="2">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -4711,7 +4750,7 @@ body {
 										alt="TOPS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">TOPS</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent"
+						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent" data-i ="3"
 							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_bottoms">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4722,7 +4761,7 @@ body {
 										alt="BOTTOMS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">BOTTOMS</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
+						<li data-i ="4" class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_dresses">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4733,7 +4772,7 @@ body {
 										alt="DRESS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">DRESSES</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
+						<li data-i ="5" class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
 							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_loungwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4744,7 +4783,7 @@ body {
 										alt="ROOM WEAR" data-expand="300"></picture>
 							</figure><span class="u-only-pc">LOUNGEWEAR</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
+						<li data-i ="6" class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_innerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4755,7 +4794,7 @@ body {
 										alt="INNER" data-expand="300"></picture>
 							</figure><span class="u-only-pc">INNERWEAR</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
+						<li data-i ="7" class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_accessories">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4766,7 +4805,7 @@ body {
 										alt="GOODS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">ACCESSORIES</span>
 						</li>
-						<li class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
+						<li data-i ="8" class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
 							data-label="l3_hp_menu_baby">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
@@ -4810,8 +4849,7 @@ body {
 							</ul>
 						</div>
 					</a>
-				</section>
-			`
+				</section>`;
 
 				return productTile
 
@@ -4834,22 +4872,10 @@ body {
 
 	var homepage = () => {
 
-		var heroText = `
-		<source
-								data-srcset="${homepageHero.imagePC}"
-								media="(min-width: 813px)" type="image/png"
-								srcset="${homepageHero.imagePC}">
-							<source
-								data-srcset="${homepageHero.imageMB}"
-								type="image/png"
-								srcset="${homepageHero.imageMB}">
-							<img class="fr-img lazyloaded"
-								src="${homepageHero.imageMB}"
-								data-src="http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-hero-logo.png?20200306"
-								alt="UNIQLO MASTERPIECE" data-expand="300">
-		`
+		
+		
 		var homepageComponent = `
-			<div class="o-hero" style="background-image: url(${homepageHero.imagePC})">
+			<div class="o-hero" >
 				<h1 class="o-hero_title">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
 						<picture class="u-imgAdjustBox_inner">
@@ -4858,16 +4884,32 @@ body {
 					</figure>
 				</h1>
 			</div>
-			<p class="a-lead">
-				${homepageHero.copy}
-			</p>
-			<div class="l-container -topLayer">
-				<nav class="l-navigation">
-				</nav>
-				<div class="c-contentsCardGroup">
+			<div class="o-hero-lead">
+				<div class="o-hero-text">
+					<p>What is a truly exceptional piece of clothing?</p>
+					<p>It’s simple, functional, has its own sense of beauty,
+					and evolves for the people who wear it.<p>
+					<p>The material, the needlework, the silhouette, the color scheme…
+					evolving with the people, the nature, and the everyday life.
+					Embracing the spirit of Japanese manufacturing,
+					paying close attention to every single detail.
+					We do this so that each and every piece of clothing
+					will be an eternal masterpiece
+					for those who live in the present.</p>
+					<p>There is no end to clothes-making at UNIQLO.</p>
+					<p class="bold">UNIQLO MASTERPIECE</p>				
 				</div>
+
 			</div>
-			<div class="c-bannerGroup"style=""></div>
+			<div class="l-wrapper">
+				<div class="l-container -topLayer">
+					<nav class="l-navigation">
+					</nav>
+					<div class="c-contentsCardGroup">
+					</div>
+				</div>
+				<div class="c-bannerGroup"style=""></div>
+			</div>
 		`
 		$('.main').html(homepageComponent)
 		hompageMenu();
@@ -4930,10 +4972,9 @@ body {
 			</ul>
 		`;
 
-		$('.c-shoulderSection').html(relatedProductsComponent);
+		$('.c-shoulderSection_content').html(relatedProductsComponent);
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
-
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i)
 			}
@@ -5102,25 +5143,24 @@ body {
 						<div class="c-contentsPanel_image"></div>
 						<div class="c-contentsPanel_inner"></div>
 					</div>
-					<section class="c-shoulderSection"></section>
+					<section class="c-shoulderSection">
+						<div class="c-shoulderSection_content"></div>
+					</section>
 				</article>
 				<aside class="l-relatedAside">
 				</aside>
-				<a class="c-topPageButton js-trackEvent" href="/jp/ja/contents/feature/masterpiece/"
+				<a class="c-topPageButton js-trackEvent" href="/masterpiece"
 					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
-						<picture class="u-imgAdjustBox_inner">
-							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306"
-								type="image/webp"
-								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.webp?20200306">
-							<source data-srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-								type="image/png"
-								srcset="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"><img
+						<div class="u-imgAdjustBox_inner">
+								<img
 								class="fr-img lazyloaded"
-								src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
-								data-src="/jp/ja/contents/feature/masterpiece/img/button-back-to-top.png?20200306"
+								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
-						</picture>
+								<p>BACK TO TOP</p>
+								<div class="long-arrow-left"></div>
+						</div>
 					</figure>
 				</a>
 			</div>`
@@ -5138,157 +5178,142 @@ body {
 
 	// Init App
 	$(document).ready(() => {
-				var urlParams = new URLSearchParams(window.location.search);
+		var urlParams = new URLSearchParams(window.location.search);
 
-				var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
-					.toLowerCase() :
-					null;
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
+			null;
 
-				var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
-					.toLowerCase() :
-					null;
-
-
-				var hpCategory = window.location.hash.toLowerCase().replace('#', '');
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('_', '-')
+			.toLowerCase() :
+			null;
 
 
-
-				if (product && category) {
-
-					var findProductPageData = masterpieceData.filter((data) => {
-						return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
-							product
-					})
-
-					if (findProductPageData && findProductPageData.length > 0) {
-						state.contentSelected = findProductPageData[0];
-						productPage();
-						if ($('.product-crumb').length === 0) {
-							$('.fr-breadcrumbs_inner').append(
-								`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
-
-						}
-
-
-					} else {
-						state.contentSelected = null;
+		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
 
 
 
-						$('.main').html('Page not found');
-					}
+		if (product && category) {
 
+			var findProductPageData = masterpieceData.filter((data) => {
+				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+					product
+			})
 
+			if (findProductPageData && findProductPageData.length > 0) {
+				state.contentSelected = findProductPageData[0];
+				productPage();
+				if ($('.product-crumb').length === 0) {
+					$('.fr-breadcrumbs_inner').append(
+						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title}</li>`)
 
-
-				} else {
-					homepage();
-					console.log(hpCategory)
-					if (hpCategory) {
-						var findProductPageData = masterpieceData.filter((data) => {
-							return data.category.toLowerCase() === hpCategory
-						})
-						if (findProductPageData && findProductPageData.length > 0) {
-							state.filter = hpCategory;
-							homepageProductList();
-
-
-						}
-
-
-					}
 				}
 
-				$('.js-trackEvent').click((e) => {
-					console.log(e.currentTarget.dataset)
+
+			} else {
+				state.contentSelected = null;
+
+
+
+				$('.main').html('Page not found');
+			}
+
+
+
+
+		} else {
+			homepage();
+			if (hpCategory) {
+				var findProductPageData = masterpieceData.filter((data) => {
+					return data.category.toLowerCase() === hpCategory
 				})
-				$('.c-contentsCard').click(() => {
-					// event.preventDefault()
-				})
-				$('.l-navigation_item').click((e) => {
-					state.filter = e.currentTarget.dataset.filterButton;
-					console.log($(e))
-					$('.l-navigation_item.isactive').removeClass('isactive');
-					$(this).addClass('isactive')
+				if (findProductPageData && findProductPageData.length > 0) {
+					state.filter = hpCategory;
 					homepageProductList();
-
-					$('html, body').animate({
-						scrollTop: $('.c-contentsCardGroup').offset().top
-					}, 300, function () {
-						window.location.hash = e.currentTarget.dataset.filterButton;
-					});
-
-					masterpieceGA(e)
-
-				})
-
-		
-
-					$(window).scroll(() => {
-						if ($('.l-navigation_wrapper').length > 0) {
-
-							var t = document.querySelector(".l-navigation_body");
-     
-                var e = document.documentElement.scrollTop || document.body.scrollTop;
-                e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t.setAttribute("data-navigation-position", "fixed") : t.setAttribute("data-navigation-position", "default"),
-                e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
-
-
-							// if($(this).scrollTop() > $(".l-navigation_wrapper").offset().top + $(this).scrollTop()){
-							// 	$('.l-navigation_body').css({
-							// 			'position': 'fixed',
-							// 			'top': '0',
-							// 			'bottom': ''
-							// 		})
-							// }
-
-
-							// if($(this).scrollTop() > $(".c-bannerGroup").offset().top + $(this).scrollTop() - $('.l-navigation_body').clientHeight()){
-
-							// 	$('.l-navigation_body').css({
-							// 			'position': 'absolute',
-							// 			'bottom': '0',
-							// 			'top': ''
-							// 		})
-							// }
-
-
-
-
-						}
-					})
-				})
-
-				// GA TAG
-				var masterpieceGA = (e) => {
-					if (!(e.dataset)) {
-						event.preventDefault();
-					}
-
-					var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
-					var urlPrefix = 'https://www.uniqlo.com/us/en';
-
-					if (window.location.href.includes('staging')) {
-						urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
-					}
-
-					if (window.location.href.includes('development')) {
-						urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
-					}
-
-					var path = window.location.href.split('?')[0].replace(urlPrefix, '');
-					if (path.substring(path.length - 1) !== '/') {
-						path = path + '/'
-					}
-					console.log(value, 'value')
-
-					// dataLayer.push({
-					// 	'event': 'eventTracking',
-					// 	'eventCategory': 'category page',
-					// 	'eventAction': `clicked category: ${path}`,
-					// 	'eventLabel': `l3_${value}`
-					// })
 				}
+			}
+		}
+
+		$('.js-trackEvent').click((e) => {
+			console.log(e.currentTarget.dataset)
+		})
+
+		$('.c-contentsCard').click(() => {
+			// event.preventDefault()
+		})
+
+		$('.l-navigation_item').click((e) => {
+			state.filter = e.currentTarget.dataset.filterButton;
+			var i = e.currentTarget.dataset.i;
+			$('.l-navigation_item.is-active').removeClass('is-active');
+			// $('.l-navigation_item').index(this).addClass('is-active');
+			console.log($('.l-navigation_item').index(this), 'aksjdh')
+			console.log($(this), 'this')
+
+
+			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
+
+			homepageProductList();
+
+			$('html, body').animate({
+				scrollTop: $('.c-contentsCardGroup').offset().top
+			}, 300, function () {
+				window.location.hash = e.currentTarget.dataset.filterButton;
+			});
+
+			masterpieceGA(e)
+
+		})
+
+
+
+		$(window).scroll(() => {
+			if ($('.l-navigation_wrapper').length > 0) {
+
+				var t = document.querySelector(".l-navigation_body");
+
+				var e = document.documentElement.scrollTop || document.body.scrollTop;
+				e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
+					.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
+						"data-navigation-position", "default"),
+					e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
+					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
+
+
+			}
+		})
+	})
+
+	// GA TAG
+	var masterpieceGA = (e) => {
+		if (!(e.dataset)) {
+			event.preventDefault();
+		}
+
+		var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
+		var urlPrefix = 'https://www.uniqlo.com/us/en';
+
+		if (window.location.href.includes('staging')) {
+			urlPrefix = 'https://staging-na-uniqlo.demandware.net/s/UniqloUS'
+		}
+
+		if (window.location.href.includes('development')) {
+			urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
+		}
+
+		var path = window.location.href.split('?')[0].replace(urlPrefix, '');
+		if (path.substring(path.length - 1) !== '/') {
+			path = path + '/'
+		}
+		console.log(value, 'value')
+
+		// dataLayer.push({
+		// 	'event': 'eventTracking',
+		// 	'eventCategory': 'category page',
+		// 	'eventAction': `clicked category: ${path}`,
+		// 	'eventLabel': `l3_${value}`
+		// })
+	}
 
 </script>
 

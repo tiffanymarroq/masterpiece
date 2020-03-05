@@ -62,7 +62,6 @@ sans-serif;
 
 // Home Tiles
 .c-contentsCard_inner {
-	opacity: 1;
 	padding-top: 2.2vw;
 }
 
@@ -95,15 +94,17 @@ sans-serif;
 		}
 	}
 
-
+    [data-aspect-ratio="322:119"]:before{
+        padding-top: 45%;
+    }
 
 
 
 	.long-arrow-left {
 		display: block;
-		margin: 30px auto;
-		width: 25px;
-		height: 25px;
+		margin: 15px 60px;
+		width: 8px;
+		height: 8px;
 		border-top: 2px solid #000;
 		border-left: 2px solid #000;
 	}
