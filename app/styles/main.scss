@@ -1387,13 +1387,18 @@ body {
 	}
 
 	.o-hero-text {
-		max-width: 450px;
+		max-width: 500px;
 		margin: 0 auto;
 
 
 		p {
 			margin-bottom: 1.875vw;
-			font-family: $fontFam_hel;
+            font-family: $fontFam_hel;
+            font-size: 14px;
+            @include bp(sm){
+            font-size: 20px;
+
+            }
 
 		}
 	}
@@ -3696,7 +3701,8 @@ body {
 
 		.c-shoulderSection_title {
 			font-size: 24px;
-			margin-bottom: 30px
+            margin-bottom: 30px;
+            text-transform: inherit;
 		}
 
 		.a-lead {
