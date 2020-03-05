@@ -259,7 +259,7 @@
 
 	//Homepage Components
 
-	var hompageMenu = () => {
+	var homepageMenu = () => {
 		var menu = `
 				<div class="l-navigation_head">
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
@@ -427,32 +427,35 @@
 		
 		
 		var homepageComponent = `
-			<div class="o-hero" >
-				<h1 class="o-hero_title">
-					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
-						<picture class="u-imgAdjustBox_inner">
-							<p class="main-hero-text">UNIQLO MASTERPIECE<p>
-						</picture>
-					</figure>
-				</h1>
-			</div>
-			<div class="o-hero-lead">
-				<div class="o-hero-text">
-					<p>What is a truly exceptional piece of clothing?</p>
-					<p>It’s simple, functional, has its own sense of beauty,
-					and evolves for the people who wear it.<p>
-					<p>The material, the needlework, the silhouette, the color scheme…
-					evolving with the people, the nature, and the everyday life.
-					Embracing the spirit of Japanese manufacturing,
-					paying close attention to every single detail.
-					We do this so that each and every piece of clothing
-					will be an eternal masterpiece
-					for those who live in the present.</p>
-					<p>There is no end to clothes-making at UNIQLO.</p>
-					<p class="bold">UNIQLO MASTERPIECE</p>				
+			<div class="hp-hero-container">
+				<div class="hp-bg-hero"></div>
+				<div class="o-hero" >
+					<h1 class="o-hero_title">
+						<figure class="u-imgAdjustBox" data-sp-aspect-ratio="452:126" data-pc-aspect-ratio="960:70">
+							<picture class="u-imgAdjustBox_inner">
+								<p class="main-hero-text">UNIQLO MASTERPIECE<p>
+							</picture>
+						</figure>
+					</h1>
 				</div>
-
+				<div class="o-hero-lead">
+					<div class="o-hero-text">
+						<p>What is a truly exceptional piece of clothing?</p>
+						<p>It’s simple, functional, has its own sense of beauty,
+						and evolves for the people who wear it.<p>
+						<p>The material, the needlework, the silhouette, the color scheme…
+						evolving with the people, the nature, and the everyday life.
+						Embracing the spirit of Japanese manufacturing,
+						paying close attention to every single detail.
+						We do this so that each and every piece of clothing
+						will be an eternal masterpiece
+						for those who live in the present.</p>
+						<p>There is no end to clothes-making at UNIQLO.</p>
+						<p class="bold">UNIQLO MASTERPIECE</p>				
+					</div>
+				</div>
 			</div>
+
 			<div class="l-wrapper">
 				<div class="l-container -topLayer">
 					<nav class="l-navigation">
@@ -464,7 +467,7 @@
 			</div>
 		`
 		$('.main').html(homepageComponent)
-		hompageMenu();
+		homepageMenu();
 		homepageProductList()
 
 	}
@@ -829,7 +832,24 @@
 					.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
 						"data-navigation-position", "default"),
 					e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
-					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute")
+					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute");
+
+
+				if(e > document.querySelector(".l-wrapper").getBoundingClientRect().top + e - t
+					.clientHeight) {
+					$('.hp-bg-hero').css({
+						'position': 'absolute',
+						'bottom': '0',
+						'top': ''
+					})
+
+				}else{
+					$('.hp-bg-hero').css({
+						'position': 'fixed',
+						'top': '70px',
+						'bottom': ''
+					})
+				}
 
 
 			}

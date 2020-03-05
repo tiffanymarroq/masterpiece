@@ -272,10 +272,11 @@ body {
 		cursor: pointer;
 		outline: none;
 		padding: 0
-    }
-    .wrapper{
-        padding: 0 20px 50px;
-    }
+	}
+
+	.wrapper {
+		padding: 0 20px 50px;
+	}
 
 	body {
 		background-color: #f4f4f4;
@@ -302,11 +303,11 @@ body {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		transform: translateZ(0)
-    }
-    
-    p{
-        font-family: $fontFam_hel;
-    }
+	}
+
+	p {
+		font-family: $fontFam_hel;
+	}
 
 	.footer_inner,
 	.main_inner {
@@ -1351,10 +1352,10 @@ body {
 
 	.l-relatedAside_title {
 		font-size: 18px;
-        margin-bottom: 5.33333vw;
-        text-transform: inherit;
-        font-weight: 500;
-        letter-spacing: .75px;
+		margin-bottom: 5.33333vw;
+		text-transform: inherit;
+		font-weight: 500;
+		letter-spacing: .75px;
 	}
 
 	.l-wrapper {
@@ -1668,9 +1669,9 @@ body {
 
 	.c-relatedButton_title {
 		font-size: 20px;
-        margin-bottom: 2.66667vw;
-        font-family: $fontFam_hel;
-        line-height: 1.2;
+		margin-bottom: 2.66667vw;
+		font-family: $fontFam_hel;
+		line-height: 1.2;
 	}
 
 	.c-relatedButton_name {
@@ -2765,8 +2766,8 @@ body {
 
 		.wrapper {
 			background-color: #fff;
-            background-color: var(--color-white);
-            width: 100%;
+			background-color: var(--color-white);
+			width: 100%;
 		}
 
 		.footer_inner,
@@ -3358,11 +3359,12 @@ body {
 		}
 
 		.l-container {
-            margin: 0 auto;
-            &.-topLayer{
-                padding-top: 60px;
+			margin: 0 auto;
 
-            }
+			&.-topLayer {
+				padding-top: 60px;
+
+			}
 		}
 
 		.l-container.-underLayer {
@@ -3407,7 +3409,7 @@ body {
 		}
 
 		.l-relatedAside {
-            padding: 0;
+			padding: 0;
 			// max-width: 936px;
 			// max-width: var(--contents-width-inner);
 			margin: 0 auto;
@@ -3632,8 +3634,8 @@ body {
 		.c-linkButton {
 			font-size: 16px;
 			margin: 30px auto 0;
-            width: 296px;
-            font-family: $fontFam_hel;
+			width: 296px;
+			font-family: $fontFam_hel;
 		}
 
 		.c-linkButton:hover {
@@ -4508,32 +4510,16 @@ body {
 
 	.o-hero {
 		// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-		background-size: 1600px 640px;
+	
 		margin-bottom: 30px;
 		padding-top: 38vw;
 
-		&:before {
-			content: '';
-			display: block;
-			width: 100%;
-			height: 0;
-			padding-top: 150.93333%;
-			// background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg) 50% 0/cover;
-			position: fixed;
-			top: 70px;
-			left: 0;
-			z-index: -1;
-		}
+    }
+    
 
-		@include bp(sm) {
-			&:before {
-				padding-top: 40%;
-				// background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
-				top: 73px;
-			}
-		}
+    
 
-	}
+
 
 
 	@media screen and (min-width: 1180px) {
@@ -4548,7 +4534,7 @@ body {
 		}
 
 		.l-navigation_body[data-navigation-position=fixed] {
-			left: 50%;
+			left: 47%;
 			margin-left: -590px
 		}
 
@@ -4627,7 +4613,7 @@ body {
 	}
 
 
-    @import '_newStyles';
-    
+	@import '_newStyles';
+
 
 }
