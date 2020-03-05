@@ -17,7 +17,7 @@ Arial,
 sans-serif;
 
 
-// @import 'breakpoints';
+@import 'breakpoints';
 
 
 // FULL WIDTH SPECIFICITY
@@ -1409,7 +1409,7 @@ body {
 	}
 
 	.o-hero {
-		background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
+		// background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
 		padding-top: 100%;
 		position: relative;
 		margin-bottom: 5.33333vw
@@ -1446,7 +1446,7 @@ body {
 	}
 
 	.c-contentsCard.-no-8 {
-		background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/image-8-2.jpg) 0 0/100% auto
+		// background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/image-8-2.jpg) 0 0/100% auto
 	}
 
 	.c-contentsCard.-no-8.is-random figure {
@@ -1546,7 +1546,11 @@ body {
 
 	.c-contentsPanel_title {
 		margin-bottom: 4vw;
-		font-size: 26px
+		font-size: 26px;
+		 font-family: 'Helvetica Neue',
+		Helvetica,
+		Arial,
+		sans-serif;;
 	}
 
 	.c-contentsPanel_text {
@@ -1609,7 +1613,7 @@ body {
 
 	.c-label {
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		font-size: 13px
 	}
 
@@ -1663,7 +1667,11 @@ body {
 		color: var(--color-gray500);
 		margin-right: 0;
 		font-size: 12px;
-		text-transform: inherit
+		text-transform: inherit;
+		font-family: 'Helvetica Neue',
+				Helvetica,
+				Arial,
+				sans-serif;
 	}
 
 	.-inPanel .c-label_item.-name {
@@ -3530,7 +3538,7 @@ body {
 
 		.c-contentsPanel {
 			display: flex;
-			// max-width: 936px;
+			max-width: 936px;
 			// max-width: var(--contents-width-inner);
 			margin: 0 auto 40px
 		}
@@ -3633,16 +3641,13 @@ body {
 
 		.c-label_item.-name {
 			font-size: 14px;
-			font-family: 'Helvetica Neue',
-				Helvetica,
-				Arial,
-				sans-serif;
+			
 		}
 
 		.-inCard .c-label_item.-name {
 			color: #fff;
 			color: var(--color-white);
-			font-size: 1.18644vw
+			font-size: 1.18644vw;
 		}
 
 		.-inPanel .c-label_item.-name {
@@ -4559,8 +4564,29 @@ body {
 			// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 			background-size: 1600px 640px;
 			padding-top: 640px;
-			margin-bottom: 30px
+			margin-bottom: 30px;
+			&:before{
+				content: '';
+				display: block;
+				width: 100%;
+				height: 0;
+				padding-top: 150.93333%;
+				background: no-repeat url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-background-hero.jpg) 50% 0/cover;
+				position: fixed;
+				top: 70px;
+				left: 0;
+				z-index: -1;
+			}
+			@include bp(sm){
+				&:before{
+					padding-top: 40%;
+					background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
+					top: 145px;
+				}
+			}
+		
 		}
+
 
 		.o-hero_title {
 			width: 960px;
@@ -4657,6 +4683,22 @@ body {
 
 	.product-fadeIn {
 		animation: fadeIn .55s forwards;
+	}
+
+
+	.o-hero-lead{
+		padding: 13.33333vw 0;
+    background: hsla(0,0%,100%,.6);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.9;
+	}
+
+	@include bp(sm){
+		.o-hero-lead{
+			padding: 3.75vw 0;
+			font-size: 1.0625vw;
+		}
 	}
 
 }
