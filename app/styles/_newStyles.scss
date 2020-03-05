@@ -1,0 +1,56 @@
+// New Edits
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: .5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.c-contentsCard {
+	opacity: 0;
+}
+
+.product-fadeIn {
+	animation: fadeIn .55s forwards;
+}
+
+
+
+// Hero
+.o-hero-lead {
+	padding: 13.33333vw 0;
+	background: hsla(0, 0%, 100%, .6);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+@include bp(sm) {
+	.o-hero-lead {
+		padding: 3.75vw 0;
+		font-size: 1.35vw;
+	}
+}
+
+// Home Tiles
+.c-contentsCard_inner {
+	opacity: 1;
+	padding-top: 2.2vw;
+}
+
+.c-contentsCard_title {
+	line-height: 1.2;
+}
+
+.-inCard .c-label_item.-name{
+    line-height: 1.2;
+}

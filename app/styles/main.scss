@@ -299,7 +299,11 @@ body {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		transform: translateZ(0)
-	}
+    }
+    
+    p{
+        font-family: $fontFam_hel;
+    }
 
 	.footer_inner,
 	.main_inner {
@@ -1406,14 +1410,14 @@ body {
 	.l-relatedAside_title {
 		font-size: 18px;
 		margin-bottom: 5.33333vw
-    }
-    
-    .l-wrapper{
-        background: var(--color-gray050);
-    z-index: 2;
-    position: relative;
-    width: 100%;
-    }
+	}
+
+	.l-wrapper {
+		background: var(--color-gray050);
+		z-index: 2;
+		position: relative;
+		width: 100%;
+	}
 
 	.o-hero {
 		// background: no-repeat url(/jp/ja/contents/feature/masterpiece/img/sp-hero-background.jpg) 50% 50%/cover;
@@ -1429,18 +1433,19 @@ body {
 		width: 60.26667vw;
 		height: 16.8vw;
 		margin: -8.4vw 0 0 -30.13333vw
-    }
-    .o-hero-text{
-        max-width: 450px;
-        margin: 0 auto;
+	}
+
+	.o-hero-text {
+		max-width: 450px;
+		margin: 0 auto;
 
 
-        p{
-            margin-bottom: 1.875vw;
-        font-family: $fontFam_hel;
+		p {
+			margin-bottom: 1.875vw;
+			font-family: $fontFam_hel;
 
-        }
-    }
+		}
+	}
 
 	.main-hero-text {
 		text-align: center;
@@ -1565,10 +1570,11 @@ body {
 	.c-contentsPanel_title {
 		margin-bottom: 4vw;
 		font-size: 26px;
-		 font-family: 'Helvetica Neue',
-		Helvetica,
-		Arial,
-		sans-serif;;
+		font-family: 'Helvetica Neue',
+			Helvetica,
+			Arial,
+			sans-serif;
+		;
 	}
 
 	.c-contentsPanel_text {
@@ -1687,9 +1693,9 @@ body {
 		font-size: 12px;
 		text-transform: inherit;
 		font-family: 'Helvetica Neue',
-				Helvetica,
-				Arial,
-				sans-serif;
+			Helvetica,
+			Arial,
+			sans-serif;
 	}
 
 	.-inPanel .c-label_item.-name {
@@ -1717,7 +1723,9 @@ body {
 
 	.c-relatedButton_title {
 		font-size: 20px;
-		margin-bottom: 2.66667vw
+        margin-bottom: 2.66667vw;
+        font-family: $fontFam_hel;
+        line-height: 1.2;
 	}
 
 	.c-relatedButton_name {
@@ -2812,7 +2820,8 @@ body {
 
 		.wrapper {
 			background-color: #fff;
-			background-color: var(--color-white)
+            background-color: var(--color-white);
+            width: 100%;
 		}
 
 		.footer_inner,
@@ -3404,8 +3413,8 @@ body {
 		}
 
 		.l-container {
-            margin: 0 auto;
-            padding-top: 60px;
+			margin: 0 auto;
+			padding-top: 60px;
 		}
 
 		.l-container.-underLayer {
@@ -3659,7 +3668,7 @@ body {
 
 		.c-label_item.-name {
 			font-size: 14px;
-			
+
 		}
 
 		.-inCard .c-label_item.-name {
@@ -3696,7 +3705,7 @@ body {
 		}
 
 		.c-relatedButton_title {
-			margin-bottom: 10px
+			margin-bottom: 15px
 		}
 
 		.c-relatedButton_name {
@@ -4545,36 +4554,37 @@ body {
 			margin-left: -4vw;
 			margin-left: calc(var(--sp-h-1g)*-1)
 		}
-    }
-    
+	}
 
-    .o-hero {
-        // background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-        background-size: 1600px 640px;
-        margin-bottom: 30px;
-			padding-top: 38vw;
 
-        &:before{
-            content: '';
-            display: block;
-            width: 100%;
-            height: 0;
-            padding-top: 150.93333%;
-            background: no-repeat url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-background-hero.jpg) 50% 0/cover;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            z-index: -1;
-        }
-        @include bp(sm){
-            &:before{
-                padding-top: 40%;
-                background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
-                top: 73px;
-            }
-        }
-    
-    }
+	.o-hero {
+		// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+		background-size: 1600px 640px;
+		margin-bottom: 30px;
+		padding-top: 38vw;
+
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 0;
+			padding-top: 150.93333%;
+			background: no-repeat url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/sp-background-hero.jpg) 50% 0/cover;
+			position: fixed;
+			top: 70px;
+			left: 0;
+			z-index: -1;
+		}
+
+		@include bp(sm) {
+			&:before {
+				padding-top: 40%;
+				background-image: url(http://175.41.241.98:8001/jp/ja/contents/feature/masterpiece/img/pc-background-hero.jpg);
+				top: 73px;
+			}
+		}
+
+	}
 
 
 	@media screen and (min-width: 1180px) {
@@ -4642,7 +4652,7 @@ body {
 		}
 
 		.c-contentsCard_title {
-			font-size: 30px
+			font-size: 28px;
 		}
 
 		.c-contentsCardGroup {
@@ -4667,60 +4677,8 @@ body {
 
 	}
 
-	.sticky-menu {
-		position: fixed;
-		top: 0;
-	}
 
-	// @media screen and (min-width: 768px) {
-	// 	.sticky-menu {
-	// 		position: relative;
-	// 	}
-
-	// }
-
-
-
-	// }
-
-
-
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-
-		40% {
-			opacity: .5;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
-
-	.c-contentsCard {
-		opacity: 0;
-	}
-
-	.product-fadeIn {
-		animation: fadeIn .55s forwards;
-	}
-
-
-	.o-hero-lead{
-		padding: 13.33333vw 0;
-    background: hsla(0,0%,100%,.6);
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.9;
-	}
-
-	@include bp(sm){
-		.o-hero-lead{
-			padding: 3.75vw 0;
-			font-size: 1.0625vw;
-		}
-	}
+    @import '_newStyles';
+    
 
 }
