@@ -844,13 +844,13 @@
 					})
 
 				}else{
+					console.log(280 - e, 'scroll')
 					$('.hp-bg-hero').css({
 						'position': 'fixed',
-						'top': '70px',
+						'top': 280 - e > 0 ? 280 - e  : 0,
 						'bottom': ''
 					})
 				}
-
 
 			}
 		})
