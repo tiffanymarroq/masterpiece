@@ -259,6 +259,31 @@
 		}
 	];
 
+
+	var errorPage = () => {
+		var error =`
+			<div style="padding: 60px 4%">
+				<p class="bold" style="text-align: center">Page Not Found</p>
+				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
+					data-label="article_cta_back_to_masterpiece">
+					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
+						<div class="u-imgAdjustBox_inner">
+								<img
+								class="fr-img lazyloaded"
+								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
+								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
+								<p>BACK TO TOP</p>
+								<div class="long-arrow-left"></div>
+						</div>
+					</figure>
+				</a>
+			</div>
+		
+			` 
+		$('.main').html(error)
+	}
+
 	//Homepage Components
 	var homepageMenu = () => {
 		var menu = `
@@ -271,7 +296,7 @@
 								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
 								alt="UNIQLO MASTERPIECE" data-expand="300">`
 							:
-								`<img class="fr-img lazyloaded img-horizontal" height='100%'
+								`<img class="fr-img lazyloaded img-horizontal" style='height:100%'
 									src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 									data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 									alt="UNIQLO MASTERPIECE" data-expand="300">`
@@ -613,6 +638,7 @@
 				success: function (pData) {
 					console.log('success')
 					if (pData.length === 0) {
+						console.log(pData, 'length 0')
 						return;
 					}
 					var price = $(pData).children('.product-tile-info')
@@ -623,6 +649,7 @@
 
 					if (price && price.includes('/')) {
 						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
+						console.log('price /')
 						return;
 					}
 					var productImage = $(pData).children(
@@ -631,12 +658,13 @@
 
 					var swatches = $(pData).children(
 						'.product-swatches').html();
+					
 
-
-					if ($(swatches).children().length === 0) {
-						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
-						return;
-					}
+					// if ($(swatches).children().length === 0) {
+					// 	$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+					// 	console.log('no swatches')
+					// 	return;
+					// }
 
 					var productTitle = $(pData).children('.product-tile-info').children(
 						'.product-name').html();
@@ -749,7 +777,9 @@
 			topArticles();
 
 		} else {
-			$('.main').html('Page not found');
+			
+
+			errorPage()
 		}
 	}
 
@@ -794,7 +824,7 @@
 
 			} else {
 				state.contentSelected = null;
-				$('.main').html('Page not found');
+				errorPage()
 			}
 
 		} else {
@@ -843,7 +873,10 @@
 
 			setTimeout(() => {
 				console.log('init masterpiece product js-event')
-				initMasterpiece()
+				initMasterpiece();
+				$('html, body').animate({
+					scrollTop: 0
+				}, 300)
 			}, 500)
 		} else if (filter) {
 			console.log('js fliter')
@@ -858,9 +891,13 @@
 				window.location.hash = filter;
 			});
 		}else{
+			
 			setTimeout(() => {
 				console.log('init masterpiece reload js-event')
-				initMasterpiece()
+				homepage();
+				$('html, body').animate({
+					scrollTop: 0
+				}, 300)
 			}, 500)
 		}
 
@@ -934,9 +971,7 @@
 		}
 
 		var path = state.currentUrl.replace(urlPrefix, '');
-		// if (path.substring(path.length - 1) !== '/') {
-		// 	path = path + '/'
-		// }
+
 		console.log(value, path, 'value')
 
 		// dataLayer.push({
@@ -950,23 +985,3 @@
 </script>
 
 
-<!-- 
-Home page
-
-
-Menu
-
-hp_menu_category
-hp_tile_productName
-
-
-Product Page
-
-l3_article_productName_productTile_#_id
-l3_article_productName_productCta_#
-l3_article_relatedArticle_productName
-
-
-
-BreadCrumb
-l3_breadcrumb_name -->
