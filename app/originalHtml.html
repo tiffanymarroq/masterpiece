@@ -5,7 +5,7 @@
 			<div class="fr-breadcrumbs u-only-pc">
 				<ol class="fr-breadcrumbs_inner">
 					<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent" href="/"
-							data-category="L3_20ss_masterpiece" data-label="breadcrumb_home" >
+							data-category="L3_20ss_masterpiece" data-label="breadcrumb_home">
 							HOME
 						</a></li>
 					<li class="fr-breadcrumbs_item js-trackEvent" data-label="breadcrumb_masterpiece">
@@ -31,9 +31,10 @@
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/',
+		// siteUrl: '/',
+		siteUrl: '/us/en/page/masterpiece-tmq',
 		currentUrl: window.location.href
-	
+
 	}
 
 
@@ -265,17 +266,16 @@
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
 						<picture class="u-imgAdjustBox_inner menu">
 							${state.width > 768 ? 
-								`<img class="fr-img lazyloaded"
+								`<img class="fr-img lazyloaded" 
 								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
 								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
 								alt="UNIQLO MASTERPIECE" data-expand="300">`
 							:
-								`<img class="fr-img lazyloaded img-horizontal"
+								`<img class="fr-img lazyloaded img-horizontal" height='100%'
 									src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 									data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 									alt="UNIQLO MASTERPIECE" data-expand="300">`
 							}
-					
 						</picture>
 					</figure>
 				</div>
@@ -384,16 +384,18 @@
 	}
 
 	var homepageProductList = () => {
-
+		console.log('hp product change', state.filter)
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
 				let productTile = `
-				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"
-				data-category="${product.category}" data-product="${product.productName}" ><a
-						class="js-trackEvent" 
-						data-label="hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}"
-						href="${state.siteUrl + product.url}">
+				<section class="c-contentsCard -no-${i}  product-fadeIn" aria-hidden="false"
+				 >
+					<a class="js-trackEvent" 
+					    data-label="hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}" 
+						href="${state.siteUrl + product.url}"
+						data-category="${product.category}" data-product="${product.productName}"
+						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
 								<img class="fr-img lazyloaded"
@@ -413,7 +415,6 @@
 				</section>`;
 
 				return productTile
-
 
 			})
 
@@ -439,7 +440,7 @@
 	var homepage = () => {
 
 
-		console.log('product page')
+		console.log('home page')
 
 		var homepageComponent = `
 			<div class="hp-hero-container">
@@ -558,7 +559,7 @@
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="article_${productNameReplace}_productTile_${position}_${data.sku}"
+					 data-label="article_${productNameReplace}_productTile_${position}_${data.sku}"
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
@@ -581,15 +582,15 @@
 					</div>
 				</a>
 				<a class="c-linkButton js-trackEvent" href="${data.ctaUrl}" 
-				data-category="L3_20ss_masterpiece_supima_cotton_crew_neck_shirt_details_page" 
+			
 				data-label="article_${productNameReplace}_productCta_${position}">${data.ctaCopy}</a>
 			</li>
 			`
 		$('.c-productButtonGroup').append(productComponent);
-
-		getProductData(data.sku, i);
-
-
+		setTimeout( ()=>{
+			getProductData(data.sku, i);
+		}, 500)
+		
 	}
 
 	var getProductData = (sku, i) => {
@@ -602,20 +603,18 @@
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-			console.log('get product')
+			console.log('get product', sku, urlPrefix)
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
 					sku,
 				i: i,
 				sku: sku,
-
-
 				success: function (pData) {
+					console.log('success')
 					if (pData.length === 0) {
 						return;
 					}
-
 					var price = $(pData).children('.product-tile-info')
 						.children(
 							'.product-pricing')
@@ -635,7 +634,7 @@
 
 
 					if ($(swatches).children().length === 0) {
-						$('.shop-by-look-card:eq(' + i + ')').hide();
+						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
 						return;
 					}
 
@@ -646,7 +645,8 @@
 					var productLink = $(pData).children('.product-tile-info').children(
 						'.product-name').children(
 						'.name-link').attr('href');
-		
+
+					console.log('get product', productTitle, i )
 
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href', productLink)
 
@@ -669,10 +669,11 @@
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 
-				let productName = product.productName.replace('&apos;',"'");
+				let productName = product.productName.replace('&apos;', "'");
 				return (
 					`<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
-							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
+							data-category="${product.category}"
+							data-product="${product.productName}"
 							data-label="article_relatedArticle_${productName.replace(/ /g, "_").toLowerCase()}"
 							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
@@ -726,7 +727,7 @@
 				<aside class="l-relatedAside">
 				</aside>
 				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="article_cta_back_to_masterpiece">
+					data-label="article_cta_back_to_masterpiece">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
 								<img
@@ -753,7 +754,7 @@
 	}
 
 
-	var initMasterpiece = ()=> {
+	function initMasterpiece() {
 		console.log('init')
 		state.currentUrl = window.location.href;
 		var urlParams = new URLSearchParams(window.location.search);
@@ -770,33 +771,31 @@
 
 		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
 
-
-
-		if (product && category) {
-
+		if ((product && category) || state.contentSelected) {
+			if (state.contentSelected) {
+				console.log('selected', state.contentSelected)
+				product = state.contentSelected.productName.toLowerCase();
+				category = state.contentSelected.category.toLowerCase()
+			}
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
 
 			if (findProductPageData && findProductPageData.length > 0) {
-
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
-					let titleReplace = state.contentSelected.title.replace('&apos;',"'") 
+					let titleReplace = state.contentSelected.title.replace('&apos;', "'")
 					$('.fr-breadcrumbs_inner').append(
 						`<li class="fr-breadcrumbs_item product-crumb js-trackEvent" data-label="breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}">${titleReplace}</li>`
 					)
-
 				}
-
 
 			} else {
 				state.contentSelected = null;
 				$('.main').html('Page not found');
 			}
-
 
 		} else {
 			homepage();
@@ -804,8 +803,12 @@
 				var findProductPageData = masterpieceData.filter((data) => {
 					return data.category.toLowerCase() === hpCategory
 				})
+
 				if (findProductPageData && findProductPageData.length > 0) {
+					console.log('category menu change', hpCategory)
 					state.filter = hpCategory;
+					$('.l-navigation_item.is-active').removeClass('is-active');
+					$(`.l-navigation_item[data-filter-button~="${hpCategory}"`).addClass('is-active');
 					homepageProductList();
 				}
 			}
@@ -815,124 +818,111 @@
 	// Init App
 	$(document).ready(() => {
 		console.log('ready')
-		// setTimeout(()=>{
+		setTimeout(() => {
 			initMasterpiece()
-		// }, 500)
+		}, 500)
 
-		$('.js-trackEvent').click((e) => {
-			console.log(e.currentTarget.dataset.label)
-			masterpieceGA(e)
+	})
 
-		})
+	$(document).on("click", ".js-trackEvent", function (e) {
+		console.log('track')
+		var dataset = e.currentTarget.dataset;
+		var product = dataset.product;
+		var category = dataset.category;
+		var filter = dataset.filterButton
+		if (product && category) {
+			console.log('js product')
+			var findProductPageData = masterpieceData.filter((data) => {
+				return data.category.toLowerCase() === category.toLowerCase() && data.productName
+					.toLowerCase() === product.toLowerCase()
+			})
 
-		$('.c-contentsCard').click((e) => {
-			console.log(e, 'cilcked hp tile')
-			// if (state.width < 768) {
+			if (findProductPageData && findProductPageData.length > 0) {
+				state.contentSelected = findProductPageData[0]
+			}
 
-			// 	var product = e.currentTarget.dataset.product.toLowerCase();
-			// 	var category = e.currentTarget.dataset.category.toLowerCase();
-			// 	console.log(state, 'card')
-			// 	var findProductPageData = masterpieceData.filter((data) => {
-			// 		return data.category.toLowerCase() === category && data.productName
-			// 			.toLowerCase() ===
-			// 			product
-			// 	})
-
-			// 	if (findProductPageData && findProductPageData.length > 0) {
-			// 		state.contentSelected = findProductPageData[0];
-			// 		productPage();
-			// 		if ($('.product-crumb').length === 0) {
-			// 			$('.fr-breadcrumbs_inner').append(
-			// 				`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
-			// 			)
-			// 		}
-
-			// 	} else {
-			// 		state.contentSelected = null;
-			// 		$('.main').html('Page not found');
-			// 	}
-
-			// }
-		
-		
-		
-		})
-
-		$('.l-navigation_item').click((e) => {
-			state.filter = e.currentTarget.dataset.filterButton;
+			setTimeout(() => {
+				console.log('init masterpiece product js-event')
+				initMasterpiece()
+			}, 500)
+		} else if (filter) {
+			console.log('js fliter')
+			state.filter = filter;
 			var i = e.currentTarget.dataset.i;
 			$('.l-navigation_item.is-active').removeClass('is-active');
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
-
 			homepageProductList();
-
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
 			}, 300, function () {
-				window.location.hash = e.currentTarget.dataset.filterButton;
+				window.location.hash = filter;
 			});
+		}else{
+			setTimeout(() => {
+				console.log('init masterpiece reload js-event')
+				initMasterpiece()
+			}, 500)
+		}
 
-			masterpieceGA(e)
-
-		})
-
-
-
-		$(window).resize(function () {
-			state.width = $(this).width()
-		});
-
-		$(window).scroll(() => {
-			if ($('.l-navigation_wrapper').length > 0) {
-
-				var t = document.querySelector(".l-navigation_body");
-
-				var e = document.documentElement.scrollTop || document.body.scrollTop;
-				e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
-					.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
-						"data-navigation-position", "default"),
-					e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
-					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute");
+		masterpieceGA(e);
+	})
 
 
-				if (e > document.querySelector(".l-wrapper").getBoundingClientRect().top + e - t
-					.clientHeight) {
+
+
+	$(window).resize(function () {
+		state.width = $(this).width()
+	});
+
+	$(window).scroll(() => {
+		if ($('.l-navigation_wrapper').length > 0) {
+
+			var t = document.querySelector(".l-navigation_body");
+			var e = document.documentElement.scrollTop || document.body.scrollTop;
+			e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
+				.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
+					"data-navigation-position", "default"),
+				e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
+				.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute");
+
+
+			if (e > document.querySelector(".l-wrapper").getBoundingClientRect().top + e - t
+				.clientHeight) {
+				$('.hp-bg-hero').css({
+					'position': 'absolute',
+					'bottom': '0',
+					'top': ''
+				})
+
+			} else {
+
+				if (state.width > 768) {
 					$('.hp-bg-hero').css({
-						'position': 'absolute',
-						'bottom': '0',
-						'top': ''
+						'position': 'fixed',
+						'top': 280 - e > 0 ? 280 - e : 0,
+						'bottom': ''
 					})
-
 				} else {
-
-					if (state.width > 768) {
-						$('.hp-bg-hero').css({
-							'position': 'fixed',
-							'top': 280 - e > 0 ? 280 - e : 0,
-							'bottom': ''
-						})
-					} else {
-						$('.hp-bg-hero').css({
-							'position': 'fixed',
-							'top': 115 - e > 0 ? 115 - e : 0,
-							'bottom': ''
-						})
-					}
-
+					$('.hp-bg-hero').css({
+						'position': 'fixed',
+						'top': 115 - e > 0 ? 115 - e : 0,
+						'bottom': ''
+					})
 				}
 
 			}
-		})
+
+		}
 	})
+
 
 	// GA TAG
 	var masterpieceGA = (e) => {
-		// event.preventDefault()
 		if (!(e.currentTarget.dataset)) {
 			event.preventDefault();
 		}
 
-		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset.label: e;
+		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset.label : e;
 		var urlPrefix = 'https://www.uniqlo.com/us/en';
 
 		if (window.location.href.includes('staging')) {
@@ -980,12 +970,3 @@ l3_article_relatedArticle_productName
 
 BreadCrumb
 l3_breadcrumb_name -->
-
-
-
-<script>
-
-
-
-
-</script>
