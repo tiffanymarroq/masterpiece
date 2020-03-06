@@ -3558,7 +3558,8 @@ q:before {
 			background: #fff;
 			background: var(--color-white);
 			padding: 0 0 2.0339vw 2.0339vw;
-			width: 83.38983vw;
+			// width: 83.38983vw;
+			width: 100%;
 			min-height: 675px
 		}
 
@@ -4654,7 +4655,8 @@ q:before {
 		}
 
 		.c-contentsCardGroup {
-			width: 984px;
+			// width: 984px;
+			width: 100%;
 			padding: 0 0 24px 24px
 		}
 

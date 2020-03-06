@@ -669,11 +669,11 @@
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 
-				let articleTile = product.title.replace('&apos;',"'");
+				let productName = product.productName.replace('&apos;',"'");
 				return (
 					`<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
 							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
-							data-label="article_relatedArticle_${articleTile.replace(/ /g, "_").toLowerCase()}"
+							data-label="article_relatedArticle_${productName.replace(/ /g, "_").toLowerCase()}"
 							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
@@ -683,7 +683,7 @@
 										class="fr-img lazyloaded"
 										src="${product.image}"
 										data-src="${product.image}"
-										alt="${articleTile}" data-expand="300">
+										alt="${productName}" data-expand="300">
 								</picture>
 							</figure>
 							<div>
@@ -927,8 +927,8 @@
 
 	// GA TAG
 	var masterpieceGA = (e) => {
-		event.preventDefault()
-		if (!(e.dataset)) {
+		// event.preventDefault()
+		if (!(e.currentTarget.dataset)) {
 			event.preventDefault();
 		}
 
