@@ -60,7 +60,7 @@
 			title: `Vintage on the outside, modern day on the inside`,
 			productName: `Vintage Regular Fit Chinos`,
 			gender: [`Men`],
-			category: `Bottoms`,
+			category: `Tops`,
 			url: `?product=vintage-regular-fit-chinos&category=bottoms`,
 			productCopy: `Which details are imperative to acheive a vintage chino look? The pocket shape? The zipper quality? The durability of the stitchwork? Which details give it authentic character? These are all important qualities, but the real key is the construction of the fabric. We updated the materials to lend a rugged, vintage feel on the outside but tweaked the design for today with a soft texture on the inside.`,
 			relatedProducts: {
@@ -218,7 +218,7 @@
 			title: `Small details speak volumes.`,
 			productName: `Comfort jacket`,
 			gender: [`Men`],
-			category: `Outerwear`,
+			category: `Tops`,
 			url: `?product=comfort-jacket&category=outerwear`,
 			productCopy: `To engineer a jacket with ultimate comfort, we started with stretchy jersey and gave it a brushed wool-like texture for a more formal look. We then ergonomically tweaked the positioning and placement of the collar so it&apos;s always sharp. All this was done to ensure that this jacket is as supremely stylish as it is completely comfortable.`,
 			relatedProducts: {
@@ -704,7 +704,7 @@
 					<h2 class="l-relatedAside_title">
 						Tops Articles
 					</h2>
-					<ul class="c-relatedButtonGroup">${articles.join('')}</ul>
+					<ul class="c-relatedButtonGroup">${articles.length > 8 ? articles.splice(0,8).join(''): articles.join('')}</ul>
 			`
 			$('.l-relatedAside').html(articleComponent)
 		}
