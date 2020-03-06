@@ -5,10 +5,10 @@
 			<div class="fr-breadcrumbs u-only-pc">
 				<ol class="fr-breadcrumbs_inner">
 					<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent" href="/"
-							data-category="L3_20ss_masterpiece" data-label="L3_20ss_masterpiece_top_breadcrumb_1">
+							data-category="L3_20ss_masterpiece" data-label="breadcrumb_home" >
 							HOME
 						</a></li>
-					<li class="fr-breadcrumbs_item">
+					<li class="fr-breadcrumbs_item js-trackEvent" data-label="breadcrumb_masterpiece">
 						<a href="/us/en/page/masterpiece">
 							MASTERPIECE
 						</a>
@@ -31,7 +31,8 @@
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/us/en/page/masterpiece-tmq',
+		siteUrl: '/',
+		currentUrl: window.location.href
 	
 	}
 
@@ -285,11 +286,11 @@
 						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
 							data-i ="0"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_all"><span>ALL</span>
+							data-label="hp_menu_all"><span>ALL</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
 						data-i ="1" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_outerwear">
+							data-label="hp_menu_outerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -300,7 +301,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_tops" data-i ="2">
+							data-label="hp_menu_tops" data-i ="2">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -311,7 +312,7 @@
 						</li>
 						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent" data-i ="3"
 							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_bottoms">
+							data-label="hp_menu_bottoms">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -322,7 +323,7 @@
 						</li>
 						<li data-i ="4" class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_dresses">
+							data-label="hp_menu_dresses">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -333,7 +334,7 @@
 						</li>
 						<li data-i ="5" class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
 							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_loungwear">
+							data-label="hp_menu_loungwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -344,7 +345,7 @@
 						</li>
 						<li data-i ="6" class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_innerwear">
+							data-label="hp_menu_innerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -355,7 +356,7 @@
 						</li>
 						<li data-i ="7" class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_accessories">
+							data-label="hp_menu_accessories">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -366,7 +367,7 @@
 						</li>
 						<li data-i ="8" class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_baby">
+							data-label="hp_menu_baby">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
 										class="fr-img lazyloaded"
@@ -389,9 +390,9 @@
 			.map((product, i) => {
 				let productTile = `
 				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"
-				data-category="${product.category}" data-product="${product.productName}"><a
+				data-category="${product.category}" data-product="${product.productName}" ><a
 						class="js-trackEvent" 
-						data-label="${'gatag'}"
+						data-label="hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}"
 						href="${state.siteUrl + product.url}">
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
@@ -438,6 +439,7 @@
 	var homepage = () => {
 
 
+		console.log('product page')
 
 		var homepageComponent = `
 			<div class="hp-hero-container">
@@ -544,16 +546,19 @@
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
-				getRelatedProduct(product.relatedProducts.productList[i], i)
+				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName)
 			}
 		}
 	}
 
-	var getRelatedProduct = (data, i) => {
+
+	var getRelatedProduct = (data, i, productName) => {
+		let productNameReplace = productName.replace(/ /g, '_').toLowerCase();
+		let position = parseInt(i) + 1;
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label=""
+					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="article_${productNameReplace}_productTile_${position}_${data.sku}"
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
@@ -577,11 +582,11 @@
 				</a>
 				<a class="c-linkButton js-trackEvent" href="${data.ctaUrl}" 
 				data-category="L3_20ss_masterpiece_supima_cotton_crew_neck_shirt_details_page" 
-				data-label="L3_ws_t_shirt">${data.ctaCopy}</a>
+				data-label="article_${productNameReplace}_productCta_${position}">${data.ctaCopy}</a>
 			</li>
 			`
 		$('.c-productButtonGroup').append(productComponent);
-		
+
 		getProductData(data.sku, i);
 
 
@@ -597,7 +602,7 @@
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-
+			console.log('get product')
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
@@ -641,8 +646,10 @@
 					var productLink = $(pData).children('.product-tile-info').children(
 						'.product-name').children(
 						'.name-link').attr('href');
+		
 
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href', productLink)
+
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(productTitle)
 					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('src',
 						productImage)
@@ -654,15 +661,19 @@
 		}
 	}
 
+
+
 	var topArticles = () => {
 		var articles = masterpieceData
 			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() &&
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
+
+				let articleTile = product.title.replace('&apos;',"'");
 				return (
 					`<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
 							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
-							data-label="L3_20ss_masterpiece_premium_linen_details_page"
+							data-label="article_relatedArticle_${articleTile.replace(/ /g, "_").toLowerCase()}"
 							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
@@ -672,7 +683,7 @@
 										class="fr-img lazyloaded"
 										src="${product.image}"
 										data-src="${product.image}"
-										alt="${product.title.replace('&apos;',"'")}" data-expand="300">
+										alt="${articleTile}" data-expand="300">
 								</picture>
 							</figure>
 							<div>
@@ -700,7 +711,7 @@
 	}
 
 	var productPage = () => {
-
+		console.log('product page')
 		var productPageComponent =
 			`<div class="l-container product-container">
 				<article class="c-contents">
@@ -715,7 +726,7 @@
 				<aside class="l-relatedAside">
 				</aside>
 				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
+					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="article_cta_back_to_masterpiece">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
 								<img
@@ -742,9 +753,10 @@
 	}
 
 
-	function initMasterpiece() {
+	var initMasterpiece = ()=> {
+		console.log('init')
+		state.currentUrl = window.location.href;
 		var urlParams = new URLSearchParams(window.location.search);
-
 		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;',
 				"'").replace('_', '-')
 			.toLowerCase() :
@@ -772,8 +784,9 @@
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
+					let titleReplace = state.contentSelected.title.replace('&apos;',"'") 
 					$('.fr-breadcrumbs_inner').append(
-						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
+						`<li class="fr-breadcrumbs_item product-crumb js-trackEvent" data-label="breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}">${titleReplace}</li>`
 					)
 
 				}
@@ -801,48 +814,54 @@
 
 	// Init App
 	$(document).ready(() => {
-		initMasterpiece()
+		console.log('ready')
+		// setTimeout(()=>{
+			initMasterpiece()
+		// }, 500)
 
 		$('.js-trackEvent').click((e) => {
 			console.log(e.currentTarget.dataset.label)
+			masterpieceGA(e)
+
 		})
 
 		$('.c-contentsCard').click((e) => {
-			console.log(e)
-			if (state.width < 768) {
+			console.log(e, 'cilcked hp tile')
+			// if (state.width < 768) {
 
-				var product = e.currentTarget.dataset.product.toLowerCase();
-				var category = e.currentTarget.dataset.category.toLowerCase();
-				console.log(state, 'card')
-				var findProductPageData = masterpieceData.filter((data) => {
-					return data.category.toLowerCase() === category && data.productName
-						.toLowerCase() ===
-						product
-				})
+			// 	var product = e.currentTarget.dataset.product.toLowerCase();
+			// 	var category = e.currentTarget.dataset.category.toLowerCase();
+			// 	console.log(state, 'card')
+			// 	var findProductPageData = masterpieceData.filter((data) => {
+			// 		return data.category.toLowerCase() === category && data.productName
+			// 			.toLowerCase() ===
+			// 			product
+			// 	})
 
-				if (findProductPageData && findProductPageData.length > 0) {
-					state.contentSelected = findProductPageData[0];
-					productPage();
-					if ($('.product-crumb').length === 0) {
-						$('.fr-breadcrumbs_inner').append(
-							`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
-						)
-					}
+			// 	if (findProductPageData && findProductPageData.length > 0) {
+			// 		state.contentSelected = findProductPageData[0];
+			// 		productPage();
+			// 		if ($('.product-crumb').length === 0) {
+			// 			$('.fr-breadcrumbs_inner').append(
+			// 				`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
+			// 			)
+			// 		}
 
-				} else {
-					state.contentSelected = null;
-					$('.main').html('Page not found');
-				}
+			// 	} else {
+			// 		state.contentSelected = null;
+			// 		$('.main').html('Page not found');
+			// 	}
 
-			}
+			// }
+		
+		
+		
 		})
 
 		$('.l-navigation_item').click((e) => {
 			state.filter = e.currentTarget.dataset.filterButton;
 			var i = e.currentTarget.dataset.i;
 			$('.l-navigation_item.is-active').removeClass('is-active');
-
-
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
 
 			homepageProductList();
@@ -908,11 +927,12 @@
 
 	// GA TAG
 	var masterpieceGA = (e) => {
+		event.preventDefault()
 		if (!(e.dataset)) {
 			event.preventDefault();
 		}
 
-		var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
+		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset.label: e;
 		var urlPrefix = 'https://www.uniqlo.com/us/en';
 
 		if (window.location.href.includes('staging')) {
@@ -923,11 +943,11 @@
 			urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
 		}
 
-		var path = window.location.href.split('?')[0].replace(urlPrefix, '');
-		if (path.substring(path.length - 1) !== '/') {
-			path = path + '/'
-		}
-		console.log(value, 'value')
+		var path = state.currentUrl.replace(urlPrefix, '');
+		// if (path.substring(path.length - 1) !== '/') {
+		// 	path = path + '/'
+		// }
+		console.log(value, path, 'value')
 
 		// dataLayer.push({
 		// 	'event': 'eventTracking',
@@ -946,8 +966,8 @@ Home page
 
 Menu
 
-l3_hp_menu_category
-l3_hp_tile_productName
+hp_menu_category
+hp_tile_productName
 
 
 Product Page

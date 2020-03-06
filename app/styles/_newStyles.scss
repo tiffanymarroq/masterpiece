@@ -213,7 +213,11 @@ sans-serif;
 }
 
 .l-navigation_head [data-sp-aspect-ratio="90:235"]:before {
-    padding-top: 281.11111%
+	padding-top: 281.11111%;
+
+	@include bp(sm){
+		padding-top: 26.16279%
+	}
 }
 
 
