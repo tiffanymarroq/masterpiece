@@ -676,11 +676,11 @@
 						'.product-swatches').html();
 
 
-					// if ($(swatches).length === 0) {
-					// 	$(`.c-productButtonGroup_item:eq(${i}) `).hide();
-					// 	console.log('no swatches')
-					// 	return;
-					// }
+					if ($(swatches).length === 0) {
+						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+						console.log('no swatches')
+						return;
+					}
 
 					var productTitle = $(pData).children('.product-tile-info').children(
 						'.product-name').html();
