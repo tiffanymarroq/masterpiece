@@ -31,7 +31,8 @@
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/us/en/page/masterpiece-tmq/'
+		siteUrl: '/us/en/page/masterpiece-tmq',
+	
 	}
 
 
@@ -387,8 +388,9 @@
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
 				let productTile = `
-				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"><a
-						class="js-trackEvent" data-category="L3_20ss_masterpiece"
+				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"
+				data-category="${product.category}" data-product="${product.productName}"><a
+						class="js-trackEvent" 
 						data-label="${'gatag'}"
 						href="${state.siteUrl + product.url}">
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
@@ -578,7 +580,8 @@
 				data-label="L3_ws_t_shirt">${data.ctaCopy}</a>
 			</li>
 			`
-		$('.c-productButtonGroup').append(productComponent)
+		$('.c-productButtonGroup').append(productComponent);
+		
 		getProductData(data.sku, i);
 
 
@@ -657,14 +660,12 @@
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 				return (
-					`
-					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
+					`<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
 							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
 							data-label="L3_20ss_masterpiece_premium_linen_details_page"
 							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
-								
 									<source data-srcset="${product.image}"
 										type="image/jpeg"
 										srcset="${product.image}"><img
@@ -760,12 +761,14 @@
 
 
 		if (product && category) {
+
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
 
 			if (findProductPageData && findProductPageData.length > 0) {
+
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
@@ -804,9 +807,34 @@
 			console.log(e.currentTarget.dataset.label)
 		})
 
-		$('.c-contentsCard').click(() => {
-			// event.preventDefault()
-			initMasterpiece()
+		$('.c-contentsCard').click((e) => {
+			console.log(e)
+			if (state.width < 768) {
+
+				var product = e.currentTarget.dataset.product.toLowerCase();
+				var category = e.currentTarget.dataset.category.toLowerCase();
+				console.log(state, 'card')
+				var findProductPageData = masterpieceData.filter((data) => {
+					return data.category.toLowerCase() === category && data.productName
+						.toLowerCase() ===
+						product
+				})
+
+				if (findProductPageData && findProductPageData.length > 0) {
+					state.contentSelected = findProductPageData[0];
+					productPage();
+					if ($('.product-crumb').length === 0) {
+						$('.fr-breadcrumbs_inner').append(
+							`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
+						)
+					}
+
+				} else {
+					state.contentSelected = null;
+					$('.main').html('Page not found');
+				}
+
+			}
 		})
 
 		$('.l-navigation_item').click((e) => {
