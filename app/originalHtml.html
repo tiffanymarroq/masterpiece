@@ -31,9 +31,8 @@
 		contentSelected: '',
 		width: window.innerWidth,
 		siteUrl: '/',
-		// siteUrl: '/us/en/page/masterpiece-tmq',
+		// siteUrl: '/us/en/page/masterpiece.html',
 		currentUrl: window.location.href
-
 	}
 
 
@@ -834,6 +833,7 @@
 						`<li class="fr-breadcrumbs_item product-crumb js-trackEvent" data-label="breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}">${titleReplace}</li>`
 					)
 				}
+				$("img.lazyload").lazyload();
 
 			} else {
 				state.contentSelected = null;
@@ -842,6 +842,8 @@
 
 		} else {
 			homepage();
+			$("img.lazyload").lazyload();
+
 			if (hpCategory) {
 				var findProductPageData = masterpieceData.filter((data) => {
 					return data.category.toLowerCase() === hpCategory
@@ -861,13 +863,16 @@
 	$(document).ready(() => {
 		console.log('ready')
 		setTimeout(() => {
-			initMasterpiece()
+			initMasterpiece();
+
+
+			$("img.lazyload").lazyload();
+
 		}, 500)
 
 	})
 
 	$(document).on("click", ".js-trackEvent", function (e) {
-		console.log('track')
 		var dataset = e.currentTarget.dataset;
 		var product = dataset.product;
 		var category = dataset.category;
@@ -894,9 +899,11 @@
 			$('.l-navigation_item.is-active').removeClass('is-active');
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
 			homepageProductList();
+			$("img.lazyload").lazyload();
+
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
-			}, 300, function () {
+			}, 0, function () {
 				window.location.hash = filter;
 			});
 		} else {
@@ -904,7 +911,12 @@
 			setTimeout(() => {
 				console.log('init masterpiece reload js-event')
 				homepage();
-					$(window).scrollTop = 0
+				$("img.lazyload").lazyload();
+				$('html, body').animate({
+					scrollTop: $('.c-contentsCardGroup').offset().top
+				}, 0, function () {
+					window.location.hash = filter;
+				});
 			}, 500)
 		}
 
@@ -1272,19 +1284,6 @@
 
 	})(jQuery, window, document);
 
-	$("img.lazyload").lazyload();
 
-	// $(function () {
-	// 	jQuery.ajax({
-	// 		url: 'https://rawgit.com/intoro/Lazy_Load_JQuery/master/js/1_9_7_jquery.lazyload.js',
-	// 		dataType: 'script',
-	// 		success: function () {
-	// 			//put in script
-	// 			console.log('lazy')
-	// 		},
-
-	// 		async: true
-	// 	});
-	// });
 
 </script>
