@@ -1113,6 +1113,10 @@
 								$self.hide();
 								if ($self.is("img")) {
 									$self.attr("src", original);
+									$self.addClass("lazyloaded");
+									$self.removeClass("lazyload");
+
+
 								} else {
 									$self.css("background-image", "url('" + original + "')");
 								}
