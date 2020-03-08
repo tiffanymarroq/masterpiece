@@ -32,7 +32,8 @@
 		width: window.innerWidth,
 		siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
-		currentUrl: window.location.href
+		currentUrl: window.location.href,
+		defaultImg: 'https://dimensionmill.org/wp-content/uploads/2019/03/square-placeholder.jpg'
 	}
 
 
@@ -284,7 +285,7 @@
 								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
 								<p>BACK TO TOP</p>
-								<div class="long-arrow-left"></div>
+								<div class="arrow-container"><div class="arrow long-arrow-left"></div></div>
 						</div>
 					</figure>
 				</a>
@@ -433,7 +434,7 @@
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
 								<img class="fr-img lazyload"
-									src="https://dimensionmill.org/wp-content/uploads/2019/03/square-placeholder.jpg"
+									src="${state.defaultImg}"
 									data-original="${product.image}"
 									alt="${product.title}" data-expand="300">
 							</picture>
@@ -529,8 +530,8 @@
 			<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 				<picture class="u-imgAdjustBox_inner">
 					<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
-						class="fr-img ls-is-cached lazyload" src="${product.image}"
-						data-src="${product.image}" alt="Comfort jacket" data-expand="300">
+						class="fr-img ls-is-cached lazyload" src="${state.defaultImg}"
+						data-original="${product.image}" alt="Comfort jacket" data-expand="300">
 				</picture>
 			</figure>`;
 
@@ -599,7 +600,7 @@
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
 								<img class="fr-img lazyload"
-								src=""
+								src="${state.defaultImg}"
 								data-src=""
 								alt="" data-expand="300">
 						</picture>
@@ -714,7 +715,8 @@
 
 				let productName = product.productName.replace('&apos;', "'");
 				return (
-					`<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
+					`<li class="c-relatedButtonGroup_item">
+						<a class="c-relatedButton js-trackEvent"
 							data-category="${product.category}"
 							data-product="${product.productName}"
 							data-label="article_relatedArticle_${productName.replace(/ /g, "_").toLowerCase()}"
@@ -722,11 +724,11 @@
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
 									<source data-srcset="${product.image}"
-										type="image/jpeg"
-										srcset="${product.image}"><img
+										type="image/jpeg">
+										<img
 										class="fr-img lazyload"
-										src="${product.image}"
-										data-src="${product.image}"
+										src="${state.defaultImg}"
+										data-original="${product.image}"
 										alt="${productName}" data-expand="300">
 								</picture>
 							</figure>
@@ -778,7 +780,8 @@
 								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
 								<p>BACK TO TOP</p>
-								<div class="long-arrow-left"></div>
+								<div class="arrow-container"><div class="arrow long-arrow-left"></div></div>
+
 						</div>
 					</figure>
 				</a>
@@ -791,8 +794,6 @@
 			topArticles();
 
 		} else {
-
-
 			errorPage()
 		}
 	}
@@ -833,7 +834,7 @@
 						`<li class="fr-breadcrumbs_item product-crumb js-trackEvent" data-label="breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}">${titleReplace}</li>`
 					)
 				}
-				$("img.lazyload").lazyload();
+				$(".lazyload").lazyload();
 
 			} else {
 				state.contentSelected = null;
@@ -842,8 +843,7 @@
 
 		} else {
 			homepage();
-			$("img.lazyload").lazyload();
-
+			$(".lazyload").lazyload();
 			if (hpCategory) {
 				var findProductPageData = masterpieceData.filter((data) => {
 					return data.category.toLowerCase() === hpCategory
@@ -864,12 +864,7 @@
 		console.log('ready')
 		setTimeout(() => {
 			initMasterpiece();
-
-
-			$("img.lazyload").lazyload();
-
 		}, 500)
-
 	})
 
 	$(document).on("click", ".js-trackEvent", function (e) {
@@ -891,7 +886,7 @@
 				initMasterpiece();
 				$('html, body').animate({
 					scrollTop: 0
-				}, 300)
+				}, 0)
 			}, 500)
 		} else if (filter) {
 			state.filter = filter;
@@ -899,7 +894,7 @@
 			$('.l-navigation_item.is-active').removeClass('is-active');
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
 			homepageProductList();
-			$("img.lazyload").lazyload();
+			$(".lazyload").lazyload();
 
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
@@ -911,7 +906,7 @@
 			setTimeout(() => {
 				console.log('init masterpiece reload js-event')
 				homepage();
-				$("img.lazyload").lazyload();
+				$(".lazyload").lazyload();
 				$('html, body').animate({
 					scrollTop: $('.c-contentsCardGroup').offset().top
 				}, 0, function () {
@@ -1001,11 +996,7 @@
 		// 	'eventLabel': `l3_${value}`
 		// })
 	}
-	// $(document).ready(function () {
-	// 	$('img.lazyload').lazyload({
-	// 		effect: "fadeIn"
-	// 	});
-	// });
+
 
 </script>
 <script>
