@@ -506,7 +506,7 @@ q:before {
 	}
 
 	.fr-img.lazyload {
-		opacity: 0
+		// opacity: 0
 	}
 
 	.fr-img.lazyloaded {
@@ -1365,7 +1365,12 @@ q:before {
 	.l-relatedAside {
 		background: #fff;
 		background: var(--color-white);
-		padding: 8vw;
+		padding: 8vw 4%;
+
+		@include bp(sm){
+			padding: 8vw;
+
+		}
 
 	}
 
@@ -1549,8 +1554,12 @@ q:before {
 	}
 
 	.c-contentsPanel_inner {
+		padding: 8vw 4%;
+		font-size: 15px;
+		@include bp(sm){
 		padding: 8vw;
-		font-size: 15px
+
+		}
 	}
 
 	.c-contentsPanel_title {
@@ -1579,7 +1588,7 @@ q:before {
 	}
 
 	.c-productButton_inner {
-		width: 100%
+		width: 50%
 	}
 
 	.c-productButton_title {
@@ -1735,7 +1744,11 @@ q:before {
 
 	.c-shoulderSection {
 
-		padding: 5.33333vw 8vw
+		padding: 5.33333vw 4%;
+		@include bp(sm){
+			padding: 5.33333vw 8vw;
+
+		}
 	}
 
 	.c-shoulderSection_title {
