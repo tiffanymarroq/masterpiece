@@ -420,6 +420,10 @@
 	}
 
 	var homepageProductList = () => {
+
+
+
+
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
@@ -433,10 +437,13 @@
 						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
+								<div class="lds-ellipsis loading"><div></div><div></div><div></div><div></div></div>
+
 								<img class="fr-img lazyload"
-									src="${state.defaultImg}"
+		 							src="${state.defaultImg}"
 									data-original="${product.image}"
 									alt="${product.title}" data-expand="300">
+
 							</picture>
 						</figure>
 						<div class="c-contentsCard_inner">
@@ -1115,6 +1122,8 @@
 									$self.attr("src", original);
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
+									$self.prev('.loading').hide();
+
 
 
 								} else {

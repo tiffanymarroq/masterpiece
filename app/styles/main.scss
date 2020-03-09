@@ -1276,8 +1276,8 @@ q:before {
 
 	.l-container.-topLayer {
 		position: relative;
-        display: flex;
-            padding-top: 60px;
+		display: flex;
+		padding-top: 60px;
 
 	}
 
@@ -1368,7 +1368,7 @@ q:before {
 		background: var(--color-white);
 		padding: 8vw 4%;
 
-		@include bp(sm){
+		@include bp(sm) {
 			padding: 8vw;
 
 		}
@@ -1537,16 +1537,15 @@ q:before {
 		font-family: $fontFam_uqBold;
 		font-size: 24px;
 		display: inline-block;
-        margin-bottom: 2.66667vw;
-        text-transform: uppercase;
-      
+		margin-bottom: 2.66667vw;
+		text-transform: uppercase;
+
 	}
 
 	.c-contentsCardGroup_body {
-        @include bp(sm){
-            margin-top: -4vw
-
-        }
+		@include bp(sm) {
+			margin-top: -4vw
+		}
 	}
 
 	.c-contentsPanel {
@@ -1557,8 +1556,9 @@ q:before {
 	.c-contentsPanel_inner {
 		padding: 8vw 4%;
 		font-size: 15px;
-		@include bp(sm){
-		padding: 8vw;
+
+		@include bp(sm) {
+			padding: 8vw;
 
 		}
 	}
@@ -1747,7 +1747,8 @@ q:before {
 	.c-shoulderSection {
 
 		padding: 5.33333vw 4%;
-		@include bp(sm){
+
+		@include bp(sm) {
 			padding: 5.33333vw 8vw;
 
 		}
@@ -2248,24 +2249,20 @@ q:before {
 		left: 0;
 		width: 100%;
 		height: 100%;
-        text-align: center;
-        &.menu{
-            height: auto;
-        transform: rotate(-90deg);
-        bottom: 0;
-        top:auto;
-            
+		text-align: center;
+		&.menu {
+			height: auto;
+			transform: rotate(-90deg);
+			bottom: 0;
+			top: auto;
 
-            @include bp(sm){
-                bottom: auto;
-                top: 0;
-                height: 100%;
-        transform: none;
-
-
-            }
-
-        }
+			@include bp(sm) {
+				bottom: auto;
+				top: 0;
+				height: 100%;
+				transform: none;
+			}
+		}
 	}
 
 	.swiper-container {
@@ -3436,7 +3433,7 @@ q:before {
 		.l-container {
 			margin: 0 auto;
 
-			
+
 		}
 
 		.l-container.-underLayer {
@@ -3626,7 +3623,8 @@ q:before {
 		.c-productButton_title {
 			font-size: 14px;
 			margin-top: 10px;
-			@include bp(sm){
+
+			@include bp(sm) {
 				font-size: 16px;
 
 			}

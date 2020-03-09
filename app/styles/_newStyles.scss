@@ -46,24 +46,26 @@ sans-serif;
 
 // Hero
 
-.o-hero{
-    z-index: 2;
+.o-hero {
+	z-index: 2;
 }
-.o-hero_title{
-    left: auto;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    font-weight: 700;
+
+.o-hero_title {
+	left: auto;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	font-weight: 700;
 }
+
 .o-hero-lead {
 	padding: 13.33333vw 4%;
 	background: hsla(0, 0%, 100%, .6);
 	text-align: center;
 	font-size: 14px;
-    line-height: 1.9;
-    z-index: 2;
-    position: relative;
+	line-height: 1.9;
+	z-index: 2;
+	position: relative;
 }
 
 @include bp(sm) {
@@ -74,37 +76,39 @@ sans-serif;
 }
 
 
-.hp-hero-container{
-    position: relative;
-    width: 100%;
-    .hp-bg-hero{
-        // &:before {
-			content: '';
-			display: block;
-			width: 100%;
-			// height: 0;
-			// padding-top: 150.93333%;
-			// background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
-			position: fixed;
-			left: 0;
-			right: 0;
-            z-index: 1;
-            min-height: 500px; 
-            height: 100%;
-            top: 115px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-			max-width: var(--contents-width-container);
-			margin: 0 auto;
+.hp-hero-container {
+	position: relative;
+	width: 100%;
+
+	.hp-bg-hero {
+		// &:before {
+		content: '';
+		display: block;
+		width: 100%;
+		// height: 0;
+		// padding-top: 150.93333%;
+		// background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		min-height: 500px;
+		height: 100%;
+		top: 115px;
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		max-width: var(--contents-width-container);
+		margin: 0 auto;
+
 		@include bp(sm) {
-                height: auto;
-				padding-top: 40%;
-				// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-			    top: 280px;
+			height: auto;
+			padding-top: 40%;
+			// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+			top: 280px;
 		}
-    }
+	}
 }
 
 // Home Tiles
@@ -113,8 +117,8 @@ sans-serif;
 }
 
 .c-contentsCard_title {
-    line-height: 1.2;
-    font-weight: 400;
+	line-height: 1.2;
+	font-weight: 400;
 }
 
 .-inCard .c-label_item.-name {
@@ -125,32 +129,33 @@ sans-serif;
 // Product Page
 .c-shoulderSection_content {
 	max-width: var(--contents-width-inner);
-    margin: 0 auto;
-    background: #f4f4f4;
-    background: var(--color-gray050);
-    padding: 20px;
+	margin: 0 auto;
+	background: #f4f4f4;
+	background: var(--color-gray050);
+	padding: 20px;
 }
 
 
 
 
 
-.-masterpiece{
-    background-color: var(--color-gray050)
+.-masterpiece {
+	background-color: var(--color-gray050)
 }
 
-.product-container{
+.product-container {
 	background-color: #fff;
-	@include bp(sm){
+
+	@include bp(sm) {
 		padding: 50px 0;
 	}
 }
 
 
-.img-horizontal{
-    // display: block;
-    height: auto;
-    width: 140px;
+.img-horizontal {
+	// display: block;
+	height: auto;
+	width: 140px;
 
 
 }
@@ -158,33 +163,34 @@ sans-serif;
 .l-navigation_head [data-sp-aspect-ratio="90:235"]:before {
 	padding-top: 281.11111%;
 
-	@include bp(sm){
+	@include bp(sm) {
 		padding-top: 26.16279%
 	}
 }
 
 
-.arrow-container{
+.arrow-container {
 	width: 85%;
 	margin: 15px auto;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	.arrow{
+
+	.arrow {
 		// margin: 0 auto;
 		margin: 15px 35%;
-		
+
 	}
 
 	.long-arrow-left {
 		display: block;
-		
+
 		width: 8px;
 		height: 8px;
 		border-top: 2px solid #000;
-        border-left: 2px solid #000;
-        transition: .5s;
-    }
+		border-left: 2px solid #000;
+		transition: .5s;
+	}
 
 
 	.long-arrow-right {
@@ -222,26 +228,97 @@ sans-serif;
 		}
 	}
 
-    [data-aspect-ratio="322:119"]:before{
-        padding-top: 45%;
-    }
+	[data-aspect-ratio="322:119"]:before {
+		padding-top: 45%;
+	}
 
-    &:hover .long-arrow-left{ 
+	&:hover .long-arrow-left {
 		margin-left: 20px;
-    }
+	}
 
 
 }
 
 
-.error-page{
+.error-page {
 	padding: 40px 4%;
 	display: flex;
 	flex-direction: column;
 	min-height: 85vh;
 	justify-content: center;
-	p:first-child{
+	p:first-child {
 		color: red;
 		text-transform: uppercase;
+	}
+}
+
+.lds-ellipsis {
+	display: inline-block;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: #c1c1c1;
+}
+
+.lds-ellipsis div {
+	position: absolute;
+	top: 50%;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #fff;
+	animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+	// left: 8px;
+	left: 40%;
+	animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+	// left: 8px;
+	left: 40%;
+	animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+	// left: 32px;
+	left: 50%;
+	animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+	// left: 56px;
+	left: 53%;
+	animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes lds-ellipsis3 {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
+@keyframes lds-ellipsis2 {
+	0% {
+		transform: translate(0, 0);
+	}
+	100% {
+		transform: translate(24px, 0);
 	}
 }

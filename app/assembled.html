@@ -258,12 +258,13 @@ q:before {
 
 .pt_primary #main .primary-content .masterpiece-container .wrapper,
 .masterpiece-container .wrapper {
-  padding: 0 0 50px;
+  margin: 0 0 50px;
 }
 
 @media all and (min-width: 768px) {
   .pt_primary #main .primary-content .masterpiece-container .wrapper,
   .masterpiece-container .wrapper {
+    margin: 0;
     padding: 0 20px 50px;
   }
 }
@@ -1573,7 +1574,14 @@ q:before {
 .masterpiece-container .l-relatedAside {
   background: #fff;
   background: var(--color-white);
-  padding: 8vw;
+  padding: 8vw 4%;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .masterpiece-container .l-relatedAside,
+  .masterpiece-container .l-relatedAside {
+    padding: 8vw;
+  }
 }
 
 .pt_primary #main .primary-content .masterpiece-container .l-relatedAside_title,
@@ -1776,8 +1784,15 @@ q:before {
 
 .pt_primary #main .primary-content .masterpiece-container .c-contentsPanel_inner,
 .masterpiece-container .c-contentsPanel_inner {
-  padding: 8vw;
+  padding: 8vw 4%;
   font-size: 15px;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .masterpiece-container .c-contentsPanel_inner,
+  .masterpiece-container .c-contentsPanel_inner {
+    padding: 8vw;
+  }
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-contentsPanel_title,
@@ -1810,7 +1825,7 @@ q:before {
 
 .pt_primary #main .primary-content .masterpiece-container .c-productButton_inner,
 .masterpiece-container .c-productButton_inner {
-  width: 100%;
+  width: 50%;
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-productButton_title,
@@ -1938,6 +1953,7 @@ q:before {
   margin-top: 5.33333vw;
   -webkit-transition: all .3s;
   transition: all .3s;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-relatedButton,
@@ -1980,7 +1996,14 @@ q:before {
 
 .pt_primary #main .primary-content .masterpiece-container .c-shoulderSection,
 .masterpiece-container .c-shoulderSection {
-  padding: 5.33333vw 8vw;
+  padding: 5.33333vw 4%;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .masterpiece-container .c-shoulderSection,
+  .masterpiece-container .c-shoulderSection {
+    padding: 5.33333vw 8vw;
+  }
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-shoulderSection_title,
@@ -4093,7 +4116,7 @@ q:before {
     background: #fff;
     background: var(--color-white);
     padding: 0 0 2.0339vw 2.0339vw;
-    width: 83.38983vw;
+    width: 100%;
     min-height: 675px;
   }
   .pt_primary #main .primary-content .masterpiece-container .c-contentsCardGroup_head,
@@ -4153,7 +4176,7 @@ q:before {
   }
   .pt_primary #main .primary-content .masterpiece-container .c-productButton_title,
   .masterpiece-container .c-productButton_title {
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 10px;
   }
   .pt_primary #main .primary-content .masterpiece-container .c-productButton_gender,
@@ -5246,7 +5269,7 @@ q:before {
   }
   .pt_primary #main .primary-content .masterpiece-container .c-contentsCardGroup,
   .masterpiece-container .c-contentsCardGroup {
-    width: 984px;
+    width: 100%;
     padding: 0 0 24px 24px;
   }
   .pt_primary #main .primary-content .masterpiece-container .-inCard .c-label_item.-category,
@@ -5345,14 +5368,17 @@ q:before {
   width: 100%;
   position: fixed;
   left: 0;
+  right: 0;
   z-index: 1;
   min-height: 500px;
-  height: 100vh;
+  height: 100%;
   top: 115px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: var(--contents-width-container);
+  margin: 0 auto;
    background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
 
 }
@@ -5393,6 +5419,98 @@ q:before {
   padding: 20px;
 }
 
+.pt_primary #main .primary-content .masterpiece-container .-masterpiece,
+.masterpiece-container .-masterpiece {
+  background-color: var(--color-gray050);
+}
+
+.pt_primary #main .primary-content .masterpiece-container .product-container,
+.masterpiece-container .product-container {
+  background-color: #fff;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .masterpiece-container .product-container,
+  .masterpiece-container .product-container {
+    padding: 50px 0;
+  }
+}
+
+.pt_primary #main .primary-content .masterpiece-container .img-horizontal,
+.masterpiece-container .img-horizontal {
+  height: auto;
+  width: 140px;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before,
+.masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before {
+  padding-top: 281.11111%;
+}
+
+@media all and (min-width: 768px) {
+  .pt_primary #main .primary-content .masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before,
+  .masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before {
+    padding-top: 26.16279%;
+  }
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container,
+.masterpiece-container .arrow-container {
+  width: 85%;
+  margin: 15px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container .arrow,
+.masterpiece-container .arrow-container .arrow {
+  margin: 15px 35%;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container .long-arrow-left,
+.masterpiece-container .arrow-container .long-arrow-left {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container .long-arrow-right,
+.masterpiece-container .arrow-container .long-arrow-right {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container .long-arrow-left,
+.masterpiece-container .arrow-container .long-arrow-left {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.pt_primary #main .primary-content .masterpiece-container .arrow-container .long-arrow-left::after,
+.masterpiece-container .arrow-container .long-arrow-left::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 45px;
+  background-color: black;
+  -webkit-transform: rotate(-45deg) translate(15px, 4px);
+          transform: rotate(-45deg) translate(15px, 4px);
+  left: 0;
+  top: 0;
+}
+
 .pt_primary #main .primary-content .masterpiece-container .c-topPageButton .u-imgAdjustBox_inner,
 .masterpiece-container .c-topPageButton .u-imgAdjustBox_inner {
   display: block;
@@ -5413,68 +5531,31 @@ q:before {
   padding-top: 45%;
 }
 
-.pt_primary #main .primary-content .masterpiece-container .c-topPageButton .long-arrow-left,
-.masterpiece-container .c-topPageButton .long-arrow-left {
-  display: block;
-  margin: 15px 60px;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid #000;
-  border-left: 2px solid #000;
-  -webkit-transition: .5s;
-  transition: .5s;
-}
-
 .pt_primary #main .primary-content .masterpiece-container .c-topPageButton:hover .long-arrow-left,
 .masterpiece-container .c-topPageButton:hover .long-arrow-left {
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
-.pt_primary #main .primary-content .masterpiece-container .c-topPageButton .long-arrow-right,
-.masterpiece-container .c-topPageButton .long-arrow-right {
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+.pt_primary #main .primary-content .masterpiece-container .error-page,
+.masterpiece-container .error-page {
+  padding: 40px 4%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 85vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.pt_primary #main .primary-content .masterpiece-container .c-topPageButton .long-arrow-left,
-.masterpiece-container .c-topPageButton .long-arrow-left {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.pt_primary #main .primary-content .masterpiece-container .c-topPageButton .long-arrow-left::after,
-.masterpiece-container .c-topPageButton .long-arrow-left::after {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 45px;
-  background-color: black;
-  -webkit-transform: rotate(-45deg) translate(15px, 4px);
-          transform: rotate(-45deg) translate(15px, 4px);
-  left: 0;
-  top: 0;
-}
-
-.pt_primary #main .primary-content .masterpiece-container .-masterpiece,
-.masterpiece-container .-masterpiece {
-  background-color: var(--color-gray050);
-}
-
-.pt_primary #main .primary-content .masterpiece-container .product-container,
-.masterpiece-container .product-container {
-  background-color: #fff;
-  padding: 50px 0;
-}
-
-.pt_primary #main .primary-content .masterpiece-container .img-horizontal,
-.masterpiece-container .img-horizontal {
-  height: auto;
-  width: 140px;
-}
-
-.pt_primary #main .primary-content .masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before,
-.masterpiece-container .l-navigation_head [data-sp-aspect-ratio="90:235"]:before {
-  padding-top: 281.11111%;
+.pt_primary #main .primary-content .masterpiece-container .error-page p:first-child,
+.masterpiece-container .error-page p:first-child {
+  color: red;
+  text-transform: uppercase;
 }
 
 
@@ -5546,6 +5627,8 @@ q:before {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
 	}
 
+
+
 	/* endCSSinject */
 
 </style>
@@ -5553,17 +5636,16 @@ q:before {
 
 <!-- inject:theHTML:html -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 <div class="masterpiece-container">
 	<div class='-masterpiece'>
 		<div class="wrapper">
 			<div class="fr-breadcrumbs u-only-pc">
 				<ol class="fr-breadcrumbs_inner">
 					<li class="fr-breadcrumbs_item"><a class="fr-breadcrumbs_itemLink js-trackEvent" href="/"
-							data-category="L3_20ss_masterpiece" data-label="L3_20ss_masterpiece_top_breadcrumb_1">
+							data-category="L3_20ss_masterpiece" data-label="breadcrumb_home">
 							HOME
 						</a></li>
-					<li class="fr-breadcrumbs_item">
+					<li class="fr-breadcrumbs_item js-trackEvent" data-label="breadcrumb_masterpiece">
 						<a href="/us/en/page/masterpiece">
 							MASTERPIECE
 						</a>
@@ -5586,23 +5668,26 @@ q:before {
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/us/en/page/masterpiece-tmq/',
-	
+		siteUrl: '/',
+		// siteUrl: '/us/en/page/masterpiece.html',
+		currentUrl: window.location.href,
+		defaultImg: 'https://dimensionmill.org/wp-content/uploads/2019/03/square-placeholder.jpg'
 	}
 
 
 	var masterpieceData = [{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
+			productHeroImgs: [''],
 			title: `From the nation who takes socks seriously`,
 			productName: `Colorful 50 Socks`,
 			gender: [`Men`],
-			category: `Accessories`,
-			url: `?product=colorful-50-socks&category=accessories`,
+			category: `Innerwear`,
+			url: `?product=colorful-50-socks&category=innerwear`,
 			productCopy: `In Japan, it&apos;s customary to take off your shoes inside, which makes socks innerwear and an accessory seen by others. This demands they be comfortable, durable, and stylish. UNIQLO is spreading this standard globally with special self-deodorizing thread that&apos;s hole-resistant and designed to help socks stay in place shoes of all types. What’s more, we have the a truly staggering variety of colors, making these Color Socks a true luxury for your feet.`,
 			relatedProducts: {
 				title: `Stylish comfort for feet around the world.`,
 				productList: [{
-					sku: `423540`,
+					sku: '423540',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/socks-and-tights/anti-odor-color-socks`,
 					ctaCopy: `View All Related Products`
@@ -5611,6 +5696,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_32_M's-Vintage-regular-fit-chino-pants.jpg`,
+			productHeroImgs: [''],
 			title: `Vintage on the outside, modern day on the inside`,
 			productName: `Vintage Regular Fit Chinos`,
 			gender: [`Men`],
@@ -5620,7 +5706,7 @@ q:before {
 			relatedProducts: {
 				title: `For outstanding comfort on the inside.`,
 				productList: [{
-					sku: `422371`,
+					sku: '422371',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/chino-pants/vintage-regular-fit`,
 					ctaCopy: `View All Related Products`
@@ -5629,6 +5715,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-Dry-pique-polo.jpg`,
+			productHeroImgs: [''],
 			title: `Quality makes the first impression`,
 			productName: `Dry Pique Polo Shirt`,
 			gender: [`Men`],
@@ -5638,7 +5725,7 @@ q:before {
 			relatedProducts: {
 				title: `Fool-proof style thanks to the sleeves and collar design.`,
 				productList: [{
-					sku: `422987`,
+					sku: '422987',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/polo-shirts/dry-pique`,
 					ctaCopy: `View All Related Products`
@@ -5646,7 +5733,8 @@ q:before {
 			}
 		},
 		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_W-SUPIMA-COTTON-T-Shirt_422697.jpg`,
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_W's-supima-cotton-T-shirt.jpg`,
+			productHeroImgs: ['422990'],
 			title: `SUPIMA®: Because basic does not lie`,
 			productName: `Supima Cotton Crew Neck T-shirt`,
 			gender: [`women`, `men`],
@@ -5656,13 +5744,13 @@ q:before {
 			relatedProducts: {
 				title: `Top quality for the most basic style.`,
 				productList: [{
-						sku: `422697`,
+						sku: '422697',
 						gender: `Women`,
-						ctaUrl: `https://www.uniqlo.com/us/en/women/t-shirts/essential-t-shirts`,
+						ctaUrl: `https://www.uniqlo.com/us/en/women/t-shirts-and-tops/essential-tees`,
 						ctaCopy: `View All Related Products`
 					},
 					{
-						sku: `422990`,
+						sku: '422990',
 						gender: `Men`,
 						ctaUrl: `https://www.uniqlo.com/us/en/men/t-shirts/essential-t-shirts`,
 						ctaCopy: `View All Related Products`
@@ -5672,6 +5760,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_34_Uniqlo-U-crew-neck-Tshirts.jpg`,
+			productHeroImgs: ['422992'],
 			title: `T-shirts that evolve with the times`,
 			productName: `Crew Neck T-shirt`,
 			gender: [`women`, `men`],
@@ -5681,13 +5770,13 @@ q:before {
 			relatedProducts: {
 				title: `The ultimate classic you&apos;ll always look good in.`,
 				productList: [{
-						sku: `424873`,
+						sku: '424873',
 						gender: `Women`,
 						ctaUrl: `https://www.uniqlo.com/us/en/women/t-shirts/essential-t-shirts`,
 						ctaCopy: `View All Related Products`
 					},
 					{
-						sku: `422992`,
+						sku: '422992',
 						gender: `Men`,
 						ctaUrl: `https://www.uniqlo.com/us/en/men/t-shirts/essential-t-shirts`,
 						ctaCopy: `View All Related Products`
@@ -5697,6 +5786,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-EFC-broad-shirts.jpg`,
+			productHeroImgs: [''],
 			title: `A shirt made with everyone in mind`,
 			productName: `Extra Fine Cotton Broad Shirt`,
 			gender: [`Men`],
@@ -5706,7 +5796,7 @@ q:before {
 			relatedProducts: {
 				title: `High-quality colors and patterns, carefully calculated by thread choice.`,
 				productList: [{
-					sku: `426930`,
+					sku: '426930',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/casual-shirts/extra-fine-cotton`,
 					ctaCopy: `View All Related Products`
@@ -5715,6 +5805,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-super-non-iron-shirt_SW_NP.jpg`,
+			productHeroImgs: [''],
 			title: `Farewell to ironing.`,
 			productName: `Super Non-Iron Shirt`,
 			gender: [`Men`],
@@ -5724,7 +5815,7 @@ q:before {
 			relatedProducts: {
 				title: `Beautiful and comfortable, whenever and wherever.`,
 				productList: [{
-					sku: `425050`,
+					sku: '427171',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/dress-shirts/slim-fit/super-non-iron`,
 					ctaCopy: `View All Related Products`
@@ -5733,6 +5824,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Fine-cloth-easy-care-shirt_NP.jpg`,
+			productHeroImgs: [''],
 			title: `You can tell the quality by the collar`,
 			productName: `Fine Cloth Shirt`,
 			gender: [`Men`],
@@ -5742,7 +5834,7 @@ q:before {
 			relatedProducts: {
 				title: `Master-level stitching in every collar.`,
 				productList: [{
-					sku: `425046`,
+					sku: '427131',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/dress-shirts`,
 					ctaCopy: `View All Related Products`
@@ -5751,6 +5843,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_23_W's-rayon-blouse.jpg`,
+			productHeroImgs: [''],
 			title: `Low-maintenance yet highly refined`,
 			productName: `Rayon Blouse`,
 			gender: [`Women`],
@@ -5760,7 +5853,7 @@ q:before {
 			relatedProducts: {
 				title: `Easy to care for thanks to special thread.`,
 				productList: [{
-					sku: `424643`,
+					sku: '424643',
 					gender: `Women`,
 					ctaUrl: `https://www.uniqlo.com/us/en/women/shirts-and-blouses/rayon-blouses`,
 					ctaCopy: `View All Related Products`
@@ -5769,6 +5862,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_31_M's-Comfort-jacket.jpg`,
+			productHeroImgs: [''],
 			title: `Small details speak volumes.`,
 			productName: `Comfort jacket`,
 			gender: [`Men`],
@@ -5778,7 +5872,7 @@ q:before {
 			relatedProducts: {
 				title: `Uncompromising comfort and style.`,
 				productList: [{
-					sku: `425035`,
+					sku: '425035',
 					gender: `Men`,
 					ctaUrl: `https://www.uniqlo.com/us/en/men/outerwear-and-blazers/blazers`,
 					ctaCopy: `View All Related Products`
@@ -5787,6 +5881,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Premium-Linen-Shirt.jpg`,
+			productHeroImgs: ['425062'],
 			title: `Linen: Transformed by Human Hands`,
 			productName: `Premium Linen Shirt`,
 			gender: [`women`, `men`],
@@ -5796,21 +5891,47 @@ q:before {
 			relatedProducts: {
 				title: `Handcrafted luxury created by experts.`,
 				productList: [{
-						sku: `426232`,
+						sku: '242658',
 						gender: `Women`,
 						ctaUrl: `https://www.uniqlo.com/us/en/women/linen-collection/shirts-and-blouses`,
 						ctaCopy: `View All Related Products`
 					},
 					{
-						sku: `425062`,
+						sku: '425062',
 						gender: `Men`,
 						ctaUrl: `https://www.uniqlo.com/us/en/men/linen-collection/shirts`,
 						ctaCopy: `View All Related Products`
 					}
 				]
 			}
-		}
+		},
 	];
+
+
+
+	var errorPage = () => {
+		var error = `
+			<div class="error-page">
+				<p class="bold" style="text-align: center">Page Not Found</p>
+				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
+					data-label="article_cta_back_to_masterpiece">
+					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
+						<div class="u-imgAdjustBox_inner">
+								<img
+								class="fr-img lazyload"
+								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
+								<p>BACK TO TOP</p>
+								<div class="arrow-container"><div class="arrow long-arrow-left"></div></div>
+						</div>
+					</figure>
+				</a>
+			</div>
+		
+			`
+		$('.main').html(error)
+	}
 
 	//Homepage Components
 	var homepageMenu = () => {
@@ -5819,17 +5940,16 @@ q:before {
 					<figure class="u-imgAdjustBox" data-sp-aspect-ratio="90:235" data-pc-aspect-ratio="172:45">
 						<picture class="u-imgAdjustBox_inner menu">
 							${state.width > 768 ? 
-								`<img class="fr-img lazyloaded"
+								`<img class="fr-img lazyload" 
 								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
-								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
+								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
 								alt="UNIQLO MASTERPIECE" data-expand="300">`
 							:
-								`<img class="fr-img lazyloaded img-horizontal"
+								`<img class="fr-img lazyload img-horizontal" style='height:100%'
 									src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
-									data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
+									data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 									alt="UNIQLO MASTERPIECE" data-expand="300">`
 							}
-					
 						</picture>
 					</figure>
 				</div>
@@ -5840,93 +5960,93 @@ q:before {
 						<li  class="l-navigation_item js-smoothScroll is-active -all js-trackEvent"
 							data-i ="0"
 							data-filter-button="all" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_all"><span>ALL</span>
+							data-label="hp_menu_all"><span>ALL</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -outer js-trackEvent" data-filter-button="outerwear"
 						data-i ="1" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_outerwear">
+							data-label="hp_menu_outerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg"
 										alt="OUTER" data-expand="300"></picture>
 							</figure><span class="u-only-pc">OUTERWEAR</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -tops js-trackEvent" data-filter-button="tops"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_tops" data-i ="2">
+							data-label="hp_menu_tops" data-i ="2">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg"
 										alt="TOPS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">TOPS</span>
 						</li>
 						<li class="l-navigation_item js-smoothScroll -bottoms js-trackEvent" data-i ="3"
 							data-filter-button="bottoms" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_bottoms">
+							data-label="hp_menu_bottoms">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg"
 										alt="BOTTOMS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">BOTTOMS</span>
 						</li>
 						<li data-i ="4" class="l-navigation_item js-smoothScroll -dress js-trackEvent" data-filter-button="dresses"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_dresses">
+							data-label="hp_menu_dresses">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg"
 										alt="DRESS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">DRESSES</span>
 						</li>
 						<li data-i ="5" class="l-navigation_item js-smoothScroll -roomwear js-trackEvent"
 							data-filter-button="loungewear" data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_loungwear">
+							data-label="hp_menu_loungwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg"
 										alt="ROOM WEAR" data-expand="300"></picture>
 							</figure><span class="u-only-pc">LOUNGEWEAR</span>
 						</li>
 						<li data-i ="6" class="l-navigation_item js-smoothScroll -inner js-trackEvent" data-filter-button="innerwear"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_innerwear">
+							data-label="hp_menu_innerwear">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg"
 										alt="INNER" data-expand="300"></picture>
 							</figure><span class="u-only-pc">INNERWEAR</span>
 						</li>
 						<li data-i ="7" class="l-navigation_item js-smoothScroll -goods js-trackEvent" data-filter-button="accessories"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_accessories">
+							data-label="hp_menu_accessories">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg"
 										alt="GOODS" data-expand="300"></picture>
 							</figure><span class="u-only-pc">ACCESSORIES</span>
 						</li>
 						<li data-i ="8" class="l-navigation_item js-smoothScroll -baby js-trackEvent" data-filter-button="baby"
 							data-link=".l-container" data-category="L3_20ss_masterpiece"
-							data-label="l3_hp_menu_baby">
+							data-label="hp_menu_baby">
 							<figure class="u-imgAdjustBox l-navigation_icon" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner l-navigation_iconInner"><img
-										class="fr-img lazyloaded"
+										class="fr-img lazyload"
 										src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg"
-										data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg"
+										data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg"
 										alt="BABY" data-expand="300"></picture>
 							</figure><span class="u-only-pc">BABY</span>
 						</li>
@@ -5938,20 +6058,22 @@ q:before {
 	}
 
 	var homepageProductList = () => {
-
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
 				let productTile = `
-				<section class="c-contentsCard -no-${i}  product-fadeIn" data-filter-panel="tops" aria-hidden="false"><a
-						class="js-trackEvent" data-category="${product.category}" data-product="${product.productName}"
-						data-label="${'gatag'}"
-						href="${state.siteUrl + product.url}">
+				<section class="c-contentsCard -no-${i}  product-fadeIn" aria-hidden="false"
+				 >
+					<a class="js-trackEvent" 
+					    data-label="hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}" 
+						href="${state.siteUrl + product.url}"
+						data-category="${product.category}" data-product="${product.productName}"
+						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
-								<img class="fr-img lazyloaded"
-									src="${product.image}"
-									data-src="${product.image}"
+								<img class="fr-img lazyload"
+									src="${state.defaultImg}"
+									data-original="${product.image}"
 									alt="${product.title}" data-expand="300">
 							</picture>
 						</figure>
@@ -5966,7 +6088,6 @@ q:before {
 				</section>`;
 
 				return productTile
-
 
 			})
 
@@ -5990,7 +6111,6 @@ q:before {
 	}
 
 	var homepage = () => {
-
 
 
 		var homepageComponent = `
@@ -6048,8 +6168,8 @@ q:before {
 			<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 				<picture class="u-imgAdjustBox_inner">
 					<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
-						class="fr-img ls-is-cached lazyloaded" src="${product.image}"
-						data-src="${product.image}" alt="Comfort jacket" data-expand="300">
+						class="fr-img ls-is-cached lazyload" src="${state.defaultImg}"
+						data-original="${product.image}" alt="Comfort jacket" data-expand="300">
 				</picture>
 			</figure>`;
 
@@ -6098,22 +6218,28 @@ q:before {
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
-				getRelatedProduct(product.relatedProducts.productList[i], i)
+				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
+				setTimeout(() => {
+					getProductData(product.relatedProducts.productList[i].sku, i);
+				}, 500)
 			}
 		}
 	}
 
-	var getRelatedProduct = (data, i) => {
+
+	var getRelatedProduct = (data, i, productName) => {
+		let productNameReplace = productName.replace(/ /g, '_').toLowerCase();
+		let position = parseInt(i) + 1;
 		let productComponent = `
 			<li class="c-productButtonGroup_item">
 				<a class="c-productButton js-trackEvent"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label=""
+					 data-label="article_${productNameReplace}_productTile_${position}_${data.sku}"
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
-								<img class="fr-img lazyloaded"
-								src=""
-								data-src=""
+								<img class="fr-img lazyload"
+								src="${state.defaultImg}"
+								data-original=""
 								alt="" data-expand="300">
 						</picture>
 					</figure>
@@ -6130,18 +6256,17 @@ q:before {
 					</div>
 				</a>
 				<a class="c-linkButton js-trackEvent" href="${data.ctaUrl}" 
-				data-category="L3_20ss_masterpiece_supima_cotton_crew_neck_shirt_details_page" 
-				data-label="L3_ws_t_shirt">${data.ctaCopy}</a>
+			
+				data-label="article_${productNameReplace}_productCta_${position}">${data.ctaCopy}</a>
 			</li>
 			`
-		$('.c-productButtonGroup').append(productComponent)
-		getProductData(data.sku, i);
+		$('.c-productButtonGroup').append(productComponent);
 
 
 	}
 
 	var getProductData = (sku, i) => {
-		var urlPrefix = 'https://www.uniqlo.com/us/en';
+		var urlPrefix = 'https://www.uniqlo.com/';
 		if (window.location.href.includes('staging')) {
 			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
 		}
@@ -6150,6 +6275,7 @@ q:before {
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
+			// https://www.uniqlo.com/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=419684
 
 			$.ajax({
 				url: urlPrefix +
@@ -6157,13 +6283,12 @@ q:before {
 					sku,
 				i: i,
 				sku: sku,
-
-
 				success: function (pData) {
+					console.log('success', pData)
 					if (pData.length === 0) {
+						console.log(pData, 'length 0')
 						return;
 					}
-
 					var price = $(pData).children('.product-tile-info')
 						.children(
 							'.product-pricing')
@@ -6172,6 +6297,7 @@ q:before {
 
 					if (price && price.includes('/')) {
 						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
+						console.log('price /')
 						return;
 					}
 					var productImage = $(pData).children(
@@ -6182,8 +6308,9 @@ q:before {
 						'.product-swatches').html();
 
 
-					if ($(swatches).children().length === 0) {
-						$('.shop-by-look-card:eq(' + i + ')').hide();
+					if ($(swatches).length === 0) {
+						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+						console.log('no swatches')
 						return;
 					}
 
@@ -6195,39 +6322,52 @@ q:before {
 						'.product-name').children(
 						'.name-link').attr('href');
 
-					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href', productLink)
-					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(productTitle)
+					console.log('get product', productTitle, i)
+
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href',
+						productLink)
+
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(
+						productTitle)
 					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('src',
 						productImage)
-					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('data-src',
+					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr(
+						'data-src',
 						productImage)
 
 				}
 			})
+
+
+
 		}
 	}
+
+
 
 	var topArticles = () => {
 		var articles = masterpieceData
 			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() &&
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
+
+				let productName = product.productName.replace('&apos;', "'");
 				return (
-					`
-					<li class="c-relatedButtonGroup_item"><a class="c-relatedButton js-trackEvent"
-							data-category="L3_20ss_masterpiece_fine_cloth_shirt_details_page"
-							data-label="L3_20ss_masterpiece_premium_linen_details_page"
+					`<li class="c-relatedButtonGroup_item">
+						<a class="c-relatedButton js-trackEvent"
+							data-category="${product.category}"
+							data-product="${product.productName}"
+							data-label="article_relatedArticle_${productName.replace(/ /g, "_").toLowerCase()}"
 							href="${state.siteUrl + product.url}">
 							<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 								<picture class="u-imgAdjustBox_inner">
-								
 									<source data-srcset="${product.image}"
-										type="image/jpeg"
-										srcset="${product.image}"><img
-										class="fr-img lazyloaded"
-										src="${product.image}"
-										data-src="${product.image}"
-										alt="${product.title.replace('&apos;',"'")}" data-expand="300">
+										type="image/jpeg">
+										<img
+										class="fr-img lazyload"
+										src="${state.defaultImg}"
+										data-original="${product.image}"
+										alt="${productName}" data-expand="300">
 								</picture>
 							</figure>
 							<div>
@@ -6248,14 +6388,13 @@ q:before {
 					<h2 class="l-relatedAside_title">
 						Tops Articles
 					</h2>
-					<ul class="c-relatedButtonGroup">${articles.join('')}</ul>
+					<ul class="c-relatedButtonGroup">${articles.length > 8 ? articles.splice(0,8).join(''): articles.join('')}</ul>
 			`
 			$('.l-relatedAside').html(articleComponent)
 		}
 	}
 
 	var productPage = () => {
-
 		var productPageComponent =
 			`<div class="l-container product-container">
 				<article class="c-contents">
@@ -6270,16 +6409,17 @@ q:before {
 				<aside class="l-relatedAside">
 				</aside>
 				<a class="c-topPageButton js-trackEvent" href="${state.siteUrl}"
-					data-category="L3_20ss_masterpiece_comfort_jacket_details_page" data-label="#">
+					data-label="article_cta_back_to_masterpiece">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
 								<img
 								class="fr-img lazyloaded"
 								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
-								data-src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
+								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
 								<p>BACK TO TOP</p>
-								<div class="long-arrow-left"></div>
+								<div class="arrow-container"><div class="arrow long-arrow-left"></div></div>
+
 						</div>
 					</figure>
 				</a>
@@ -6292,14 +6432,14 @@ q:before {
 			topArticles();
 
 		} else {
-			$('.main').html('Page not found');
+			errorPage()
 		}
 	}
 
 
 	function initMasterpiece() {
+		state.currentUrl = window.location.href;
 		var urlParams = new URLSearchParams(window.location.search);
-
 		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;',
 				"'").replace('_', '-')
 			.toLowerCase() :
@@ -6313,32 +6453,31 @@ q:before {
 
 		var hpCategory = window.location.hash.toLowerCase().replace('#', '');
 
-
-
-		if (product && category) {
-
+		if ((product && category) || state.contentSelected) {
+			if (state.contentSelected) {
+				product = state.contentSelected.productName.toLowerCase();
+				category = state.contentSelected.category.toLowerCase()
+			}
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
 
 			if (findProductPageData && findProductPageData.length > 0) {
-
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
+					let titleReplace = state.contentSelected.title.replace('&apos;', "'")
 					$('.fr-breadcrumbs_inner').append(
-						`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
+						`<li class="fr-breadcrumbs_item product-crumb js-trackEvent" data-label="breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}">${titleReplace}</li>`
 					)
-
 				}
-
+				$(".lazyload").lazyload();
 
 			} else {
 				state.contentSelected = null;
-				$('.main').html('Page not found');
+				errorPage()
 			}
-
 
 		} else {
 			homepage();
@@ -6346,130 +6485,137 @@ q:before {
 				var findProductPageData = masterpieceData.filter((data) => {
 					return data.category.toLowerCase() === hpCategory
 				})
+
 				if (findProductPageData && findProductPageData.length > 0) {
 					state.filter = hpCategory;
+					$('.l-navigation_item.is-active').removeClass('is-active');
+					$(`.l-navigation_item[data-filter-button~="${hpCategory}"`).addClass('is-active');
 					homepageProductList();
 				}
 			}
+
+			$(".lazyload").lazyload();
+
 		}
 	}
 
 	// Init App
 	$(document).ready(() => {
-		initMasterpiece()
+		console.log('ready')
+		setTimeout(() => {
+			initMasterpiece();
+		}, 500)
+	})
 
-		$('.js-trackEvent').click((e) => {
-			console.log(e.currentTarget.dataset.label)
-		})
+	$(document).on("click", ".js-trackEvent", function (e) {
+		var dataset = e.currentTarget.dataset;
+		var product = dataset.product;
+		var category = dataset.category;
+		var filter = dataset.filterButton
+		if (product && category) {
+			var findProductPageData = masterpieceData.filter((data) => {
+				return data.category.toLowerCase() === category.toLowerCase() && data.productName
+					.toLowerCase() === product.toLowerCase()
+			})
 
-		$('.c-contentsCard').click((e) => {
-
-			if (state.width < 768) {
-				var product = e.currentTarget.dataset.product.toLowerCase();
-				var category = e.currentTarget.dataset.category.toLowerCase();
-
-				var findProductPageData = masterpieceData.filter((data) => {
-					return data.category.toLowerCase() === category && data.productName
-						.toLowerCase() ===
-						product
-				})
-
-				if (findProductPageData && findProductPageData.length > 0) {
-
-					state.contentSelected = findProductPageData[0];
-					productPage();
-					if ($('.product-crumb').length === 0) {
-						$('.fr-breadcrumbs_inner').append(
-							`<li class="fr-breadcrumbs_item product-crumb">${state.contentSelected.title.replace('&apos;',"'")}</li>`
-						)
-
-					}
-
-
-				} else {
-					state.contentSelected = null;
-					$('.main').html('Page not found');
-				}
-
+			if (findProductPageData && findProductPageData.length > 0) {
+				state.contentSelected = findProductPageData[0]
 			}
-		})
 
-		$('.l-navigation_item').click((e) => {
-			state.filter = e.currentTarget.dataset.filterButton;
+			setTimeout(() => {
+				initMasterpiece();
+				$('html, body').animate({
+					scrollTop: 0
+				}, 0)
+			}, 500)
+		} else if (filter) {
+			state.filter = filter;
 			var i = e.currentTarget.dataset.i;
 			$('.l-navigation_item.is-active').removeClass('is-active');
-
-
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
-
 			homepageProductList();
+			$(".lazyload").lazyload();
 
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
-			}, 300, function () {
-				window.location.hash = e.currentTarget.dataset.filterButton;
+			}, 0, function () {
+				window.location.hash = filter;
 			});
+		} else {
 
-			masterpieceGA(e)
+			setTimeout(() => {
+				console.log('init masterpiece reload js-event')
+				homepage();
+				$(".lazyload").lazyload();
+				$('html, body').animate({
+					scrollTop: $('.c-contentsCardGroup').offset().top
+				}, 0, function () {
+					window.location.hash = filter;
+				});
+			}, 500)
+		}
 
-		})
-
-
-
-		$(window).resize(function () {
-			state.width = $(this).width()
-		});
-
-		$(window).scroll(() => {
-			if ($('.l-navigation_wrapper').length > 0) {
-
-				var t = document.querySelector(".l-navigation_body");
-
-				var e = document.documentElement.scrollTop || document.body.scrollTop;
-				e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
-					.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
-						"data-navigation-position", "default"),
-					e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
-					.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute");
+		masterpieceGA(e);
+	})
 
 
-				if (e > document.querySelector(".l-wrapper").getBoundingClientRect().top + e - t
-					.clientHeight) {
+
+
+	$(window).resize(function () {
+		state.width = $(this).width()
+	});
+
+	$(window).scroll(() => {
+		if ($('.l-navigation_wrapper').length > 0) {
+
+			var t = document.querySelector(".l-navigation_body");
+			var e = document.documentElement.scrollTop || document.body.scrollTop;
+			e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
+				.setAttribute("data-navigation-position", "fixed") : t.setAttribute(
+					"data-navigation-position", "default"),
+				e > document.querySelector(".c-bannerGroup").getBoundingClientRect().top + e - t
+				.clientHeight ? t.classList.add("is-absolute") : t.classList.remove("is-absolute");
+
+
+			if (e > document.querySelector(".l-wrapper").getBoundingClientRect().top + e - t
+				.clientHeight) {
+				$('.hp-bg-hero').css({
+					'position': 'absolute',
+					'bottom': '0',
+					'top': ''
+				})
+
+			} else {
+
+				if (state.width > 768) {
 					$('.hp-bg-hero').css({
-						'position': 'absolute',
-						'bottom': '0',
-						'top': ''
+						'position': 'fixed',
+						'top': 280 - e > 0 ? 280 - e : 0,
+						'bottom': ''
 					})
-
 				} else {
-
-					if (state.width > 768) {
-						$('.hp-bg-hero').css({
-							'position': 'fixed',
-							'top': 280 - e > 0 ? 280 - e : 0,
-							'bottom': ''
-						})
-					} else {
-						$('.hp-bg-hero').css({
-							'position': 'fixed',
-							'top': 115 - e > 0 ? 115 - e : 0,
-							'bottom': ''
-						})
-					}
-
+					$('.hp-bg-hero').css({
+						'position': 'fixed',
+						'top': 115 - e > 0 ? 115 - e : 0,
+						'bottom': ''
+					})
 				}
 
 			}
-		})
+
+		}
 	})
+
+
+
 
 	// GA TAG
 	var masterpieceGA = (e) => {
-		if (!(e.dataset)) {
+		if (!(e.currentTarget.dataset)) {
 			event.preventDefault();
 		}
 
-		var value = e.dataset && e.dataset.label ? e.dataset.label.toLowerCase() : e;
+		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset.label : e;
 		var urlPrefix = 'https://www.uniqlo.com/us/en';
 
 		if (window.location.href.includes('staging')) {
@@ -6480,11 +6626,8 @@ q:before {
 			urlPrefix = 'https://development-na-uniqlo.demandware.net/s/UniqloUS'
 		}
 
-		var path = window.location.href.split('?')[0].replace(urlPrefix, '');
-		if (path.substring(path.length - 1) !== '/') {
-			path = path + '/'
-		}
-		console.log(value, 'value')
+		var path = state.currentUrl.replace(urlPrefix, '');
+
 
 		// dataLayer.push({
 		// 	'event': 'eventTracking',
@@ -6494,34 +6637,287 @@ q:before {
 		// })
 	}
 
+
 </script>
-
-
-<!-- 
-Home page
-
-
-Menu
-
-l3_hp_menu_category
-l3_hp_tile_productName
-
-
-Product Page
-
-l3_article_productName_productTile_#_id
-l3_article_productName_productCta_#
-l3_article_relatedArticle_productName
-
-
-
-BreadCrumb
-l3_breadcrumb_name -->
-
-
-
 <script>
+	/*!
+	 * Lazy Load - jQuery plugin for lazy loading images
+	 *
+	 * Copyright (c) 2007-2015 Mika Tuupola
+	 *
+	 * Licensed under the MIT license:
+	 *   http://www.opensource.org/licenses/mit-license.php
+	 *
+	 * Project home:
+	 *   http://www.appelsiini.net/projects/lazyload
+	 *
+	 * Version:  1.9.7
+	 *
+	 */
 
+	(function ($, window, document, undefined) {
+		var $window = $(window);
+
+		$.fn.lazyload = function (options) {
+			var elements = this;
+			var $container;
+			var settings = {
+				threshold: 0,
+				failure_limit: 0,
+				event: "scroll",
+				effect: "show",
+				container: window,
+				data_attribute: "original",
+				skip_invisible: false,
+				appear: null,
+				load: null,
+				placeholder: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC"
+			};
+
+			function update() {
+				var counter = 0;
+
+				elements.each(function () {
+					var $this = $(this);
+					if (settings.skip_invisible && !$this.is(":visible")) {
+						return;
+					}
+					if ($.abovethetop(this, settings) ||
+						$.leftofbegin(this, settings)) {
+						/* Nothing. */
+					} else if (!$.belowthefold(this, settings) &&
+						!$.rightoffold(this, settings)) {
+						$this.trigger("appear");
+						/* if we found an image we'll load, reset the counter */
+						counter = 0;
+					} else {
+						if (++counter > settings.failure_limit) {
+							return false;
+						}
+					}
+				});
+
+			}
+
+			if (options) {
+				/* Maintain BC for a couple of versions. */
+				if (undefined !== options.failurelimit) {
+					options.failure_limit = options.failurelimit;
+					delete options.failurelimit;
+				}
+				if (undefined !== options.effectspeed) {
+					options.effect_speed = options.effectspeed;
+					delete options.effectspeed;
+				}
+
+				$.extend(settings, options);
+			}
+
+			/* Cache container as jQuery as object. */
+			$container = (settings.container === undefined ||
+				settings.container === window) ? $window : $(settings.container);
+
+			/* Fire one scroll event per scroll. Not one scroll event per image. */
+			if (0 === settings.event.indexOf("scroll")) {
+				$container.bind(settings.event, function () {
+					return update();
+				});
+			}
+
+			this.each(function () {
+				var self = this;
+				var $self = $(self);
+
+				self.loaded = false;
+
+				/* If no src attribute given use data:uri. */
+				if ($self.attr("src") === undefined || $self.attr("src") === false) {
+					if ($self.is("img")) {
+						$self.attr("src", settings.placeholder);
+					}
+				}
+
+				/* When appear is triggered load original image. */
+				$self.one("appear", function () {
+					if (!this.loaded) {
+						if (settings.appear) {
+							var elements_left = elements.length;
+							settings.appear.call(self, elements_left, settings);
+						}
+						$("<img />")
+							.bind("load", function () {
+
+								var original = $self.attr("data-" + settings.data_attribute);
+								$self.hide();
+								if ($self.is("img")) {
+									$self.attr("src", original);
+									$self.addClass("lazyloaded");
+									$self.removeClass("lazyload");
+
+
+								} else {
+									$self.css("background-image", "url('" + original + "')");
+								}
+								$self[settings.effect](settings.effect_speed);
+
+								self.loaded = true;
+
+								/* Remove image from array so it is not looped next time. */
+								var temp = $.grep(elements, function (element) {
+									return !element.loaded;
+								});
+								elements = $(temp);
+
+								if (settings.load) {
+									var elements_left = elements.length;
+									settings.load.call(self, elements_left, settings);
+								}
+							})
+							.attr("src", $self.attr("data-" + settings.data_attribute));
+					}
+				});
+
+				/* When wanted event is triggered load original image */
+				/* by triggering appear.                              */
+				if (0 !== settings.event.indexOf("scroll")) {
+					$self.bind(settings.event, function () {
+						if (!self.loaded) {
+							$self.trigger("appear");
+						}
+					});
+				}
+			});
+
+			/* Check if something appears when window is resized. */
+			$window.bind("resize", function () {
+				update();
+			});
+
+			/* With IOS5 force loading images when navigating with back button. */
+			/* Non optimal workaround. */
+			if ((/(?:iphone|ipod|ipad).*os 5/gi).test(navigator.appVersion)) {
+				$window.bind("pageshow", function (event) {
+					if (event.originalEvent && event.originalEvent.persisted) {
+						elements.each(function () {
+							$(this).trigger("appear");
+						});
+					}
+				});
+			}
+
+			/* Force initial check if images should appear. */
+			$(document).ready(function () {
+				update();
+			});
+
+			return this;
+		};
+
+		/* Convenience methods in jQuery namespace.           */
+		/* Use as  $.belowthefold(element, {threshold : 100, container : window}) */
+
+		$.belowthefold = function (element, settings) {
+			var fold;
+
+			if (settings.container === undefined || settings.container === window) {
+				fold = (window.innerHeight ? window.innerHeight : $window.height()) + $window.scrollTop();
+			} else {
+				fold = $(settings.container).offset().top + $(settings.container).height();
+			}
+
+			return fold <= $(element).offset().top - settings.threshold;
+		};
+
+		$.rightoffold = function (element, settings) {
+			var fold;
+
+			if (settings.container === undefined || settings.container === window) {
+				fold = $window.width() + $window.scrollLeft();
+			} else {
+				fold = $(settings.container).offset().left + $(settings.container).width();
+			}
+
+			return fold <= $(element).offset().left - settings.threshold;
+		};
+
+		$.abovethetop = function (element, settings) {
+			var fold;
+
+			if (settings.container === undefined || settings.container === window) {
+				fold = $window.scrollTop();
+			} else {
+				fold = $(settings.container).offset().top;
+			}
+
+			return fold >= $(element).offset().top + settings.threshold + $(element).height();
+		};
+
+		$.leftofbegin = function (element, settings) {
+			var fold;
+
+			if (settings.container === undefined || settings.container === window) {
+				fold = $window.scrollLeft();
+			} else {
+				fold = $(settings.container).offset().left;
+			}
+
+			return fold >= $(element).offset().left + settings.threshold + $(element).width();
+		};
+
+		$.inviewport = function (element, settings) {
+			return !$.rightoffold(element, settings) && !$.leftofbegin(element, settings) &&
+				!$.belowthefold(element, settings) && !$.abovethetop(element, settings);
+		};
+
+		/* Custom selectors for your convenience.   */
+		/* Use as $("img:below-the-fold").something() or */
+		/* $("img").filter(":below-the-fold").something() which is faster */
+
+		$.extend($.expr[":"], {
+			"below-the-fold": function (a) {
+				return $.belowthefold(a, {
+					threshold: 0
+				});
+			},
+			"above-the-top": function (a) {
+				return !$.belowthefold(a, {
+					threshold: 0
+				});
+			},
+			"right-of-screen": function (a) {
+				return $.rightoffold(a, {
+					threshold: 0
+				});
+			},
+			"left-of-screen": function (a) {
+				return !$.rightoffold(a, {
+					threshold: 0
+				});
+			},
+			"in-viewport": function (a) {
+				return $.inviewport(a, {
+					threshold: 0
+				});
+			},
+			/* Maintain BC for couple of versions. */
+			"above-the-fold": function (a) {
+				return !$.belowthefold(a, {
+					threshold: 0
+				});
+			},
+			"right-of-fold": function (a) {
+				return $.rightoffold(a, {
+					threshold: 0
+				});
+			},
+			"left-of-fold": function (a) {
+				return !$.rightoffold(a, {
+					threshold: 0
+				});
+			}
+		});
+
+	})(jQuery, window, document);
 
 
 
