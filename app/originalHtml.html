@@ -521,7 +521,7 @@
 				<div class="c-bannerGroup"style=""></div>
 			</div>
 		`
-		if(!state.loading){
+		if (!state.loading) {
 			$('.main').css('opacity', '1');
 		}
 		$('.main').html(homepageComponent)
@@ -591,7 +591,7 @@
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
 				// setTimeout(() => {
-					getProductData(product.relatedProducts.productList[i].sku, i);
+				getProductData(product.relatedProducts.productList[i].sku, i);
 				// }, 500)
 			}
 		}
@@ -788,10 +788,10 @@
 					</figure>
 				</a>
 			</div>`
-		if(!state.loading){
+		if (!state.loading) {
 			console.log('loaded')
 			$('.main').css('opacity', '1');
-			
+
 		}
 
 		if (state.contentSelected) {
@@ -847,8 +847,8 @@
 
 			} else {
 				state.contentSelected = null;
-			$('.main').css('opacity', '1');
-				
+				$('.main').css('opacity', '1');
+
 				errorPage()
 			}
 
@@ -1009,7 +1009,6 @@
 		// 	'eventLabel': `l3_${value}`
 		// })
 	}
-
 
 </script>
 <script>
@@ -1293,7 +1292,5 @@
 		});
 
 	})(jQuery, window, document);
-
-
 
 </script>
