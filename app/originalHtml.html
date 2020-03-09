@@ -14,7 +14,7 @@
 					</li>
 				</ol>
 			</div>
-			<main class="main">
+			<main class="main" style="opacity: 0;">
 			</main>
 
 		</div>
@@ -25,14 +25,14 @@
 
 <script>
 	var state = {
-		loading: false,
+		loading: true,
 		menuSelectedItem: '',
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		// siteUrl: '/',
+		siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
-		siteUrl: '/us/en/fc-pg-tmq.html',
+		// siteUrl: '/us/en/fc-pg-tmq.html',
 		currentUrl: window.location.href,
 		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
@@ -479,6 +479,7 @@
 	}
 
 	var homepage = () => {
+		console.log(state, 'home')
 		var homepageComponent = `
 			<div class="hp-hero-container">
 				<div class="hp-bg-hero"></div>
@@ -519,6 +520,9 @@
 				<div class="c-bannerGroup"style=""></div>
 			</div>
 		`
+		if(!state.loading){
+			$('.main').css('opacity', '1');
+		}
 		$('.main').html(homepageComponent)
 		homepageMenu();
 		homepageProductList()
@@ -585,9 +589,9 @@
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
-				setTimeout(() => {
+				// setTimeout(() => {
 					getProductData(product.relatedProducts.productList[i].sku, i);
-				}, 500)
+				// }, 500)
 			}
 		}
 	}
@@ -636,13 +640,10 @@
 		if (window.location.href.includes('staging')) {
 			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
 		}
-
 		if (window.location.href.includes('development')) {
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-			// https://www.uniqlo.com/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=419684
-
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
@@ -650,9 +651,9 @@
 				i: i,
 				sku: sku,
 				success: function (pData) {
-					console.log('success', pData)
 					if (pData.length === 0) {
-						console.log(pData, 'length 0')
+						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+
 						return;
 					}
 					var price = $(pData).children('.product-tile-info')
@@ -663,7 +664,6 @@
 
 					if (price && price.includes('/')) {
 						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
-						console.log('price /')
 						return;
 					}
 					var productImage = $(pData).children(
@@ -676,10 +676,8 @@
 
 					if ($(swatches).length === 0) {
 						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
-						console.log('no swatches')
 						return;
 					}
-
 					var productTitle = $(pData).children('.product-tile-info').children(
 						'.product-name').html();
 
@@ -688,7 +686,6 @@
 						'.product-name').children(
 						'.name-link').attr('href');
 
-					console.log('get product', productTitle, i)
 
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href',
 						productLink)
@@ -790,8 +787,13 @@
 					</figure>
 				</a>
 			</div>`
+		if(!state.loading){
+			$('.main').css('opacity', '1');
+			
+		}
 
 		if (state.contentSelected) {
+		
 			$('.main').html(productPageComponent);
 			productInfo();
 			relatedProducts();
@@ -828,6 +830,7 @@
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
+			state.loading = false
 
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
@@ -846,6 +849,7 @@
 			}
 
 		} else {
+			state.loading = false;
 			homepage();
 			if (hpCategory) {
 				var findProductPageData = masterpieceData.filter((data) => {
@@ -867,7 +871,6 @@
 
 	// Init App
 	$(document).ready(() => {
-		console.log('ready')
 		setTimeout(() => {
 			initMasterpiece();
 		}, 500)
@@ -901,7 +904,6 @@
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
 			homepageProductList();
 			$(".lazyload").lazyload();
-
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
 			}, 0, function () {
@@ -910,7 +912,6 @@
 		} else {
 
 			setTimeout(() => {
-				console.log('init masterpiece reload js-event')
 				homepage();
 				$(".lazyload").lazyload();
 				$('html, body').animate({
@@ -920,7 +921,6 @@
 				});
 			}, 500)
 		}
-
 		masterpieceGA(e);
 	})
 
