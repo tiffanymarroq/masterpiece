@@ -84,13 +84,13 @@ sans-serif;
 			width: 100%;
 			// height: 0;
 			// padding-top: 150.93333%;
-			background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+			// background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
 			position: fixed;
 			left: 0;
 			right: 0;
             z-index: 1;
             min-height: 500px; 
-            height: 100vh;
+            height: 100%;
             top: 115px;
             background-attachment: fixed;
             background-position: center;
@@ -98,17 +98,11 @@ sans-serif;
             background-size: cover;
 			max-width: var(--contents-width-container);
 			margin: 0 auto;
-        
-		// }
-
 		@include bp(sm) {
-			// &:before {
                 height: auto;
 				padding-top: 40%;
-				background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+				// background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 			    top: 280px;
-                
-			// }
 		}
     }
 }
@@ -146,8 +140,10 @@ sans-serif;
 }
 
 .product-container{
-    background-color: #fff;
-    padding: 50px 0;
+	background-color: #fff;
+	@include bp(sm){
+		padding: 50px 0;
+	}
 }
 
 

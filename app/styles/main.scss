@@ -285,9 +285,10 @@ q:before {
 	}
 
 	.wrapper {
-		padding: 0 0 50px;
+		margin: 0 0 50px;
 
 		@include bp(sm) {
+			margin: 0;
 			padding: 0 20px 50px;
 
 		}
@@ -1592,7 +1593,7 @@ q:before {
 	}
 
 	.c-productButton_title {
-		margin-top: 1.33333vw
+		margin-top: 1.33333vw;
 	}
 
 	.c-productButton_gender {
@@ -1709,7 +1710,8 @@ q:before {
 		line-height: 48px;
 		text-align: center;
 		margin-top: 5.33333vw;
-		transition: all .3s
+		transition: all .3s;
+		font-family: $fontFam_hel;
 	}
 
 	.c-relatedButton {
@@ -3622,8 +3624,12 @@ q:before {
 		}
 
 		.c-productButton_title {
-			font-size: 16px;
-			margin-top: 10px
+			font-size: 14px;
+			margin-top: 10px;
+			@include bp(sm){
+				font-size: 16px;
+
+			}
 		}
 
 		.c-productButton_gender {
