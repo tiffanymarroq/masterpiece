@@ -4607,7 +4607,7 @@ q:before {
 
 	@media screen and (min-width: 1180px) {
 		.l-navigation {
-			width: 196px;
+			width: 250px;
 			padding-right: 24px;
 			font-size: 18px
 		}
@@ -4617,8 +4617,7 @@ q:before {
 		}
 
 		.l-navigation_body[data-navigation-position=fixed] {
-			left: 47%;
-			margin-left: -590px
+			left: auto;
 		}
 
 		.l-navigation_item {
