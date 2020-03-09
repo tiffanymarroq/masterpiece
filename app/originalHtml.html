@@ -423,8 +423,6 @@
 	var homepageProductList = () => {
 
 
-
-
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
@@ -481,8 +479,6 @@
 	}
 
 	var homepage = () => {
-
-
 		var homepageComponent = `
 			<div class="hp-hero-container">
 				<div class="hp-bg-hero"></div>
@@ -607,9 +603,9 @@
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
-								<img class="fr-img lazyload"
+								<img class="fr-img lazyloaded"
 								src="${state.defaultImg}"
-								data-original=""
+								data-original="${state.defaultImg}"
 								alt="" data-expand="300">
 						</picture>
 					</figure>

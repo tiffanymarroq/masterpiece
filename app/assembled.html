@@ -5380,7 +5380,7 @@ q:before {
   background-size: cover;
   max-width: var(--contents-width-container);
   margin: 0 auto;
-  background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
 
 }
 
@@ -5390,7 +5390,7 @@ q:before {
     height: auto;
     padding-top: 40%;
     top: 280px;
-		 background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 
   }
 }
@@ -5529,12 +5529,12 @@ q:before {
 
 .pt_primary #main .primary-content .masterpiece-container .c-topPageButton [data-aspect-ratio="322:119"]:before,
 .masterpiece-container .c-topPageButton [data-aspect-ratio="322:119"]:before {
-  padding-top: 45%;
+  padding-top: 55%;
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-topPageButton:hover .long-arrow-left,
 .masterpiece-container .c-topPageButton:hover .long-arrow-left {
-  margin-left: 20px;
+  margin-left: 15%;
 }
 
 .pt_primary #main .primary-content .masterpiece-container .error-page,
@@ -5677,6 +5677,7 @@ q:before {
 }
 
 
+
 .-outer:hover .l-navigation_icon {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-hover.svg)
 	}
@@ -5744,7 +5745,6 @@ q:before {
 	.-baby.is-active .l-navigation_iconInner {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
 	}
-
 	/* endCSSinject */
 
 </style>
@@ -5784,8 +5784,9 @@ q:before {
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/',
+		// siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
+		siteUrl: '/us/en/fc-pg-tmq.html',
 		currentUrl: window.location.href,
 		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
@@ -6191,7 +6192,7 @@ q:before {
 						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
-								<div class="lds-ellipsis loading"><div></div><div></div><div></div><div></div></div>
+								<div class="lds-ellipsis loading-img"><div></div><div></div><div></div><div></div></div>
 
 								<img class="fr-img lazyload"
 		 							src="${state.defaultImg}"
@@ -6360,9 +6361,9 @@ q:before {
 					href="#">
 					<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 						<picture class="u-imgAdjustBox_inner">
-								<img class="fr-img lazyload"
+								<img class="fr-img lazyloaded"
 								src="${state.defaultImg}"
-								data-original=""
+								data-original="${state.defaultImg}"
 								alt="" data-expand="300">
 						</picture>
 					</figure>
@@ -6876,7 +6877,7 @@ q:before {
 									$self.attr("src", original);
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
-									$self.prev('.loading').hide();
+									$self.prev('.loading-img').hide();
 
 
 
