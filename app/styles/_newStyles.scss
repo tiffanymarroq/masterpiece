@@ -237,7 +237,6 @@ sans-serif;
 	}
 }
 
-
 .error-page {
 	padding: 40px 4%;
 	display: flex;
@@ -284,13 +283,13 @@ sans-serif;
 
 .lds-ellipsis div:nth-child(3) {
 	// left: 32px;
-	left: 50%;
+	left: 48%;
 	animation: lds-ellipsis2 0.6s infinite;
 }
 
 .lds-ellipsis div:nth-child(4) {
 	// left: 56px;
-	left: 53%;
+	left: 50%;
 	animation: lds-ellipsis3 0.6s infinite;
 }
 
