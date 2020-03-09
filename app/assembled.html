@@ -5205,7 +5205,7 @@ q:before {
 @media screen and (min-width: 1180px) {
   .pt_primary #main .primary-content .masterpiece-container .l-navigation,
   .masterpiece-container .l-navigation {
-    width: 196px;
+    width: 250px;
     padding-right: 24px;
     font-size: 18px;
   }
@@ -5215,8 +5215,7 @@ q:before {
   }
   .pt_primary #main .primary-content .masterpiece-container .l-navigation_body[data-navigation-position=fixed],
   .masterpiece-container .l-navigation_body[data-navigation-position=fixed] {
-    left: 47%;
-    margin-left: -590px;
+    left: auto;
   }
   .pt_primary #main .primary-content .masterpiece-container .l-navigation_item,
   .masterpiece-container .l-navigation_item {
@@ -5380,6 +5379,8 @@ q:before {
   background-size: cover;
   max-width: var(--contents-width-container);
   margin: 0 auto;
+  background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+
 }
 
 @media all and (min-width: 768px) {
@@ -5388,6 +5389,8 @@ q:before {
     height: auto;
     padding-top: 40%;
     top: 280px;
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+
   }
 }
 
@@ -5680,6 +5683,77 @@ q:before {
 
 
 
+
+.-outer:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-hover.svg)
+	}
+
+	.-tops:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops-hover.svg)
+	}
+
+	.-bottoms:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms-hover.svg)
+	}
+
+	.-dress:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress-hover.svg)
+	}
+
+	.-roomwear:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear-hover.svg)
+	}
+
+	.-inner:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner-hover.svg)
+	}
+
+	.-goods:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods-hover.svg)
+	}
+
+	.-baby:hover .l-navigation_icon {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-hover.svg)
+    }
+    
+
+
+
+
+    .-outer.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-active.svg)
+	}
+
+	.-tops.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops-active.svg)
+	}
+
+	.-bottoms.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms-active.svg)
+	}
+
+	.-dress.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress-active.svg)
+	}
+
+	.-roomwear.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear-active.svg)
+	}
+
+	.-inner.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner-active.svg)
+	}
+
+	.-goods.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods-active.svg)
+	}
+
+	.-baby.is-active .l-navigation_iconInner {
+		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
+	}
+
+
+
 	/* endCSSinject */
 
 </style>
@@ -5962,6 +6036,7 @@ q:before {
 
 
 	var errorPage = () => {
+		console.log(state.loading, 'err component')
 		var error = `
 			<div class="error-page">
 				<p class="bold" style="text-align: center">Page Not Found</p>
@@ -6209,7 +6284,7 @@ q:before {
 				<div class="c-bannerGroup"style=""></div>
 			</div>
 		`
-		if(!state.loading){
+		if (!state.loading) {
 			$('.main').css('opacity', '1');
 		}
 		$('.main').html(homepageComponent)
@@ -6279,7 +6354,7 @@ q:before {
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
 				// setTimeout(() => {
-					getProductData(product.relatedProducts.productList[i].sku, i);
+				getProductData(product.relatedProducts.productList[i].sku, i);
 				// }, 500)
 			}
 		}
@@ -6476,19 +6551,20 @@ q:before {
 					</figure>
 				</a>
 			</div>`
-		if(!state.loading){
+		if (!state.loading) {
+			console.log('loaded')
 			$('.main').css('opacity', '1');
-			
+
 		}
 
 		if (state.contentSelected) {
-		
 			$('.main').html(productPageComponent);
 			productInfo();
 			relatedProducts();
 			topArticles();
 
 		} else {
+			console.log(state.loading)
 			errorPage()
 		}
 	}
@@ -6534,6 +6610,8 @@ q:before {
 
 			} else {
 				state.contentSelected = null;
+				$('.main').css('opacity', '1');
+
 				errorPage()
 			}
 
@@ -6560,6 +6638,8 @@ q:before {
 
 	// Init App
 	$(document).ready(() => {
+		$('.main').css('opacity', '0')
+
 		setTimeout(() => {
 			initMasterpiece();
 		}, 500)
@@ -6580,6 +6660,7 @@ q:before {
 				state.contentSelected = findProductPageData[0]
 			}
 
+
 			setTimeout(() => {
 				initMasterpiece();
 				$('html, body').animate({
@@ -6599,6 +6680,7 @@ q:before {
 				window.location.hash = filter;
 			});
 		} else {
+			$('.main').css('opacity', '0')
 
 			setTimeout(() => {
 				homepage();
@@ -6666,6 +6748,7 @@ q:before {
 
 	// GA TAG
 	var masterpieceGA = (e) => {
+
 		if (!(e.currentTarget.dataset)) {
 			event.preventDefault();
 		}
@@ -6683,7 +6766,7 @@ q:before {
 
 		var path = state.currentUrl.replace(urlPrefix, '');
 
-
+		console.log(value, 'ga')
 		// dataLayer.push({
 		// 	'event': 'eventTracking',
 		// 	'eventCategory': 'category page',
@@ -6691,7 +6774,6 @@ q:before {
 		// 	'eventLabel': `l3_${value}`
 		// })
 	}
-
 
 </script>
 <script>
@@ -6975,8 +7057,6 @@ q:before {
 		});
 
 	})(jQuery, window, document);
-
-
 
 </script>
 
