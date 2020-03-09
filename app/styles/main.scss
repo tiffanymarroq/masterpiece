@@ -1522,7 +1522,8 @@ q:before {
 	.c-contentsCardGroup {
 		transition: all .3s;
 		width: 84vw;
-		min-height: 179.33333vw
+		min-height: 179.33333vw;
+		// margin-top: 15px;
 	}
 
 	.c-contentsCardGroup_head {
@@ -1530,7 +1531,8 @@ q:before {
 		font-size: 16px;
 		color: red;
 		color: var(--color-red);
-		padding: 0 4vw 5.33333vw
+		padding: 0 4vw 5.33333vw;
+		margin-top: 20px;
 	}
 
 	.c-contentsCardGroup_headInner {

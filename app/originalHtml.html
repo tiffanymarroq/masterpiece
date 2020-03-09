@@ -30,10 +30,11 @@
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		siteUrl: '/',
+		// siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
+		siteUrl: '/us/en/fc-pg-tmq.html',
 		currentUrl: window.location.href,
-		defaultImg: 'https://dimensionmill.org/wp-content/uploads/2019/03/square-placeholder.jpg'
+		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
 
 
@@ -437,7 +438,7 @@
 						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
-								<div class="lds-ellipsis loading"><div></div><div></div><div></div><div></div></div>
+								<div class="lds-ellipsis loading-img"><div></div><div></div><div></div><div></div></div>
 
 								<img class="fr-img lazyload"
 		 							src="${state.defaultImg}"
@@ -1122,7 +1123,7 @@
 									$self.attr("src", original);
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
-									$self.prev('.loading').hide();
+									$self.prev('.loading-img').hide();
 
 
 

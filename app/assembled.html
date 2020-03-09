@@ -1758,6 +1758,7 @@ q:before {
   color: red;
   color: var(--color-red);
   padding: 0 4vw 5.33333vw;
+  margin-top: 20px;
 }
 
 .pt_primary #main .primary-content .masterpiece-container .c-contentsCardGroup_headInner,
@@ -5379,7 +5380,7 @@ q:before {
   background-size: cover;
   max-width: var(--contents-width-container);
   margin: 0 auto;
-   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+  background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
 
 }
 
@@ -5389,7 +5390,7 @@ q:before {
     height: auto;
     padding-top: 40%;
     top: 280px;
-    background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+		 background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 
   }
 }
@@ -5558,6 +5559,123 @@ q:before {
   text-transform: uppercase;
 }
 
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis,
+.masterpiece-container .lds-ellipsis {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #c1c1c1;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis div,
+.masterpiece-container .lds-ellipsis div {
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis div:nth-child(1),
+.masterpiece-container .lds-ellipsis div:nth-child(1) {
+  left: 40%;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis div:nth-child(2),
+.masterpiece-container .lds-ellipsis div:nth-child(2) {
+  left: 40%;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis div:nth-child(3),
+.masterpiece-container .lds-ellipsis div:nth-child(3) {
+  left: 48%;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.pt_primary #main .primary-content .masterpiece-container .lds-ellipsis div:nth-child(4),
+.masterpiece-container .lds-ellipsis div:nth-child(4) {
+  left: 50%;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
 
 .-outer:hover .l-navigation_icon {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-hover.svg)
@@ -5627,8 +5745,6 @@ q:before {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
 	}
 
-
-
 	/* endCSSinject */
 
 </style>
@@ -5671,7 +5787,7 @@ q:before {
 		siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
 		currentUrl: window.location.href,
-		defaultImg: 'https://dimensionmill.org/wp-content/uploads/2019/03/square-placeholder.jpg'
+		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
 
 
@@ -6058,6 +6174,10 @@ q:before {
 	}
 
 	var homepageProductList = () => {
+
+
+
+
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
@@ -6071,10 +6191,13 @@ q:before {
 						>
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
+								<div class="lds-ellipsis loading"><div></div><div></div><div></div><div></div></div>
+
 								<img class="fr-img lazyload"
-									src="${state.defaultImg}"
+		 							src="${state.defaultImg}"
 									data-original="${product.image}"
 									alt="${product.title}" data-expand="300">
+
 							</picture>
 						</figure>
 						<div class="c-contentsCard_inner">
@@ -6753,6 +6876,8 @@ q:before {
 									$self.attr("src", original);
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
+									$self.prev('.loading').hide();
+
 
 
 								} else {
