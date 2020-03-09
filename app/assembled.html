@@ -5380,8 +5380,6 @@ q:before {
   background-size: cover;
   max-width: var(--contents-width-container);
   margin: 0 auto;
-   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
-
 }
 
 @media all and (min-width: 768px) {
@@ -5390,8 +5388,6 @@ q:before {
     height: auto;
     padding-top: 40%;
     top: 280px;
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
-
   }
 }
 
@@ -5676,75 +5672,14 @@ q:before {
   }
 }
 
-
-
-.-outer:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-hover.svg)
-	}
-
-	.-tops:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops-hover.svg)
-	}
-
-	.-bottoms:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms-hover.svg)
-	}
-
-	.-dress:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress-hover.svg)
-	}
-
-	.-roomwear:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear-hover.svg)
-	}
-
-	.-inner:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner-hover.svg)
-	}
-
-	.-goods:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods-hover.svg)
-	}
-
-	.-baby:hover .l-navigation_icon {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-hover.svg)
-    }
-    
+.pt_primary #main .primary-content .masterpiece-container .main,
+.masterpiece-container .main {
+  -webkit-transition: .5s;
+  transition: .5s;
+}
 
 
 
-
-    .-outer.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer-active.svg)
-	}
-
-	.-tops.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops-active.svg)
-	}
-
-	.-bottoms.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms-active.svg)
-	}
-
-	.-dress.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress-active.svg)
-	}
-
-	.-roomwear.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear-active.svg)
-	}
-
-	.-inner.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner-active.svg)
-	}
-
-	.-goods.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods-active.svg)
-	}
-
-	.-baby.is-active .l-navigation_iconInner {
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
-	}
 	/* endCSSinject */
 
 </style>
@@ -5768,7 +5703,7 @@ q:before {
 					</li>
 				</ol>
 			</div>
-			<main class="main">
+			<main class="main" style="opacity: 0;">
 			</main>
 
 		</div>
@@ -5779,14 +5714,14 @@ q:before {
 
 <script>
 	var state = {
-		loading: false,
+		loading: true,
 		menuSelectedItem: '',
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		// siteUrl: '/',
+		siteUrl: '/',
 		// siteUrl: '/us/en/page/masterpiece.html',
-		siteUrl: '/us/en/fc-pg-tmq.html',
+		// siteUrl: '/us/en/fc-pg-tmq.html',
 		currentUrl: window.location.href,
 		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
@@ -6177,8 +6112,6 @@ q:before {
 	var homepageProductList = () => {
 
 
-
-
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
@@ -6235,8 +6168,7 @@ q:before {
 	}
 
 	var homepage = () => {
-
-
+		console.log(state, 'home')
 		var homepageComponent = `
 			<div class="hp-hero-container">
 				<div class="hp-bg-hero"></div>
@@ -6277,6 +6209,9 @@ q:before {
 				<div class="c-bannerGroup"style=""></div>
 			</div>
 		`
+		if(!state.loading){
+			$('.main').css('opacity', '1');
+		}
 		$('.main').html(homepageComponent)
 		homepageMenu();
 		homepageProductList()
@@ -6343,9 +6278,9 @@ q:before {
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
-				setTimeout(() => {
+				// setTimeout(() => {
 					getProductData(product.relatedProducts.productList[i].sku, i);
-				}, 500)
+				// }, 500)
 			}
 		}
 	}
@@ -6394,13 +6329,10 @@ q:before {
 		if (window.location.href.includes('staging')) {
 			urlPrefix = 'https://staging-na-uniqlo.demandware.net'
 		}
-
 		if (window.location.href.includes('development')) {
 			urlPrefix = 'https://development-na-uniqlo.demandware.net'
 		}
 		if (sku) {
-			// https://www.uniqlo.com/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=419684
-
 			$.ajax({
 				url: urlPrefix +
 					'/on/demandware.store/Sites-UniqloUS-Site/default/Product-HitTile?pid=' +
@@ -6408,9 +6340,9 @@ q:before {
 				i: i,
 				sku: sku,
 				success: function (pData) {
-					console.log('success', pData)
 					if (pData.length === 0) {
-						console.log(pData, 'length 0')
+						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+
 						return;
 					}
 					var price = $(pData).children('.product-tile-info')
@@ -6421,7 +6353,6 @@ q:before {
 
 					if (price && price.includes('/')) {
 						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
-						console.log('price /')
 						return;
 					}
 					var productImage = $(pData).children(
@@ -6434,10 +6365,8 @@ q:before {
 
 					if ($(swatches).length === 0) {
 						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
-						console.log('no swatches')
 						return;
 					}
-
 					var productTitle = $(pData).children('.product-tile-info').children(
 						'.product-name').html();
 
@@ -6446,7 +6375,6 @@ q:before {
 						'.product-name').children(
 						'.name-link').attr('href');
 
-					console.log('get product', productTitle, i)
 
 					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href',
 						productLink)
@@ -6548,8 +6476,13 @@ q:before {
 					</figure>
 				</a>
 			</div>`
+		if(!state.loading){
+			$('.main').css('opacity', '1');
+			
+		}
 
 		if (state.contentSelected) {
+		
 			$('.main').html(productPageComponent);
 			productInfo();
 			relatedProducts();
@@ -6586,6 +6519,7 @@ q:before {
 				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
 					product
 			})
+			state.loading = false
 
 			if (findProductPageData && findProductPageData.length > 0) {
 				state.contentSelected = findProductPageData[0];
@@ -6604,6 +6538,7 @@ q:before {
 			}
 
 		} else {
+			state.loading = false;
 			homepage();
 			if (hpCategory) {
 				var findProductPageData = masterpieceData.filter((data) => {
@@ -6625,7 +6560,6 @@ q:before {
 
 	// Init App
 	$(document).ready(() => {
-		console.log('ready')
 		setTimeout(() => {
 			initMasterpiece();
 		}, 500)
@@ -6659,7 +6593,6 @@ q:before {
 			$(`.l-navigation_item:eq(${i})`).addClass('is-active')
 			homepageProductList();
 			$(".lazyload").lazyload();
-
 			$('html, body').animate({
 				scrollTop: $('.c-contentsCardGroup').offset().top
 			}, 0, function () {
@@ -6668,7 +6601,6 @@ q:before {
 		} else {
 
 			setTimeout(() => {
-				console.log('init masterpiece reload js-event')
 				homepage();
 				$(".lazyload").lazyload();
 				$('html, body').animate({
@@ -6678,7 +6610,6 @@ q:before {
 				});
 			}, 500)
 		}
-
 		masterpieceGA(e);
 	})
 

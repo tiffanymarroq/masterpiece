@@ -273,6 +273,7 @@
 
 
 	var errorPage = () => {
+		console.log(state.loading, 'err component')
 		var error = `
 			<div class="error-page">
 				<p class="bold" style="text-align: center">Page Not Found</p>
@@ -788,18 +789,19 @@
 				</a>
 			</div>`
 		if(!state.loading){
+			console.log('loaded')
 			$('.main').css('opacity', '1');
 			
 		}
 
 		if (state.contentSelected) {
-		
 			$('.main').html(productPageComponent);
 			productInfo();
 			relatedProducts();
 			topArticles();
 
 		} else {
+			console.log(state.loading)
 			errorPage()
 		}
 	}
@@ -845,6 +847,8 @@
 
 			} else {
 				state.contentSelected = null;
+			$('.main').css('opacity', '1');
+				
 				errorPage()
 			}
 
@@ -891,6 +895,8 @@
 				state.contentSelected = findProductPageData[0]
 			}
 
+			$('.main').css('opacity', '0')
+
 			setTimeout(() => {
 				initMasterpiece();
 				$('html, body').animate({
@@ -910,6 +916,7 @@
 				window.location.hash = filter;
 			});
 		} else {
+			$('.main').css('opacity', '0')
 
 			setTimeout(() => {
 				homepage();
@@ -994,7 +1001,7 @@
 
 		var path = state.currentUrl.replace(urlPrefix, '');
 
-
+		console.log(value, 'ga')
 		// dataLayer.push({
 		// 	'event': 'eventTracking',
 		// 	'eventCategory': 'category page',
