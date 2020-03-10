@@ -432,9 +432,9 @@
 							<picture class='u-imgAdjustBox_inner'>
 								<div class='lds-ellipsis loading-img'><div></div><div></div><div></div><div></div></div>
 								<img class='fr-img lazyload'
-		 							src='${state.defaultImg}'
-									data-original='${product.image}'
-									alt='${product.title}' data-expand='300'>
+		 							src="${state.defaultImg}"
+									data-original="${product.image}"
+									alt="${product.title}" data-expand='300'>
 							</picture>
 						</figure>
 						<div class='c-contentsCard_inner'>
@@ -524,9 +524,9 @@
 		var imageContainer = [`
 			<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
 				<picture class='u-imgAdjustBox_inner'>
-					<source data-srcset='${product.image}' type='image/jpeg' ><img
-						class='fr-img ls-is-cached lazyload' src='${state.defaultImg}'
-						data-original='${product.image}' alt='Comfort jacket' data-expand='300'>
+					<img
+						class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
+						data-original="${product.image}" alt="${product.productName}" data-expand='300'>
 				</picture>
 			</figure>`];
 		if (product.productHeroImgs.length > 0) {
@@ -537,9 +537,9 @@
 					var image =
 						`<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
 						<picture class='u-imgAdjustBox_inner'>
-							<source data-srcset='${product.productHeroImgs[i]}' type='image/jpeg' ><img
-								class='fr-img ls-is-cached lazyload' src='${state.defaultImg}'
-								data-original='${product.productHeroImgs[i]}' alt='Comfort jacket' data-expand='300'>
+							<img
+								class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
+								data-original="${product.productHeroImgs[i]}" alt="${product.productName}" data-expand='300'>
 						</picture>
 					</figure>`
 					imageContainer.push(image)
@@ -620,9 +620,7 @@
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
 				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
-				// setTimeout(() => {
 				getProductData(product.relatedProducts.productList[i].sku, i);
-				// }, 500)
 			}
 		}
 	}
@@ -639,8 +637,8 @@
 					<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
 						<picture class='u-imgAdjustBox_inner'>
 								<img class='fr-img lazyloaded'
-								src='${state.defaultImg}'
-								data-original='${state.defaultImg}'
+								src="${state.defaultImg}"
+								data-original="${state.defaultImg}"
 								alt='' data-expand='300'>
 						</picture>
 					</figure>
@@ -755,13 +753,12 @@
 							href='${state.siteUrl + product.url}'>
 							<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
 								<picture class='u-imgAdjustBox_inner'>
-									<source data-srcset='${product.image}'
-										type='image/jpeg'>
+								
 										<img
 										class='fr-img lazyload'
-										src='${state.defaultImg}'
-										data-original='${product.image}'
-										alt='${productName}' data-expand='300'>
+										src="${state.defaultImg}"
+										data-original="${product.image}"
+										alt="${productName}" data-expand='300'>
 								</picture>
 							</figure>
 							<div>
