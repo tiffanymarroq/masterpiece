@@ -421,7 +421,7 @@
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
-				let productTile = `
+				var productTile = `
 				<section class='c-contentsCard -no-${i} product-fadeIn' aria-hidden='false'>
 					<a class='js-trackEvent' 
 					    data-label='hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}' 
@@ -551,10 +551,10 @@
 
 		var content = `
 				<h1 class='c-contentsPanel_title'>
-					${product.title.replace('&apos;','')}
+					${product.title.replace('&apos;',"''")}
 				</h1>
 				<p class='c-contentsPanel_text'>
-					${product.productCopy.replace("&apos;','")}
+					${product.productCopy.replace("&apos;","'")}
 				</p>
 				<ul class='c-label -inPanel'>
 					<li class='c-label_item -category'>
@@ -609,7 +609,7 @@
 		var product = state.contentSelected;
 		var relatedProductsComponent =
 			`	<h2 class='c-shoulderSection_title'>
-				${product.relatedProducts.title.replace("&apos;','")}
+				${product.relatedProducts.title.replace('&apos;',"''")}
 			</h2>
 			<ul class='c-productButtonGroup'>
 			</ul>
@@ -629,9 +629,9 @@
 
 
 	var getRelatedProduct = (data, i, productName) => {
-		let productNameReplace = productName.replace(/ /g, '_').toLowerCase();
-		let position = parseInt(i) + 1;
-		let productComponent = `
+		var productNameReplace = productName.replace(/ /g, '_').toLowerCase();
+		var position = parseInt(i) + 1;
+		var productComponent = `
 			<li class='c-productButtonGroup_item'>
 				<a class='c-productButton js-trackEvent'
 					 data-label='article_${productNameReplace}_productTile_${position}_${data.sku}'
@@ -745,7 +745,7 @@
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 
-				let productName = product.productName.replace("&apos;', ''");
+				var productName = product.productName.replace('&apos;',"''");
 				return (
 					`<li class='c-relatedButtonGroup_item'>
 						<a class='c-relatedButton js-trackEvent'
@@ -766,7 +766,7 @@
 							</figure>
 							<div>
 								<h3 class='c-relatedButton_title'>
-									${product.title.replace("&apos;', ''")}
+									${product.title.replace('&apos;',"''")}
 								</h3>
 								<p class='c-relatedButton_name'>
 									${product.productName}
@@ -843,11 +843,11 @@
 	function initMasterpiece() {
 		state.currentUrl = window.location.href;
 		var urlParams = new URLSearchParams(window.location.search);
-		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace("&apos;', ''").replace('_', '-')
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;',"''").replace('_', '-')
 			.toLowerCase() :
 			null;
 
-		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace("&apos;', ''").replace('_', '-')
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('&apos;',"''").replace('_', '-')
 			.toLowerCase() :
 			null;
 
@@ -869,7 +869,7 @@
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
-					let titleReplace = state.contentSelected.title.replace("&apos;', ''")
+					var titleReplace = state.contentSelected.title.replace('&apos;',"''")
 					$('.fr-breadcrumbs_inner').append(
 						`<li class='fr-breadcrumbs_item product-crumb js-trackEvent' data-label='breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}'>${titleReplace}</li>`
 					)
@@ -1049,7 +1049,6 @@
 			'eventLabel': `l3_${value}`
 		})
 	}
-
 </script>
 <script>
 
