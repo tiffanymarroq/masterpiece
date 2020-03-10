@@ -1770,7 +1770,7 @@ q:before {
 	}
 
 	[aria-hidden=true] {
-		display: none !important
+		// display: none !important
 	}
 
 	[aria-hidden=false] {
@@ -3623,12 +3623,10 @@ q:before {
 		}
 
 		.c-productButton_title {
-			font-size: 14px;
+			font-size: 12px;
 			margin-top: 10px;
-
 			@include bp(sm) {
 				font-size: 16px;
-
 			}
 		}
 

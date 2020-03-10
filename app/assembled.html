@@ -2022,11 +2022,6 @@ q:before {
   line-height: 1.7;
 }
 
-.pt_primary #main .primary-content .masterpiece-container [aria-hidden=true],
-.masterpiece-container [aria-hidden=true] {
-  display: none !important;
-}
-
 .pt_primary #main .primary-content .masterpiece-container [aria-hidden=false],
 .masterpiece-container [aria-hidden=false] {
   display: block;
@@ -5379,7 +5374,7 @@ q:before {
   background-size: cover;
   max-width: var(--contents-width-container);
   margin: 0 auto;
-  background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
+   background: no-repeat url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_sp.jpg) 50% 0/cover;
 
 }
 
@@ -5389,7 +5384,7 @@ q:before {
     height: auto;
     padding-top: 40%;
     top: 280px;
-		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
+			 background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece-banner_pc.jpg);
 
   }
 }
@@ -5681,7 +5676,37 @@ q:before {
   transition: .5s;
 }
 
+.pt_primary #main .primary-content .masterpiece-container button.slick-prev::before,
+.pt_primary #main .primary-content .masterpiece-container button.slick-next::before,
+.masterpiece-container button.slick-prev::before,
+.masterpiece-container button.slick-next::before {
+  content: '';
+}
 
+.pt_primary #main .primary-content .masterpiece-container button.slick-prev,
+.pt_primary #main .primary-content .masterpiece-container button.slick-arrow.slick-prev:hover,
+.pt_primary #main .primary-content .masterpiece-container button.slick-arrow.slick-prev:focus,
+.masterpiece-container button.slick-prev,
+.masterpiece-container button.slick-arrow.slick-prev:hover,
+.masterpiece-container button.slick-arrow.slick-prev:focus {
+  z-index: 1;
+  left: 5px;
+  width: 15px;
+  height: 69px;
+  background: url(https://www.uniqlo.com/na-static/on/demandware.static/Sites-UniqloUS-Site/-/default/v1504016526668/images/sprite-uniqlo.png) -97px -727px no-repeat;
+}
+
+.pt_primary #main .primary-content .masterpiece-container button.slick-next,
+.pt_primary #main .primary-content .masterpiece-container button.slick-arrow.slick-next:hover,
+.pt_primary #main .primary-content .masterpiece-container button.slick-arrow.slick-next:focus,
+.masterpiece-container button.slick-next,
+.masterpiece-container button.slick-arrow.slick-next:hover,
+.masterpiece-container button.slick-arrow.slick-next:focus {
+  right: 5px;
+  width: 15px;
+  height: 69px;
+  background: url(https://www.uniqlo.com/na-static/on/demandware.static/Sites-UniqloUS-Site/-/default/v1504016526668/images/sprite-uniqlo.png) -108px -819px no-repeat;
+}
 
 
 .-outer:hover .l-navigation_icon {
@@ -5752,8 +5777,6 @@ q:before {
 		background-image: url(https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby-active.svg)
 	}
 
-
-
 	/* endCSSinject */
 
 </style>
@@ -5779,11 +5802,9 @@ q:before {
 			</div>
 			<main class="main" style="opacity: 0;">
 			</main>
-
 		</div>
 	</div>
 </div>
-
 
 
 <script>
@@ -5801,9 +5822,11 @@ q:before {
 	}
 
 
+
+
 	var masterpieceData = [{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `From the nation who takes socks seriously`,
 			productName: `Colorful 50 Socks`,
 			gender: [`Men`],
@@ -5822,7 +5845,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_32_M's-Vintage-regular-fit-chino-pants.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `Vintage on the outside, modern day on the inside`,
 			productName: `Vintage Regular Fit Chinos`,
 			gender: [`Men`],
@@ -5841,7 +5864,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-Dry-pique-polo.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `Quality makes the first impression`,
 			productName: `Dry Pique Polo Shirt`,
 			gender: [`Men`],
@@ -5860,7 +5883,9 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_W's-supima-cotton-T-shirt.jpg`,
-			productHeroImgs: ['422990'],
+			productHeroImgs: [
+				`https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-supima-cotton-T-shirt.jpg`
+			],
 			title: `SUPIMA®: Because basic does not lie`,
 			productName: `Supima Cotton Crew Neck T-shirt`,
 			gender: [`women`, `men`],
@@ -5886,7 +5911,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_34_Uniqlo-U-crew-neck-Tshirts.jpg`,
-			productHeroImgs: ['422992'],
+			productHeroImgs: [``],
 			title: `T-shirts that evolve with the times`,
 			productName: `Crew Neck T-shirt`,
 			gender: [`women`, `men`],
@@ -5912,7 +5937,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-EFC-broad-shirts.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `A shirt made with everyone in mind`,
 			productName: `Extra Fine Cotton Broad Shirt`,
 			gender: [`Men`],
@@ -5931,7 +5956,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-super-non-iron-shirt_SW_NP.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `Farewell to ironing.`,
 			productName: `Super Non-Iron Shirt`,
 			gender: [`Men`],
@@ -5950,7 +5975,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Fine-cloth-easy-care-shirt_NP.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `You can tell the quality by the collar`,
 			productName: `Fine Cloth Shirt`,
 			gender: [`Men`],
@@ -5969,7 +5994,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_23_W's-rayon-blouse.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `Low-maintenance yet highly refined`,
 			productName: `Rayon Blouse`,
 			gender: [`Women`],
@@ -5988,7 +6013,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_31_M's-Comfort-jacket.jpg`,
-			productHeroImgs: [''],
+			productHeroImgs: [``],
 			title: `Small details speak volumes.`,
 			productName: `Comfort jacket`,
 			gender: [`Men`],
@@ -6007,7 +6032,7 @@ q:before {
 		},
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Premium-Linen-Shirt.jpg`,
-			productHeroImgs: ['425062'],
+			productHeroImgs: [``],
 			title: `Linen: Transformed by Human Hands`,
 			productName: `Premium Linen Shirt`,
 			gender: [`women`, `men`],
@@ -6017,7 +6042,7 @@ q:before {
 			relatedProducts: {
 				title: `Handcrafted luxury created by experts.`,
 				productList: [{
-						sku: '242658',
+						sku: '426582',
 						gender: `Women`,
 						ctaUrl: `https://www.uniqlo.com/us/en/women/linen-collection/shirts-and-blouses`,
 						ctaCopy: `View All Related Products`
@@ -6033,10 +6058,7 @@ q:before {
 		},
 	];
 
-
-
 	var errorPage = () => {
-		console.log(state.loading, 'err component')
 		var error = `
 			<div class="error-page">
 				<p class="bold" style="text-align: center">Page Not Found</p>
@@ -6045,7 +6067,7 @@ q:before {
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
 								<img
-								class="fr-img lazyload"
+								class="fr-img lazyloaded"
 								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
@@ -6054,9 +6076,7 @@ q:before {
 						</div>
 					</figure>
 				</a>
-			</div>
-		
-			`
+			</div>`
 		$('.main').html(error)
 	}
 
@@ -6068,9 +6088,9 @@ q:before {
 						<picture class="u-imgAdjustBox_inner menu">
 							${state.width > 768 ? 
 								`<img class="fr-img lazyload" 
-								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
-								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
-								alt="UNIQLO MASTERPIECE" data-expand="300">`
+									src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
+									data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png"
+									alt="UNIQLO MASTERPIECE" data-expand="300">`
 							:
 								`<img class="fr-img lazyload img-horizontal" style='height:100%'
 									src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
@@ -6185,14 +6205,11 @@ q:before {
 	}
 
 	var homepageProductList = () => {
-
-
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
 				let productTile = `
-				<section class="c-contentsCard -no-${i}  product-fadeIn" aria-hidden="false"
-				 >
+				<section class="c-contentsCard -no-${i} product-fadeIn" aria-hidden="false">
 					<a class="js-trackEvent" 
 					    data-label="hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}" 
 						href="${state.siteUrl + product.url}"
@@ -6201,12 +6218,10 @@ q:before {
 						<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 							<picture class="u-imgAdjustBox_inner">
 								<div class="lds-ellipsis loading-img"><div></div><div></div><div></div><div></div></div>
-
 								<img class="fr-img lazyload"
 		 							src="${state.defaultImg}"
 									data-original="${product.image}"
 									alt="${product.title}" data-expand="300">
-
 							</picture>
 						</figure>
 						<div class="c-contentsCard_inner">
@@ -6218,14 +6233,11 @@ q:before {
 						</div>
 					</a>
 				</section>`;
-
 				return productTile
-
 			})
 
 		var productListContainer =
-			`
-				<div class="c-contentsCardGroup_body">
+			`<div class="c-contentsCardGroup_body">
 					<p class="c-contentsCardGroup_head"  aria-hidden="false">
 						<span class="c-contentsCardGroup_headInner">
 							${state.filter}
@@ -6236,14 +6248,12 @@ q:before {
 					:
 						'<div class="c-contentsCard -comingSoon product-fadeIn" >Coming soon...</div>'
 					}
-				</div>
-			`
+				</div>`
 		$('.c-contentsCardGroup').html(productListContainer)
 
 	}
 
 	var homepage = () => {
-		console.log(state, 'home')
 		var homepageComponent = `
 			<div class="hp-hero-container">
 				<div class="hp-bg-hero"></div>
@@ -6297,15 +6307,34 @@ q:before {
 	// Product Components
 
 	var productInfo = () => {
-		var product = state.contentSelected
-		var image = `
+		var product = state.contentSelected;
+		var imageContainer = [`
 			<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
 				<picture class="u-imgAdjustBox_inner">
-					<source data-srcset="${product.image}" type="image/jpeg" srcset="${product.image}"><img
+					<source data-srcset="${product.image}" type="image/jpeg" ><img
 						class="fr-img ls-is-cached lazyload" src="${state.defaultImg}"
 						data-original="${product.image}" alt="Comfort jacket" data-expand="300">
 				</picture>
-			</figure>`;
+			</figure>`];
+		if (product.productHeroImgs.length > 0) {
+
+			for (var i = 0; i < product.productHeroImgs.length; i++) {
+
+				if (product.productHeroImgs[i].length > 0) {
+					var image =
+						`<figure class="u-imgAdjustBox" data-aspect-ratio="1:1">
+						<picture class="u-imgAdjustBox_inner">
+							<source data-srcset="${product.productHeroImgs[i]}" type="image/jpeg" ><img
+								class="fr-img ls-is-cached lazyload" src="${state.defaultImg}"
+								data-original="${product.productHeroImgs[i]}" alt="Comfort jacket" data-expand="300">
+						</picture>
+					</figure>`
+					imageContainer.push(image)
+				}
+
+			}
+		}
+
 
 		var content = `
 				<h1 class="c-contentsPanel_title">
@@ -6332,8 +6361,15 @@ q:before {
 					</li>
 				</ul>`;
 
-		$('.c-contentsPanel .c-contentsPanel_image').html(image);
+		$('.c-contentsPanel .c-contentsPanel_image').html(imageContainer.join(''));
 		$('.c-contentsPanel .c-contentsPanel_inner').html(content);
+
+		if (product.productHeroImgs.length > 0) {
+			$('.product-container .c-contentsPanel .c-contentsPanel_image').slick({
+				dots: false,
+				arrows: true,
+			})
+		}
 
 
 	}
@@ -6522,6 +6558,7 @@ q:before {
 	}
 
 	var productPage = () => {
+
 		var productPageComponent =
 			`<div class="l-container product-container">
 				<article class="c-contents">
@@ -6551,6 +6588,8 @@ q:before {
 					</figure>
 				</a>
 			</div>`
+
+
 		if (!state.loading) {
 			console.log('loaded')
 			$('.main').css('opacity', '1');
@@ -6639,17 +6678,24 @@ q:before {
 	// Init App
 	$(document).ready(() => {
 		$('.main').css('opacity', '0')
-
-		setTimeout(() => {
-			initMasterpiece();
-		}, 500)
+		if (state.width < 768) {
+			setTimeout(() => {
+				initMasterpiece();
+			}, 500)
+		} else {
+			initMasterpiece()
+		}
 	})
 
 	$(document).on("click", ".js-trackEvent", function (e) {
 		var dataset = e.currentTarget.dataset;
 		var product = dataset.product;
 		var category = dataset.category;
-		var filter = dataset.filterButton
+		var filter = dataset.filterButton;
+
+		$(window).resize(function () {
+			state.width = $(this).width()
+		});
 		if (product && category) {
 			var findProductPageData = masterpieceData.filter((data) => {
 				return data.category.toLowerCase() === category.toLowerCase() && data.productName
@@ -6660,13 +6706,15 @@ q:before {
 				state.contentSelected = findProductPageData[0]
 			}
 
+			if (state.width < 768) {
 
-			setTimeout(() => {
-				initMasterpiece();
-				$('html, body').animate({
-					scrollTop: 0
-				}, 0)
-			}, 500)
+				setTimeout(() => {
+					initMasterpiece();
+					$('html, body').animate({
+						scrollTop: 0
+					}, 0)
+				}, 500)
+			}
 		} else if (filter) {
 			state.filter = filter;
 			var i = e.currentTarget.dataset.i;
@@ -6680,18 +6728,26 @@ q:before {
 				window.location.hash = filter;
 			});
 		} else {
-			$('.main').css('opacity', '0')
+			if (state.width < 768) {
+				$('.main').css('opacity', '0')
 
-			setTimeout(() => {
-				homepage();
-				$(".lazyload").lazyload();
-				$('html, body').animate({
-					scrollTop: $('.c-contentsCardGroup').offset().top
-				}, 0, function () {
-					window.location.hash = filter;
-				});
-			}, 500)
+				setTimeout(() => {
+					homepage();
+					$(".lazyload").lazyload();
+					$('html, body').animate({
+						scrollTop: $('.c-contentsCardGroup').offset().top
+					}, 0, function () {
+						window.location.hash = filter;
+					});
+				}, 500)
+			}
+
 		}
+
+
+
+
+
 		masterpieceGA(e);
 	})
 
@@ -6704,7 +6760,6 @@ q:before {
 
 	$(window).scroll(() => {
 		if ($('.l-navigation_wrapper').length > 0) {
-
 			var t = document.querySelector(".l-navigation_body");
 			var e = document.documentElement.scrollTop || document.body.scrollTop;
 			e > document.querySelector(".l-navigation_wrapper").getBoundingClientRect().top + e ? t
@@ -6766,13 +6821,13 @@ q:before {
 
 		var path = state.currentUrl.replace(urlPrefix, '');
 
-		console.log(value, 'ga')
-		// dataLayer.push({
-		// 	'event': 'eventTracking',
-		// 	'eventCategory': 'category page',
-		// 	'eventAction': `clicked category: ${path}`,
-		// 	'eventLabel': `l3_${value}`
-		// })
+		// console.log(value, 'ga')
+		dataLayer.push({
+			'event': 'eventTracking',
+			'eventCategory': 'category page',
+			'eventAction': `clicked category: ${path}`,
+			'eventLabel': `l3_${value}`
+		})
 	}
 
 </script>
