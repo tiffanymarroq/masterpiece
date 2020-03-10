@@ -282,7 +282,7 @@
 					<figure class="u-imgAdjustBox" data-aspect-ratio="322:119">
 						<div class="u-imgAdjustBox_inner">
 								<img
-								class="fr-img lazyload"
+								class="fr-img lazyloaded"
 								src="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 								data-original="https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png"
 								alt="UNIQLO MASTERPIECE BACK TO TOP" data-expand="300">
@@ -292,7 +292,7 @@
 					</figure>
 				</a>
 			</div>
-		
+
 			`
 		$('.main').html(error)
 	}
@@ -1016,13 +1016,13 @@
 
 		var path = state.currentUrl.replace(urlPrefix, '');
 
-		console.log(value, 'ga')
-		// dataLayer.push({
-		// 	'event': 'eventTracking',
-		// 	'eventCategory': 'category page',
-		// 	'eventAction': `clicked category: ${path}`,
-		// 	'eventLabel': `l3_${value}`
-		// })
+		// console.log(value, 'ga')
+		dataLayer.push({
+			'event': 'eventTracking',
+			'eventCategory': 'category page',
+			'eventAction': `clicked category: ${path}`,
+			'eventLabel': `l3_${value}`
+		})
 	}
 
 </script>
