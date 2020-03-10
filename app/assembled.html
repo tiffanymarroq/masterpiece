@@ -6945,10 +6945,7 @@ q:before {
 									$self.attr("src", original);
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
-									$self.prev('.loading-img').hide();
-
-
-
+									$self.prev().hide();
 								} else {
 									$self.css("background-image", "url('" + original + "')");
 								}
