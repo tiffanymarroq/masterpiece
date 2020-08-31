@@ -1,3 +1,5 @@
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js'></script>
 <div class='masterpiece-container'>
 	<div class='-masterpiece'>
 		<div class='wrapper'>
@@ -8,17 +10,19 @@
 							HOME
 						</a></li>
 					<li class='fr-breadcrumbs_item js-trackEvent' data-label='breadcrumb_masterpiece'>
-						<a href='/us/en/page/masterpiece'>
+						<a href='/us/en/page/masterpiece.html'>
 							MASTERPIECE
 						</a>
 					</li>
 				</ol>
 			</div>
-			<main class='main' style='opacity: 0;'>
+			<main class='main'>
 			</main>
+
 		</div>
 	</div>
 </div>
+
 
 
 <script>
@@ -28,9 +32,7 @@
 		filter: 'all',
 		contentSelected: '',
 		width: window.innerWidth,
-		// siteUrl: '/',
-		siteUrl: '/us/en/page/masterpiece.html',
-		// siteUrl: '/us/en/fc-pg-tmq.html',
+		siteUrl: window.location.href.includes('localhost') ? '/':'/us/en/page/masterpiece.html',
 		currentUrl: window.location.href,
 		defaultImg: 'https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/square999999.jpg'
 	}
@@ -39,16 +41,111 @@
 
 
 	var masterpieceData = [{
+			image: `https://image.uniqlo.com/UQ/ST3/us/imagesother/featurepages/HighQuality/20FW_MASTERPIECE_Oxford-shirt_Square.jpg`,
+			productHeroImgs: [``],
+			title: `Durable fabric + classic style`,
+			productName: `Oxford Shirt`,
+			gender: [`Men`],
+			category: `Tops`,
+			url: `?product=oxford-shirt&category=tops`,
+			productCopy: `First created in the 19th century, the original Oxford cloth featured a unique, two-tone basket weave for a distinctive, marled look. Our polished Oxford shirts are made with a tried-and-true fabric we’ve been using for years. The carefully selected yarns are expertly woven for just the right tension, firmness, and elegance. While we constantly strive to refine all of our crafted materials, we believe this fabric exceeds even the highest expectations. Soft and breathable, this shirt&apos;s timeless design will keep you feeling comfortable and looking classic.`,
+			relatedProducts: {
+				title: `Quality, ease, and design`,
+				productList: [{
+					sku: '430913',
+					gender: `Men`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/casual-shirts/oxford`,
+					ctaCopy: `View All Related Products`
+				}]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com/UQ/ST3/us/imagesother/featurepages/HighQuality/20FW_MASTERPIECE_Sweatshirt_Square.jpg`,
+			productHeroImgs: [``],
+			title: `Thoughtful simplicity`,
+			productName: `Sweatshirt`,
+			gender: [`Men`],
+			category: `Tops`,
+			url: `?product=sweatshirt&category=tops`,
+			productCopy: `At UNIQLO, we believe that in order for a classic to remain a classic, it must incorporate timeless design while carefully evolving with modern styles. Our sweatshirt is elevated with thoughtful reconsideration of its standard, essential elements. We started with the yarn, adjusting the knitting tension to create the softest fabric imaginable. We then reimagined the fit with a more modern shape. Next, we focused on the details, from the durability of the stitch to the smoothness of the zipper. The hood got a reinforced neckline for lasting strength, and a quick-dry polyester lining for a comfortable feel. The relaxed cuffs and hem finish this evolved classic with ease of wear in mind.`,
+			relatedProducts: {
+				title: `A classic, evolved`,
+				productList: [{
+					sku: '429160',
+					gender: `Men`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/sweatshirts-and-sweatpants`,
+					ctaCopy: `View All Related Products`
+				}]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com/UQ/ST3/us/imagesother/home/20SS-MP_Square_Italian-Leather-Belt.jpg`,
+			productHeroImgs: [``],
+			title: `From Toscana to your wardrobe`,
+			productName: `Italian Oiled Leather Belt`,
+			gender: [`Men`],
+			category: `Accessories`,
+			url: `?product=italian-oiled-leather-belt&category=accessories`,
+			productCopy: `It’s a joy to see how a belt transforms over the years. With time and the right material, a belt should develop character with each wear. Our leather comes from the hide of cows from farms with strict quality management and care.  This took us to Toscana, famous for their leather goods. They have a wealth of experience in their tanning process. We decided to opt for the vegetable tanned leather using eco-friendly tannins. It brings out the inherent expression of natural leather with sturdiness you can count on for many years. A belt that only improves with time.`,
+			relatedProducts: {
+				title: `Fine belts that refine with wear`,
+				productList: [{
+					sku: '423838',
+					gender: `Men`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/accessories-and-shoes/belts`,
+					ctaCopy: `View All Related Products`
+				}]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com/UQ/ST3/us/imagesother/home/20SS-MP_Square_3waybag_E.jpg`,
+			productHeroImgs: [``],
+			title: `A bag that means business`,
+			productName: `3-Way Bag`,
+			gender: [`Men`],
+			category: `Accessories`,
+			url: `?product=3_way-bag&category=accessories`,
+			productCopy: `Business calls for practicality. At UNIQLO "practicality" is exactly what we aimed for with our business bags. To start off, we looked for superior durability with the material and decided on the high-strength polyester which keeps its shape even with daily use. Then we focused on offering versatility to best serve their needs. A reliable water-stop zipper to weather the sudden downpour. Cushioning material protects your devices while in motion and a number of pockets enable you to store small items.  Every inch of this bag has been designed to be practical.*Not 100% waterproof.  *The water may seep through after hours in the rain.`,
+			relatedProducts: {
+				title: `Durability and functionality suited for business`,
+				productList: [{
+					sku: '423481',
+					gender: `Men`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/accessories-and-shoes/bags`,
+					ctaCopy: `View All Related Products`
+				}]
+			}
+		},
+		{
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/20SS_MASTERPIECE_Denim-Jacket.jpg`,
+			productHeroImgs: [``],
+			title: `Legacy doesn’t hold us back`,
+			productName: `Denim Jacket`,
+			gender: [`Men`],
+			category: `Outerwear`,
+			url: `?product=denim-jacket&category=outerwear`,
+			productCopy: `With their roots in the USA, denim jackets have been loved for generations all over the world. Still, we found ways to improve the standard classic design. To make them more comfortable, we started with the fabric. While keeping the signature character of a denim jacket, we recalibrated the balance between the cotton and the stretch material. We worked diligently to maintain the traditional look of denim we all love and made a number of small changes so that whatever the angle, it would undoubtedly stay true to the authentic denim look.`,
+			relatedProducts: {
+				title: `Authentic denim, modern enough to move in`,
+				productList: [{
+					sku: '425030',
+					gender: `Men`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/outerwear-and-blazers/jackets`,
+					ctaCopy: `View All Related Products`
+				}]
+			}
+		},
+		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_37_Colorful-50-socks.jpg`,
 			productHeroImgs: [``],
-			title: `From the nation who takes socks seriously`,
-			productName: `Colorful 50 Socks`,
+			title: `Developed in a nation of "tatami"`,
+			productName: `Socks`,
 			gender: [`Men`],
 			category: `Innerwear`,
-			url: `?product=colorful-50-socks&category=innerwear`,
-			productCopy: `In Japan, it&apos;s customary to take off your shoes inside, which makes socks innerwear and an accessory seen by others. This demands they be comfortable, durable, and stylish. UNIQLO is spreading this standard globally with special self-deodorizing thread that&apos;s hole-resistant and designed to help socks stay in place shoes of all types. What’s more, we have the a truly staggering variety of colors, making these Color Socks a true luxury for your feet.`,
+			url: `?product=socks&category=innerwear`,
+			productCopy: `Socks are rather unique. In a country where it is customary to take off your shoes, socks are often worn at home as an accessory. This demands higher standards for the pair. They have to be comfortable, sturdy, and stylish. And UNIQLO has taken this on board. The special self-deodorizing thread absorbs and neutralizes the odor from sweat. Our socks are hole-resistant and is designed to stay in its place whether it’s inside a sneaker or leather shoe. What’s more, we have the most variety of colors within UNIQLO to satisfy the aesthetics of all. True simplicity for your feet.`,
 			relatedProducts: {
-				title: `Stylish comfort for feet around the world.`,
+				title: `Stylish comfort for your feet`,
 				productList: [{
 					sku: '423540',
 					gender: `Men`,
@@ -58,54 +155,14 @@
 			}
 		},
 		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_32_M's-Vintage-regular-fit-chino-pants.jpg`,
-			productHeroImgs: [``],
-			title: `Vintage on the outside, modern day on the inside`,
-			productName: `Vintage Regular Fit Chinos`,
-			gender: [`Men`],
-			category: `Bottoms`,
-			url: `?product=vintage-regular-fit-chinos&category=bottoms`,
-			productCopy: `Which details are imperative to acheive a vintage chino look? The pocket shape? The zipper quality? The durability of the stitchwork? Which details give it authentic character? These are all important qualities, but the real key is the construction of the fabric. We updated the materials to lend a rugged, vintage feel on the outside but tweaked the design for today with a soft texture on the inside.`,
-			relatedProducts: {
-				title: `For outstanding comfort on the inside.`,
-				productList: [{
-					sku: '422371',
-					gender: `Men`,
-					ctaUrl: `https://www.uniqlo.com/us/en/men/chino-pants/vintage-regular-fit`,
-					ctaCopy: `View All Related Products`
-				}]
-			}
-		},
-		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-Dry-pique-polo.jpg`,
-			productHeroImgs: [``],
-			title: `Quality makes the first impression`,
-			productName: `Dry Pique Polo Shirt`,
-			gender: [`Men`],
-			category: `Tops`,
-			url: `?product=dry-pique-polo-shirt&category=tops`,
-			productCopy: `What makes or breaks a polo shirt are the collars and the sleeves. Wash after wash, the sharp lines give way. We decided to swap the thread used in these areas with fabric woven using air pressure to prevent lint fluff and double-layered the button strip to boost durability. This makes them incredibly versatile, able to be styled alone casually or paired it with a blazer for a more formal look.`,
-			relatedProducts: {
-				title: `Fool-proof style thanks to the sleeves and collar design.`,
-				productList: [{
-					sku: '422987',
-					gender: `Men`,
-					ctaUrl: `https://www.uniqlo.com/us/en/men/polo-shirts/dry-pique`,
-					ctaCopy: `View All Related Products`
-				}]
-			}
-		},
-		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_W's-supima-cotton-T-shirt.jpg`,
-			productHeroImgs: [
-				`https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_34_M's-supima-cotton-T-shirt.jpg`
-			],
-			title: `SUPIMA®: Because basic does not lie`,
+			productHeroImgs: [``],
+			title: `The cashmere of cotton`,
 			productName: `Supima Cotton Crew Neck T-shirt`,
 			gender: [`women`, `men`],
 			category: `Tops`,
 			url: `?product=supima-cotton-crew-neck-t_shirt&category=tops`,
-			productCopy: `The finest Pima cotton, grown in the high dry land of Pima, Arizona, is called Supima® (superior pima). It represents less than1% of cotton grown in the world and is highly sought after, but we didn&apos;t hesitate to use it for T-shirts. Because when you try to upgrade the ultimate basic, you must use premium material. You&apos;ll recognize the high-quality color and soft texture at first touch, because basic does not lie.`,
+			productCopy: `There’s a town known for cotton in the States – Pima, Arizona which is where we arrived in our search for the premium cotton. The finest Pima Cotton, grown in the high dry land, is called Supima® (superior pima). It represents less than 1% of cotton grown in the world but we weren’t afraid to use this fine cotton for t-shirts. Because when you try to find the ultimate basic, you can’t go without premium material. The beautiful colors, the soft texture…if you touch it, you’ll know. Because basic does not lie.`,
 			relatedProducts: {
 				title: `Top quality for the most basic style.`,
 				productList: [{
@@ -126,14 +183,14 @@
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_24_34_Uniqlo-U-crew-neck-Tshirts.jpg`,
 			productHeroImgs: [``],
-			title: `T-shirts that evolve with the times`,
-			productName: `Crew Neck T-shirt`,
+			title: `The T-shirt isn&apos;t done evolving`,
+			productName: `UNIQLO U Crew Neck T-shirt`,
 			gender: [`women`, `men`],
 			category: `Tops`,
-			url: `?product=crew-neck-t_shirt&category=tops`,
-			productCopy: `Some might treat the T-shirt as an already-perfected design, but we believe attention to detail reveals much potential for improvement. Driven by this belief, we scrutinized the thread and color quality along with the density of the fabric so the design maintains its shape longer than ever before. We&apos;re proud to introduce the next classic T-shirt that&apos;s universally flattering and multi-functional.`,
+			url: `?product=uniqlo-u-crew-neck-t_shirt&category=tops`,
+			productCopy: `Many consider the T-shirt to be a perfect garment. At UNIQLO, we beg to differ. We see the T-shirt as a consant canvas for design improvement. Driven by this belief, we spent bulk of our time on perfecting the fabric. Scrutinizing to find the optimum thread, the perfect pressure of the weave, and the ideal fabric thickness. After extensive testing, we came up with the best possible fabric which really does keep its shape. With a passion to create the next classic T-shirt made to flatter all.`,
 			relatedProducts: {
-				title: `The ultimate classic you&apos;ll always look good in.`,
+				title: `Perfect to a tee`,
 				productList: [{
 						sku: '424873',
 						gender: `Women`,
@@ -150,39 +207,20 @@
 			}
 		},
 		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-EFC-broad-shirts.jpg`,
+			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_31_M's-Comfort-jacket.jpg`,
 			productHeroImgs: [``],
-			title: `A shirt made with everyone in mind`,
-			productName: `Extra Fine Cotton Broad Shirt`,
+			title: `Perfection in each detail`,
+			productName: `Comfort Jacket`,
 			gender: [`Men`],
-			category: `Tops`,
-			url: `?product=extra-fine-cotton-broad-shirt&category=tops`,
-			productCopy: `Casual shirts can make their own style statement thanks to 100% extra-long cotton fibers, known for allowing dye to seep to their core to acheive high-quality color saturation. That’s not all: We also adjust the density of the weave according to the pattern design like stripes or checks. UNIQLO believes everyone should be able to revel in the simplicity of premium quality, and this is how we acheive it.`,
+			category: `Outerwear`,
+			url: `?product=comfort-jacket&category=outerwear`,
+			productCopy: `How much comfort can you bring to a single jacket? To start, we focused on the material. We chose the stretchy jersey material but gave it a wool-like look with a napped finish. The key was to go for a casual feel with a formal look. As for the collar, we took special care to make it as perfect as possible. We meticulously calculated the position and the alignment between the top and bottom layers of fabric for a natural sharpness.The result is a polished jacket with a spiffy expression. This jacket embodies the combination of form AND function.`,
 			relatedProducts: {
-				title: `High-quality colors and patterns, carefully calculated by thread choice.`,
+				title: `Refusing to sacrifice form for function`,
 				productList: [{
-					sku: '426930',
+					sku: '425035',
 					gender: `Men`,
-					ctaUrl: `https://www.uniqlo.com/us/en/men/casual-shirts/extra-fine-cotton`,
-					ctaCopy: `View All Related Products`
-				}]
-			}
-		},
-		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-super-non-iron-shirt_SW_NP.jpg`,
-			productHeroImgs: [``],
-			title: `Farewell to ironing.`,
-			productName: `Super Non-Iron Shirt`,
-			gender: [`Men`],
-			category: `Tops`,
-			url: `?product=super-non_iron-shirt&category=tops`,
-			productCopy: `Even if it’s a non-iron shirt, it’s pointless if it feels and looks uncomfortable. UNIQLO not only pursues style and comfort, but also low-maintenance care, all at once. For the high-quality look, we’ve selected premium materials and treated them with a special easy-care finishing technology, particularly to the wrinkle-prone sleeves and underarm areas so that these shirts are both stylish and convenient. *Depending on washing method, light ironing may be needed.`,
-			relatedProducts: {
-				title: `Beautiful and comfortable, whenever and wherever.`,
-				productList: [{
-					sku: '427171',
-					gender: `Men`,
-					ctaUrl: `https://www.uniqlo.com/us/en/men/dress-shirts/slim-fit/super-non-iron`,
+					ctaUrl: `https://www.uniqlo.com/us/en/men/outerwear-and-blazers/blazers`,
 					ctaCopy: `View All Related Products`
 				}]
 			}
@@ -190,12 +228,12 @@
 		{
 			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Fine-cloth-easy-care-shirt_NP.jpg`,
 			productHeroImgs: [``],
-			title: `You can tell the quality by the collar`,
+			title: `You can tell a fine shirt by its collar`,
 			productName: `Fine Cloth Shirt`,
 			gender: [`Men`],
 			category: `Tops`,
 			url: `?product=fine-cloth-shirt&category=tops`,
-			productCopy: `At UNIQLO, we believe a shirt is only as good as its stitching. Our masters of needlework ensure our shirts are in a class all their own. For many years, they have kept the industry going, and their influence can be seen throughout every step of our production. Take the collar for example: it must be perfectly symmetrical and stand crisply on its own. To achieve this, each one is carefully stitched together using a special method designed by the masters, creating high-quality design that&apos;s truly made for everyone.`,
+			productCopy: `The collar, the sleeves, the pockets… We believe a shirt is as good as its stitching and the overall look defines its class. At UNIQLO, bring our shirts to life with our master needle craft. For many years, these masters have kept the textile industry going and their wisdom and skills are alive and well throughout our production. Take the collar, for example. It must be symmetrically exquisite and stand proud when folded. It is carefully stitched together with the special method designed by the masters. Because each stitch adds to the class of the one who wears it.`,
 			relatedProducts: {
 				title: `Master-level stitching in every collar.`,
 				productList: [{
@@ -206,329 +244,268 @@
 				}]
 			}
 		},
-		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_23_W's-rayon-blouse.jpg`,
-			productHeroImgs: [``],
-			title: `Low-maintenance yet highly refined`,
-			productName: `Rayon Blouse`,
-			gender: [`Women`],
-			category: `Tops`,
-			url: `?product=rayon-blouse&category=tops`,
-			productCopy: `Rayon can be a finicky fabric, but at UNIQLO we like a challenge. Our secret is the special thread hybrid thread that&apos;s part-rayon for luster, part-polyester for durability that leaves the rayon fabric soft and easy to care for. The only thing lost is the extra time it takes you to maintain.`,
-			relatedProducts: {
-				title: `Easy to care for thanks to special thread.`,
-				productList: [{
-					sku: '424643',
-					gender: `Women`,
-					ctaUrl: `https://www.uniqlo.com/us/en/women/shirts-and-blouses/rayon-blouses`,
-					ctaCopy: `View All Related Products`
-				}]
-			}
-		},
-		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_31_M's-Comfort-jacket.jpg`,
-			productHeroImgs: [``],
-			title: `Small details speak volumes.`,
-			productName: `Comfort jacket`,
-			gender: [`Men`],
-			category: `Outerwear`,
-			url: `?product=comfort-jacket&category=outerwear`,
-			productCopy: `To engineer a jacket with ultimate comfort, we started with stretchy jersey and gave it a brushed wool-like texture for a more formal look. We then ergonomically tweaked the positioning and placement of the collar so it&apos;s always sharp. All this was done to ensure that this jacket is as supremely stylish as it is completely comfortable.`,
-			relatedProducts: {
-				title: `Uncompromising comfort and style.`,
-				productList: [{
-					sku: '425035',
-					gender: `Men`,
-					ctaUrl: `https://www.uniqlo.com/us/en/men/outerwear-and-blazers/blazers`,
-					ctaCopy: `View All Related Products`
-				}]
-			}
-		},
-		{
-			image: `https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/masterpiece_33_M's-Premium-Linen-Shirt.jpg`,
-			productHeroImgs: [``],
-			title: `Linen: Transformed by Human Hands`,
-			productName: `Premium Linen Shirt`,
-			gender: [`women`, `men`],
-			category: `Tops`,
-			url: `?product=premium-linen-shirt&category=tops`,
-			productCopy: `The oldest textile in the world, linen is mainly produced in Northern France. The premium linen used by UNIQLO has a distinct, signature texture thanks to little knots in the fiber called “Neps,” but a balance must be found between too many and too few. To achieve this, we remove excess Neps from the fabric one-by-one with tweezers—a process requiring patience as well as the steady hand and keen eyes of highly skilled textile experts.`,
-			relatedProducts: {
-				title: `Handcrafted luxury created by experts.`,
-				productList: [{
-						sku: '426582',
-						gender: `Women`,
-						ctaUrl: `https://www.uniqlo.com/us/en/women/linen-collection/shirts-and-blouses`,
-						ctaCopy: `View All Related Products`
-					},
-					{
-						sku: '425062',
-						gender: `Men`,
-						ctaUrl: `https://www.uniqlo.com/us/en/men/linen-collection/shirts`,
-						ctaCopy: `View All Related Products`
-					}
-				]
-			}
-		},
 	];
 	var errorPage = () => {
 		var error = `
-			<div class='error-page'>
-				<p class='bold' style='text-align: center'>Page Not Found</p>
-				<a class='c-topPageButton js-trackEvent' href='${state.siteUrl}'
-					data-label='article_cta_back_to_masterpiece'>
-					<figure class='u-imgAdjustBox' data-aspect-ratio='322:119'>
-						<div class='u-imgAdjustBox_inner'>
-								<img
-								class='fr-img lazyloaded'
-								src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
-								data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
-								alt='UNIQLO MASTERPIECE BACK TO TOP' data-expand='300'>
-								<p>BACK TO TOP</p>
-								<div class='arrow-container'><div class='arrow long-arrow-left'></div></div>
-						</div>
-					</figure>
-				</a>
-			</div>`
+                        <div class='error-page'>
+                                <p class='bold' style='text-align: center'>Page Not Found</p>
+                                <a class='c-topPageButton js-trackEvent' href='${state.siteUrl}'
+                                        data-label='article_cta_back_to_masterpiece'>
+                                        <figure class='u-imgAdjustBox' data-aspect-ratio='322:119'>
+                                                <div class='u-imgAdjustBox_inner'>
+                                                                <img
+                                                                class='fr-img lazyloaded'
+                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
+                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
+                                                                alt='UNIQLO MASTERPIECE BACK TO TOP' data-expand='300'>
+                                                                <p>BACK TO TOP</p>
+                                                                <div class='arrow-container'><div class='arrow long-arrow-left'></div></div>
+                                                </div>
+                                        </figure>
+                                </a>
+                        </div>`
 		$('.main').html(error)
 	}
 
 	//Homepage Components
 	var homepageMenu = () => {
 		var menu = `
-				<div class='l-navigation_head'>
-					<figure class='u-imgAdjustBox' data-sp-aspect-ratio='90:235' data-pc-aspect-ratio='172:45'>
-						<picture class='u-imgAdjustBox_inner menu'>
-							${state.width > 768 ? 
-								`<img class='fr-img lazyload' 
-									src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png'
-									data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png'
-									alt='UNIQLO MASTERPIECE' data-expand='300'>`
-							:
-								`<img class='fr-img lazyload img-horizontal' style='height:100%'
-									src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
-									data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
-									alt='UNIQLO MASTERPIECE' data-expand='300'>`
-							}
-						</picture>
-					</figure>
-				</div>
+                                <div class='l-navigation_head'>
+                                        <figure class='u-imgAdjustBox' data-sp-aspect-ratio='90:235' data-pc-aspect-ratio='172:45'>
+                                                <picture class='u-imgAdjustBox_inner menu'>
+                                                        ${state.width > 768 ? 
+                                                                `<img class='fr-img lazyload' 
+                                                                        src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png'
+                                                                        data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-stacked.png'
+                                                                        alt='UNIQLO MASTERPIECE' data-expand='300'>`
+                                                        :
+                                                                `<img class='fr-img lazyload img-horizontal' style='height:100%'
+                                                                        src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
+                                                                        data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
+                                                                        alt='UNIQLO MASTERPIECE' data-expand='300'>`
+                                                        }
+                                                </picture>
+                                        </figure>
+                                </div>
 
-				<!-- Navigation -->
-				<div class='l-navigation_wrapper'>
-					<ul class='l-navigation_body' data-navigation-position='default'>
-						<li  class='l-navigation_item js-smoothScroll is-active -all js-trackEvent'
-							data-i ='0'
-							data-filter-button='all' data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_all'><span>ALL</span>
-						</li>
-						<li class='l-navigation_item js-smoothScroll -outer js-trackEvent' data-filter-button='outerwear'
-						data-i ='1' data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_outerwear'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg'
-										alt='OUTER' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>OUTERWEAR</span>
-						</li>
-						<li class='l-navigation_item js-smoothScroll -tops js-trackEvent' data-filter-button='tops'
-							data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_tops' data-i ='2'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg'
-										alt='TOPS' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>TOPS</span>
-						</li>
-						<li class='l-navigation_item js-smoothScroll -bottoms js-trackEvent' data-i ='3'
-							data-filter-button='bottoms' data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_bottoms'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg'
-										alt='BOTTOMS' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>BOTTOMS</span>
-						</li>
-						<li data-i ='4' class='l-navigation_item js-smoothScroll -dress js-trackEvent' data-filter-button='dresses'
-							data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_dresses'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg'
-										alt='DRESS' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>DRESSES</span>
-						</li>
-						<li data-i ='5' class='l-navigation_item js-smoothScroll -roomwear js-trackEvent'
-							data-filter-button='loungewear' data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_loungwear'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg'
-										alt='ROOM WEAR' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>LOUNGEWEAR</span>
-						</li>
-						<li data-i ='6' class='l-navigation_item js-smoothScroll -inner js-trackEvent' data-filter-button='innerwear'
-							data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_innerwear'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg'
-										alt='INNER' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>INNERWEAR</span>
-						</li>
-						<li data-i ='7' class='l-navigation_item js-smoothScroll -goods js-trackEvent' data-filter-button='accessories'
-							data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_accessories'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg'
-										alt='GOODS' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>ACCESSORIES</span>
-						</li>
-						<li data-i ='8' class='l-navigation_item js-smoothScroll -baby js-trackEvent' data-filter-button='baby'
-							data-link='.l-container' data-category='L3_20ss_masterpiece'
-							data-label='hp_menu_baby'>
-							<figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
-										class='fr-img lazyload'
-										src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg'
-										data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg'
-										alt='BABY' data-expand='300'></picture>
-							</figure><span class='u-only-pc'>BABY</span>
-						</li>
-					</ul>
-				</div>
+                                <!-- Navigation -->
+                                <div class='l-navigation_wrapper'>
+                                        <ul class='l-navigation_body' data-navigation-position='default'>
+                                                <li  class='l-navigation_item js-smoothScroll is-active -all js-trackEvent'
+                                                        data-i ='0'
+                                                        data-filter-button='all' data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_all'><span>ALL</span>
+                                                </li>
+                                                <li class='l-navigation_item js-smoothScroll -outer js-trackEvent' data-filter-button='outerwear'
+                                                data-i ='1' data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_outerwear'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-outer.svg'
+                                                                                alt='OUTER' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>OUTERWEAR</span>
+                                                </li>
+                                                <li class='l-navigation_item js-smoothScroll -tops js-trackEvent' data-filter-button='tops'
+                                                        data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_tops' data-i ='2'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-tops.svg'
+                                                                                alt='TOPS' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>TOPS</span>
+                                                </li>
+                                                <li class='l-navigation_item js-smoothScroll -bottoms js-trackEvent' data-i ='3'
+                                                        data-filter-button='bottoms' data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_bottoms'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-bottoms.svg'
+                                                                                alt='BOTTOMS' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>BOTTOMS</span>
+                                                </li>
+                                                <li data-i ='4' class='l-navigation_item js-smoothScroll -dress js-trackEvent' data-filter-button='dresses'
+                                                        data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_dresses'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-dress.svg'
+                                                                                alt='DRESS' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>DRESSES</span>
+                                                </li>
+                                                <li data-i ='5' class='l-navigation_item js-smoothScroll -roomwear js-trackEvent'
+                                                        data-filter-button='loungewear' data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_loungwear'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-roomwear.svg'
+                                                                                alt='ROOM WEAR' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>LOUNGEWEAR</span>
+                                                </li>
+                                                <li data-i ='6' class='l-navigation_item js-smoothScroll -inner js-trackEvent' data-filter-button='innerwear'
+                                                        data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_innerwear'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-inner.svg'
+                                                                                alt='INNER' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>INNERWEAR</span>
+                                                </li>
+                                                <li data-i ='7' class='l-navigation_item js-smoothScroll -goods js-trackEvent' data-filter-button='accessories'
+                                                        data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_accessories'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-goods.svg'
+                                                                                alt='GOODS' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>ACCESSORIES</span>
+                                                </li>
+                                                <li data-i ='8' class='l-navigation_item js-smoothScroll -baby js-trackEvent' data-filter-button='baby'
+                                                        data-link='.l-container' data-category='L3_20ss_masterpiece'
+                                                        data-label='hp_menu_baby'>
+                                                        <figure class='u-imgAdjustBox l-navigation_icon' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner l-navigation_iconInner'><img
+                                                                                class='fr-img lazyload'
+                                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg'
+                                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/featurepages/HighQuality/icon-baby.svg'
+                                                                                alt='BABY' data-expand='300'></picture>
+                                                        </figure><span class='u-only-pc'>BABY</span>
+                                                </li>
+                                        </ul>
+                                </div>
 
-		`
+                `
 		$('.l-navigation').html(menu)
 	}
 
+
+	// Component: Home Product List
 	var homepageProductList = () => {
 		var categoryProductItems = masterpieceData
 			.filter(product => state.filter === product.category.toLowerCase() || state.filter === 'all')
 			.map((product, i) => {
-				var productTile = `
-				<section class='c-contentsCard -no-${i} product-fadeIn' aria-hidden='false'>
-					<a class='js-trackEvent' 
-					    data-label='hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}' 
-						href='${state.siteUrl + product.url}'
-						data-category='${product.category}' data-product='${product.productName}'
-						>
-						<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
-							<picture class='u-imgAdjustBox_inner'>
-								<div class='lds-ellipsis loading-img'><div></div><div></div><div></div><div></div></div>
-								<img class='fr-img lazyload'
-		 							src="${state.defaultImg}"
-									data-original="${product.image}"
-									alt="${product.title}" data-expand='300'>
-							</picture>
-						</figure>
-						<div class='c-contentsCard_inner'>
-							<h2 class='c-contentsCard_title'>${product.title}</h2>
-							<ul class='c-label -inCard'>
-								<li class='c-label_item -category'>${product.category}</li>
-								<li class='c-label_item -name'>${product.productName}</li>
-							</ul>
-						</div>
-					</a>
-				</section>`;
+				let productTile = `
+                                <section class='c-contentsCard -no-${i} product-fadeIn' aria-hidden='false'>
+                                        <a class='js-trackEvent' 
+                                            data-label='hp_tile_${product.productName.replace(/ /g, '_').toLowerCase()}' 
+                                                href='${state.siteUrl + product.url}'
+                                                data-category='${product.category}' data-product='${product.productName}'
+                                                >
+                                                <figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
+                                                        <picture class='u-imgAdjustBox_inner'>
+
+                                                                <img class='fr-img lazyload'
+                                                                         src="${state.defaultImg}"
+                                                                        data-original="${product.image}"
+                                                                        alt="${product.title}" data-expand='300'>
+                                                        </picture>
+                                                </figure>
+                                                <div class='c-contentsCard_inner'>
+                                                        <h2 class='c-contentsCard_title'>${product.title}</h2>
+                                                        <ul class='c-label -inCard'>
+                                                                <li class='c-label_item -category'>${product.category}</li>
+                                                                <li class='c-label_item -name'>${product.productName}</li>
+                                                        </ul>
+                                                </div>
+                                        </a>
+                                </section>`;
 				return productTile
 			})
 
 		var productListContainer =
 			`<div class='c-contentsCardGroup_body'>
-					<p class='c-contentsCardGroup_head'  aria-hidden='false'>
-						<span class='c-contentsCardGroup_headInner'>
-							${state.filter}
-						</span>
-					</p>
-					${categoryProductItems && categoryProductItems.length > 0 ? 
-						categoryProductItems.join('')
-					:
-						`<div class='c-contentsCard -comingSoon product-fadeIn' >Coming soon...</div>`
-					}
-				</div>`
+                                        <p class='c-contentsCardGroup_head'  aria-hidden='false'>
+                                                <span class='c-contentsCardGroup_headInner'>
+                                                        ${state.filter}
+                                                </span>
+                                        </p>
+                                        ${categoryProductItems && categoryProductItems.length > 0 ? 
+                                                categoryProductItems.join('')
+                                        :
+                                                `<div class='c-contentsCard -comingSoon product-fadeIn' >Coming soon...</div>`
+                                        }
+                                </div>`
 		$('.c-contentsCardGroup').html(productListContainer)
 
 	}
 
+	//Page: Home
 	var homepage = () => {
+		var stickyHero = `
+                    <div class='hp-bg-hero'></div>
+                        <div class='o-hero' >
+                                <h1 class='o-hero_title'>
+                                        <figure class='u-imgAdjustBox' data-sp-aspect-ratio='452:126' data-pc-aspect-ratio='960:70'>
+                                                <picture class='u-imgAdjustBox_inner'>
+                                                        <p class='main-hero-text'>UNIQLO MASTERPIECE<p>
+                                                </picture>
+                                        </figure>
+                                </h1>
+                        </div>
+                        <div class='o-hero-lead'> <div class='o-hero-text'><!-- Add text here --></div></div>
+                `;
+		var staticHero = `
+                      <div style="position: relative" class="hero-container">
+                        <div class="intro">
+                            <div class="intro-inner">
+                                <div class="intro-header">
+                                        <img src="https://image.uniqlo.com/UQ/ST3/us/imagesother/featurepages/HighQuality/UNIQLOMASTERPIECE-logo.png" alt="Logo" />
+                                        <h3>A STORY ABOUT QUALITY</h3>
+                                </div>
+                                <p>What is a Masterpiece?</p>
+                                <p>At UNIQLO, it’s a piece of clothing that exemplifies<br> quality craftsmanship.</p>
+                                <p>Simple and functional, with a practical sense of<br>beauty.
+                                Designed with comfort and ease for everyday<br> living. Crafted with thoughtful attention to detail. </p>
+                                <p>Enhanced with innovative technology.<br>
+                                Continually refined to meet evolving needs.<br> Exceptionally made for maximum longevity.<p>
+                                <p>Timelessly modern for lasting style. <p>
+                                <p>The story continues...<p>
+                                </div>
+                        </div>
+                      </div>
+                `
 		var homepageComponent = `
-			<div class='hp-hero-container'>
-				<div class='hp-bg-hero'></div>
-				<div class='o-hero' >
-					<h1 class='o-hero_title'>
-						<figure class='u-imgAdjustBox' data-sp-aspect-ratio='452:126' data-pc-aspect-ratio='960:70'>
-							<picture class='u-imgAdjustBox_inner'>
-								<p class='main-hero-text'>UNIQLO MASTERPIECE<p>
-							</picture>
-						</figure>
-					</h1>
-				</div>
-				<div class='o-hero-lead'>
-					<div class='o-hero-text'>
-						<p>What is a truly exceptional piece of clothing?</p>
-						<p>It’s simple, functional, has its own sense of beauty,
-						and evolves for the people who wear it.<p>
-						<p>The material, the needlework, the silhouette, the color scheme…
-						evolving with the people, the nature, and the everyday life.
-						Embracing the spirit of Japanese manufacturing,
-						paying close attention to every single detail.
-						We do this so that each and every piece of clothing
-						will be an eternal masterpiece
-						for those who live in the present.</p>
-						<p>There is no end to clothes-making at UNIQLO.</p>
-						<p class='bold'>UNIQLO MASTERPIECE</p>				
-					</div>
-				</div>
-			</div>
-
-			<div class='l-wrapper'>
-				<div class='l-container -topLayer'>
-					<nav class='l-navigation'>
-					</nav>
-					<div class='c-contentsCardGroup'>
-					</div>
-				</div>
-				<div class='c-bannerGroup'style=''></div>
-			</div>
-		`
+                        <div class='hp-hero-container'>
+                               ${staticHero}
+                        </div>
+                        <div class='l-wrapper'>
+                                <div class='l-container -topLayer'><nav class='l-navigation'></nav> <div class='c-contentsCardGroup'></div></div>
+                                <div class='c-bannerGroup'style=''></div>
+                        </div>
+                `
 		if (!state.loading) {
 			$('.main').css('opacity', '1');
 		}
 		$('.main').html(homepageComponent)
 		homepageMenu();
 		homepageProductList()
-
 	}
 
 
 	// Product Components
-
 	var productInfo = () => {
 		var product = state.contentSelected;
 		var imageContainer = [`
-			<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
-				<picture class='u-imgAdjustBox_inner'>
-					<img
-						class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
-						data-original="${product.image}" alt="${product.productName}" data-expand='300'>
-				</picture>
-			</figure>`];
+                        <figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
+                                <picture class='u-imgAdjustBox_inner'>
+                                        <img
+                                                class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
+                                                data-original="${product.image}" alt="${product.productName}" data-expand='300'>
+                                </picture>
+                        </figure>`];
 		if (product.productHeroImgs.length > 0) {
 
 			for (var i = 0; i < product.productHeroImgs.length; i++) {
@@ -536,12 +513,12 @@
 				if (product.productHeroImgs[i].length > 0) {
 					var image =
 						`<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
-						<picture class='u-imgAdjustBox_inner'>
-							<img
-								class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
-								data-original="${product.productHeroImgs[i]}" alt="${product.productName}" data-expand='300'>
-						</picture>
-					</figure>`
+                                                <picture class='u-imgAdjustBox_inner'>
+                                                        <img
+                                                                class='fr-img ls-is-cached lazyload' src="${state.defaultImg}"
+                                                                data-original="${product.productHeroImgs[i]}" alt="${product.productName}" data-expand='300'>
+                                                </picture>
+                                        </figure>`
 					imageContainer.push(image)
 				}
 
@@ -550,29 +527,29 @@
 
 
 		var content = `
-				<h1 class='c-contentsPanel_title'>
-					${product.title.replace('&apos;',"''")}
-				</h1>
-				<p class='c-contentsPanel_text'>
-					${product.productCopy.replace("&apos;","'")}
-				</p>
-				<ul class='c-label -inPanel'>
-					<li class='c-label_item -category'>
-						${product.category}
-					</li>
-					${ product.gender && product.gender.length > 0 ?
-						Object.keys(product.gender).map((i) => {
-							return (
-								`<li class='c-label_item -gender' data-i=${i}>
-									${product.gender[i]}
-								</li>`)
-							}).join('')
-						: null
-					}
-					<li class='c-label_item -name'>
-						${product.productName}
-					</li>
-				</ul>`;
+                                <h1 class='c-contentsPanel_title'>
+                                        ${product.title.replace('&apos;',"'")}
+                                </h1>
+                                <p class='c-contentsPanel_text'>
+                                        ${product.productCopy.replace('&apos;',"'")}
+                                </p>
+                                <ul class='c-label -inPanel'>
+                                        <li class='c-label_item -category'>
+                                                ${product.category}
+                                        </li>
+                                        ${ product.gender && product.gender.length > 0 ?
+                                                Object.keys(product.gender).map((i) => {
+                                                        return (
+                                                                `<li class='c-label_item -gender' data-i=${i}>
+                                                                        ${product.gender[i]}
+                                                                </li>`)
+                                                        }).join('')
+                                                : null
+                                        }
+                                        <li class='c-label_item -name'>
+                                                ${product.productName}
+                                        </li>
+                                </ul>`;
 
 		$('.c-contentsPanel .c-contentsPanel_image').html(imageContainer.join(''));
 		$('.c-contentsPanel .c-contentsPanel_inner').html(content);
@@ -586,10 +563,11 @@
 					dataType: 'script',
 					success: function () {
 						//put in script
-						$('.product-container .c-contentsPanel .c-contentsPanel_image').slick({
-							dots: false,
-							arrows: true,
-						})
+						$('.product-container .c-contentsPanel .c-contentsPanel_image')
+							.slick({
+								dots: false,
+								arrows: true,
+							})
 					},
 					async: true
 				});
@@ -608,62 +586,63 @@
 	var relatedProducts = () => {
 		var product = state.contentSelected;
 		var relatedProductsComponent =
-			`	<h2 class='c-shoulderSection_title'>
-				${product.relatedProducts.title.replace('&apos;',"''")}
-			</h2>
-			<ul class='c-productButtonGroup'>
-			</ul>
-		`;
+			`        <h2 class='c-shoulderSection_title'>
+                                ${product.relatedProducts.title.replace('&apos;',"'")}
+                        </h2>
+                        <ul class='c-productButtonGroup'>
+                        </ul>
+                `;
 
 		$('.c-shoulderSection_content').html(relatedProductsComponent);
 
 		if (product.relatedProducts && product.relatedProducts.productList.length > 0) {
 			for (var i in product.relatedProducts.productList) {
-				getRelatedProduct(product.relatedProducts.productList[i], i, product.productName);
+				getRelatedProduct(product.relatedProducts.productList[i], i, product
+					.productName);
 				getProductData(product.relatedProducts.productList[i].sku, i);
 			}
 		}
 	}
 
-
+	//Component: Product Tile
 	var getRelatedProduct = (data, i, productName) => {
 		var productNameReplace = productName.replace(/ /g, '_').toLowerCase();
 		var position = parseInt(i) + 1;
 		var productComponent = `
-			<li class='c-productButtonGroup_item'>
-				<a class='c-productButton js-trackEvent'
-					 data-label='article_${productNameReplace}_productTile_${position}_${data.sku}'
-					href='#'>
-					<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
-						<picture class='u-imgAdjustBox_inner'>
-								<img class='fr-img lazyloaded'
-								src="${state.defaultImg}"
-								data-original="${state.defaultImg}"
-								alt='' data-expand='300'>
-						</picture>
-					</figure>
-					<div class='c-productButton_inner'>
-						<p class='c-productButton_gender'>
-							${data.gender}
-						</p>
-						<h3 class='c-productButton_title'>
-						
-						</h3>
-						<p class='c-productButton_viewProduct'>
-							View product
-						</p>
-					</div>
-				</a>
-				<a class='c-linkButton js-trackEvent' href='${data.ctaUrl}' 
-			
-				data-label='article_${productNameReplace}_productCta_${position}'>${data.ctaCopy}</a>
-			</li>
-			`
+                        <li class='c-productButtonGroup_item'>
+                                <a class='c-productButton js-trackEvent'
+                                         data-label='article_${productNameReplace}_productTile_${position}_${data.sku}'
+                                        href='#'>
+                                        <figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
+                                                <picture class='u-imgAdjustBox_inner'>
+                                                                <img class='fr-img lazyloaded'
+                                                                src="${state.defaultImg}"
+                                                                data-original="${state.defaultImg}"
+                                                                alt='' data-expand='300'>
+                                                </picture>
+                                        </figure>
+                                        <div class='c-productButton_inner'>
+                                                <p class='c-productButton_gender'>
+                                                        ${data.gender}
+                                                </p>
+                                                <h3 class='c-productButton_title' style='text-transform: capitalize'>
+                                                
+                                                </h3>
+                                                <p class='c-productButton_viewProduct'>
+                                                        View product
+                                                </p>
+                                        </div>
+                                </a>
+                                <a class='c-linkButton js-trackEvent' href='${data.ctaUrl}' 
+                        
+                                data-label='article_${productNameReplace}_productCta_${position}'>${data.ctaCopy}</a>
+                        </li>
+                        `
 		$('.c-productButtonGroup').append(productComponent);
 
 
 	}
-
+	// API: Get Product Data
 	var getProductData = (sku, i) => {
 		var urlPrefix = 'https://www.uniqlo.com/';
 		if (window.location.href.includes('staging')) {
@@ -680,34 +659,44 @@
 				i: i,
 				sku: sku,
 				success: function (pData) {
+					console.log(pData)
 					if (pData.length === 0) {
-						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+						$(`.c-productButtonGroup_item:eq(${i}) `)
+							.hide();
 
 						return;
 					}
 					var price = $(pData).children('.product-tile-info')
+						.children('.price-promomsg')
 						.children(
 							'.product-pricing')
 						.children(
-							'.product-sales-price').html();
+							'.product-sales-price').html()
 
 					if (price && price.includes('/')) {
-						$('.c-productButtonGroup_item:eq(' + i + ')').hide();
+						$('.c-productButtonGroup_item:eq(' + i +
+							')').hide();
 						return;
 					}
 					var productImage = $(pData).children(
-						'.product-tile-info').children(
-						'.product-image').children('.thumb-link').children('img').attr('src');
+							'.product-tile-info').children('.product-img-swatches-info').children(
+							'.hover-wrapper')
+						.children(
+							'.product-image').children('.thumb-link').children('img').attr('src');
 
-					var swatches = $(pData).children(
-						'.product-swatches').html();
+					var swatches = $(pData).children('.product-tile-info').children(
+							'.product-img-swatches-info')
+						.children('.hover-wrapper').children(
+							'.product-swatches').html();
 
 
 					if ($(swatches).length === 0) {
-						$(`.c-productButtonGroup_item:eq(${i}) `).hide();
+						$(`.c-productButtonGroup_item:eq(${i}) `)
+							.hide();
 						return;
 					}
-					var productTitle = $(pData).children('.product-tile-info').children(
+					var productTitle = $(pData).children(
+						'.product-tile-info').children(
 						'.product-name').html();
 
 
@@ -716,16 +705,20 @@
 						'.name-link').attr('href');
 
 
-					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`).attr('href',
-						productLink)
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton`)
+						.attr('href',
+							productLink)
 
-					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`).html(
-						productTitle)
-					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr('src',
-						productImage)
-					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`).attr(
-						'data-src',
-						productImage)
+					$(`.c-productButtonGroup_item:eq(${i}) .c-productButton_title`)
+						.html(
+							productTitle)
+					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`)
+						.attr('src',
+							productImage)
+					$(`.c-productButtonGroup_item:eq(${i}) .u-imgAdjustBox_inner img`)
+						.attr(
+							'data-src',
+							productImage)
 
 				}
 			})
@@ -733,93 +726,94 @@
 
 
 		}
+
 	}
 
 
-
+	//Component: Articles
 	var topArticles = () => {
 		var articles = masterpieceData
-			.filter(product => product.title.toLowerCase() !== state.contentSelected.title.toLowerCase() &&
+			.filter(product => product.title.toLowerCase() !== state.contentSelected.title
+				.toLowerCase() &&
 				product.category.toLowerCase() === state.contentSelected.category.toLowerCase())
 			.map((product, i) => {
 
-				var productName = product.productName.replace('&apos;', "''");
+				var productName = product.productName.replace('&apos;', "'");
 				return (
 					`<li class='c-relatedButtonGroup_item'>
-						<a class='c-relatedButton js-trackEvent'
-							data-category='${product.category}'
-							data-product='${product.productName}'
-							data-label='article_relatedArticle_${productName.replace(/ /g, '_').toLowerCase()}'
-							href='${state.siteUrl + product.url}'>
-							<figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
-								<picture class='u-imgAdjustBox_inner'>
-								
-										<img
-										class='fr-img lazyload'
-										src="${state.defaultImg}"
-										data-original="${product.image}"
-										alt="${productName}" data-expand='300'>
-								</picture>
-							</figure>
-							<div>
-								<h3 class='c-relatedButton_title'>
-									${product.title.replace('&apos;',"''")}
-								</h3>
-								<p class='c-relatedButton_name'>
-									${product.productName}
-								</p>
-							</div>
-						</a>
-					</li>
-					`
+                                                <a class='c-relatedButton js-trackEvent'
+                                                        data-category='${product.category}'
+                                                        data-product='${product.productName}'
+                                                        data-label='article_relatedArticle_${productName.replace(/ /g, '_').toLowerCase()}'
+                                                        href='${state.siteUrl + product.url}'>
+                                                        <figure class='u-imgAdjustBox' data-aspect-ratio='1:1'>
+                                                                <picture class='u-imgAdjustBox_inner'>
+                                                                
+                                                                                <img
+                                                                                class='fr-img lazyload'
+                                                                                src="${state.defaultImg}"
+                                                                                data-original="${product.image}"
+                                                                                alt="${productName}" data-expand='300'>
+                                                                </picture>
+                                                        </figure>
+                                                        <div>
+                                                                <h3 class='c-relatedButton_title'>
+                                                                        ${product.title.replace('&apos;',"'")}
+                                                                </h3>
+                                                                <p class='c-relatedButton_name'>
+                                                                        ${product.productName}
+                                                                </p>
+                                                        </div>
+                                                </a>
+                                        </li>
+                                        `
 				)
 			})
 		if (articles.length > 0) {
 			var articleComponent = `
-					<h2 class='l-relatedAside_title'>
-						Tops Articles
-					</h2>
-					<ul class='c-relatedButtonGroup'>${articles.length > 8 ? articles.splice(0,8).join(''): articles.join('')}</ul>
-			`
+                                        <h2 class='l-relatedAside_title'>
+                                                Tops Articles
+                                        </h2>
+                                        <ul class='c-relatedButtonGroup'>${articles.length > 8 ? articles.splice(0,8).join(''): articles.join('')}</ul>
+                        `
 			$('.l-relatedAside').html(articleComponent)
 		}
 	}
 
+	//Page: Product
 	var productPage = () => {
-
 		var productPageComponent =
 			`<div class='l-container product-container'>
-				<article class='c-contents'>
-					<div class='c-contentsPanel'>
-						<div class='c-contentsPanel_image'></div>
-						<div class='c-contentsPanel_inner'></div>
-					</div>
-					<section class='c-shoulderSection'>
-						<div class='c-shoulderSection_content'></div>
-					</section>
-				</article>
-				<aside class='l-relatedAside'>
-				</aside>
-				<a class='c-topPageButton js-trackEvent' href='${state.siteUrl}'
-					data-label='article_cta_back_to_masterpiece'>
-					<figure class='u-imgAdjustBox' data-aspect-ratio='322:119'>
-						<div class='u-imgAdjustBox_inner'>
-								<img
-								class='fr-img lazyloaded'
-								src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
-								data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
-								alt='UNIQLO MASTERPIECE BACK TO TOP' data-expand='300'>
-								<p>BACK TO TOP</p>
-								<div class='arrow-container'><div class='arrow long-arrow-left'></div></div>
+                                <article class='c-contents'>
+                                        <div class='c-contentsPanel'>
+                                                <div class='c-contentsPanel_image'></div>
+                                                <div class='c-contentsPanel_inner'></div>
+                                        </div>
+                                        <section class='c-shoulderSection'>
+                                                <div class='c-shoulderSection_content'></div>
+                                        </section>
+                                </article>
+                                <aside class='l-relatedAside'>
+                                </aside>
+                                <a class='c-topPageButton js-trackEvent' href='${state.siteUrl}'
+                                        data-label='article_cta_back_to_masterpiece'>
+                                        <figure class='u-imgAdjustBox' data-aspect-ratio='322:119'>
+                                                <div class='u-imgAdjustBox_inner'>
+                                                                <img
+                                                                class='fr-img lazyloaded'
+                                                                src='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png'
+                                                                data-original='https://image.uniqlo.com//UQ/ST3/us/imagesother/home/uniqlomasterpiece-horizontal.png
+                                                                alt='UNIQLO MASTERPIECE BACK TO TOP' data-expand='300'>
+                                                                <p>BACK TO TOP</p>
+                                                                <div class='arrow-container'><div class='arrow long-arrow-left'></div></div>
 
-						</div>
-					</figure>
-				</a>
-			</div>`
+                                                </div>
+                                        </figure>
+                                </a>
+                        </div>`
 
 
 		if (!state.loading) {
-			console.log('loaded')
 			$('.main').css('opacity', '1');
 
 		}
@@ -831,22 +825,21 @@
 			topArticles();
 
 		} else {
-			console.log(state.loading)
 			errorPage()
 		}
 	}
 
-
+	//Init Function
 	function initMasterpiece() {
 		state.currentUrl = window.location.href;
 		var urlParams = new URLSearchParams(window.location.search);
-		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;', "''")
-			.replace('_', '-')
+		var product = urlParams.get('product') ? urlParams.get('product').split('-').join(' ').replace('&apos;', "'")
+			.replace(/_/g, '-')
 			.toLowerCase() :
 			null;
 
-		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('&apos;', "''")
-			.replace('_', '-')
+		var category = urlParams.get('category') ? urlParams.get('category').split('-').join(' ').replace('&apos;', "'")
+			.replace(/_/g, '-')
 			.toLowerCase() :
 			null;
 
@@ -859,7 +852,8 @@
 				category = state.contentSelected.category.toLowerCase()
 			}
 			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category && data.productName.toLowerCase() ===
+				return data.category.toLowerCase() === category && data.productName
+					.toLowerCase() ===
 					product
 			})
 			state.loading = false
@@ -868,7 +862,7 @@
 				state.contentSelected = findProductPageData[0];
 				productPage();
 				if ($('.product-crumb').length === 0) {
-					var titleReplace = state.contentSelected.title.replace('&apos;', "''")
+					var titleReplace = state.contentSelected.title.replace('&apos;', "'")
 					$('.fr-breadcrumbs_inner').append(
 						`<li class='fr-breadcrumbs_item product-crumb js-trackEvent' data-label='breadcrumb_${titleReplace.replace(/ /g, '_').toLowerCase()}'>${titleReplace}</li>`
 					)
@@ -892,7 +886,8 @@
 				if (findProductPageData && findProductPageData.length > 0) {
 					state.filter = hpCategory;
 					$('.l-navigation_item.is-active').removeClass('is-active');
-					$(`.l-navigation_item[data-filter-button~='${hpCategory}'`).addClass('is-active');
+					$(`.l-navigation_item[data-filter-button~='${hpCategory}'`).addClass(
+						'is-active');
 					homepageProductList();
 				}
 			}
@@ -906,6 +901,8 @@
 	$(document).ready(() => {
 		$('.main').css('opacity', '0')
 		if (state.width < 768) {
+			$('.loading-img').hide()
+
 			setTimeout(() => {
 				initMasterpiece();
 			}, 500)
@@ -925,7 +922,8 @@
 		});
 		if (product && category) {
 			var findProductPageData = masterpieceData.filter((data) => {
-				return data.category.toLowerCase() === category.toLowerCase() && data.productName
+				return data.category.toLowerCase() === category
+					.toLowerCase() && data.productName
 					.toLowerCase() === product.toLowerCase()
 			})
 
@@ -961,9 +959,12 @@
 					homepage();
 					$('.lazyload').lazyload();
 					$('html, body').animate({
-						scrollTop: $('.c-contentsCardGroup').offset().top
+						scrollTop: $(
+								'.c-contentsCardGroup')
+							.offset().top
 					}, 0, function () {
-						window.location.hash = filter;
+						window.location.hash =
+							filter;
 					});
 				}, 500)
 			}
@@ -982,11 +983,14 @@
 		if ($('.l-navigation_wrapper').length > 0) {
 			var t = document.querySelector('.l-navigation_body');
 			var e = document.documentElement.scrollTop || document.body.scrollTop;
-			e > document.querySelector('.l-navigation_wrapper').getBoundingClientRect().top + e ? t
+			e > document.querySelector('.l-navigation_wrapper').getBoundingClientRect()
+				.top + e ? t
 				.setAttribute('data-navigation-position', 'fixed') : t.setAttribute(
 					'data-navigation-position', 'default'),
-				e > document.querySelector('.c-bannerGroup').getBoundingClientRect().top + e - t
-				.clientHeight ? t.classList.add('is-absolute') : t.classList.remove('is-absolute');
+				e > document.querySelector('.c-bannerGroup').getBoundingClientRect()
+				.top + e - t
+				.clientHeight ? t.classList.add('is-absolute') : t.classList.remove(
+					'is-absolute');
 
 
 			if (e > document.querySelector('.l-wrapper').getBoundingClientRect().top + e - t
@@ -1028,7 +1032,8 @@
 			event.preventDefault();
 		}
 
-		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset.label : e;
+		var value = e.currentTarget.dataset && e.currentTarget.dataset.label ? e.currentTarget.dataset
+			.label : e;
 		var urlPrefix = 'https://www.uniqlo.com/us/en';
 
 		if (window.location.href.includes('staging')) {
@@ -1051,6 +1056,8 @@
 
 </script>
 
+
+<!-- Lazy load  -->
 <script>
 	(function ($, window, document, undefined) {
 		var $window = $(window);
@@ -1143,14 +1150,17 @@
 						}
 						$("<img />")
 							.bind("load", function () {
+
 								var original = $self.attr("data-" + settings.data_attribute);
 								$self.hide();
 								if ($self.is("img")) {
 									$self.attr("src", original);
-									console.log($self.prev('.loading-img'))
-									$self.prev('.loading-img').hide();
 									$self.addClass("lazyloaded");
 									$self.removeClass("lazyload");
+									$self.prev('.loading-img').hide();
+
+
+
 								} else {
 									$self.css("background-image", "url('" + original + "')");
 								}
@@ -1316,6 +1326,3 @@
 	})(jQuery, window, document);
 
 </script>
-
-
-<!-- endHTMLinject -->
